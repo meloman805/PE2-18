@@ -4,11 +4,18 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1366,768
+Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=98
-TXCnt=4
+NLCnt=117
+TXCnt=9
+
+[shapedef]
+Name=Animated SPDT Switch
+Animated SPDT Switch=0,0,48,16
+Current=0,24,16,24
+Current=0,-8,16,-8
+Current=32,0,48,0
 
 [shapedef]
 Name=Capacitor
@@ -214,7 +221,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=758
+Used=744
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -226,7 +233,6 @@ Name=идеальный ОУ
 Definition=Macro
 Shape=идеальный  ОУ
 Mask=4096
-Used=5
 Label Offset=15,-38,10,10
 PinCnt=3
 Pin="InP",a,0,6,-9,0
@@ -238,7 +244,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=275
+Used=268
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -249,7 +255,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7681
-Used=365
+Used=362
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -261,7 +267,7 @@ Name=Inductor
 Definition=Inductor
 Shape=Inductor
 Mask=7681
-Used=44
+Used=43
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -273,7 +279,6 @@ Name=пропорциональное звено
 Definition=Macro
 Shape=01
 Mask=4096
-Used=3
 Label Offset=36,-31,20,27
 PinCnt=2
 Pin="PinA",a,0,0,-8,-2
@@ -284,7 +289,6 @@ Name=вычитатель
 Definition=Macro
 Shape=05
 Mask=4096
-Used=3
 Label Offset=28,-42,16,19
 PinCnt=3
 Pin="PinA",a,0,0
@@ -296,7 +300,6 @@ Name=инерционное звено
 Definition=Macro
 Shape=03
 Mask=4096
-Used=7
 Label Offset=36,-29,19,35
 PinCnt=2
 Pin="PinA",a,0,0,-7,-2
@@ -307,7 +310,6 @@ Name=колебательное звено
 Definition=Macro
 Shape=04
 Mask=4096
-Used=4
 Label Offset=50,-30,18,52
 PinCnt=2
 Pin="PinA",a,0,0,-6,0
@@ -318,16 +320,29 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4864
-Used=18
+Used=11
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
 Pin="Plus",6,0,-5,-6
 Pin="Minus",0,0,-20,-6
 
+[compdef]
+Name=Animated SPDT Switch
+Definition=ANIMATED SPDT SWITCH
+Shape=Animated SPDT Switch
+Mask=5888
+Used=11
+memo=Animated Single Pole, Double Throw Switch
+Label Offset=1,22,11,7
+PinCnt=3
+Pin="A",0,0,4,0
+Pin="B",0,2,3,10
+Pin="C",6,1,-6,-1
+
 [Circuit]
 Window Placement=2,3, -1,-1, -8,-31, 26,26,940,405
-Default Object=Color=#000080
+Default Object=Color=#FF0000,Pattern=Dash
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
 Default Object Apply Fill To Text=No
@@ -351,9 +366,15 @@ Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
 
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash
+Px=119,95,313,369
+
 [Comp]
 Name=Resistor
-Px=120,144
+Px=120,216
 Rot=4
 
 [Attr]
@@ -372,7 +393,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=160,192
+Px=168,264
 Rot=6
 
 [Attr]
@@ -391,7 +412,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=224,96
+Px=224,168
 Rot=4
 
 [Attr]
@@ -410,7 +431,7 @@ V
 
 [Comp]
 Name=идеальный ОУ
-Px=208,144
+Px=208,216
 
 [Attr]
 ON=15,-38,PART
@@ -427,7 +448,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=176,208
+Px=176,280
 Rot=7
 
 [Attr]
@@ -446,39 +467,39 @@ V
 
 [Comp]
 Name=Ground
-Px=176,256
+Px=176,328
 Rot=7
 
 [Wire]
-Pxs=160,192,176,192
+Pxs=168,264,176,264
 
 [Wire]
-Pxs=176,192,176,208
+Pxs=176,264,176,280
 
 [Wire]
-Pxs=176,192,208,192
+Pxs=176,264,208,264
 
 [Wire]
-Pxs=168,144,208,144
+Pxs=168,216,208,216
 
 [Wire]
-Pxs=208,96,208,144
+Pxs=208,168,208,216
 
 [Wire]
-Pxs=208,96,224,96
+Pxs=208,168,224,168
 
 [Wire]
-Pxs=272,96,288,96
+Pxs=272,168,288,168
 
 [Wire]
-Pxs=288,96,288,168
+Pxs=288,168,288,240
 
 [Wire]
-Pxs=256,168,288,168
+Pxs=256,240,288,240
 
 [Comp]
 Name=идеальный ОУ
-Px=384,168
+Px=432,232
 
 [Attr]
 ON=15,-38,PART
@@ -494,14 +515,14 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=288,168,288,216
+Pxs=288,240,288,280
 
 [Wire]
-Pxs=288,216,384,216
+Pxs=288,280,432,280
 
 [Comp]
 Name=Resistor
-Px=312,120
+Px=360,184
 Rot=4
 
 [Attr]
@@ -520,7 +541,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=376,120
+Px=424,184
 Rot=4
 
 [Attr]
@@ -539,33 +560,33 @@ V
 
 [Comp]
 Name=Ground
-Px=312,120
+Px=336,184
 Rot=7
 
 [Wire]
-Pxs=360,120,368,120
+Pxs=408,184,416,184
 
 [Wire]
-Pxs=368,168,384,168
+Pxs=416,232,432,232
 
 [Wire]
-Pxs=368,120,368,168
+Pxs=416,184,416,232
 
 [Wire]
-Pxs=368,120,376,120
+Pxs=416,184,424,184
 
 [Wire]
-Pxs=432,192,456,192
+Pxs=480,256,504,256
 
 [Wire]
-Pxs=424,120,456,120
+Pxs=472,184,504,184
 
 [Wire]
-Pxs=456,120,456,192
+Pxs=504,184,504,256
 
 [Comp]
 Name=Resistor
-Px=488,192
+Px=552,256
 Rot=4
 
 [Attr]
@@ -583,11 +604,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=456,192,488,192
+Pxs=504,256,552,256
 
 [Comp]
 Name=Capacitor
-Px=560,200
+Px=624,264
 Rot=7
 
 [Attr]
@@ -605,19 +626,19 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=536,192,560,192
+Pxs=600,256,624,256
 
 [Wire]
-Pxs=560,192,560,200
+Pxs=624,256,624,264
 
 [Comp]
 Name=Ground
-Px=560,248
+Px=624,312
 Rot=7
 
 [Comp]
 Name=идеальный ОУ
-Px=584,144
+Px=648,208
 
 [Attr]
 ON=13,-25,PART
@@ -633,11 +654,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=560,192,584,192
+Pxs=624,256,648,256
 
 [Comp]
 Name=Resistor
-Px=488,112
+Px=552,184
 Rot=4
 
 [Attr]
@@ -656,7 +677,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=544,112
+Px=608,184
 Rot=4
 
 [Attr]
@@ -675,33 +696,33 @@ V
 
 [Comp]
 Name=Ground
-Px=480,112
+Px=544,184
 Rot=6
 
 [Wire]
-Pxs=536,112,544,112
+Pxs=600,184,608,184
 
 [Wire]
-Pxs=480,112,488,112
+Pxs=544,184,552,184
 
 [Wire]
-Pxs=544,144,584,144
+Pxs=608,208,648,208
 
 [Wire]
-Pxs=544,112,544,144
+Pxs=608,184,608,208
 
 [Wire]
-Pxs=592,112,648,112
+Pxs=656,184,704,184
 
 [Wire]
-Pxs=648,112,648,168
+Pxs=704,184,704,232
 
 [Wire]
-Pxs=632,168,648,168
+Pxs=696,232,704,232
 
 [Comp]
 Name=Resistor
-Px=648,168
+Px=720,232
 Rot=4
 
 [Attr]
@@ -720,7 +741,7 @@ V
 
 [Comp]
 Name=Inductor
-Px=744,168
+Px=824,232
 Rot=6
 
 [Attr]
@@ -739,7 +760,7 @@ V
 
 [Comp]
 Name=Capacitor
-Px=768,184
+Px=848,248
 Rot=7
 
 [Attr]
@@ -757,19 +778,19 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=744,168,768,168
+Pxs=824,232,848,232
 
 [Wire]
-Pxs=768,168,768,184
+Pxs=848,232,848,248
 
 [Comp]
 Name=Ground
-Px=768,232
+Px=848,296
 Rot=7
 
 [Comp]
 Name=Resistor
-Px=792,168
+Px=904,248
 Rot=4
 
 [Attr]
@@ -786,12 +807,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=768,168,792,168
-
 [Comp]
 Name=Capacitor
-Px=864,184
+Px=976,264
 Rot=7
 
 [Attr]
@@ -810,18 +828,18 @@ V
 
 [Comp]
 Name=Ground
-Px=864,232
+Px=976,312
 Rot=7
 
 [Wire]
-Pxs=840,168,864,168
+Pxs=952,248,976,248
 
 [Wire]
-Pxs=864,168,864,184
+Pxs=976,248,976,264
 
 [Comp]
 Name=идеальный ОУ
-Px=896,120
+Px=1008,200
 
 [Attr]
 ON=13,-25,PART
@@ -838,7 +856,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=800,80
+Px=912,160
 Rot=4
 
 [Attr]
@@ -857,7 +875,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=856,80
+Px=968,160
 Rot=4
 
 [Attr]
@@ -876,54 +894,51 @@ V
 
 [Comp]
 Name=Ground
-Px=792,80
+Px=904,160
 Rot=6
 
 [Wire]
-Pxs=848,80,856,80
+Pxs=960,160,968,160
 
 [Wire]
-Pxs=792,80,800,80
+Pxs=904,160,912,160
 
 [Wire]
-Pxs=856,120,896,120
+Pxs=968,200,1008,200
 
 [Wire]
-Pxs=856,80,856,120
+Pxs=968,160,968,200
 
 [Wire]
-Pxs=904,80,960,80
+Pxs=1016,160,1072,160
 
 [Wire]
-Pxs=960,80,960,144
+Pxs=1072,160,1072,208
 
 [Wire]
-Pxs=944,144,960,144
+Pxs=1056,224,1072,224
 
 [Wire]
-Pxs=960,144,984,144
+Pxs=1072,208,1104,208
 
 [Wire]
-Pxs=864,168,896,168
+Pxs=976,248,1008,248
 
 [Wire]
-Pxs=120,40,120,144
+Pxs=88,152,88,160
 
 [Wire]
-Pxs=984,40,984,144
+Pxs=1104,88,1104,208
 
 [Wire]
-Pxs=984,144,1008,144
+Pxs=80,264,96,264
 
 [Wire]
-Pxs=80,192,96,192
-
-[Wire]
-Pxs=96,192,112,192
+Pxs=96,264,120,264
 
 [Comp]
 Name=пропорциональное звено
-Px=280,424
+Px=392,520
 
 [Attr]
 ON=36,-31,PART
@@ -944,7 +959,7 @@ V
 
 [Comp]
 Name=вычитатель
-Px=152,424
+Px=256,520
 Rot=4
 
 [Attr]
@@ -961,11 +976,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=216,424,280,424
+Pxs=320,520,392,520
 
 [Comp]
 Name=инерционное звено
-Px=400,424
+Px=512,520
 
 [Attr]
 ON=36,-29,PART
@@ -989,11 +1004,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=368,424,400,424
+Pxs=480,520,512,520
 
 [Comp]
 Name=колебательное звено
-Px=504,424
+Px=616,520
 
 [Attr]
 ON=50,-30,PART
@@ -1022,7 +1037,7 @@ V
 
 [Comp]
 Name=инерционное звено
-Px=608,424
+Px=720,520
 
 [Attr]
 ON=36,-29,PART
@@ -1046,40 +1061,40 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=600,424,608,424
+Pxs=712,520,720,520
 
 [Wire]
-Pxs=488,424,504,424
+Pxs=600,520,616,520
 
 [Wire]
-Pxs=120,424,152,424
+Pxs=232,520,256,520
 
 [Wire]
-Pxs=696,424,704,424
+Pxs=808,520,816,520
 
 [Wire]
-Pxs=704,352,704,424
+Pxs=816,408,816,520
 
 [Wire]
-Pxs=184,352,704,352
+Pxs=296,408,816,408
 
 [Wire]
-Pxs=704,424,728,424
+Pxs=816,520,840,520
 
 [Comp]
 Name=Ground
-Px=120,472
+Px=232,568
 Rot=7
 
 [Wire]
-Pxs=104,424,120,424
+Pxs=216,520,232,520
 
 [Wire]
-Pxs=104,472,120,472
+Pxs=216,568,232,568
 
 [Comp]
 Name=Voltage Source
-Px=104,472
+Px=216,568
 Rot=3
 
 [Attr]
@@ -1089,7 +1104,7 @@ Style=8192
 
 [Attr]
 ON=-80,-41,VALUE
-V=DC 0 AC 1 0 Pulse 0 5 100n 100n 100n 10 10
+V=DC 1 AC 1 0 Pulse 0 1 100n 100n 100n 10 11
 
 [Attr]
 ON=0,0,PACKAGE
@@ -1097,18 +1112,15 @@ V
 
 [Attr]
 ON=0,11,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 100n 100n 100n 10 10
+V=DC 1 AC 1 0 Pulse 0 1 100n 100n 100n 10 11
 Style=256
 
 [Wire]
-Pxs=80,200,104,200
-
-[Wire]
-Pxs=80,192,80,200
+Pxs=80,264,80,272
 
 [Comp]
 Name=Voltage Source
-Px=104,248
+Px=80,320
 Rot=3
 
 [Attr]
@@ -1131,12 +1143,147 @@ Style=256
 
 [Comp]
 Name=Ground
-Px=104,248
+Px=80,320
 Rot=7
+
+[Comp]
+Name=Animated SPDT Switch
+Px=80,112
+Rot=7
+
+[Attr]
+ON=-52,7,PART
+V=Switch1
+Style=8192
+
+[Attr]
+ON=-26,21,STATE
+V=Up
+
+[Attr]
+ON=-27,35,RON
+V=1m
+
+[Attr]
+ON=-36,49,ROFF
+V=1e15
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=336,184,360,184
+
+[Wire]
+Pxs=88,216,120,216
+
+[Wire]
+Pxs=88,160,88,216
+
+[Comp]
+Name=Ground
+Px=80,112
+Rot=5
+
+[Wire]
+Pxs=96,88,96,112
+
+[Wire]
+Pxs=96,88,1104,88
+
+[Wire]
+Pxs=768,232,776,232
+
+[Wire]
+Pxs=1120,208,1120,216
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash
+Px=323,95,517,371
+
+[Wire]
+Pxs=704,232,720,232
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash
+Px=527,95,721,372
+
+[Wire]
+Pxs=1104,208,1120,208
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash
+Px=725,95,886,372
+
+[Wire]
+Pxs=848,248,904,248
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash
+Px=889,95,1083,372
+
+[Wire]
+Pxs=1072,208,1072,224
+
+[Comp]
+Name=Animated SPDT Switch
+Px=280,432
+Rot=7
+
+[Attr]
+ON=-52,7,PART
+V=Switch2
+Style=8192
+
+[Attr]
+ON=-26,21,STATE
+V=Up
+
+[Attr]
+ON=-27,35,RON
+V=1m
+
+[Attr]
+ON=-36,49,ROFF
+V=1e15
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=280,432
+Rot=5
+
+[Wire]
+Pxs=296,408,296,432
+
+[Wire]
+Pxs=288,480,288,488
+
+[Grid Text]
+Text="Вычитатель"
+Px=128,120
+Height=-18
+Color=#FF0000
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
 
 [Grid Text]
 Text="Out1"
-Px=1008,144
+Px=1120,208
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1144,7 +1291,7 @@ CBorder=None
 
 [Grid Text]
 Text="In1"
-Px=96,192
+Px=96,264
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1152,7 +1299,7 @@ CBorder=None
 
 [Grid Text]
 Text="Out2"
-Px=728,424
+Px=840,520
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1160,7 +1307,50 @@ CBorder=None
 
 [Grid Text]
 Text="In2"
-Px=120,424
+Px=232,520
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="пропорциональное звено"
+Px=328,112
+Height=-16
+Color=#FF0000
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="инерционное звено"
+Text="1-го порядка"
+Px=528,128
+Height=-16
+Color=#FF0000
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="инерционное звено"
+Text="2-го порядка"
+Px=728,128
+Height=-16
+Color=#FF0000
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="инерционное звено"
+Text="1-го порядка"
+Px=896,128
+Height=-16
+Color=#FF0000
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1174,7 +1364,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -1320,9 +1510,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=35,144
-Scale 3=1
-Px=400,307
+SB 3=159,250
+Scale 3=0.66666666666666663
+Px=333,479
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1382,7 +1572,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=15,1
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1872,8 +2061,8 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=1u
-TStep=0
+TRange=0.4
+TStep=1u
 NPts=51
 Temp=27
 RetraceRuns=1
@@ -1885,41 +2074,14 @@ IgnoreExprErrors=False
 
 [WaveForm]
 Analysis=Transient
-Plt=1
+Plt=2
 AliasID=1
 XExp=T
-YExp=v(Out1)
-XRng=1e-6
-YRng=7.5
+YExp=v(Out2)
+XRng=TMAX,TSTART
+YRng=1.2e+46,-8e+45
 Options=LINEARX,LINEARY
-Range Grid X=2e-7
-Range Grid Y=1.5
-Enable=Enable
-Line Color=#0000FF
-Text Color=#0000FF
-Rainbow=False
-VFmtX=3
-VFmtY=3
-ScaleFactorX="None"
-ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
-SFmtX=2
-SFmtY=3
-NOFmtX=3
-NOFmtY=3
-
-[WaveForm]
-Analysis=Transient
-Plt=1
-AliasID=2
-XExp=T
-YExp=v(In1)
-XRng=1e-6
-YRng=7.5
-Options=LINEARX,LINEARY
-Range Grid X=2e-7
-Range Grid Y=1.5
+Range Grid Y=4e+45
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1937,7 +2099,33 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
+Plt=1
+AliasID=2
+XExp=T
+YExp=v(In2)
+XRng=TMAX,TSTART
+YRng=1.2,0
+Options=LINEARX,LINEARY
+Range Grid Y=0.2
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
 AliasID=-1
+YRng=Auto
 Options=LINEARX,LINEARY
 Enable=Enable
 Line Color=#008000
@@ -1981,7 +2169,7 @@ Range Grid X=20000
 Range Grid Y=20
 Show Data Points=True
 Show Data Points LabelY=True
-Data Points=12000  
+Data Points=12000
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -2035,7 +2223,7 @@ Range Grid X=20000
 Range Grid Y=20
 Show Data Points=True
 Show Data Points LabelY=True
-Data Points=2k  
+Data Points=2k
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000

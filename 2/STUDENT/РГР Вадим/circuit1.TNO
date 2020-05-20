@@ -3,7 +3,7 @@
 ***                                                                          ***
 ***                                                                          ***
 ***                      Transient Analysis of circuit1                      ***
-***                           22.04.2020 22:00:21                            ***
+***                           17.05.2020 15:27:04                            ***
 ********************************************************************************
 Limits
 ======
@@ -38,10 +38,10 @@ Node           Voltage  Node           Voltage  Node           Voltage
 10              0.000   11              0.000   12              0.000  
 13              0.000   14              0.000   OUT1            0.000  
 16              0.000   17              0.000   IN2             0.000  
-OUT2            0.000   20              0.000   21              0.000  
-X7.X2.PINA      0.000   X7.X1.PINB      0.000   X8.X1.PINB      0.000  
-X8.3            0.000   X8.X2.PINA      0.000   X9.X2.PINA      0.000  
-X9.X1.PINB      0.000  
+19              0.000   20              0.000   21              0.000  
+OUT2            0.000   X7.X2.PINA      0.000   X7.X1.PINB      0.000  
+X8.X1.PINB      0.000   X8.3            0.000   X8.X2.PINA      0.000  
+X9.X2.PINA      0.000   X9.X1.PINB      0.000  
 
 DC Operating Point Inductor Current
 ===================================
@@ -77,7 +77,33 @@ tc1                  0.000         0.000         0.000         0.000         0.0
 tc2                  0.000         0.000         0.000         0.000         0.000 
 
 
-Instance:               R11           R12           R13        DA1.R1        DA1.R2
+Instance:               R11           R12           R13    SWITCH1.R1    SWITCH1.R2
+V                    0.000         0.000         0.000         0.000         0.000 
+Power DC Terms:
+PD                   0.000         0.000         0.000         0.000         0.000 
+
+DC Pin Currents:
+Ir                   0.000         0.000         0.000         0.000         0.000 
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:        SWITCH1.R3    SWITCH1.R4    SWITCH1.R5    SWITCH2.R1    SWITCH2.R2
+V                    0.000         0.000         0.000         0.000         0.000 
+Power DC Terms:
+PD                   0.000         0.000         0.000         0.000         0.000 
+
+DC Pin Currents:
+Ir                   0.000         0.000         0.000         0.000         0.000 
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:        SWITCH2.R3    SWITCH2.R4    SWITCH2.R5        DA1.R1        DA1.R2
 V                    0.000         0.000         0.000         0.000         0.000 
 Power DC Terms:
 PD                   0.000         0.000         0.000         0.000         0.000 
@@ -242,12 +268,21 @@ ISource             0.000
 
 Operating Point for Devices of Type SPICE Source
 ================================================
-Instance:               V3            V4
-V                   0.000         0.000 
+Instance:               V3            V4    SWITCH1.V1    SWITCH1.V2    SWITCH1.V3
+V                   0.000         0.000         0.000         0.000         0.000 
 Power DC Terms:
-PG                  0.000         0.000 
+PG                  0.000         0.000         0.000         0.000         0.000 
 
 DC Pin Currents:
-ISource             0.000         0.000 
+ISource             0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:       SWITCH2.V1    SWITCH2.V2    SWITCH2.V3
+V                   0.000         0.000         0.000 
+Power DC Terms:
+PG                  0.000         0.000         0.000 
+
+DC Pin Currents:
+ISource             0.000         0.000         0.000 
 
 

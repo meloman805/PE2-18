@@ -4,7 +4,7 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1366,768
+Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
 NLCnt=98
@@ -214,7 +214,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=758
+Used=744
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -226,7 +226,6 @@ Name=идеальный ОУ
 Definition=Macro
 Shape=идеальный  ОУ
 Mask=4096
-Used=5
 Label Offset=15,-38,10,10
 PinCnt=3
 Pin="InP",a,0,6,-9,0
@@ -238,7 +237,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=275
+Used=268
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -249,7 +248,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7681
-Used=365
+Used=362
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -261,7 +260,7 @@ Name=Inductor
 Definition=Inductor
 Shape=Inductor
 Mask=7681
-Used=44
+Used=43
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -273,7 +272,6 @@ Name=пропорциональное звено
 Definition=Macro
 Shape=01
 Mask=4096
-Used=3
 Label Offset=36,-31,20,27
 PinCnt=2
 Pin="PinA",a,0,0,-8,-2
@@ -284,7 +282,6 @@ Name=вычитатель
 Definition=Macro
 Shape=05
 Mask=4096
-Used=3
 Label Offset=28,-42,16,19
 PinCnt=3
 Pin="PinA",a,0,0
@@ -296,7 +293,6 @@ Name=инерционное звено
 Definition=Macro
 Shape=03
 Mask=4096
-Used=7
 Label Offset=36,-29,19,35
 PinCnt=2
 Pin="PinA",a,0,0,-7,-2
@@ -307,7 +303,6 @@ Name=колебательное звено
 Definition=Macro
 Shape=04
 Mask=4096
-Used=4
 Label Offset=50,-30,18,52
 PinCnt=2
 Pin="PinA",a,0,0,-6,0
@@ -318,7 +313,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4864
-Used=18
+Used=11
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -328,7 +323,7 @@ Pin="Minus",0,0,-20,-6
 [Circuit]
 Window Placement=2,3, -1,-1, -8,-31, 26,26,940,405
 Default Object=Color=#0000FF,Width=2
-Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Font=Height=-26,FStyle=0,Color=#0000FF,Name=Arial
 Default Object Apply Border To Text=No
 Default Object Apply Fill To Text=No
 NodeVoltageFormat=2
@@ -1853,6 +1848,30 @@ Name="Main"
 
 [AObject]
 Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=37.561303644737492,25.073825503355696,0,0
+Font=Height=-26,FStyle=0,Color=#008000,Name=Arial
+Text="Желаемая ЛАЧХ"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=39.905028288412296,61.100671140939589,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="Исходная ЛАЧХ"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
 Object=Line
 Weight=2
 CBorder=#0000FF
@@ -2057,6 +2076,90 @@ CBorder=#B80791
 w=0
 AliasID1=1
 Pos=147.00724775140702,-80.045045045045057,147.00724775140702,71.576576576576571
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=13.731558974366367,-71.489932885906057,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="W3"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=159.34629546830388,-72.966442953020149,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="Wc"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=702.05742922062507,-72.671140939597322,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="W2"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=13322.212705743075,-73.557046979865788,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="W1"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=41.443552611559596,-71.194630872483231,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="W4"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=1.4625209731181379,-72.080536912751683,0,0
+Font=Height=-26,FStyle=0,Color=#FF0000,Name=Arial
+Text="W5"
+JustifyH=Left
+JustifyV=Top
+
+[AObject]
+Analysis=AC
+Object=Text
+CBorder=None
+w=0
+AliasID1=1
+Pos=2.0557310083128844,-25.718120805369139,0,0
+Font=Height=-26,FStyle=0,Color=#0000FF,Name=Arial
+Text="ЛАЧХ звена корекции"
+JustifyH=Left
+JustifyV=Top
 
 [Monte Carlo Options]
 Analysis=Transient
