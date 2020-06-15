@@ -79,7 +79,7 @@ Name=VofV
 Definition=VofV
 Shape=VOFV
 Mask=4096
-Used=2
+Used=3
 memo=Linear VofV constant dependent source
 Label Offset=62,11,-30,59
 PinCnt=4
@@ -93,7 +93,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4864
-Used=13
+Used=17
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -105,14 +105,14 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=277
+Used=278
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 26,26,1390,613
+Window Placement=2,3, -1,-1, -8,-31, 144,180,1508,767
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -164,7 +164,7 @@ Style=8192
 
 [Attr]
 ON=-75,-41,VALUE
-V=DC 1 AC 0 0 
+V=DC 1 AC 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -177,7 +177,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_None
-V=DC 1 AC 0 0 
+V=DC 1 AC 0 0
 Style=256
 
 [Wire]
@@ -354,7 +354,6 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=162,57
 Scale 3=0.66666666666666663
 Px=410,312
 WinBackGround Color=#FFFFFF

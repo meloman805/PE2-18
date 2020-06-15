@@ -121,7 +121,7 @@ Show Grid Text=True
 
 [Comp]
 Name=Ground
-Px=320,360
+Px=312,232
 Rot=7
 
 [Comp]
@@ -278,7 +278,7 @@ ALIGNBOTTOM=No
 
 [Section]
 Index=0
-Name="11"
+Name="12"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -301,7 +301,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=0.66666666666666663
-Px=318,207
+Px=252,113
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -361,7 +361,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=35,4
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -678,12 +677,12 @@ Analysis=Transient
 Plt=2
 AliasID=2
 XExp=F
-YExp=FFT(V(E1))
-XRng=5000,0
-YRng=6e+6
+YExp=HARM(V(E1))
+XRng=10000
+YRng=2
 Options=LINEARX,LINEARY
-Range Grid X=500
-Range Grid Y=1.2e+6
+Range Grid X=1000
+Range Grid Y=0.4
 Enable=Enable
 CS=Popsicle
 Line Color=#FF0000

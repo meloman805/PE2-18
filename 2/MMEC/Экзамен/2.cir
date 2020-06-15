@@ -8,7 +8,7 @@ Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
 NLCnt=33
-TXCnt=1
+TXCnt=0
 
 [shapedef]
 Name=Ground
@@ -73,7 +73,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=750
+Used=754
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -85,14 +85,14 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=276
+Used=278
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 26,26,1390,613
+Window Placement=2,3, -1,-1, -8,-31, 144,180,1508,767
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -127,7 +127,7 @@ Style=8192
 
 [Attr]
 ON=-75,-40,VALUE
-V=DC 1m AC 0 0 
+V=DC 1m AC 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -140,7 +140,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_None
-V=DC 1m AC 0 0 
+V=DC 1m AC 0 0
 Style=256
 
 [Wire]
@@ -192,7 +192,7 @@ Style=8192
 
 [Attr]
 ON=-75,-40,VALUE
-V=DC 10u AC 0 0 
+V=DC 10u AC 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -205,7 +205,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_None
-V=DC 10u AC 0 0 
+V=DC 10u AC 0 0
 Style=256
 
 [Wire]
@@ -257,7 +257,7 @@ Style=8192
 
 [Attr]
 ON=-75,-40,VALUE
-V=DC 50 AC 0 0 
+V=DC 50 AC 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -270,7 +270,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_None
-V=DC 50 AC 0 0 
+V=DC 50 AC 0 0
 Style=256
 
 [Wire]
@@ -322,7 +322,7 @@ Style=8192
 
 [Attr]
 ON=-75,-40,VALUE
-V=DC 6k AC 0 0 
+V=DC 6k AC 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -335,7 +335,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_None
-V=DC 6k AC 0 0 
+V=DC 6k AC 0 0
 Style=256
 
 [Wire]
@@ -379,20 +379,6 @@ Pxs=920,224,920,248
 Name=Ground
 Px=160,528
 Rot=7
-
-[Grid Text]
-Text="Dynamic DC"
-Text="Temperature=27"
-Text="Displaying DC Currents"
-BannerDC=True
-Px=16,84
-Height=-10
-Color=#000000
-GridSnap=False
-JustifyH=Left
-JustifyV=Bottom
-CFill=#C0C0C0
-CBorder=#000000
 
 [Schematic]
 CurrentSection 0=0
