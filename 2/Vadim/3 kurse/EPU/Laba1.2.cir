@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=54
+NLCnt=57
 TXCnt=8
 
 [shapedef]
@@ -88,7 +88,7 @@ Name=Stim4
 Definition=STIM
 Shape=STIM4
 Mask=5120
-Used=6
+Used=7
 Data2=4
 memo=4-Bit Digital Stimulus
 Label Offset=4,25,19,16
@@ -144,7 +144,7 @@ Name=Or3
 Definition=OR
 Shape=Or3
 Mask=4096
-Used=1
+Used=2
 Data1=3
 memo=3 Input Generic OR Gate
 Label Offset=15,3,7,11
@@ -181,39 +181,40 @@ Show Grid Text=True
 
 [Comp]
 Name=Stim4
-Px=96,128
+Px=96,136
+Rot=4
 
 [Attr]
-ON=4,24,PART
+ON=4,-39,PART
 V=U1
 Style=8192
 
 [Attr]
-ON=4,53,FORMAT
-V=4
+ON=4,-53,FORMAT
+V=1111
 
 [Attr]
-ON=4,67,COMMAND
-V=Count4
+ON=4,-67,COMMAND
+V=Repeat1
 
 [Attr]
-ON=4,81,I/O MODEL
+ON=4,-81,I/O MODEL
 V=IO_STD
 
 [Attr]
-ON=4,95,TIMESTEP
+ON=4,-95,TIMESTEP
 V=0
 
 [Attr]
-ON=4,109,IO_LEVEL
+ON=4,-109,IO_LEVEL
 V=0
 
 [Attr]
-ON=4,123,POWER NODE
+ON=4,-123,POWER NODE
 V=$G_DPWR
 
 [Attr]
-ON=4,136,GROUND NODE
+ON=4,-136,GROUND NODE
 V=$G_DGND
 
 [Attr]
@@ -316,31 +317,25 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=168,120,200,120
+Pxs=168,120,200,104
 
 [Wire]
-Pxs=168,128,176,128
+Pxs=168,128,184,128
 
 [Wire]
 Pxs=168,136,216,136
 
 [Wire]
-Pxs=168,144,200,144
+Pxs=168,152,200,152
 
 [Wire]
-Pxs=200,120,248,120
+Pxs=200,104,248,120
 
 [Wire]
-Pxs=176,128,256,128
+Pxs=216,144,240,144
 
 [Wire]
-Pxs=216,136,240,136
-
-[Wire]
-Pxs=200,144,232,144
-
-[Wire]
-Pxs=232,144,232,168
+Pxs=232,152,232,168
 
 [Wire]
 Pxs=248,104,248,120
@@ -520,7 +515,7 @@ Pxs=392,184,392,216
 Pxs=392,216,424,216
 
 [Wire]
-Pxs=240,136,240,256
+Pxs=240,136,240,144
 
 [Wire]
 Pxs=240,256,312,256
@@ -583,17 +578,24 @@ Pxs=264,272,312,272
 [Wire]
 Pxs=264,104,272,104
 
-[Grid Text]
-Text="x1"
-Px=200,144
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
+[Wire]
+Pxs=184,128,256,128
+
+[Wire]
+Pxs=168,144,168,152
+
+[Wire]
+Pxs=200,152,232,152
+
+[Wire]
+Pxs=216,136,216,144
+
+[Wire]
+Pxs=240,144,240,256
 
 [Grid Text]
-Text="x2"
-Px=216,136
+Text="x4"
+Px=200,152
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -601,15 +603,23 @@ CBorder=None
 
 [Grid Text]
 Text="x3"
-Px=176,128
+Px=216,136
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
 CBorder=None
 
 [Grid Text]
-Text="x4"
-Px=200,120
+Text="x2"
+Px=184,128
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="x1"
+Px=200,104
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -655,7 +665,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.5
+Scale=0.25
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -801,9 +811,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,16
-Scale 3=0.5
-Px=470,257
+SB 3=92,62
+Scale 3=0.25
+Px=324,80
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -848,6 +858,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Text
+SB 0=0,20
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -863,7 +874,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=17,1
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -896,6 +906,21 @@ Text=+0ns 0
 Text=+label=start
 Text=+100ns Incr By 1
 Text=+200ns goto start -1 times
+Text=
+Text=.define Repeat1 
+Text=+Repeat 5 Times
+Text=+0us 0000
+Text=+1us 0001
+Text=+2us 0010
+Text=+3us 0011
+Text=+4us 0110
+Text=+5us 0111
+Text=+6us 1010
+Text=+7us 1011
+Text=+8us 1110
+Text=+9us 1111
+Text=+10us 0000
+Text=+Endrepeat
 
 [Text Area]
 Section=0
@@ -1141,7 +1166,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=5u
+TRange=10u
 TStep=0
 NPts=51
 Temp=27
@@ -1203,7 +1228,7 @@ Analysis=Transient
 Plt=1
 AliasID=2
 XExp=T
-YExp=bin(y4,y3,y2,y1)
+YExp=bin(x4,x3,x2,x1)
 XRng=AutoAlways
 YRng=Auto
 Options=LINEARX,LINEARY
@@ -1227,7 +1252,7 @@ Analysis=Transient
 Plt=1
 AliasID=3
 XExp=T
-YExp=bin(x1,x2,x3,x4)
+YExp=bin(y4,y3,y2,y1)
 XRng=AutoAlways
 YRng=Auto
 Options=LINEARX,LINEARY
