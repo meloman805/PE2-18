@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=68
-TXCnt=7
+NLCnt=80
+TXCnt=6
 
 [shapedef]
 Name=And.root
@@ -23,6 +23,18 @@ Arc=12,-4,40,20 , 28,32,28,-16
 [shapedef]
 Name=And2
 Root="And.root",0,0,0
+
+[shapedef]
+Name=And4
+Root="Bigand.root",0,8,0
+Line=0,0,9,0
+Line=0,32,9,32
+
+[shapedef]
+Name=Bigand.root
+Root="And.root",0,0,0
+Line=9,-4,9,-16
+Line=9,20,9,32
 
 [shapedef]
 Name=Fixed
@@ -192,7 +204,7 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=3840
-Used=3
+Used=5
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -251,11 +263,27 @@ Pin="In",0,0,-4,-2
 Pin="Out",6,0,-10,-2
 
 [compdef]
+Name=And4
+Definition=AND
+Shape=And4
+Mask=4096
+Used=1
+Data1=4
+memo=4 Input Generic AND Gate
+Label Offset=13,13,0,13
+PinCnt=5
+Pin="In0",0,0,-7,-1
+Pin="In1",0,1,-19,7
+Pin="In2",0,3,-19,7
+Pin="In3",0,4,-8,16
+Pin="Out",6,2,-6,-1
+
+[compdef]
 Name=And2
 Definition=AND
 Shape=And2
 Mask=4867
-Used=26
+Used=29
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -265,7 +293,7 @@ Pin="In1",0,2,-6,-1
 Pin="Out",6,1,-7,-1
 
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 96,96,1390,692
+Window Placement=2,3, -1,-1, -9,-38, 96,75,1390,671
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -348,31 +376,13 @@ Pxs=64,104,72,104
 Pxs=64,112,72,112
 
 [Wire]
-Pxs=128,112,128,144
-
-[Wire]
-Pxs=128,144,128,168
-
-[Wire]
-Pxs=128,168,312,168
-
-[Wire]
 Pxs=152,104,152,136
 
 [Wire]
-Pxs=152,136,152,152
-
-[Wire]
-Pxs=152,152,312,152
+Pxs=152,136,152,168
 
 [Wire]
 Pxs=168,96,168,112
-
-[Wire]
-Pxs=168,112,168,328
-
-[Wire]
-Pxs=168,328,760,328
 
 [Wire]
 Pxs=232,88,264,88
@@ -445,90 +455,6 @@ V=KR531ID14
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=400,96,752,96
-
-[Wire]
-Pxs=400,96,400,128
-
-[Wire]
-Pxs=400,136,472,136
-
-[Wire]
-Pxs=400,144,440,144
-
-[Wire]
-Pxs=400,160,424,160
-
-[Wire]
-Pxs=424,160,424,280
-
-[Wire]
-Pxs=424,160,456,160
-
-[Wire]
-Pxs=424,280,760,280
-
-[Wire]
-Pxs=440,144,440,264
-
-[Wire]
-Pxs=440,144,464,144
-
-[Wire]
-Pxs=440,264,760,264
-
-[Wire]
-Pxs=456,160,456,200
-
-[Wire]
-Pxs=456,200,528,200
-
-[Wire]
-Pxs=464,144,464,152
-
-[Wire]
-Pxs=464,152,472,152
-
-[Wire]
-Pxs=520,136,520,144
-
-[Wire]
-Pxs=520,136,696,136
-
-[Wire]
-Pxs=520,184,528,184
-
-[Wire]
-Pxs=568,192,576,192
-
-[Wire]
-Pxs=696,136,696,200
-
-[Wire]
-Pxs=696,200,760,200
-
-[Wire]
-Pxs=696,200,696,232
-
-[Wire]
-Pxs=696,232,760,232
-
-[Wire]
-Pxs=696,232,696,248
-
-[Wire]
-Pxs=696,248,760,248
-
-[Wire]
-Pxs=712,168,712,192
-
-[Wire]
-Pxs=712,168,760,168
-
-[Wire]
-Pxs=752,96,752,216
 
 [Wire]
 Pxs=752,216,760,216
@@ -608,86 +534,6 @@ ON=0,0,PACKAGE
 V
 
 [Comp]
-Name=And2
-Px=472,136
-
-[Attr]
-ON=-28,-22,PART
-V=U11
-Style=8192
-
-[Attr]
-ON=-14,-24,TIMING MODEL
-V=2
-
-[Attr]
-ON=-46,-24,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,-24,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-14,-24,IO_LEVEL
-V=0
-
-[Attr]
-ON=-60,-24,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-60,-24,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=520,144,520,184
-
-[Comp]
-Name=And2
-Px=528,184
-
-[Attr]
-ON=-28,-22,PART
-V=U12
-Style=8192
-
-[Attr]
-ON=-14,-24,TIMING MODEL
-V=2
-
-[Attr]
-ON=-46,-24,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,-24,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-14,-24,IO_LEVEL
-V=0
-
-[Attr]
-ON=-60,-24,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-60,-24,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=576,192,712,192
-
-[Comp]
 Name=Inverter
 Px=944,248
 
@@ -727,6 +573,320 @@ V
 [Wire]
 Pxs=992,248,1000,248
 
+[Wire]
+Pxs=152,168,312,168
+
+[Wire]
+Pxs=168,112,168,144
+
+[Wire]
+Pxs=168,144,312,144
+
+[Wire]
+Pxs=312,144,312,152
+
+[Wire]
+Pxs=400,176,456,176
+
+[Wire]
+Pxs=712,168,712,176
+
+[Wire]
+Pxs=712,168,760,168
+
+[Comp]
+Name=And4
+Px=528,120
+
+[Attr]
+ON=13,13,PART
+V=U14
+Style=8192
+
+[Attr]
+ON=13,27,TIMING MODEL
+V=1
+
+[Attr]
+ON=13,41,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=13,55,MNTYMXDLY
+V=0
+
+[Attr]
+ON=13,69,IO_LEVEL
+V=0
+
+[Attr]
+ON=13,83,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=13,97,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=400,128,464,128
+
+[Wire]
+Pxs=504,120,504,128
+
+[Wire]
+Pxs=504,120,528,120
+
+[Wire]
+Pxs=400,144,440,144
+
+[Wire]
+Pxs=512,128,512,144
+
+[Wire]
+Pxs=512,128,528,128
+
+[Wire]
+Pxs=400,160,488,160
+
+[Wire]
+Pxs=520,144,520,160
+
+[Wire]
+Pxs=520,144,528,144
+
+[Wire]
+Pxs=528,152,528,176
+
+[Wire]
+Pxs=528,176,712,176
+
+[Wire]
+Pxs=576,136,744,136
+
+[Wire]
+Pxs=744,136,744,184
+
+[Wire]
+Pxs=744,184,760,184
+
+[Comp]
+Name=And2
+Px=536,208
+
+[Attr]
+ON=-28,-22,PART
+V=U15
+Style=8192
+
+[Attr]
+ON=-14,-36,TIMING MODEL
+V=1
+
+[Attr]
+ON=-46,-50,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=-14,-64,MNTYMXDLY
+V=0
+
+[Attr]
+ON=-14,-78,IO_LEVEL
+V=0
+
+[Attr]
+ON=-60,-92,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-60,-106,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=464,128,464,208
+
+[Wire]
+Pxs=464,208,536,208
+
+[Wire]
+Pxs=464,128,504,128
+
+[Wire]
+Pxs=440,144,440,224
+
+[Wire]
+Pxs=440,224,536,224
+
+[Wire]
+Pxs=440,144,512,144
+
+[Wire]
+Pxs=584,216,736,216
+
+[Wire]
+Pxs=736,200,736,216
+
+[Wire]
+Pxs=736,200,760,200
+
+[Comp]
+Name=And2
+Px=536,240
+
+[Attr]
+ON=-28,-22,PART
+V=U16
+Style=8192
+
+[Attr]
+ON=-14,-36,TIMING MODEL
+V=1
+
+[Attr]
+ON=-46,-50,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=-14,-64,MNTYMXDLY
+V=0
+
+[Attr]
+ON=-14,-78,IO_LEVEL
+V=0
+
+[Attr]
+ON=-60,-92,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-60,-106,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=488,160,488,240
+
+[Wire]
+Pxs=488,240,536,240
+
+[Wire]
+Pxs=488,160,520,160
+
+[Wire]
+Pxs=456,176,456,256
+
+[Wire]
+Pxs=456,256,536,256
+
+[Wire]
+Pxs=456,176,528,176
+
+[Wire]
+Pxs=584,248,752,248
+
+[Wire]
+Pxs=752,216,752,248
+
+[Comp]
+Name=Fixed Digital
+Px=712,352
+Rot=7
+
+[Attr]
+ON=-8,-16,PART
+V=U17
+
+[Attr]
+ON=0,-13,VALUE
+V=0
+Style=8192
+
+[Attr]
+ON=-32,1,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=0,15,IO_LEVEL
+V=0
+
+[Attr]
+ON=-46,29,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-46,43,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=712,384,760,384
+
+[Wire]
+Pxs=760,328,760,384
+
+[Comp]
+Name=Fixed Digital
+Px=664,272
+Rot=4
+
+[Attr]
+ON=-8,-16,PART
+V=U18
+
+[Attr]
+ON=0,-13,VALUE
+V=0
+Style=8192
+
+[Attr]
+ON=-32,1,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=0,15,IO_LEVEL
+V=0
+
+[Attr]
+ON=-46,29,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-46,43,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=696,272,760,272
+
+[Wire]
+Pxs=760,272,760,280
+
+[Wire]
+Pxs=760,232,760,248
+
+[Wire]
+Pxs=760,264,760,272
+
+[Wire]
+Pxs=760,248,760,264
+
 [Grid Text]
 Text="F2"
 Px=1000,248
@@ -738,14 +898,6 @@ CBorder=None
 [Grid Text]
 Text="F"
 Px=912,248
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="x5"
-Px=128,144
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -915,7 +1067,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="circuit3"
+Name="Лаба 2 финал"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -937,9 +1089,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=355,77
+SB 3=113,0
 Scale 3=0.66666666666666663
-Px=934,200
+Px=470,389
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -984,6 +1136,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Text
+SB 0=10,20
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -999,7 +1152,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=17,2
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1045,23 +1197,7 @@ Text=+12us 00001100
 Text=+13us 00001101
 Text=+14us 00001110
 Text=+15us 00001111
-Text=+16us 00010000
-Text=+17us 00010001
-Text=+18us 00010010
-Text=+19us 00010011
-Text=+20us 00010100
-Text=+21us 00010101
-Text=+22us 00010110
-Text=+23us 00010111
-Text=+24us 00011000
-Text=+25us 00011001
-Text=+26us 00011010
-Text=+27us 00011011
-Text=+28us 00011100
-Text=+29us 00011101
-Text=+30us 00011110
-Text=+31us 00011111
-Text=+32us 00000000
+Text=+16us 00000000
 Text=+Endrepeat
 
 [Text Area]
@@ -1523,7 +1659,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=32u
+TRange=16u
 TStep=0
 NPts=51
 Temp=27
@@ -1539,7 +1675,7 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=bin(x5,x4,X2,x2,x1)
+YExp=bin(x4,X2,x2,x1)
 XRng=AutoAlways
 YRng=Auto
 Options=LINEARX,LINEARY

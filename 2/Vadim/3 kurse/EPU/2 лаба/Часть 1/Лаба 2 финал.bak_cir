@@ -173,7 +173,7 @@ Name=Stim8
 Definition=STIM
 Shape=STIM8
 Mask=5123
-Used=3
+Used=4
 Data2=8
 memo=8-Bit Digital Stimulus
 Label Offset=2,49,29,19
@@ -192,7 +192,7 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=3840
-Used=3
+Used=8
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -203,7 +203,7 @@ Name=KR531ID14
 Definition=Subckt
 Shape=ID14
 Mask=160
-Used=3
+Used=4
 memo=2 декодера 2 в 4
 Label Offset=-8,33,18,37
 PinCnt=7
@@ -220,7 +220,7 @@ Name=K155KP5
 Definition=Subckt
 Shape=K155KP5
 Mask=128
-Used=2
+Used=3
 memo=—електор-мультиплексор данных на 8 каналов без стробировани€
 Label Offset=0,146,-152,12
 PinCnt=12
@@ -242,7 +242,7 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
-Used=13
+Used=15
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -255,7 +255,7 @@ Name=And2
 Definition=AND
 Shape=And2
 Mask=4867
-Used=26
+Used=32
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -265,7 +265,7 @@ Pin="In1",0,2,-6,-1
 Pin="Out",6,1,-7,-1
 
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 96,75,1390,671
+Window Placement=2,3, 0,818, -9,-38, 79,78,1373,674
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -274,7 +274,7 @@ NodeVoltageFormat=2
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 256,256,1920,852
+Window Placement in Transient Analysis=1,2, 0,818, -9,-38, 252,252,1916,848
 Window Placement in AC Analysis=2,3, -1,-1, -9,-38, 96,96,1760,692
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
@@ -447,10 +447,10 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=400,96,752,96
+Pxs=400,88,752,88
 
 [Wire]
-Pxs=400,96,400,128
+Pxs=400,88,400,128
 
 [Wire]
 Pxs=400,136,472,136
@@ -528,7 +528,7 @@ Pxs=712,168,712,192
 Pxs=712,168,760,168
 
 [Wire]
-Pxs=752,96,752,216
+Pxs=752,88,752,216
 
 [Wire]
 Pxs=752,216,760,216
@@ -937,9 +937,8 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=216,1
 Scale 3=0.66666666666666663
-Px=729,137
+Px=505,253
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
