@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=68
-TXCnt=7
+NLCnt=55
+TXCnt=5
 
 [shapedef]
 Name=And.root
@@ -25,25 +25,15 @@ Name=And2
 Root="And.root",0,0,0
 
 [shapedef]
+Name=And3
+Root="And.root",0,0,0
+Line=0,8,9,8
+
+[shapedef]
 Name=Fixed
 Line=8,0,32,0
 Line=8,0,0,-8
 Line=8,0,0,8
-
-[shapedef]
-Name=Inv
-Root="Inv.root",0,0,0
-
-[shapedef]
-Name=Inv.root
-Line=8,-16,8,16
-Line=8,-16,40,0
-Line=8,16,40,0
-Line=0,0,8,0
-Ellipse=40,-2,44,2
-FColor=None
-Line=44,0,47,0
-Line=46,0,48,0
 
 [shapedef]
 Name=STIM8
@@ -173,7 +163,7 @@ Name=Stim8
 Definition=STIM
 Shape=STIM8
 Mask=5123
-Used=4
+Used=6
 Data2=8
 memo=8-Bit Digital Stimulus
 Label Offset=2,49,29,19
@@ -191,8 +181,8 @@ Pin="Out0",9,5,7,11
 Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
-Mask=3840
-Used=8
+Mask=2048
+Used=19
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -203,7 +193,7 @@ Name=KR531ID14
 Definition=Subckt
 Shape=ID14
 Mask=160
-Used=4
+Used=7
 memo=2 декодера 2 в 4
 Label Offset=-8,33,18,37
 PinCnt=7
@@ -220,7 +210,7 @@ Name=K155KP5
 Definition=Subckt
 Shape=K155KP5
 Mask=128
-Used=3
+Used=7
 memo=Селектор-мультиплексор данных на 8 каналов без стробирования
 Label Offset=0,146,-152,12
 PinCnt=12
@@ -238,24 +228,11 @@ Pin="12",d,-2,11
 Pin="13",d,-2,9
 
 [compdef]
-Name=Inverter
-Definition=INV
-Shape=Inv
-Mask=4611
-Used=15
-Data1=1
-memo=Generic Inverter Gate
-Label Offset=12,-6,11,21
-PinCnt=2
-Pin="In",0,0,-4,-2
-Pin="Out",6,0,-10,-2
-
-[compdef]
 Name=And2
 Definition=AND
 Shape=And2
-Mask=4867
-Used=32
+Mask=5123
+Used=41
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -263,6 +240,21 @@ PinCnt=3
 Pin="In0",0,0,-6,-1
 Pin="In1",0,2,-6,-1
 Pin="Out",6,1,-7,-1
+
+[compdef]
+Name=And3
+Definition=AND
+Shape=And3
+Mask=4096
+Used=2
+Data1=3
+memo=3 Input Generic AND Gate
+Label Offset=13,5,7,10
+PinCnt=4
+Pin="In0",0,0,-7,-1
+Pin="In1",0,1,-17,7
+Pin="In2",0,2,-7,16
+Pin="Out",6,1,-8,-2
 
 [Circuit]
 Window Placement=2,3, 0,818, -9,-38, 79,78,1373,674
@@ -292,7 +284,7 @@ Show Grid Text=True
 
 [Comp]
 Name=Stim8
-Px=2,120
+Px=18,120
 Rot=4
 
 [Attr]
@@ -333,68 +325,23 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=64,80,72,80
+Pxs=176,104,176,136
 
 [Wire]
-Pxs=64,88,72,88
+Pxs=176,136,176,312
 
 [Wire]
-Pxs=64,96,72,96
+Pxs=192,96,192,112
 
 [Wire]
-Pxs=64,104,72,104
+Pxs=256,88,288,88
 
 [Wire]
-Pxs=64,112,72,112
-
-[Wire]
-Pxs=128,112,128,144
-
-[Wire]
-Pxs=128,144,128,168
-
-[Wire]
-Pxs=128,168,312,168
-
-[Wire]
-Pxs=152,104,152,136
-
-[Wire]
-Pxs=152,136,152,152
-
-[Wire]
-Pxs=152,152,312,152
-
-[Wire]
-Pxs=168,96,168,112
-
-[Wire]
-Pxs=168,112,168,328
-
-[Wire]
-Pxs=168,328,760,328
-
-[Wire]
-Pxs=232,88,264,88
-
-[Wire]
-Pxs=264,88,264,312
-
-[Wire]
-Pxs=264,312,760,312
-
-[Wire]
-Pxs=272,80,272,296
-
-[Wire]
-Pxs=272,296,760,296
-
-[Wire]
-Pxs=288,48,288,128
+Pxs=312,48,312,128
 
 [Comp]
 Name=Fixed Digital
-Px=288,16
+Px=312,16
 Rot=7
 
 [Attr]
@@ -427,11 +374,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=288,128,312,128
+Pxs=312,128,336,128
 
 [Comp]
 Name=KR531ID14
-Px=328,136
+Px=352,136
 
 [Attr]
 ON=-8,33,PART
@@ -446,96 +393,9 @@ V=KR531ID14
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=400,88,752,88
-
-[Wire]
-Pxs=400,88,400,128
-
-[Wire]
-Pxs=400,136,472,136
-
-[Wire]
-Pxs=400,144,440,144
-
-[Wire]
-Pxs=400,160,424,160
-
-[Wire]
-Pxs=424,160,424,280
-
-[Wire]
-Pxs=424,160,456,160
-
-[Wire]
-Pxs=424,280,760,280
-
-[Wire]
-Pxs=440,144,440,264
-
-[Wire]
-Pxs=440,144,464,144
-
-[Wire]
-Pxs=440,264,760,264
-
-[Wire]
-Pxs=456,160,456,200
-
-[Wire]
-Pxs=456,200,528,200
-
-[Wire]
-Pxs=464,144,464,152
-
-[Wire]
-Pxs=464,152,472,152
-
-[Wire]
-Pxs=520,136,520,144
-
-[Wire]
-Pxs=520,136,696,136
-
-[Wire]
-Pxs=520,184,528,184
-
-[Wire]
-Pxs=568,192,576,192
-
-[Wire]
-Pxs=696,136,696,200
-
-[Wire]
-Pxs=696,200,760,200
-
-[Wire]
-Pxs=696,200,696,232
-
-[Wire]
-Pxs=696,232,760,232
-
-[Wire]
-Pxs=696,232,696,248
-
-[Wire]
-Pxs=696,248,760,248
-
-[Wire]
-Pxs=712,168,712,192
-
-[Wire]
-Pxs=712,168,760,168
-
-[Wire]
-Pxs=752,88,752,216
-
-[Wire]
-Pxs=752,216,760,216
-
 [Comp]
 Name=K155KP5
-Px=776,176
+Px=800,176
 
 [Attr]
 ON=0,146,PART
@@ -550,174 +410,151 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=912,248,944,248
+Pxs=90,104,176,104
 
 [Wire]
-Pxs=400,128,400,136
+Pxs=90,96,192,96
 
 [Wire]
-Pxs=74,112,128,112
+Pxs=90,88,256,88
 
 [Wire]
-Pxs=74,104,152,104
+Pxs=90,80,296,80
 
 [Wire]
-Pxs=74,96,168,96
+Pxs=176,312,784,312
 
 [Wire]
-Pxs=74,88,232,88
+Pxs=192,112,192,296
 
 [Wire]
-Pxs=74,80,272,80
+Pxs=192,296,784,296
+
+[Wire]
+Pxs=288,88,288,168
+
+[Wire]
+Pxs=288,168,336,168
+
+[Wire]
+Pxs=296,80,296,152
+
+[Wire]
+Pxs=296,152,336,152
 
 [Comp]
-Name=Inverter
-Px=864,248
+Name=Fixed Digital
+Px=752,280
 
 [Attr]
-ON=-26,-8,PART
-V=U9
+ON=-14,-7,PART
+V=U5
+
+[Attr]
+ON=-14,7,VALUE
+V=1
 Style=8192
 
 [Attr]
-ON=-18,-22,TIMING MODEL
-V=2
-
-[Attr]
-ON=-50,-36,I/O MODEL
+ON=-14,21,I/O MODEL
 V=IO_STD
 
 [Attr]
-ON=-18,-50,MNTYMXDLY
+ON=-14,35,IO_LEVEL
 V=0
 
 [Attr]
-ON=-18,-64,IO_LEVEL
-V=0
-
-[Attr]
-ON=-64,-78,POWER NODE
+ON=-14,49,POWER NODE
 V=$G_DPWR
 
 [Attr]
-ON=-64,-92,GROUND NODE
+ON=-14,63,GROUND NODE
 V=$G_DGND
 
 [Attr]
 ON=0,0,PACKAGE
 V
+
+[Wire]
+Pxs=784,232,784,248
+
+[Wire]
+Pxs=784,264,784,280
+
+[Wire]
+Pxs=784,248,784,264
+
+[Comp]
+Name=Fixed Digital
+Px=752,328
+
+[Attr]
+ON=-14,-7,PART
+V=U6
+
+[Attr]
+ON=-14,7,VALUE
+V=0
+Style=8192
+
+[Attr]
+ON=-14,21,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=-14,35,IO_LEVEL
+V=0
+
+[Attr]
+ON=-14,49,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-14,63,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=424,128,448,128
+
+[Wire]
+Pxs=424,176,472,176
 
 [Comp]
 Name=And2
-Px=472,136
+Px=496,144
+Rot=4
 
 [Attr]
-ON=-28,-22,PART
-V=U11
+ON=12,-35,PART
+V=U7
 Style=8192
 
 [Attr]
-ON=-14,-24,TIMING MODEL
-V=2
-
-[Attr]
-ON=-46,-24,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,-24,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-14,-24,IO_LEVEL
-V=0
-
-[Attr]
-ON=-60,-24,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-60,-24,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=520,144,520,184
-
-[Comp]
-Name=And2
-Px=528,184
-
-[Attr]
-ON=-28,-22,PART
-V=U12
-Style=8192
-
-[Attr]
-ON=-14,-24,TIMING MODEL
-V=2
-
-[Attr]
-ON=-46,-24,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,-24,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-14,-24,IO_LEVEL
-V=0
-
-[Attr]
-ON=-60,-24,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-60,-24,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=576,192,712,192
-
-[Comp]
-Name=Inverter
-Px=944,248
-
-[Attr]
-ON=-26,-8,PART
-V=U13
-Style=8192
-
-[Attr]
-ON=-18,-22,TIMING MODEL
+ON=12,-49,TIMING MODEL
 V=1
 
 [Attr]
-ON=-50,-36,I/O MODEL
+ON=12,-63,I/O MODEL
 V=IO_STD
 
 [Attr]
-ON=-18,-50,MNTYMXDLY
+ON=12,-77,MNTYMXDLY
 V=0
 
 [Attr]
-ON=-18,-64,IO_LEVEL
+ON=12,-91,IO_LEVEL
 V=0
 
 [Attr]
-ON=-64,-78,POWER NODE
+ON=12,-105,POWER NODE
 V=$G_DPWR
 
 [Attr]
-ON=-64,-92,GROUND NODE
+ON=12,-119,GROUND NODE
 V=$G_DGND
 
 [Attr]
@@ -725,27 +562,120 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=992,248,1000,248
+Pxs=496,144,496,176
 
-[Grid Text]
-Text="F2"
-Px=1000,248
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
+[Wire]
+Pxs=544,136,784,136
+
+[Wire]
+Pxs=784,136,784,168
+
+[Wire]
+Pxs=424,144,488,144
+
+[Wire]
+Pxs=488,144,488,200
+
+[Wire]
+Pxs=488,200,552,200
+
+[Wire]
+Pxs=424,160,432,160
+
+[Wire]
+Pxs=480,160,480,208
+
+[Wire]
+Pxs=480,208,552,208
+
+[Wire]
+Pxs=472,176,472,216
+
+[Wire]
+Pxs=472,216,552,216
+
+[Wire]
+Pxs=472,176,496,176
+
+[Comp]
+Name=And3
+Px=552,200
+
+[Attr]
+ON=13,5,PART
+V=U8
+Style=8192
+
+[Attr]
+ON=13,19,TIMING MODEL
+V=1
+
+[Attr]
+ON=13,33,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=13,47,MNTYMXDLY
+V=0
+
+[Attr]
+ON=13,61,IO_LEVEL
+V=0
+
+[Attr]
+ON=13,75,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=13,89,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=600,208,728,208
+
+[Wire]
+Pxs=728,184,784,184
+
+[Wire]
+Pxs=728,184,728,208
+
+[Wire]
+Pxs=448,128,448,248
+
+[Wire]
+Pxs=448,248,736,248
+
+[Wire]
+Pxs=448,128,496,128
+
+[Wire]
+Pxs=736,200,736,248
+
+[Wire]
+Pxs=736,200,784,200
+
+[Wire]
+Pxs=432,160,432,256
+
+[Wire]
+Pxs=432,256,760,256
+
+[Wire]
+Pxs=432,160,480,160
+
+[Wire]
+Pxs=760,216,760,256
+
+[Wire]
+Pxs=760,216,784,216
 
 [Grid Text]
 Text="F"
-Px=912,248
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="x5"
-Px=128,144
+Px=888,248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -753,7 +683,7 @@ CBorder=None
 
 [Grid Text]
 Text="x4"
-Px=152,136
+Px=176,136
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -761,7 +691,7 @@ CBorder=None
 
 [Grid Text]
 Text="x3"
-Px=168,112
+Px=192,112
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -769,7 +699,7 @@ CBorder=None
 
 [Grid Text]
 Text="x2"
-Px=232,88
+Px=256,88
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -777,7 +707,7 @@ CBorder=None
 
 [Grid Text]
 Text="x1"
-Px=272,80
+Px=296,80
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -915,7 +845,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="Лаба 2 финал"
+Name="Денчик 2ё"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -938,7 +868,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=0.66666666666666663
-Px=464,223
+Px=426,447
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -983,6 +913,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Text
+SB 0=10,20
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -998,6 +929,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
+SB 0=17,2
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1043,23 +975,7 @@ Text=+12us 00001100
 Text=+13us 00001101
 Text=+14us 00001110
 Text=+15us 00001111
-Text=+16us 00010000
-Text=+17us 00010001
-Text=+18us 00010010
-Text=+19us 00010011
-Text=+20us 00010100
-Text=+21us 00010101
-Text=+22us 00010110
-Text=+23us 00010111
-Text=+24us 00011000
-Text=+25us 00011001
-Text=+26us 00011010
-Text=+27us 00011011
-Text=+28us 00011100
-Text=+29us 00011101
-Text=+30us 00011110
-Text=+31us 00011111
-Text=+32us 00000000
+Text=+16us 00000000
 Text=+Endrepeat
 
 [Text Area]
@@ -1083,7 +999,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -9,-38, 256,256,1920,852
+Window Placement=2,3, -1,-1, -9,-38, 252,252,1916,848
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -1521,7 +1437,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=32u
+TRange=16u
 TStep=0
 NPts=51
 Temp=27
@@ -1537,7 +1453,7 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=bin(x5,x4,X2,x2,x1)
+YExp=dec(x4,X3,x2,x1)
 XRng=AutoAlways
 YRng=Auto
 Options=LINEARX,LINEARY
@@ -1582,10 +1498,9 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=1
 AliasID=3
 XExp=T
-YExp=bin(F2)
+YExp=\
 XRng=AutoAlways
 YRng=Auto
 Options=LINEARX,LINEARY
