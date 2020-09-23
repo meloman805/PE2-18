@@ -1,0 +1,99 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                           Dynamic AC of laba2                            ***
+***                            23.09.2020 9:41:55                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=1e+006 (Mag, Degrees)
+==============================================
+Node             Voltage  Node             Voltage  Node             Voltage 
+1        584.02m,-270.2m  2                    1,0  3        583.99m,379.34m 
+VCC                  0,0  5           4.99,-179.62  OUT         4.99,-179.62 
+
+
+AC values for Bipolar Junction Transistors NPN (Mag, Degrees)
+=============================================================
+Instance:                     Q1
+Using model:                   1
+
+Power AC Terms:
+PG              394.06m,-677.17n
+PD                 409.17m,0.03f
+PS                           0,0
+
+AC Pin Currents:
+Ib                41.52m,379.34m
+Ic                 1.83m,379.37m
+Ie                43.35m,-179.62
+Is                           0,0
+
+Device Variables:
+area                      1.000 
+vbe                       0.000 
+vce                       0.000 
+
+
+
+AC values for Resistor (Mag, Degrees)
+=====================================
+Instance:                      RG                  R1                  R2
+
+Power AC Terms:
+PD                        17.3m,0       11.37u,-0.07f         34.1u,0.04f
+
+AC Pin Currents:
+Ir                  41.6m,-179.62      19.47u,379.34m       58.4u,-179.62
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:                      R3              R_LOAD
+
+Power AC Terms:
+PD                    8.3m,-0.05f           830.49u,0
+
+AC Pin Currents:
+Ir                  1.66m,-179.62     166.38u,379.64m
+
+Device Variables:
+tc1                        0.000               0.000 
+tc2                        0.000               0.000 
+
+
+
+AC values for Capacitor (Mag, Degrees)
+======================================
+Instance:                      C1                  C2
+
+Power AC Terms:
+PS                    275.42u,-90           4.41n,-90
+
+AC Pin Currents:
+Ic                  41.6m,379.34m     166.38u,-179.62
+
+Device Variables:
+ic                         0.000               0.000 
+
+
+
+AC values for SPICE Source (Mag, Degrees)
+=========================================
+Instance:                     V1                  V2
+
+Power AC Terms:
+PG                41.6m,-379.34m                 0,0
+
+AC Pin Currents:
+ISource            41.6m,-179.62       1.64m,-179.62
+
+
