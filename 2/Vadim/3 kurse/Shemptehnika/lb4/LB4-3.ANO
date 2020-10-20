@@ -1,0 +1,378 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                           AC Analysis of LB4-3                           ***
+***                            21.10.2020 1:48:05                            ***
+********************************************************************************
+Limits
+======
+Frequency Range          Log 100k,10
+Number of Points         1001
+Temperature              Linear 27
+Maximum Change %         5
+Noise Input              NONE
+Noise Output             2
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Auto Scale Ranges        Off
+Accumulate Plots         On
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                     Run=1                     ***
+***                Temperature=27                 ***
+*****************************************************
+
+Run=1 Temperature=27
+
+Model parameters for devices of type Diode
+==========================================
+Instance:               D1               D2   
+Using model:             1                1   
+LEVEL                    1(*)             1(*)
+AF                  1.000 (*)        1.000 (*)
+BV                  0.000 (*)        0.000 (*)
+CJO                 0.000 (*)        0.000 (*)
+EG                  1.110 (*)        1.110 (*)
+FC                500.000m(*)      500.000m(*)
+IBV               100.000p(*)      100.000p(*)
+IBVL                0.000 (*)        0.000 (*)
+IKF                 0.000 (*)        0.000 (*)
+IS                 10.000f(*)       10.000f(*)
+ISR                 0.000 (*)        0.000 (*)
+KF                  0.000 (*)        0.000 (*)
+M                 500.000m(*)      500.000m(*)
+N                   1.000 (*)        1.000 (*)
+NBV                 1.000 (*)        1.000 (*)
+NBVL                1.000 (*)        1.000 (*)
+NR                  2.000 (*)        2.000 (*)
+RL                  0.000 (*)        0.000 (*)
+RS                  0.000 (*)        0.000 (*)
+T_ABS            UNDEFINED(*)     UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)     UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)     UNDEFINED(*)
+TBV1                0.000 (*)        0.000 (*)
+TBV2                0.000 (*)        0.000 (*)
+TIKF                0.000 (*)        0.000 (*)
+TRS1                0.000 (*)        0.000 (*)
+TRS2                0.000 (*)        0.000 (*)
+TT                  0.000 (*)        0.000 (*)
+VJ                  1.000 (*)        1.000 (*)
+XTI                 3.000 (*)        3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Sine Source
+================================================
+Instance:               V4   
+Using model:             1   
+A                   2.000    
+DC                  0.000 (*)
+F                   5.000K   
+PH                  0.000 (*)
+RP                  0.000 (*)
+RS                  1.000m(*)
+TAU                 0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Mosfet NMOS
+================================================
+Instance:               M1   
+Using model:    $GENERIC_N   
+LEVEL            UNDEFINED(*)
+AF                  1.000 (*)
+CBD               400.000p   
+CBS                 0.000 (*)
+CGBO                0.000 (*)
+CGDO              130.000p   
+CGSO              170.000p   
+CJ                  0.000 (*)
+CJSW                0.000 (*)
+DELTA               0.000 (*)
+ETA                 0.000 (*)
+FC                500.000m(*)
+GAMMA               0.000    
+GDSNOI              0.000    
+IS                 10.000f   
+JS                 10.000n   
+JSW                 0.000 (*)
+KAPPA            UNDEFINED(*)
+KF                  0.000 (*)
+KP                 20.000u   
+L                   2.000u   
+LAMBDA             20.000m   
+LD                  0.000 (*)
+MJ                500.000m(*)
+MJSW              330.000m(*)
+N                   1.000 (*)
+NEFF                1.000 (*)
+NFS                 0.000 (*)
+NLEV                0.000    
+NSS              UNDEFINED(*)
+NSUB                0.000    
+PB                800.000m(*)
+PBSW              800.000m(*)
+PHI               600.000m   
+RB                  0.000 (*)
+RD                150.000m   
+RDS               320.000K   
+RG                 30.000    
+RS                300.000m   
+RSH                 0.000 (*)
+T_ABS            UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)
+THETA               0.000 (*)
+TOX                 0.000    
+TPG                 1.000    
+TT                  0.000 (*)
+UCRIT              10.000K(*)
+UEXP                0.000 (*)
+UO                600.000    
+UTRA                0.000 (*)
+VMAX                0.000 (*)
+VTO                 4.000    
+W                 350.000m   
+WD                  0.000 (*)
+XJ                  0.000 (*)
+XQC                 1.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Opamp
+==========================================
+Instance:               X1   
+Using model:             1   
+LEVEL                    1(*)
+A                 100.000K   
+C                  30.000p(*)
+CMRR              100.000K(*)
+GBW               1.000MEG(*)
+IBIAS             100.000n(*)
+IOFF                1.000n(*)
+IOSC               20.000m(*)
+PD                 25.000m(*)
+PM                 60.000 (*)
+ROUTAC             75.000 (*)
+ROUTDC            125.000 (*)
+SRN               500.000K(*)
+SRP               500.000K(*)
+T_ABS            UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)
+TYPE                1.000 (*)
+VCC                15.000 (*)
+VEE               -15.000 (*)
+VNS               -13.000 (*)
+VOFF                1.000m(*)
+VPS                13.000 (*)
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1             0.000   2        -3.461E-034  VE          -15.000  
+OUT      -4.074E-034  VC           15.000   6             0.000  
+7        -3.169E-034  8         2.020E-024  9         1.075E-020 
+10        2.020E-024  11       -5.804E-027 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:                  D1               D2
+Using model:                1                1
+
+Capacitance Terms:
+CAP                    0.000            0.000 
+
+Current Terms:
+ID                -2.026E-036       5.804E-039
+
+Resistance Terms:
+REQ                  721.170G         721.170G
+
+Voltage Terms:
+VD                -2.026E-024       5.804E-027
+
+Power DC Terms:
+PD                 4.104E-060       3.369E-065
+PS                     0.000            0.000 
+
+DC Pin Currents:
+Id                -2.026E-036       5.804E-039
+
+Condition:
+State                     OFF              OFF
+
+Device Variables:
+area                   1.000            1.000 
+ic                     0.000            0.000 
+
+
+
+Operating Point for Devices of Type Mosfet NMOS
+===============================================
+Instance:                  M1
+Using model:       $GENERIC_N
+
+Capacitance Terms:
+CBD                  400.000p
+CBS                    0.000 
+CGSOVL                59.500p
+CGDOVL                45.500p
+CGBOVL                 0.000 
+CGS                    0.000 
+CGD                    0.000 
+CGB                    0.000 
+
+Conductance Terms:
+GM                     0.000 
+GDS                    0.000 
+GMBS                   0.000 
+
+Current Terms:
+ID                -5.270E-032
+
+Voltage Terms:
+VGS                2.020E-024
+VDS                3.169E-034
+VBS                1.075E-020
+VGB               -1.075E-020
+VGD                2.020E-024
+VDB               -1.075E-020
+VTH                    4.000 
+VDSAT                  0.000 
+
+Power DC Terms:
+PD                 2.972E-051
+PS                     0.000 
+
+DC Pin Currents:
+Ig                     0.000 
+Id                -5.270E-032
+Is                -2.440E-032
+Ib                 7.710E-032
+
+Condition:
+State                     OFF
+
+Device Variables:
+m                      1.000 
+l                      0.000 
+w                      0.000 
+ad                     0.000 
+as                     0.000 
+pd                     0.000 
+ps                     0.000 
+nrd                    0.000 
+nrs                    0.000 
+nrb                    0.000 
+nrg                    0.000 
+vds                    0.000 
+vgs                    0.000 
+vbs                    0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                 X1.R               R4               R5               R6
+V                  -4.074E-034           0.000        2.918E-035       6.129E-035
+Power DC Terms:
+PD                  8.298E-070           0.000        4.258E-072       8.943E-072
+
+DC Pin Currents:
+Ir                 -2.037E-036           0.000        1.459E-037       1.459E-037
+
+Device Variables:
+tc1                     0.000            0.000            0.000            0.000 
+tc2                     0.000            0.000            0.000            0.000 
+
+
+Instance:                   R7               R8               R9              R10
+V                       0.000       -3.169E-034      -2.204E-039       2.020E-024
+Power DC Terms:
+PD                      0.000        4.565E-071       9.716E-081       1.236E-054
+
+DC Pin Currents:
+Ir                      0.000       -1.441E-037      -4.408E-042       6.121E-031
+
+Device Variables:
+tc1                     0.000            0.000            0.000            0.000 
+tc2                     0.000            0.000            0.000            0.000 
+
+
+Instance:                  R11            V4.RS
+V                   5.804E-027      -4.074E-034
+Power DC Terms:
+PD                  3.369E-057       1.660E-064
+
+DC Pin Currents:
+Ir                  5.804E-031      -4.074E-031
+
+Device Variables:
+tc1                     0.000            0.000 
+tc2                     0.000            0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                   C4               C5               C6
+V                  -4.074E-034           0.000       -2.020E-024
+Power DC Terms:
+PS                      0.000            0.000            0.000 
+
+DC Pin Currents:
+Ic                      0.000            0.000            0.000 
+
+Device Variables:
+ic                      0.000            0.000            0.000 
+
+
+
+Operating Point for Devices of Type Opamp
+=========================================
+Instance:                  X1
+Using model:                1
+Condition:
+State                     LIN
+
+
+
+Operating Point for Devices of Type Sine Source
+===============================================
+Instance:                   V4
+Using model:                 1
+V                  -4.074E-034
+Power DC Terms:
+PG                      0.000 
+
+DC Pin Currents:
+ISource            -4.074E-031
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                  V2               V3
+V                     15.000          -15.000 
+Power DC Terms:
+PG                     0.000            0.000 
+
+DC Pin Currents:
+ISource                0.000            0.000 
+
+
