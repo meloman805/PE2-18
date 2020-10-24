@@ -1,0 +1,232 @@
+********************************************************************************
+***                            Micro-Cap 9.0.7.0                             ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient analysis of lb2                         ***
+********************************************************************************
+Limits
+======
+Time Range           25u
+Maximum Time Step    0
+Number of Points     51
+Temperature          Linear 27
+Run Options          Normal
+State Variables      Zero
+Operating Point      On
+Operating Point Only Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27 
+
+Model parameters for devices of type Diode
+==========================================
+Instance:       B2.X5$.D1       B2.X5$.D2       B2.X5$.D3       B2.X5$.D4   
+Using model:         D74S        D74SCLMP             D74             D74   
+LEVEL                   1(*)            1(*)            1(*)            1(*)
+AF                 1.000 (*)       1.000 (*)       1.000 (*)       1.000 (*)
+BV                 0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+CJO              200.000f        200.000f          5.000p          5.000p   
+EG               690.000m        690.000m          1.110 (*)       1.110 (*)
+FC               500.000m(*)     500.000m(*)     500.000m(*)     500.000m(*)
+IBV              100.000p(*)     100.000p(*)     100.000p(*)     100.000p(*)
+IBVL               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+IKF                0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+IS                 1.000p          1.000p         10.000f         10.000f   
+ISR                0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+KF                 0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+M                500.000m        500.000m        500.000m        500.000m   
+N                  1.000 (*)       1.000 (*)       1.000 (*)       1.000 (*)
+NBV                1.000 (*)       1.000 (*)       1.000 (*)       1.000 (*)
+NBVL               1.000 (*)       1.000 (*)       1.000 (*)       1.000 (*)
+NR                 2.000 (*)       2.000 (*)       2.000 (*)       2.000 (*)
+RL                 0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+RS                 0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+T_ABS           UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)    UNDEFINED(*)
+TBV1               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+TBV2               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+TIKF               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+TRS1               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+TRS2               0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+TT                 0.000 (*)       0.000 (*)       0.000 (*)       0.000 (*)
+VJ               700.000m        700.000m          1.000 (*)       1.000 (*)
+XTI                2.000           2.000           3.000 (*)       3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Bipolar Junction Transistors NPN
+=====================================================================
+Instance:       B2.X5$.Q1   
+Using model:          Q74   
+LEVEL                   1(*)
+AF                 1.000 (*)
+BF                49.000    
+BR                40.000m   
+CJC              500.000f   
+CJE                1.000p   
+CJS                3.000p   
+EG                 1.110 (*)
+FC               500.000m(*)
+IKF                0.000 (*)
+IKR                0.000 (*)
+IRB                0.000 (*)
+IS                 0.100f(*)
+ISC                0.400f   
+ISE                0.100f   
+ISS                0.000 (*)
+ITF                0.000 (*)
+KF                 0.000 (*)
+MJC              330.000m   
+MJE              500.000m   
+MJS              330.000m   
+NC                 2.000 (*)
+NE                 1.500 (*)
+NF                 1.000 (*)
+NK               500.000m(*)
+NR                 1.000 (*)
+NS                 1.000 (*)
+PTF                0.000 (*)
+RB                 0.000 (*)
+RBM                0.000 (*)
+RC                40.000    
+RE                 0.000 (*)
+T_ABS           UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)
+TF               200.000p   
+TR                10.000n   
+TRB1               0.000 (*)
+TRB2               0.000 (*)
+TRC1               0.000 (*)
+TRC2               0.000 (*)
+TRE1               0.000 (*)
+TRE2               0.000 (*)
+TRM1               0.000 (*)
+TRM2               0.000 (*)
+VAF                0.000 (*)
+VAR                0.000 (*)
+VJC              800.000m   
+VJE              900.000m   
+VJS              700.000m   
+VTF                0.000 (*)
+XCJC               1.000 (*)
+XTB                0.000 (*)
+XTF                0.000 (*)
+XTI                3.000 (*)
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+11            0.000   $G_DPWR       5.000   $G_DGND       0.000  
+B2.X5$.1    784.291m  B2.X5$.2    238.836m  B2.X5$.3    119.418m 
+
+DC Operating Point Digital States
+=================================
+Node     State Node     State Node     State Node     State Node     State
+Y        1     2        0     3        1     4        0     5        1    
+6        0     X3       0     X2       0     X1       0     10       0    
+X4       0     X5       0     14       0     15       1     16       0    
+17       0     18       0     B1.W_O   1     B2.1Y0_O 0     B2.1Y1_O 1    
+B2.1Y2_O 1     B2.1Y3_O 1     11$ATOD  0    
+
+
+Operating point for devices of type Diode
+=========================================
+Instance:          B2.X5$.D1       B2.X5$.D2       B2.X5$.D3       B2.X5$.D4
+Using model:            D74S        D74SCLMP             D74             D74
+ID                    1.442m          0.000           1.121p          1.121p
+VD                  545.456m          0.000         119.418m        119.418m
+REQ                  17.938          25.212G         24.920G         24.920G
+CAP                 361.819f        200.000f          5.328p          5.328p
+
+DC Power Terms:
+PD                  786.487u          0.000         133.919f        133.919f
+PS                    0.000           0.000           0.000           0.000 
+
+DC Pin Currents:
+Id                    1.442m          0.000           1.121p          1.121p
+
+Condition:
+State                     ON             OFF             OFF             OFF
+
+
+
+Operating point for devices of type Bipolar Junction Transistors NPN
+====================================================================
+Instance:          B2.X5$.Q1
+Using model:             Q74
+IB                   63.720u
+IC                    1.442m
+VBE                 784.291m
+VBC                 545.456m
+VCE                 238.836m
+BETADC               22.629 
+GM                   57.045m
+RPI                 857.056 
+RX                    0.000 
+RO                   19.289K
+CPI                  13.359p
+CMU                   1.252p
+CBX                   0.000 
+CJS                   2.781p
+BETAAC               48.890 
+FT                621.374MEG
+
+DC Power Terms:
+PD                  394.350u
+PS                    0.000 
+
+DC Pin Currents:
+Ib                   63.720u
+Ic                    1.442m
+Ie                   -1.506m
+Is                    0.000 
+
+Condition:
+State                    SAT
+
+
+
+Operating point for devices of type Resistor
+============================================
+Instance:           B2.X5$.R1       B2.X6$.R1       B2.X6$.R2       B2.X6$.R3
+DC Power Terms:
+PD                     6.347m         25.000n          0.000           0.000 
+
+DC Pin Currents:
+Ir                     1.506m          5.000n          0.000           0.000 
+
+
+
+Operating point for devices of type Capacitor
+=============================================
+Instance:           B2.X5$.C1
+DC Power Terms:
+PS                     0.000 
+
+DC Pin Currents:
+Ic                     0.000 
+
+
+
+Operating point for devices of type SPICE Source
+================================================
+Instance:                 V1       B2.X6$.V1       B2.X6$.V2
+DC Power Terms:
+PG                    0.000           7.528m          0.000 
+
+DC Pin Currents:
+ISource               1.506m         -1.506m          1.121p
+
+

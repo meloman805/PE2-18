@@ -1,0 +1,114 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                          Dynamic AC of LR_05_02                          ***
+***                           21.10.2020 11:23:01                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=1e+006 (Mag, Degrees)
+==============================================
+Node              Voltage  Node              Voltage 
+IN                    1,0  2                     0,0 
+3        995.22m,-254.84m  OUT      846.35m,-239.37m 
+5                     0,0  6        996.89m,-330.03m 
+7           851.05u,88.71  8           236.33u,88.89 
+
+
+AC values for Diode (Mag, Degrees)
+==================================
+Instance:                      VD1                   VD2
+Using model:              $GENERIC              $GENERIC
+
+Power AC Terms:
+PD                    2.33u,-5.21f               2.36u,0
+PS                      15.06n,-90            15.23n,-90
+
+AC Pin Currents:
+Id                 357.14u,-136.88         360.46u,61.78
+
+Device Variables:
+area                        1.000                 1.000 
+ic                          0.000                 0.000 
+
+
+
+AC values for Bipolar Junction Transistors NPN (Mag, Degrees)
+=============================================================
+Instance:                      VT5                   VT2                   VT4
+Using model:            $GENERIC_N            $GENERIC_N            $GENERIC_N
+
+Power AC Terms:
+PG                  18.63m,131.08m           59.11n,-180          74.81u,90.02
+PD               308.4u,-4.92E-018      3.39n,-8.54E-019              28.22u,0
+PS                      87.51u,-90            487.3p,-90            74.64u,-90
+
+AC Pin Currents:
+Ib                   304.26u,40.64          1.01u,124.91            74u,-90.84
+Ic                 21.69m,-552.79m          72.62u,88.69         152.59u,78.94
+Ie                   21.92m,179.97         73.44u,-90.84         80.83u,-110.4
+Is                             0,0                   0,0                   0,0
+
+Device Variables:
+area                        1.000                 1.000                 1.000 
+vbe                         0.000                 0.000                 0.000 
+vce                         0.000                 0.000                 0.000 
+
+
+
+AC values for Bipolar Junction Transistors PNP (Mag, Degrees)
+=============================================================
+Instance:                      VT6                   VT3                   VT1
+Using model:            $GENERIC_P            $GENERIC_P            $GENERIC_P
+
+Power AC Terms:
+PG                  17.88m,619.75m          23.07u,85.56            4.43n,-180
+PD                       756.33u,0      31.24u,7.40E-022    888.87p,-7.76E-025
+PS                      42.87u,-90            22.86u,-90             36.2p,-90
+
+AC Pin Currents:
+Ib                   219.34u,49.93         22.65u,-90.72        226.64n,135.58
+Ic                 20.26m,-943.35m          54.77u,57.03          22.34u,88.86
+Ie                    20.4m,179.53        37.61u,-141.72          22.5u,-90.72
+Is                             0,0                   0,0                   0,0
+
+Device Variables:
+area                        1.000                 1.000                 1.000 
+vbe                         0.000                 0.000                 0.000 
+vce                         0.000                 0.000                 0.000 
+
+
+
+AC values for Resistor (Mag, Degrees)
+=====================================
+Instance:                        R3                    R2                    R1
+
+Power AC Terms:
+PD                         35.82m,0         482.86p,0.19f              37.24p,0
+
+AC Pin Currents:
+Ir                  42.32m,-239.37m         567.37n,88.71         157.56n,88.89
+
+Device Variables:
+tc1                          0.000                 0.000                 0.000 
+tc2                          0.000                 0.000                 0.000 
+
+
+
+AC values for SPICE Source (Mag, Degrees)
+=========================================
+Instance:                       V1                    V2                    V3
+
+Power AC Terms:
+PG                  708.11u,-52.49                   0,0                   0,0
+
+AC Pin Currents:
+ISource            708.11u,-127.51         21.66m,179.33         20.24m,178.63
+
+

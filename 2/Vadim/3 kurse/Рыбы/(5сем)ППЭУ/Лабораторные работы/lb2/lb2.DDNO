@@ -1,0 +1,120 @@
+********************************************************************************
+***                            Micro-Cap 9.0.7.0                             ***
+***                               ”ÏÌ˚È ÀÂÌÚˇÈ                               ***
+***                               Õ»” Ã›» (—‘)                               ***
+***                            Dynamic DC of lb2                             ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27 
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1            12.000   2             2.709   3             2.018  
+4             2.709   5            11.905   OUT           0.000  
+
+DC Operating Point Inductor Current
+===================================
+Inductor     Current 
+LK            0.000  
+
+
+Operating point for devices of type Bipolar Junction Transistors NPN
+====================================================================
+Instance:                Q1
+Using model:         KT312B
+IB                 260.157u
+IC                   9.488m
+VBE                691.331m
+VBC                 -9.196 
+VCE                  9.887 
+BETADC              36.470 
+GM                 321.192m
+RPI                106.402 
+RX                   0.000 
+RO                   7.273K
+CPI                397.511p
+CMU                  2.916p
+CBX                  0.000 
+CJS                  0.000 
+BETAAC              34.175 
+FT               127.662MEG
+
+DC Power Terms:
+PD                  93.990m
+PS                   0.000 
+
+DC Pin Currents:
+Ib                 260.157u
+Ic                   9.488m
+Ie                  -9.748m
+Is                   0.000 
+
+Condition:
+State                   LIN
+
+
+
+Operating point for devices of type Resistor
+============================================
+Instance:                 R1             R2             RE             R3
+DC Power Terms:
+PD                   86.319m        24.466m        19.670m         0.000 
+
+DC Pin Currents:
+Ir                    9.291m         9.031m         9.748m         0.000 
+
+
+Instance:                 R4
+DC Power Terms:
+PD                  900.217u
+
+DC Pin Currents:
+Ir                    9.488m
+
+
+
+Operating point for devices of type Inductor
+============================================
+Instance:                 LK
+DC Power Terms:
+PS                    0.000 
+
+DC Pin Currents:
+Il                    0.000 
+
+
+
+Operating point for devices of type Capacitor
+=============================================
+Instance:                CBL             CE             C2             C3
+DC Power Terms:
+PS                    0.000          0.000          0.000          0.000 
+
+DC Pin Currents:
+Ic                    0.000          0.000          0.000          0.000 
+
+
+Instance:                 C1             C4
+DC Power Terms:
+PS                    0.000          0.000 
+
+DC Pin Currents:
+Ic                    0.000          0.000 
+
+
+
+Operating point for devices of type SPICE Source
+================================================
+Instance:                V1
+DC Power Terms:
+PG                 225.345m
+
+DC Pin Currents:
+ISource            -18.779m
+
+
