@@ -4,11 +4,11 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1920,1080
+Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=61
-TXCnt=0
+NLCnt=72
+TXCnt=7
 
 [shapedef]
 Name=Battery
@@ -43,6 +43,13 @@ Line=26,0,48,0
 Current=32,12,16,12
 Ellipse=29,-7,31,-5
 FColor=#0000FF
+
+[shapedef]
+Name=FofS
+Line=0,0,16,0
+Line=144,0,160,0
+Rectangle=16,-24,144,24
+FColor=None
 
 [shapedef]
 Name=Ground
@@ -82,6 +89,12 @@ Line=39,7,43,7
 Current=32,8,16,8
 
 [shapedef]
+Name=NFV
+Root="Vsource.root",0,0,0
+Root="TextN.Root",28,-6,1
+Root="TextF.Root",28,1,1
+
+[shapedef]
 Name=NPN
 Root="Bjt.root",0,0,0
 PolyClosed=3
@@ -112,6 +125,18 @@ Line=26,-4,26,-2
 Line=26,-2,22,2
 Line=22,2,22,4
 Line=22,4,24,6
+
+[shapedef]
+Name=TextF.Root
+Line=0,0,5,0
+Line=0,0,0,8
+Line=2,4,0,4
+
+[shapedef]
+Name=TextN.Root
+Line=0,8,0,0
+Line=0,0,5,8
+Line=5,8,5,0
 
 [shapedef]
 Name=Varactor
@@ -188,6 +213,22 @@ Line=32,0,24,-2
 Line=32,0,24,2
 
 [shapedef]
+Name=NFV_gost
+Line=0,0,9,0
+Diamond=9,-14,39,14
+FColor=None
+Line=24,-2,35,0
+Line=24,2,35,0
+Line=7,5,7,9
+Line=41,5,41,9
+Line=39,7,43,7
+Current=32,16,16,16
+Line=39,0,48,0
+Line=13,0,35,0
+Root="TextN.Root",39,-17,1
+Root="TextF.Root",39,-10,1
+
+[shapedef]
 Name=Ground_GOST
 Line=1,0,13,0
 Line=13,-8,13,8
@@ -197,7 +238,7 @@ Name=NPN
 Definition=NPN
 Shape=NPN
 Mask=4097
-Used=110
+Used=107
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -209,8 +250,8 @@ Pin="Emitter",3,3,5,1
 Name=Inductor
 Definition=Inductor
 Shape=Inductor
-Mask=6401
-Used=49
+Mask=7681
+Used=43
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -221,8 +262,8 @@ Pin="Minus",0,0,-3,-9
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
-Mask=6401
-Used=778
+Mask=7937
+Used=762
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -233,8 +274,8 @@ Pin="Minus",0,0,-14,-4
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=7937
-Used=377
+Mask=7681
+Used=371
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -246,7 +287,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=302
+Used=276
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -256,8 +297,7 @@ Pin="PinA",0,0,-3,-7
 Name=1N5144A
 Definition=Diode
 Shape=Varactor
-Mask=6016
-Used=1
+Mask=4224
 memo=Voltage Variable Capacitance Diode Ct=22pF Vr=60V If=250mA
 Label Offset=15,10,12,11
 PinCnt=2
@@ -269,7 +309,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=36
+Used=27
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -281,15 +321,39 @@ Name=Sine Source
 Definition=Sine source
 Shape=Sine_Source
 Mask=4865
-Used=16
+Used=17
 memo=Sine Source
 Label Offset=18,12,15,12
 PinCnt=2
 Pin="Plus",6,0,-6,-6
 Pin="Minus",0,0,-19,-6
 
+[compdef]
+Name=NFV
+Definition=NFV
+Shape=NFV
+Mask=4864
+Used=20
+memo=Analog behavioral voltage source (E.g. VALUE=I(R2)*V(3,4)^2)
+Label Offset=18,12,16,13
+PinCnt=2
+Pin="Plus",6,0,-8,-4
+Pin="Minus",0,0,-21,-6
+
+[compdef]
+Name=VCO
+Definition=Macro
+Shape=FofS
+Mask=20480
+Used=1
+memo=Voltage Controlled Oscillator Macro
+Label Offset=21,-13,27,71
+PinCnt=2
+Pin="PinA",a,0,0,-10,-3
+Pin="PinB",a,20,0,-5,-4
+
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 0,0,1290,592
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1290,592
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -298,7 +362,7 @@ NodeVoltageFormat=2
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 96,96,794,682
+Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 96,96,794,682
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
@@ -553,11 +617,11 @@ Style=8192
 
 [Attr]
 ON=-63,25,MODEL
-V=$GENERIC
+V=1N659
 
 [Attr]
 ON=-64,53,PACKAGE
-V=DO-204AA
+V=DO-35
 
 [Wire]
 Pxs=360,368,368,368
@@ -829,6 +893,182 @@ Rot=7
 [Wire]
 Pxs=600,216,600,224
 
+[Comp]
+Name=Sine Source
+Px=240,600
+Rot=3
+
+[Attr]
+ON=-28,-26,PART
+V=V3
+Style=8192
+
+[Attr]
+ON=-33,-40,MODEL
+V=U_mod
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=240,600
+Rot=7
+
+[Comp]
+Name=NFV
+Px=352,600
+Rot=3
+
+[Attr]
+ON=-28,-27,PART
+V=E1
+Style=8192
+
+[Attr]
+ON=-84,-41,VALUE
+V=U0*cos(2*pi*f0*t+phi)
+
+[Attr]
+ON=-57,-55,DERIVATIVE
+V=Default
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=352,600
+Rot=7
+
+[Wire]
+Pxs=352,544,352,552
+
+[Wire]
+Pxs=240,552,264,552
+
+[Comp]
+Name=Sine Source
+Px=456,632
+Rot=3
+
+[Attr]
+ON=-28,-26,PART
+V=V4
+Style=8192
+
+[Attr]
+ON=-33,-40,MODEL
+V=U_mod
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=456,632
+Rot=7
+
+[Comp]
+Name=VCO
+Style=ShowPinText
+Px=480,584
+
+[Attr]
+ON=21,-13,PART
+V=X2
+Style=8192
+
+[Attr]
+ON=21,1,FILE
+V=VCO
+
+[Attr]
+ON=21,29,Param:VP
+V=14
+
+[Attr]
+ON=21,43,Param:F0
+V=515k
+
+[Attr]
+ON=21,57,Param:KF
+V=400k
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=456,584,480,584
+
+[Wire]
+Pxs=640,584,664,584
+
+[Grid Text]
+Text="Out"
+Px=664,584
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="U_mod_PhM"
+Px=264,552
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text=".define U0 1V"
+Px=232,712
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
+
+[Grid Text]
+Text=".define f0 200kHz"
+Px=232,736
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
+
+[Grid Text]
+Text=".define phi k_phi*v(U_mod_phm)"
+Px=232,760
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
+
+[Grid Text]
+Text=".define  k_phi 200k*(2*pi)"
+Px=232,784
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
+
+[Grid Text]
+Text=".model U_mod sin (A=1 F=10k)"
+Px=232,688
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -837,7 +1077,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -983,9 +1223,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=128,14
-Scale 3=1
-Px=857,280
+SB 3=118,144
+Scale 3=0.66666666666666663
+Px=659,643
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1045,7 +1285,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=15,4
+SB 0=21,5
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1080,7 +1320,8 @@ Text=
 Text=.MODEL 34567 SIN ()
 Text=.MODEL 345678 SIN ()
 Text=.MODEL 1 SIN (F=3k)
-Text=.MODEL 5 SIN ()
+Text=.MODEL 5 SIN (A=3 F=4k)
+Text=.MODEL 213 SIN (F=8k)
 
 [InfoPage]
 InfoPage=True
@@ -1096,7 +1337,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -9,-38, 96,96,794,682
+Window Placement=2,3, -1,-1, -8,-31, 96,96,794,682
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -1320,8 +1561,8 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=600u
-TStep=1000n
+TRange=90/520k
+TStep=10n
 NPts=51
 Temp=27
 RetraceRuns=1
@@ -1333,10 +1574,9 @@ IgnoreExprErrors=False
 
 [WaveForm]
 Analysis=Transient
-Plt=1
 AliasID=1
 XExp=T
-YExp=v(R6)
+YExp=v(R8)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
@@ -1357,9 +1597,10 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
+Plt=2
 AliasID=2
 XExp=T
-YExp=v(2)
+YExp=v(V3)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
@@ -1380,7 +1621,10 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-AliasID=-1
+Plt=1
+AliasID=3
+XExp=T
+YExp=V(Out)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
