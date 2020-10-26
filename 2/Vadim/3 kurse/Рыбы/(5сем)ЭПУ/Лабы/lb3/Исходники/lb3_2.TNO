@@ -1,0 +1,39 @@
+********************************************************************************
+***                            Micro-Cap 9.0.7.0                             ***
+***                                                                          ***
+***                                                                          ***
+***                       Transient analysis of lb3_2                        ***
+********************************************************************************
+Limits
+======
+Time Range           25u
+Maximum Time Step    0
+Number of Points     51
+Temperature          Linear 27
+Run Options          Normal
+State Variables      Zero
+Operating Point      On
+Operating Point Only Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27 
+
+DC Operating Point Digital States
+=================================
+Node      State Node      State Node      State Node      State
+CLK       0     2         1     3         1     Q0        0    
+Q3        0     6         1     Q1        0     8         1    
+Q2        0     10        1     X2.MJ     1     X2.MK     0    
+X2.SJ     0     X2.SK     1     X2.CLKBAR 1     X2.Q_O    0    
+X2.QBAR_O 1     X3.MJ     0     X3.MK     1     X3.SJ     0    
+X3.SK     1     X3.CLKBAR 1     X3.Q_O    0     X3.QBAR_O 1    
+X4.MJ     0     X4.MK     1     X4.SJ     0     X4.SK     1    
+X4.CLKBAR 1     X4.Q_O    0     X4.QBAR_O 1     X5.MJ     0    
+X5.MK     1     X5.SJ     0     X5.SK     1     X5.CLKBAR 1    
+X5.Q_O    0     X5.QBAR_O 1               X               X    
+          X               X    
+

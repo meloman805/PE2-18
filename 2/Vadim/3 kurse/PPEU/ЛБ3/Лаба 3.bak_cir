@@ -451,12 +451,12 @@ Px=472,304
 Rot=7
 
 [Attr]
-ON=-16,-38,PART
+ON=6,3,PART
 V=C3
 Style=8192
 
 [Attr]
-ON=-20,-24,CAPACITANCE
+ON=1,27,CAPACITANCE
 V=24f
 Style=8192
 
@@ -694,7 +694,7 @@ V=C1
 Style=8192
 
 [Attr]
-ON=-23,-24,CAPACITANCE
+ON=-20,-14,CAPACITANCE
 V=25p
 Style=8192
 
@@ -992,11 +992,11 @@ V=14
 
 [Attr]
 ON=21,43,Param:F0
-V=515k
+V=450k
 
 [Attr]
 ON=21,57,Param:KF
-V=500k
+V=400k
 
 [Attr]
 ON=0,0,PACKAGE
@@ -1223,9 +1223,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=118,288
+SB 3=0,48
 Scale 3=0.66666666666666663
-Px=612,662
+Px=674,380
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1285,7 +1285,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=21,5
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1561,7 +1560,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=70/520k
+TRange=90/520k
 TStep=10n
 NPts=51
 Temp=27

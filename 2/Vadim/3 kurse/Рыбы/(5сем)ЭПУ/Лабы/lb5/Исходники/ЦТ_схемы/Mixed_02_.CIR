@@ -1,0 +1,1037 @@
+[Main]
+FileType=CIR
+Version=9.00
+Program=Micro-Cap
+Screen=2048,1152
+MCAPVersion=9.0.6.1
+Key ID=2 233 293 684
+NLCnt=30
+TXCnt=2
+
+[shapedef]
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Resistor
+PolyOpen=12 
+PolyLine=0,0
+PolyLine=0,0
+PolyLine=12,0
+PolyLine=14,-4
+PolyLine=18,4
+PolyLine=22,-4
+PolyLine=26,4
+PolyLine=30,-4
+PolyLine=34,4
+PolyLine=36,0
+PolyLine=48,0
+PolyLine=48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Ground
+Line=0,0,12,0
+Line=12,-8,12,8
+Line=18,-4,18,4
+Line=24,0,24,0
+
+[shapedef]
+Name=Minus.root
+Line=-2,0,2,0
+
+[shapedef]
+Name=Plus.root
+Line=-2,0,2,0
+Line=0,-2,0,2
+
+[shapedef]
+Name=Battery_Euro
+Line=26,-7,26,7
+Line=26,0,48,0
+Line=0,0,22,0
+Root="Minus.root",15,4,0
+Root="Plus.root",29,2,0
+Rectangle=22,-3,23,3,SOLID
+Current=32,-8,16,-8
+
+[shapedef]
+Name=Resistor_Euro
+Rectangle=12,-4,36,4
+Line=0,0,12,0
+Line=48,0,36,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Fixed
+Line=8,0,32,0
+Line=8,0,0,-8
+Line=8,0,0,8
+
+[shapedef]
+Name=Animated Analog Led
+Animated Analog Led=0,-24,8,0
+Current=-8,-8,-8,-16
+Line=-4,-6,-4,-2
+Line=-6,-4,-2,-4
+
+[shapedef]
+Name=StimClock
+Arc=50,-8,62,8 , 56,8,62,0
+Arc=50,-8,62,8 , 62,0,56,-8
+Line=13,8,57,8
+Arc=8,-8,18,8 , 13,-8,8,0
+Ellipse=53,-3,59,3,SOLID
+Line=64,0,72,0
+Arc=8,-8,18,8 , 8,0,13,8
+Line=13,-8,57,-8
+Line=56,0,64,0
+Line=16,4,20,4
+Line=20,4,20,-4
+Line=20,-4,24,-4
+Line=24,-4,24,4
+Line=24,4,28,4
+Line=28,4,28,-4
+Line=28,-4,32,-4
+Line=32,-4,32,4
+Line=32,4,36,4
+Line=36,4,36,-4
+Line=36,-4,40,-4
+Line=40,-4,40,4
+Line=40,4,44,4
+Line=44,4,44,-4
+Line=44,-4,48,-4
+Line=48,-4,48,4
+Line=48,4,52,4
+
+[shapedef]
+Name=K155LI2
+Text="&",0,-5,9,7 , -10,0,"Arial"
+Line=-8,-16,16,-16
+Line=16,-16,16,16
+Line=16,16,-8,16
+Line=-8,16,-8,-16
+Line=-8,-8,-16,-8
+Line=-8,8,-16,8
+Line=24,0,16,0
+
+[compdef]
+Name=DClock
+Definition=Macro
+Shape=StimClock
+Mask=4096
+memo=Digital Clock Stimulus Macro
+Link=http://www.spectrum-soft.com/news/fall2003/dclock.shtm
+Label Offset=29,10,12,21
+PinCnt=1
+Pin="Out",d,9,0
+
+[compdef]
+Name=Fixed Digital
+Definition=DIGITAL STATE
+Shape=Fixed
+Mask=3072
+memo=Provides a fixed digital state
+Label Offset=-14,-7,-6,-27
+PinCnt=1
+Pin="Out",4,0,-8,-3
+
+[compdef]
+Name=Resistor
+Definition=Resistor
+Shape=Resistor
+ShapeAlias="Euro","Resistor_Euro"
+Mask=7681
+memo=Resistor
+Label Offset=18,6,8,11
+PinCnt=2
+Pin="Plus",6,0,-10,-4
+Pin="Minus",0,0,-14,-4
+
+[compdef]
+Name=Animated Analog LED
+Definition=ANIMATED ANALOG LED
+Shape=Animated Analog Led
+Mask=4096
+memo=Animated Analog LED
+Label Offset=12,-27,5,10
+PinCnt=2
+Pin="Anode",0,0,-24,5
+Pin="Cathode",1,0,5,5
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=257
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+ShapeAlias="Euro","Battery_Euro"
+Mask=4865
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[compdef]
+Name=K155LI2
+Definition=Subckt
+Shape=K155LI2
+Mask=1184
+memo=4 логических элемента 2И с открытым коллектором
+Label Offset=-7,2,19,-10
+PinCnt=3
+Pin="1",d,-2,-1,-7,-1
+Pin="2",d,-2,1,-7,0
+Pin="3",d,3,0
+
+[Circuit]
+Window Placement=2,3, -1,-1, -4,-23, 44,44,1762,748
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+WinBackGround Color=#FFFFFF
+Select Color=#008080
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#FF0000,Name=Arial
+Component Color=#000080
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Arial
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Node Number=Height=-12,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=#000000
+Dynamic AC Voltage Color=#C0C0C0
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Window Placement in Transient Analysis=0,1, -1,-1, -4,-23, 1022,0,2044,1030
+SpiceType=AMBIGUOUS
+Block Select Color=#51F998
+TitleBlock Field_1=$name
+TitleBlock Field_2=$user $company
+TitleBlock Field_3
+TitleBlock Field_4=$date
+TitleBlock Field_5=Page $page of $maxpage
+TitleBlock One Title=True
+Title_Block_Border=False
+Title_Block=False
+Show Nodes=True
+Show Voltages=True
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=DClock
+Grid=4,22
+
+[Attr]
+ONV=28,-21,PART,X1
+Style=8192
+
+[Attr]
+ONV=29,25,FILE,DClock
+
+[Attr]
+ONV=-2,-58,Param:ZEROWIDTH,clkT/2
+Style=12288
+
+[Attr]
+ONV=-4,-41,Param:ONEWIDTH,clkT/2
+Style=12288
+
+[Wire]
+Grids=13,22,19,22
+
+[Wire]
+Grids=19,22,19,40
+
+[Wire]
+Grids=19,22,27,22
+
+[Wire]
+Grids=19,40,27,40
+
+[Comp]
+Name=Fixed Digital
+Grid=23,20
+
+[Attr]
+ONV=-14,-7,PART,U1
+
+[Attr]
+ONV=-7,-7,VALUE,1
+Style=8192
+
+[Attr]
+ONV=-14,23,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,38,IO_LEVEL,0
+
+[Attr]
+ONV=-14,53,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,68,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=23,38
+
+[Attr]
+ONV=-14,-7,PART,U2
+
+[Attr]
+ONV=-5,-7,VALUE,1
+Style=8192
+
+[Attr]
+ONV=-14,23,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,38,IO_LEVEL,0
+
+[Attr]
+ONV=-14,53,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,68,GROUND NODE,$G_DGND
+
+[Wire]
+Grids=32,21,37,21
+
+[Wire]
+Grids=32,39,37,39
+
+[Wire]
+Grids=37,7,40,7
+
+[Wire]
+Grids=37,7,37,8
+
+[Comp]
+Name=Resistor
+Grid=37,14
+Rot=3
+
+[Attr]
+ONV=8,-37,PART,R1
+Style=8192
+
+[Attr]
+ONV=6,-25,RESISTANCE,150
+Style=8192
+
+[Attr]
+ONV=18,36,SHAPEGROUP,Euro
+
+[Wire]
+Grids=37,14,37,16
+
+[Comp]
+Name=Animated Analog LED
+Grid=37,16
+Rot=1
+
+[Attr]
+ONV=-32,-3,PART,Led1
+Style=8192
+
+[Attr]
+ONV=5,25,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Wire]
+Grids=37,17,37,21
+
+[Wire]
+Grids=37,30,41,30
+
+[Wire]
+Grids=37,30,37,32
+
+[Comp]
+Name=Resistor
+Grid=37,32
+Rot=7
+
+[Attr]
+ONV=9,8,PART,R2
+Style=8192
+
+[Attr]
+ONV=7,25,RESISTANCE,165
+Style=8192
+
+[Attr]
+ONV=-34,41,SHAPEGROUP,Euro
+
+[Wire]
+Grids=37,38,37,39
+
+[Wire]
+Grids=37,39,37,43
+
+[Comp]
+Name=Animated Analog LED
+Grid=37,43
+Rot=1
+
+[Attr]
+ONV=-30,-4,PART,Led2
+Style=8192
+
+[Attr]
+ONV=12,-12,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Wire]
+Grids=37,44,37,46
+
+[Comp]
+Name=Ground
+Grid=37,46
+Rot=7
+
+[Comp]
+Name=Battery
+Grid=46,7
+Rot=2
+
+[Attr]
+ONV=-33,-25,PART,V1
+Style=8192
+
+[Attr]
+ONV=-29,7,VALUE,5
+Style=8192
+
+[Attr]
+ONV=-45,-24,SHAPEGROUP,Euro
+
+[Wire]
+Grids=46,7,47,7
+
+[Comp]
+Name=Ground
+Grid=47,7
+Rot=4
+
+[Comp]
+Name=Battery
+Grid=47,30
+Rot=2
+
+[Attr]
+ONV=-32,-23,PART,V2
+Style=8192
+
+[Attr]
+ONV=-29,9,VALUE,5
+Style=8192
+
+[Attr]
+ONV=-45,-52,SHAPEGROUP,Euro
+
+[Comp]
+Name=Ground
+Grid=47,30
+
+[Comp]
+Name=K155LI2
+Grid=29,21
+Rot=4
+
+[Attr]
+ONV=-4,-32,PART,X2
+Style=8192
+
+[Attr]
+ONV=-20,18,NAME,K155LI2
+Style=8192
+
+[Comp]
+Name=K155LI2
+Grid=29,39
+Rot=4
+
+[Attr]
+ONV=-3,-31,PART,X3
+Style=8192
+
+[Attr]
+ONV=-16,19,NAME,K155LI2
+Style=8192
+
+[Node Offsets]
+Section=0
+;Node,Page,GridX,GridY,OffsetX,OffsetY
+Offset=6,0,37,17,27,25
+Offset=7,0,37,38,24,9
+
+[Grid Text]
+Text=".Define clkT 500n"
+Grid=2,48
+CBorder=NONE
+
+[Grid Text]
+Text=".options DIGMNTYMX=4"
+Grid=2,51
+Enable=False
+CBorder=NONE
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1
+PrinterScale=1
+GridUser=10
+ShapeGroups="Main","DeMorgan","Main1","Euro","Rus","Polarity","Main11","Main2","Electrolytic"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+DisplayMeasure=Last
+
+[Tools]
+Pos=Top
+PROBE=No
+SELECT=Yes
+COMP=No
+TEXT=Yes
+WIRE=No
+WIRED=No
+BUS=No
+GRAPHIC=No
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+FLAG=No
+META=No
+INFO=No
+HELP=No
+LINK=No
+REGION_ENABLE=No
+DIGTRC=No
+DIGTRC2=No
+DIGALL=No
+GRIDTEXT=No
+COMPTEXT=No
+NODE=Yes
+MEASURED=No
+NODEV=Yes
+CURRENT=Yes
+POWER=No
+CONDITIN=No
+PIN=No
+CROSS=No
+GRID=No
+BORDER=No
+TITLE=No
+RUBBER=No
+PROPERTY=No
+STEP=No
+MIRROR=No
+ROTATE=No
+FLIPY=No
+FLIPX=No
+FINDCOMP=No
+FIND=No
+REPEAT=No
+MODEL=No
+CIR2CKT=No
+ATTDISP=No
+ENABLE=No
+DISABLE=No
+TOFRONT=No
+TOBACK=No
+SELNEXT=No
+PAGEADD=No
+PAGEDEL=No
+ZOOMIN=No
+ZOOMOUT=No
+GOTOFLAG=No
+UPLEVEL=No
+COLOR=No
+FONT=No
+
+[Section]
+Index=0
+Name="Mixed_02_"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=400
+TabSize 1=400
+TabSize 2=400
+TabSize 3=400
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=1
+Grid=40,40
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+
+[Text Area]
+Section=0
+Page=1
+Font=Height=-16,FStyle=0,Color=#FF0000,Name=Courier New
+Comment Color=#808080
+Background Color=#FFFFFF
+Len=0
+
+
+[Text Area]
+Section=0
+Page=2
+Font=Height=-16,FStyle=0,Color=#FF0000,Name=Courier New
+Comment Color=#808080
+Background Color=#FFFFFF
+Len=39
+.SUBCKT K555LI2 1 2 3 
+.ENDS K555LI2
+
+
+[Transient]
+Window Placement=0,1, -1,-1, -4,-23, 0,0,1022,1030
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#000000
+Grid Weight=1
+Grid Pattern=Dot
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+OperPoint=True
+OperPointOnly=False
+AutoScaleRanges=False
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=False
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+FFT_NPts="1024"
+FFT_IncludeDCHarmonic=False
+FFT_AutoScale_Harmonics="10"
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=6
+MonPageWidth=66
+MonPlotWidth=21
+MonExprXWidth=96
+MonExprYWidth=112
+MonRangeXWidth=140
+MonRangeYWidth=91
+AnimateWait=2
+AnimateWaitTime=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=True
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Operating Point=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Low="TMIN"
+Num Out High="TMAX"
+Num Out Font=Height=-15,FStyle=0,Color=#000080,Name=Courier New
+
+[Tools]
+Pos=Top
+SELECT=Yes
+GRAPHIC=No
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+POLYCLOS=No
+SCALE=No
+CURSOR=No
+MEASUREH=No
+MEASUREV=No
+TAG=No
+PTAG=No
+TEXT=No
+PROPERTY=No
+START=Yes
+STOP=Yes
+PAUSE=Yes
+DATAPTS=No
+TOKENS=No
+RULER=No
+PLUS=No
+XAXIS=No
+YAXIS=No
+MINORLOG=No
+LOG25=No
+BASELINE=No
+HORIZCUR=No
+GOTOX=No
+GOTOY=No
+GOTOPERF=No
+GOTOBRNC=No
+CLEAR_ACCUMULATED=No
+PDELETE_ALL_PLOTS=No
+NEXT=No
+NEXTIN=No
+PEAK=No
+VALLEY=No
+HIGH=No
+LOW=No
+INFLECTN=No
+GHIGH=No
+GLOW=No
+BOTTOM=No
+TOP=No
+WAVEFORMBUFFER=No
+AOUTPUT=No
+PKEY=No
+ENXSCALE=No
+ENYSCALE=No
+ZOOMIN=No
+ZOOMOUT=No
+AUTOSCALE=No
+COLOR=No
+FONT=No
+SELNEXT=No
+
+[APage]
+Analysis=Transient
+Name="Main"
+
+[Monte Carlo Options]
+Analysis=Transient
+Status=Off
+Zero Tolerance=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Limits]
+Analysis=Transient
+TRange=5*CLKt
+TStep=1e-8
+NPts=51
+Temp=27
+RetraceRuns=1
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=1
+XExp=T
+YExp=D(1)
+XRng=TMAX,TMIN
+YRng=4,0
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=1
+CS=Normal
+Line Color=#000000
+Text Color=#000000
+Rainbow=False
+LWdth=3
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=3
+XExp=T
+YExp=v(6)
+XRng=TMAX,TMIN
+YRng=4,0
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=1
+CS=Normal
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+LWdth=2
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=2
+AliasID=4
+XExp=T
+YExp=I(Led1)
+XRng=TMAX,TMIN
+YRng=30m,-5m
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=10m
+CS=Normal
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=False
+LWdth=2
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=3
+AliasID=6
+XExp=T
+YExp=V(7)
+XRng=TMAX,TMIN
+YRng=4,0
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=1
+CS=Normal
+Line Color=#000080
+Text Color=#000080
+Rainbow=False
+LWdth=2
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=4
+AliasID=5
+XExp=T
+YExp=I(Led2)
+XRng=TMAX,TMIN
+YRng=30m,-5m
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=10m
+CS=Normal
+Line Color=#D2004F
+Text Color=#D2004F
+Rainbow=False
+LWdth=2
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[WaveForm]
+Analysis=Transient
+AliasID=-1
+XRng=TMAX,TMIN
+YRng=4,0
+Options=LINEARX,LINEARY
+Range Grid X=clkT/5
+Range Grid Y=1
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+CurrentPage 0="Main"
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=Distortion
+
+[Watch]
+Analysis=Transient
+Format=3
+ExprPercentWidth=80
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0

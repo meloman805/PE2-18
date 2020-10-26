@@ -1,0 +1,968 @@
+[Main]
+FileType=CIR
+Version=9.00
+Program=Micro-Cap
+Screen=2048,1152
+MCAPVersion=9.0.6.1
+Key ID=2 233 293 684
+NLCnt=8
+TXCnt=0
+
+[shapedef]
+Name=283
+Block=0,8,56,152,0,18
+BlockLine="Line",-16,16
+BlockLine="Line",-16,32
+BlockLine="Line",-16,48
+BlockLine="Line",-16,64
+BlockLine="Line",-16,80
+BlockLine="Line",-16,96
+BlockLine="Line",-16,112
+BlockLine="Line",-16,128
+BlockLine="Line",-16,144
+BlockLine="None",72,16
+BlockLine="Line",72,32
+BlockLine="Line",72,48
+BlockLine="Line",72,64
+BlockLine="Line",72,80
+BlockLine="None",72,96
+BlockLine="None",72,112
+BlockLine="Line",72,128
+BlockLine="None",72,144
+
+[shapedef]
+Name=82
+Block=0,8,56,88,-18,10
+BlockLine="Line",-16,16
+BlockLine="Line",-16,32
+BlockLine="Line",-16,48
+BlockLine="Line",-16,64
+BlockLine="Line",-16,80
+BlockLine="None",72,16
+BlockLine="Line",72,32
+BlockLine="Line",72,48
+BlockLine="None",72,64
+BlockLine="Line",72,80
+
+[shapedef]
+Name=83
+Block=0,8,56,152,0,18
+BlockLine="Line",-16,16
+BlockLine="Line",-16,32
+BlockLine="Line",-16,48
+BlockLine="Line",-16,64
+BlockLine="Line",-16,80
+BlockLine="Line",-16,96
+BlockLine="Line",-16,112
+BlockLine="Line",-16,128
+BlockLine="Line",-16,144
+BlockLine="None",72,16
+BlockLine="None",72,32
+BlockLine="Line",72,48
+BlockLine="Line",72,64
+BlockLine="Line",72,80
+BlockLine="Line",72,96
+BlockLine="None",72,112
+BlockLine="Line",72,128
+BlockLine="None",72,144
+
+[shapedef]
+Name=183
+Block=-8,8,56,168,0,20
+BlockLine="None",-24,16
+BlockLine="Line",-24,32
+BlockLine="Line",-24,48
+BlockLine="Line",-24,64
+BlockLine="None",-24,80
+BlockLine="None",-24,96
+BlockLine="Line",-24,112
+BlockLine="Line",-24,128
+BlockLine="Line",-24,144
+BlockLine="None",-24,160
+BlockLine="None",72,16
+BlockLine="Line",72,32
+BlockLine="Line",72,48
+BlockLine="None",72,64
+BlockLine="None",72,80
+BlockLine="None",72,96
+BlockLine="Line",72,112
+BlockLine="Line",72,128
+BlockLine="None",72,144
+BlockLine="None",72,160
+
+[shapedef]
+Name=385LS
+Block=0,8,72,232,0,28
+BlockLine="Inv",-16,16
+BlockLine="Clock",-16,32
+BlockLine="Line",-16,48
+BlockLine="Line",-16,64
+BlockLine="Line",-16,80
+BlockLine="Line",-16,96
+BlockLine="Line",-16,112
+BlockLine="Line",-16,128
+BlockLine="Line",-16,144
+BlockLine="Line",-16,160
+BlockLine="Line",-16,176
+BlockLine="Line",-16,192
+BlockLine="Line",-16,208
+BlockLine="Line",-16,224
+BlockLine="None",88,16
+BlockLine="None",88,32
+BlockLine="Line",88,48
+BlockLine="None",88,64
+BlockLine="None",88,80
+BlockLine="Line",88,96
+BlockLine="None",88,112
+BlockLine="None",88,128
+BlockLine="Line",88,144
+BlockLine="None",88,160
+BlockLine="None",88,176
+BlockLine="Line",88,192
+BlockLine="None",88,208
+BlockLine="None",88,224
+
+[shapedef]
+Name=IM3 сумматор
+Line=-8,-16,48,-16
+Line=-8,-16,-8,16
+Line=-8,16,8,16
+Line=-8,16,-8,40
+Line=-8,40,-8,64
+Line=-8,64,-8,88
+Line=-8,88,48,88
+Line=-8,64,8,64
+Line=-8,40,8,40
+Line=8,88,8,-16
+Line=32,-16,32,88
+Line=48,88,48,-16
+Line=-16,-8,-8,-8
+Line=-16,0,-8,0
+Line=-16,8,-8,8
+Line=-16,24,-8,24
+Line=-16,32,-8,32
+Line=-16,48,-8,48
+Line=-16,56,-8,56
+Line=-16,72,-8,72
+Line=-16,80,-8,80
+Line=48,0,56,0
+Line=48,16,56,16
+Line=48,32,56,32
+Line=48,48,56,48
+Line=48,64,56,64
+Text="A1",-6,-14,8,-2 , -10,0,"Arial"
+Text="B1",-6,-6,8,6 , -10,0,"Arial"
+Text="P0",-6,2,8,14 , -10,0,"Arial"
+Text="A2",-6,16,8,28 , -10,0,"Arial"
+Text="B2",-6,26,8,38 , -10,0,"Arial"
+Text="A3",-6,40,8,52 , -10,0,"Arial"
+Text="B3",-6,50,8,62 , -10,0,"Arial"
+Text="A4",-6,66,8,78 , -10,0,"Arial"
+Text="B4",-6,74,8,86 , -10,0,"Arial"
+Text="S1",34,-6,48,6 , -10,0,"Arial"
+Text="S2",34,10,48,22 , -10,0,"Arial"
+Text="S3",34,26,48,38 , -10,0,"Arial"
+Text="S4",34,42,48,54 , -10,0,"Arial"
+Text="P4",34,58,48,70 , -10,0,"Arial"
+Text="SM",12,-10,31,4 , -11,0,"Arial"
+
+[shapedef]
+Name=K555IM5
+Line=-16,-8,0,-8
+Line=-16,8,0,8
+Line=-16,24,0,24
+Line=-16,40,0,40
+Line=-16,56,0,56
+Line=-16,72,0,72
+Line=56,-8,72,-8
+Line=56,24,72,24
+Line=56,40,72,40
+Line=56,72,72,72
+Line=16,-16,16,80
+Line=32,-16,32,80
+Line=0,32,56,32
+Text="A",4,-14,13,-2 , -10,0,"Arial"
+Text="Pn",2,18,16,30 , -10,0,"Arial"
+Line=0,16,16,16
+Line=0,64,16,64
+Text="SM",16,-14,33,-2 , -10,0,"Arial"
+Text="S",40,-14,49,-2 , -10,0,"Arial"
+Text="Pn+1",33,19,58,31 , -10,0,"Arial"
+Line=0,-16,56,-16
+Line=0,80,56,80
+Line=56,-16,56,80
+Line=0,-16,0,80
+Text="B",4,2,13,14 , -10,0,"Arial"
+Text="A",4,34,13,46 , -10,0,"Arial"
+Text="Pn",2,66,16,78 , -10,0,"Arial"
+Text="SM",16,34,33,46 , -10,0,"Arial"
+Text="S",40,34,49,46 , -10,0,"Arial"
+Text="Pn+1",33,67,58,79 , -10,0,"Arial"
+Text="B",4,50,13,62 , -10,0,"Arial"
+
+[shapedef]
+Name=IM6 сумматор
+Line=-8,-16,64,-16
+Line=-8,-16,-8,128
+Line=16,-16,16,128
+Line=40,-16,40,128
+Line=-16,-8,-8,-8
+Line=-16,8,-8,8
+Line=-16,24,-8,24
+Line=-16,40,-8,40
+Line=-16,56,-8,56
+Line=-16,72,-8,72
+Line=-16,88,-8,88
+Line=-16,104,-8,104
+Line=-8,112,16,112
+Line=-16,120,-8,120
+Line=-8,128,64,128
+Line=64,40,72,40
+Line=64,56,72,56
+Line=64,72,72,72
+Line=64,88,72,88
+Line=64,-16,64,128
+Text="SM",20,-13,37,-1 , -10,0,"Arial"
+Text="B4",-4,-14,10,-2 , -10,0,"Arial"
+Text="A4",-4,2,10,14 , -10,0,"Arial"
+Text="S4",46,34,60,46 , -10,0,"Arial"
+Text="S3",46,50,60,62 , -10,0,"Arial"
+Text="S2",46,66,60,78 , -10,0,"Arial"
+Text="S1",46,82,60,94 , -10,0,"Arial"
+Text="",-6,114,9,127 , 245,80,"Arial"
+Line=-8,16,16,16
+Line=-8,48,16,48
+Line=-8,80,16,80
+Line=64,16,72,16
+Text="P4",46,10,60,22 , -10,0,"Arial"
+Line=-8,48,16,48
+Text="B3",-4,18,10,30 , -10,0,"Arial"
+Text="A3",-4,34,10,46 , -10,0,"Arial"
+Text="B2",-4,50,10,62 , -10,0,"Arial"
+Text="A2",-4,66,10,78 , -10,0,"Arial"
+Text="B1",-4,82,10,94 , -10,0,"Arial"
+Text="A1",-4,98,10,110 , -10,0,"Arial"
+Text="P0",-4,114,10,126 , -10,0,"Arial"
+
+[compdef]
+Name=7482
+Definition=Subckt
+Shape=82
+Mask=20608
+memo=2-Bit Binary Full Adders
+Label Offset=20,88,-5,15
+PinCnt=8
+Pin="A1",d,-2,2,19,7
+Pin="A2",d,-2,4,19,7
+Pin="B1",d,-2,6,19,7
+Pin="B2",d,-2,8,19,7
+Pin="C0",d,-2,10,19,7
+Pin="S1",d,9,4,-30,7
+Pin="S2",d,9,6,-30,7
+Pin="C2",d,9,10,-30,7
+
+[compdef]
+Name=7483A
+Definition=Subckt
+Shape=83
+Mask=20608
+memo=4-Bit Binary Full Adders With Fast Carry
+Label Offset=19,153,-3,15
+PinCnt=14
+Pin="A1",d,-2,2,19,7
+Pin="A2",d,-2,4,19,7
+Pin="A3",d,-2,6,19,7
+Pin="A4",d,-2,8,19,7
+Pin="B1",d,-2,10,19,7
+Pin="B2",d,-2,12,19,7
+Pin="B3",d,-2,14,19,7
+Pin="B4",d,-2,16,19,7
+Pin="C0",d,-2,18,19,7
+Pin="S1",d,9,6,-31,7
+Pin="S2",d,9,8,-31,7
+Pin="S3",d,9,10,-31,7
+Pin="S4",d,9,12,-31,7
+Pin="C4",d,9,16,-31,7
+
+[compdef]
+Name=74LS183
+Definition=Subckt
+Shape=183
+Mask=20608
+memo=Dual Carry-Save Full Adder
+Label Offset=60,70,-4,11
+PinCnt=10
+Pin="1CN",d,-3,4,20,7
+Pin="1B",d,-3,8,20,7
+Pin="1A",d,-3,6,20,7
+Pin="1CN1",d,9,4,-44,7
+Pin="1SUM",d,9,6,-47,7
+Pin="2CN",d,-3,14,20,7
+Pin="2A",d,-3,16,20,7
+Pin="2B",d,-3,18,20,7
+Pin="2CN1",d,9,14,-44,7
+Pin="2SUM",d,9,16,-47,7
+
+[compdef]
+Name=74LS283
+Definition=Subckt
+Shape=283
+Mask=20608
+memo=4-Bit Binary Full Adders With Fast Carry
+Label Offset=19,154,-3,14
+PinCnt=14
+Pin="A2",d,-2,4,19,7
+Pin="A1",d,-2,2,19,7
+Pin="A3",d,-2,6,19,7
+Pin="A4",d,-2,8,19,7
+Pin="B1",d,-2,10,19,7
+Pin="B2",d,-2,12,19,7
+Pin="B3",d,-2,14,19,7
+Pin="B4",d,-2,16,19,7
+Pin="C0",d,-2,18,19,7
+Pin="S1",d,9,4,-31,7
+Pin="S2",d,9,6,-31,7
+Pin="S3",d,9,8,-31,7
+Pin="S4",d,9,10,-31,7
+Pin="C4",d,9,16,-31,7
+
+[compdef]
+Name=74LS385
+Definition=Subckt
+Shape=385LS
+Mask=20608
+memo=Quad Serial Adder/Subtractor
+Label Offset=68,13,-30,67
+PinCnt=18
+Pin="CLRBAR",d,-2,2,20,7
+Pin="CLK",d,-2,4,26,7
+Pin="1S/ABAR",d,-2,6,20,7
+Pin="1A",d,-2,8,20,7
+Pin="1B",d,-2,10,20,7
+Pin="2S/ABAR",d,-2,12,20,7
+Pin="2A",d,-2,14,20,7
+Pin="2B",d,-2,16,20,7
+Pin="3S/ABAR",d,-2,18,20,7
+Pin="3A",d,-2,20,20,7
+Pin="3B",d,-2,22,20,7
+Pin="4S/ABAR",d,-2,24,20,7
+Pin="4A",d,-2,26,20,7
+Pin="4B",d,-2,28,20,7
+Pin="1S",d,11,6,-31,7
+Pin="2S",d,11,12,-31,7
+Pin="3S",d,11,18,-31,7
+Pin="4S",d,11,24,-31,7
+
+[compdef]
+Name=K155IM3
+Definition=Subckt
+Shape=IM3 сумматор
+Mask=128
+memo=Четырехразрядный полный сумматор
+Label Offset=-8,74,19,21
+PinCnt=14
+Pin="10",d,-2,-1,-14,2
+Pin="8",d,-2,3,-9,3
+Pin="3",d,-2,6,-9,2
+Pin="1",d,-2,9,-9,2
+Pin="11",d,-2,0,-14,2
+Pin="7",d,-2,4,-9,3
+Pin="4",d,-2,7,-8,2
+Pin="16",d,-2,10,-14,2
+Pin="13",d,-2,1,-14,2
+Pin="9",d,7,0,0,-1
+Pin="6",d,7,2,0,-2
+Pin="2",d,7,4,0,-2
+Pin="15",d,7,6,0,-1
+Pin="14",d,7,8,0,-1
+
+[compdef]
+Name=K555IM5
+Definition=Subckt
+Shape=K555IM5
+Mask=32
+memo=2 одноразрядных сумматора
+Label Offset=0,64,20,29
+PinCnt=10
+Pin="1",d,-2,-1
+Pin="3",d,-2,1
+Pin="4",d,-2,3
+Pin="13",d,-2,5
+Pin="12",d,-2,7
+Pin="11",d,-2,9
+Pin="6",d,9,-1,-6,0
+Pin="5",d,9,3,-6,0
+Pin="8",d,9,5,-6,0
+Pin="10",d,9,9,-10,0
+
+[compdef]
+Name=K555IM6
+Definition=Subckt
+Shape=IM6 сумматор
+Mask=1152
+memo=4-разрядный сумматор с ускореным переносом
+Label Offset=-8,114,-124,8
+PinCnt=14
+Pin="11",d,-2,-1,-11,-1
+Pin="12",d,-2,1,-11,0
+Pin="15",d,-2,3,-11,0
+Pin="14",d,-2,5,-11,0
+Pin="2",d,-2,7,-6,0
+Pin="3",d,-2,9,-6,0
+Pin="6",d,-2,11,-6,0
+Pin="5",d,-2,13,-6,0
+Pin="7",d,-2,15,-7,1
+Pin="9",d,9,2
+Pin="10",d,9,5
+Pin="13",d,9,7
+Pin="1",d,9,9
+Pin="4",d,9,11
+
+[Circuit]
+Window Placement=2,3, -1,-1, -4,-23, 198,198,1912,899
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=#000000
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+SpiceType=AMBIGUOUS
+Block Select Color=#51F998
+TitleBlock Field_1=$name
+TitleBlock Field_2=$user $company
+TitleBlock Field_3
+TitleBlock Field_4=$date
+TitleBlock Field_5=Page $page of $maxpage
+TitleBlock One Title=False
+Title_Block_Border=False
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=7482
+Style=ShowPinText
+Color=#000000
+Grid=4,30
+
+[Attr]
+ONV=20,88,PART,X1
+Color=#000000
+
+[Attr]
+ONV=11,-7,NAME,7482
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Attr]
+ONV=20,130,PACKAGE,DIP14
+Color=#000000
+
+[Comp]
+Name=7483A
+Style=ShowPinText
+Color=#000000
+Grid=37,30
+
+[Attr]
+ONV=19,153,PART,X2
+Color=#000000
+
+[Attr]
+ONV=6,-9,NAME,7483A
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Attr]
+ONV=19,195,PACKAGE,DIP16
+Color=#000000
+
+[Comp]
+Name=74LS183
+Style=ShowPinText
+Color=#000000
+Grid=21,30
+
+[Attr]
+ONV=60,70,PART,X3
+Color=#000000
+
+[Attr]
+ONV=-3,-9,NAME,74LS183
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Attr]
+ONV=60,112,PACKAGE,DIP14
+Color=#000000
+
+[Comp]
+Name=74LS283
+Style=ShowPinText
+Color=#000000
+Grid=54,30
+
+[Attr]
+ONV=19,154,PART,X4
+Color=#000000
+
+[Attr]
+ONV=1,-7,NAME,74LS283
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Attr]
+ONV=19,196,PACKAGE,DIP16
+Color=#000000
+
+[Comp]
+Name=74LS385
+Style=ShowPinText
+Color=#000000
+Grid=71,30
+
+[Attr]
+ONV=68,13,PART,X5
+Color=#000000
+
+[Attr]
+ONV=3,-9,NAME,74LS385
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Attr]
+ONV=68,55,PACKAGE,DIP20
+Color=#000000
+
+[Comp]
+Name=K155IM3
+Color=#000000
+Grid=38,7
+
+[Attr]
+ONV=-8,74,PART,X6
+Color=#000000
+
+[Attr]
+ONV=-6,-32,NAME,K155IM3
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Comp]
+Name=K555IM5
+Color=#000000
+Grid=21,7
+
+[Attr]
+ONV=0,64,PART,X7
+Color=#000000
+
+[Attr]
+ONV=2,-32,NAME,K555IM5
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Comp]
+Name=K555IM6
+Color=#000000
+Grid=54,7
+
+[Attr]
+ONV=71,115,PART,X8
+Color=#000000
+
+[Attr]
+ONV=-2,-32,NAME,K555IM6
+Style=8192
+Color=#000000
+
+[Attr]
+ONV=0,22,FILE,
+Color=#000000
+
+[Attr]
+ONV=0,33,PARAMS:,
+Color=#000000
+
+[Attr]
+ONV=0,44,TEXT:,
+Color=#000000
+
+[Attr]
+ONV=0,55,COST,
+Color=#000000
+
+[Attr]
+ONV=0,66,POWER,
+Color=#000000
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=0.6666666666666666
+PrinterScale=1
+GridUser=10
+ShapeGroups="Main","DeMorgan","Main1","Euro","Rus","Polarity","Main11","Main2","Electrolytic"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+DisplayMeasure=Last
+
+[Tools]
+Pos=Top
+PROBE=Yes
+SELECT=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+FLAG=Yes
+META=No
+INFO=Yes
+HELP=Yes
+LINK=Yes
+REGION_ENABLE=Yes
+DIGTRC=No
+DIGTRC2=No
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CROSS=No
+GRID=Yes
+BORDER=No
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+MODEL=Yes
+CIR2CKT=No
+ATTDISP=No
+ENABLE=Yes
+DISABLE=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=No
+PAGEADD=No
+PAGEDEL=No
+ZOOMIN=Yes
+ZOOMOUT=Yes
+GOTOFLAG=No
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+
+[Section]
+Index=0
+Name="Adders_All"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=400
+TabSize 1=400
+TabSize 2=400
+TabSize 3=400
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=0.6666666666666666
+Grid=97,16
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+
+[Text Area]
+Section=0
+Page=1
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Text Area]
+Section=0
+Page=2
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=Distortion
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0

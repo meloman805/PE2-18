@@ -1,0 +1,1139 @@
+[Main]
+FileType=CIR
+Version=9.00
+Program=Micro-Cap
+Screen=2048,1152
+MCAPVersion=9.0.7.0
+Key ID=2 233 293 684
+NLCnt=99
+TXCnt=1
+
+[shapedef]
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Resistor
+PolyOpen=12 
+PolyLine=0,0
+PolyLine=0,0
+PolyLine=12,0
+PolyLine=14,-4
+PolyLine=18,4
+PolyLine=22,-4
+PolyLine=26,4
+PolyLine=30,-4
+PolyLine=34,4
+PolyLine=36,0
+PolyLine=48,0
+PolyLine=48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Ground
+Line=0,0,12,0
+Line=12,-8,12,8
+Line=18,-4,18,4
+Line=24,0,24,0
+
+[shapedef]
+Name=Minus.root
+Line=-2,0,2,0
+
+[shapedef]
+Name=Plus.root
+Line=-2,0,2,0
+Line=0,-2,0,2
+
+[shapedef]
+Name=Battery_Euro
+Line=26,-7,26,7
+Line=26,0,48,0
+Line=0,0,22,0
+Root="Minus.root",15,4,0
+Root="Plus.root",29,2,0
+Rectangle=22,-3,23,3,SOLID
+Current=32,-8,16,-8
+
+[shapedef]
+Name=Resistor_Euro
+Rectangle=12,-4,36,4
+Line=0,0,12,0
+Line=48,0,36,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Animated Analog Led
+Animated Analog Led=0,-24,8,0
+Current=-8,-8,-8,-16
+Line=-4,-6,-4,-2
+Line=-6,-4,-2,-4
+
+[shapedef]
+Name=Animated SPST Switch
+Animated SPST Switch=0,-8,48,8
+Current=16,8,32,8
+
+[shapedef]
+Name=IV3 шифратор
+Line=-16,-8,-10,-8
+Line=-16,8,-10,8
+Line=-16,24,-10,24
+Line=-16,40,-10,40
+Line=-16,56,-10,56
+Line=-16,72,-10,72
+Line=-16,88,-10,88
+Line=-16,104,-10,104
+Line=-16,120,-10,120
+Line=-8,128,-8,122
+Line=-8,118,-8,106
+Line=-8,102,-8,90
+Line=-8,86,-8,74
+Line=-8,70,-8,58
+Line=-8,54,-8,42
+Line=-8,38,-8,26
+Line=-8,22,-8,10
+Line=-8,6,-8,-6
+Line=-8,-10,-8,-16
+Line=-8,-16,64,-16
+Line=64,-16,64,6
+Line=64,10,64,30
+Line=64,34,64,54
+Line=64,58,64,78
+Line=64,82,64,128
+Line=64,128,-8,128
+Line=72,80,66,80
+Line=72,56,66,56
+Line=72,32,66,32
+Line=72,8,66,8
+Line=40,-16,40,128
+Line=16,128,16,-16
+Ellipse=-10,-10,-6,-6
+Ellipse=-10,6,-6,10
+Ellipse=-10,22,-6,26
+Ellipse=-10,38,-6,42
+Ellipse=-10,54,-6,58
+Ellipse=-10,70,-6,74
+Ellipse=-10,86,-6,90
+Ellipse=-10,102,-6,106
+Ellipse=-10,118,-6,122
+Ellipse=62,78,66,82
+Ellipse=62,54,66,58
+Ellipse=62,30,66,34
+Ellipse=62,6,66,10
+Text="I1",-2,-14,8,-2 , -10,0,"Arial"
+Text="CD",22,-10,39,2 , -10,0,"Arial"
+Text="I2",-2,2,8,14 , -10,0,"Arial"
+Text="I3",-2,18,8,30 , -10,0,"Arial"
+Text="I4",-2,34,8,46 , -10,0,"Arial"
+Text="I5",-2,50,8,62 , -10,0,"Arial"
+Text="I6",-2,66,8,78 , -10,0,"Arial"
+Text="I7",-2,82,8,94 , -10,0,"Arial"
+Text="I8",-2,98,8,110 , -10,0,"Arial"
+Text="I9",-2,114,8,126 , -10,0,"Arial"
+Text="A0",46,2,60,14 , -10,0,"Arial"
+Text="A1",46,26,60,38 , -10,0,"Arial"
+Text="A2",46,50,60,62 , -10,0,"Arial"
+Text="A3",46,74,60,86 , -10,0,"Arial"
+
+[compdef]
+Name=K555IV3
+Definition=Subckt
+Shape=IV3 шифратор
+Mask=160
+memo=Приоритетный шифратор
+Label Offset=-8,112,-127,5
+PinCnt=13
+Pin="11",d,-2,-1,-9,-1
+Pin="12",d,-2,1,-9,-1
+Pin="13",d,-2,3,-9,-1
+Pin="1",d,-2,5,-3,-1
+Pin="2",d,-2,7,-3,-1
+Pin="3",d,-2,9,-3,-1
+Pin="4",d,-2,11,-3,-1
+Pin="5",d,-2,13,-3,-1
+Pin="10",d,-2,15,-9,-1
+Pin="9",d,9,1
+Pin="7",d,9,4
+Pin="6",d,9,7
+Pin="14",d,9,10
+
+[compdef]
+Name=Resistor
+Definition=Resistor
+Shape=Resistor
+ShapeAlias="Euro","Resistor_Euro"
+Mask=6913
+memo=Resistor
+Label Offset=1,-34,8,11
+PinCnt=2
+Pin="Plus",6,0,-10,-4
+Pin="Minus",0,0,-14,-4
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+ShapeAlias="Euro","Battery_Euro"
+Mask=4097
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=513
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
+Name=Animated Analog LED
+Definition=ANIMATED ANALOG LED
+Shape=Animated Analog Led
+Mask=4096
+memo=Animated Analog LED
+Label Offset=12,-27,5,10
+PinCnt=2
+Pin="Anode",0,0,-24,5
+Pin="Cathode",1,0,5,5
+
+[compdef]
+Name=Animated SPST Switch
+Definition=ANIMATED SPST SWITCH
+Shape=Animated SPST Switch
+Mask=4096
+memo=Animated Single Pole, Single Throw Switch
+Label Offset=2,5,11,11
+PinCnt=2
+Pin="A",0,0,5,0
+Pin="B",6,0,-10,1
+
+[Circuit]
+Window Placement=2,3, -1,-1, -4,-23, 0,0,1714,701
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=#000000
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+SpiceType=AMBIGUOUS
+Block Select Color=#51F998
+TitleBlock Field_1=$name
+TitleBlock Field_2=$user $company
+TitleBlock Field_3
+TitleBlock Field_4=$date
+TitleBlock Field_5=Page $page of $maxpage
+TitleBlock One Title=False
+Title_Block_Border=False
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=K555IV3
+Grid=33,16
+
+[Attr]
+ONV=-8,112,PART,X2
+
+[Attr]
+ONV=-1,-35,NAME,K555IV3
+Style=8192
+
+[Comp]
+Name=Resistor
+Grid=66,17
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R1
+Style=8192
+
+[Attr]
+ONV=8,-39,RESISTANCE,150
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=71,17
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R2
+Style=8192
+
+[Attr]
+ONV=8,-39,RESISTANCE,150
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=76,17
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R3
+Style=8192
+
+[Attr]
+ONV=8,-39,RESISTANCE,150
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=81,17
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R4
+Style=8192
+
+[Attr]
+ONV=8,-39,RESISTANCE,150
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Wire]
+Grids=66,11,71,11
+
+[Wire]
+Grids=81,6,81,11
+
+[Wire]
+Grids=71,11,76,11
+
+[Wire]
+Grids=76,11,81,11
+
+[Comp]
+Name=Battery
+Grid=88,6
+Rot=2
+
+[Attr]
+ONV=-35,-21,PART,V1
+Style=8192
+
+[Attr]
+ONV=-30,8,VALUE,5
+Style=8192
+
+[Attr]
+ONV=-48,-49,SHAPEGROUP,Euro
+
+[Comp]
+Name=Ground
+Grid=88,6
+Rot=1
+
+[Wire]
+Grids=71,17,71,20
+
+[Wire]
+Grids=76,17,76,23
+
+[Wire]
+Grids=81,17,81,26
+
+[Comp]
+Name=Animated Analog LED
+Grid=61,17
+Rot=6
+
+[Attr]
+ONV=-37,-19,PART,Led1
+Style=8192
+
+[Attr]
+ONV=-144,-13,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Comp]
+Name=Animated Analog LED
+Grid=56,20
+Rot=6
+
+[Attr]
+ONV=-36,-19,PART,Led2
+Style=8192
+
+[Attr]
+ONV=-144,-13,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Comp]
+Name=Animated Analog LED
+Grid=51,23
+Rot=6
+
+[Attr]
+ONV=-38,-20,PART,Led3
+Style=8192
+
+[Attr]
+ONV=-144,-13,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Comp]
+Name=Animated Analog LED
+Grid=46,26
+Rot=6
+
+[Attr]
+ONV=-38,-18,PART,Led4
+Style=8192
+
+[Attr]
+ONV=-144,-13,COLOR,Red,1.7,0.015,.5,20p
+
+[Attr]
+ONV=0,0,COLOR_REF,#FF0000
+Style=256
+
+[Wire]
+Grids=81,6,82,6
+
+[Wire]
+Grids=42,17,60,17
+
+[Wire]
+Grids=42,20,55,20
+
+[Wire]
+Grids=42,23,50,23
+
+[Wire]
+Grids=42,26,45,26
+
+[Wire]
+Grids=11,17,28,17
+
+[Wire]
+Grids=11,19,26,19
+
+[Wire]
+Grids=11,21,24,21
+
+[Wire]
+Grids=11,23,22,23
+
+[Wire]
+Grids=11,25,20,25
+
+[Wire]
+Grids=11,27,18,27
+
+[Wire]
+Grids=11,29,16,29
+
+[Wire]
+Grids=11,31,14,31
+
+[Comp]
+Name=Resistor
+Grid=14,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R5
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Wire]
+Grids=11,15,30,15
+
+[Comp]
+Name=Resistor
+Grid=16,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R6
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=18,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R7
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=20,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R8
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=22,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R9
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=24,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R10
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=26,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R11
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=28,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R12
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Comp]
+Name=Resistor
+Grid=30,12
+Rot=5
+
+[Attr]
+ONV=8,-25,PART,R13
+
+[Attr]
+ONV=-10,-31,RESISTANCE,1k
+Style=8192
+
+[Attr]
+ONV=8,-53,SHAPEGROUP,Euro
+
+[Wire]
+Grids=14,12,14,31
+
+[Wire]
+Grids=14,31,31,31
+
+[Wire]
+Grids=16,12,16,29
+
+[Wire]
+Grids=16,29,31,29
+
+[Wire]
+Grids=18,12,18,27
+
+[Wire]
+Grids=18,27,31,27
+
+[Wire]
+Grids=20,12,20,25
+
+[Wire]
+Grids=20,25,31,25
+
+[Wire]
+Grids=22,12,22,23
+
+[Wire]
+Grids=22,23,31,23
+
+[Wire]
+Grids=24,12,24,21
+
+[Wire]
+Grids=24,21,31,21
+
+[Wire]
+Grids=26,12,26,19
+
+[Wire]
+Grids=26,19,31,19
+
+[Wire]
+Grids=28,12,28,17
+
+[Wire]
+Grids=28,17,31,17
+
+[Wire]
+Grids=14,6,16,6
+
+[Wire]
+Grids=16,6,18,6
+
+[Wire]
+Grids=18,6,20,6
+
+[Wire]
+Grids=20,6,22,6
+
+[Wire]
+Grids=22,6,24,6
+
+[Wire]
+Grids=24,6,26,6
+
+[Wire]
+Grids=26,6,28,6
+
+[Wire]
+Grids=28,6,30,6
+
+[Wire]
+Grids=30,6,81,6
+
+[Wire]
+Grids=30,12,30,15
+
+[Wire]
+Grids=30,15,31,15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,15
+
+[Attr]
+ONV=0,-16,PART,S1
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,17
+
+[Attr]
+ONV=-2,-12,PART,S2
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,19
+
+[Attr]
+ONV=-1,-13,PART,S3
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,CLOSED
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,21
+
+[Attr]
+ONV=0,-14,PART,S4
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,23
+
+[Attr]
+ONV=-1,-14,PART,S5
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,25
+
+[Attr]
+ONV=-1,-14,PART,S6
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,27
+
+[Attr]
+ONV=-1,-15,PART,S7
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,29
+
+[Attr]
+ONV=0,-14,PART,S8
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Comp]
+Name=Animated SPST Switch
+Grid=5,31
+
+[Attr]
+ONV=0,-14,PART,S9
+Style=8192
+
+[Attr]
+ONV=2,19,STATE,OPEN
+
+[Attr]
+ONV=2,33,RON,1m
+
+[Attr]
+ONV=2,47,ROFF,1e15
+
+[Wire]
+Grids=4,15,5,15
+
+[Wire]
+Grids=4,17,5,17
+
+[Wire]
+Grids=4,19,5,19
+
+[Wire]
+Grids=4,21,5,21
+
+[Wire]
+Grids=4,23,5,23
+
+[Wire]
+Grids=4,25,5,25
+
+[Wire]
+Grids=4,27,5,27
+
+[Wire]
+Grids=4,29,5,29
+
+[Wire]
+Grids=4,31,5,31
+
+[Wire]
+Grids=4,15,4,17
+
+[Wire]
+Grids=4,17,4,19
+
+[Wire]
+Grids=4,19,4,21
+
+[Wire]
+Grids=4,21,4,23
+
+[Wire]
+Grids=4,23,4,25
+
+[Wire]
+Grids=4,25,4,27
+
+[Wire]
+Grids=4,27,4,29
+
+[Wire]
+Grids=4,29,4,31
+
+[Comp]
+Name=Ground
+Grid=4,31
+Rot=1
+
+[Wire]
+Grids=46,26,81,26
+
+[Wire]
+Grids=51,23,76,23
+
+[Wire]
+Grids=56,20,71,20
+
+[Wire]
+Grids=61,17,66,17
+
+[Grid Text]
+Text="LED загорается при лог. 0 (низком уровне)"
+Grid=46,35
+CBorder=NONE
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1
+PrinterScale=1
+GridUser=10
+ShapeGroups="Main","DeMorgan","Main1","Euro","Rus","Polarity","Main11","Main2","Electrolytic","GOST","Main3","Main111"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+DisplayMeasure=Last
+
+[Tools]
+Pos=Top
+PROBE=Yes
+SELECT=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+FLAG=Yes
+META=No
+INFO=Yes
+HELP=Yes
+LINK=Yes
+REGION_ENABLE=Yes
+DIGTRC=No
+DIGTRC2=No
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CROSS=No
+GRID=Yes
+BORDER=No
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+MODEL=Yes
+CIR2CKT=No
+ATTDISP=No
+ENABLE=Yes
+DISABLE=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=No
+PAGEADD=No
+PAGEDEL=No
+ZOOMIN=Yes
+ZOOMOUT=Yes
+GOTOFLAG=No
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+
+[Section]
+Index=0
+Name="Coder_IV3"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=400
+TabSize 1=400
+TabSize 2=400
+TabSize 3=400
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=1
+Grid=21,44
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+
+[Text Area]
+Section=0
+Page=1
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Text Area]
+Section=0
+Page=2
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+Temp=27
+SliderPer=10
+PlaceText=False
+TextGrid=4,44
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=Distortion
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0

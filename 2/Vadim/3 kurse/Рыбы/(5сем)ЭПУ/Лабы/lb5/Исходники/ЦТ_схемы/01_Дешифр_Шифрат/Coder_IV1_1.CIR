@@ -1,0 +1,661 @@
+[Main]
+FileType=CIR
+Version=9.00
+Program=Micro-Cap
+Screen=2048,1152
+MCAPVersion=9.0.7.0
+Key ID=2 233 293 684
+NLCnt=21
+TXCnt=0
+
+[shapedef]
+Name=148
+Block=0,8,56,152,152,18
+BlockLine="Inv",-16,16
+BlockLine="Inv",-16,32
+BlockLine="Inv",-16,48
+BlockLine="Inv",-16,64
+BlockLine="Inv",-16,80
+BlockLine="Inv",-16,96
+BlockLine="Inv",-16,112
+BlockLine="Inv",-16,128
+BlockLine="Inv",-16,144
+BlockLine="None",72,16
+BlockLine="None",72,32
+BlockLine="Inv",72,48
+BlockLine="Inv",72,64
+BlockLine="None",72,80
+BlockLine="Inv",72,96
+BlockLine="Inv",72,112
+BlockLine="Inv",72,128
+BlockLine="None",72,144
+
+[shapedef]
+Name=Fixed
+Line=8,0,32,0
+Line=8,0,0,-8
+Line=8,0,0,8
+
+[shapedef]
+Name=K555IV1
+Line=56,24,64,24
+Line=64,8,56,8
+Line=64,64,56,64
+Line=64,80,56,80
+Line=64,96,56,96
+Line=16,-16,16,128
+Line=40,-16,40,128
+Line=40,48,56,48
+Line=0,112,16,112
+Line=-16,120,0,120
+Line=56,-16,56,128
+Line=0,-16,0,128
+Line=0,-16,56,-16
+Line=0,128,56,128
+Line=-16,104,0,104
+Line=-16,88,0,88
+Line=-16,72,0,72
+Line=-16,56,0,56
+Line=-16,40,0,40
+Line=-16,24,0,24
+Line=-16,8,0,8
+Line=-16,-8,0,-8
+Text="CD",22,-10,39,2 , -10,0,"Arial"
+Text="X0",2,-13,16,-1 , -10,0,"Arial"
+Text="X1",2,3,16,15 , -10,0,"Arial"
+Text="X2",2,19,16,31 , -10,0,"Arial"
+Text="X3",2,35,16,47 , -10,0,"Arial"
+Text="X4",2,51,16,63 , -10,0,"Arial"
+Text="X5",2,67,16,79 , -10,0,"Arial"
+Text="X6",2,83,16,95 , -10,0,"Arial"
+Text="X7",2,99,16,111 , -10,0,"Arial"
+Text="E0",41,3,55,15 , -10,0,"Arial"
+Text="CS",41,19,57,31 , -10,0,"Arial"
+Text="A0",42,59,56,71 , -10,0,"Arial"
+Text="A1",42,75,56,87 , -10,0,"Arial"
+Text="A2",42,91,56,103 , -10,0,"Arial"
+Text="E1",2,115,16,127 , -10,0,"Arial"
+
+[compdef]
+Name=Fixed Digital
+Definition=DIGITAL STATE
+Shape=Fixed
+Mask=3072
+memo=Provides a fixed digital state
+Label Offset=-14,-7,-6,-27
+PinCnt=1
+Pin="Out",4,0,-8,-3
+
+[compdef]
+Name=K555IV1
+Definition=Macro
+Shape=K555IV1
+Mask=128
+memo=Приоритетный шифратор 8 в 3
+Label Offset=0,114,-126,6
+PinCnt=14
+Pin="10",d,-2,-1
+Pin="11",d,-2,1
+Pin="12",d,-2,3
+Pin="13",d,-2,5
+Pin="1",d,-2,7
+Pin="2",d,-2,9
+Pin="3",d,-2,11,2,2
+Pin="4",d,-2,13
+Pin="5",d,-2,15
+Pin="15",d,8,1
+Pin="14",d,8,3
+Pin="9",d,8,8
+Pin="7",d,8,10
+Pin="6",d,8,12
+
+[compdef]
+Name=74148
+Definition=Subckt
+Shape=148
+Mask=20608
+memo=8-Line To 3-Line Priority Encoders
+Label Offset=59,8,-36,57
+PinCnt=14
+Pin="I0",d,-2,2,19,7
+Pin="I1",d,-2,4,19,7
+Pin="I2",d,-2,6,19,7
+Pin="I3",d,-2,8,19,7
+Pin="I4",d,-2,10,19,7
+Pin="I5",d,-2,12,19,7
+Pin="I6",d,-2,14,19,7
+Pin="I7",d,-2,16,19,7
+Pin="EI",d,-2,18,19,7
+Pin="EO",d,9,6,-32,7
+Pin="GS",d,9,8,-32,7
+Pin="A0",d,9,12,-32,7
+Pin="A1",d,9,14,-32,7
+Pin="A2",d,9,16,-32,7
+
+[Circuit]
+Window Placement=2,3, -1,-1, -4,-23, 0,0,1714,701
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=#000000
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+SpiceType=AMBIGUOUS
+Block Select Color=#51F998
+TitleBlock Field_1=$name
+TitleBlock Field_2=$user $company
+TitleBlock Field_3
+TitleBlock Field_4=$date
+TitleBlock Field_5=Page $page of $maxpage
+TitleBlock One Title=False
+Title_Block_Border=False
+Title_Block=False
+Show Nodes=False
+Show Voltages=True
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Wire]
+Grids=13,9,16,9
+
+[Wire]
+Grids=13,11,16,11
+
+[Wire]
+Grids=13,13,16,13
+
+[Wire]
+Grids=13,15,16,15
+
+[Wire]
+Grids=13,17,16,17
+
+[Wire]
+Grids=13,19,16,19
+
+[Wire]
+Grids=13,21,16,21
+
+[Wire]
+Grids=13,23,16,23
+
+[Wire]
+Grids=13,34,16,34
+
+[Comp]
+Name=Fixed Digital
+Grid=9,9
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U1
+
+[Attr]
+ONV=-8,-8,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,11
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U2
+
+[Attr]
+ONV=-7,-7,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,13
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U3
+
+[Attr]
+ONV=-7,-6,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,15
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U4
+
+[Attr]
+ONV=-8,-7,VALUE,1
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,17
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U5
+
+[Attr]
+ONV=-6,-8,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,19
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U6
+
+[Attr]
+ONV=-7,-7,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,21
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U7
+
+[Attr]
+ONV=-8,-9,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,23
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U8
+
+[Attr]
+ONV=-9,-7,VALUE,0
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=Fixed Digital
+Grid=9,34
+Rot=4
+
+[Attr]
+ONV=-14,-7,PART,U9
+
+[Attr]
+ONV=-8,-6,VALUE,1
+Style=8192
+
+[Attr]
+ONV=-14,-35,I/O MODEL,IO_STD
+
+[Attr]
+ONV=-14,-49,IO_LEVEL,0
+
+[Attr]
+ONV=-14,-63,POWER NODE,$G_DPWR
+
+[Attr]
+ONV=-14,-77,GROUND NODE,$G_DGND
+
+[Comp]
+Name=K555IV1
+Grid=18,10
+
+[Attr]
+ONV=0,114,PART,X1
+
+[Attr]
+ONV=0,-32,FILE,K555IV1
+Style=8192
+
+[Wire]
+Grids=16,25,16,34
+
+[Comp]
+Name=74148
+Style=ShowPinText
+Grid=18,49
+
+[Attr]
+ONV=23,16,PART,X2
+Style=8192
+
+[Attr]
+ONV=6,-11,NAME,74148
+Style=8192
+
+[Attr]
+ONV=59,50,PACKAGE,DIP16
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1
+PrinterScale=1
+GridUser=10
+ShapeGroups="Main","DeMorgan","Main1","Euro","Rus","Polarity","Main11","Main2","Electrolytic","GOST","Main3","Main111"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+DisplayMeasure=Last
+
+[Tools]
+Pos=Top
+PROBE=Yes
+SELECT=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+FLAG=Yes
+META=No
+INFO=Yes
+HELP=Yes
+LINK=Yes
+REGION_ENABLE=Yes
+DIGTRC=No
+DIGTRC2=No
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CROSS=No
+GRID=Yes
+BORDER=No
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+MODEL=Yes
+CIR2CKT=No
+ATTDISP=No
+ENABLE=Yes
+DISABLE=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=No
+PAGEADD=No
+PAGEDEL=No
+ZOOMIN=Yes
+ZOOMOUT=Yes
+GOTOFLAG=No
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+
+[Section]
+Index=0
+Name="Coder_IV1_1"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=400
+TabSize 1=400
+TabSize 2=400
+TabSize 3=400
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=1
+Grid=33,38
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+
+[Text Area]
+Section=0
+Page=1
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Text Area]
+Section=0
+Page=2
+Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+Background Color=#FFFFFF
+Len=0
+
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+Temp=27
+SliderPer=10
+PlaceText=False
+TextGrid=15,44
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=Distortion
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
