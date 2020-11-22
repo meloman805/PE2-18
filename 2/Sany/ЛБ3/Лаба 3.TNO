@@ -1,0 +1,390 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                       Transient Analysis of Ырср 3                       ***
+***                           03.11.2020 13:10:44                            ***
+********************************************************************************
+Limits
+======
+Time Range               150/520k
+Maximum Time Step        100n
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type Diode
+==========================================
+Instance:              D1   
+Using model:        1N659   
+LEVEL                   1(*)
+AF                 1.000 (*)
+BV                60.000    
+CJO                1.731p   
+EG                 1.110 (*)
+FC               500.000m(*)
+IBV              100.000p   
+IBVL               0.000 (*)
+IKF                0.000 (*)
+IS                 4.780n   
+ISR                0.000 (*)
+KF                 0.000 (*)
+M                816.138m   
+N                  1.776    
+NBV                1.000 (*)
+NBVL               1.000 (*)
+NR                 2.000 (*)
+RL                 1.916G   
+RS               869.733m   
+T_ABS           UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)
+TBV1               0.000 (*)
+TBV2               0.000 (*)
+TIKF               0.000 (*)
+TRS1               0.000 (*)
+TRS2               0.000 (*)
+TT               432.809n   
+VJ                15.000    
+XTI                3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Sine Source
+================================================
+Instance:              V2              V3              V4   
+Using model:            5           U_MOD           U_MOD   
+A                  3.000           1.000           1.000    
+DC                 0.000 (*)       0.000 (*)       0.000 (*)
+F                  7.000K          5.000K          5.000K   
+PH                 0.000 (*)       0.000 (*)       0.000 (*)
+RP                 0.000 (*)       0.000 (*)       0.000 (*)
+RS                 1.000m(*)       1.000m(*)       1.000m(*)
+TAU                0.000 (*)       0.000 (*)       0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Bipolar Junction Transistors NPN
+=====================================================================
+Instance:              Q2   
+Using model:        2N918   
+LEVEL                   1(*)
+AF                 1.000 (*)
+BF               199.631    
+BR               219.479m   
+CJC                7.787p   
+CJE                2.828p   
+CJS                0.000 (*)
+EG                 1.110 (*)
+FC               500.000m(*)
+GAMMA             10.000p(*)
+IKF                1.000    
+IKR              995.400m   
+IRB                0.000 (*)
+IS                 9.659f   
+ISC                3.559p   
+ISE              807.101f   
+ISS                0.000 (*)
+ITF                9.882m   
+KF                 0.000 (*)
+MJC              558.067m   
+MJE              642.887m   
+MJS                0.000 (*)
+NC                 2.000 (*)
+NE                 2.000    
+NF                 1.370    
+NK               500.000m(*)
+NR                 1.000 (*)
+NS                 1.000 (*)
+PTF                0.000 (*)
+QCO                0.000 (*)
+QUASIMOD           0.000 (*)
+RB                 0.000 (*)
+RBM                0.000 (*)
+RC               500.000m   
+RCO                0.000 (*)
+RE                 1.999    
+T_ABS           UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)
+TF               158.837p   
+TR                10.000n   
+TRB1               0.000 (*)
+TRB2               0.000 (*)
+TRC1               0.000 (*)
+TRC2               0.000 (*)
+TRE1               0.000 (*)
+TRE2               0.000 (*)
+TRM1               0.000 (*)
+TRM2               0.000 (*)
+VAF              100.000    
+VAR                0.000 (*)
+VG                 1.206 (*)
+VJC              700.000m   
+VJE              700.000m   
+VJS              750.000m(*)
+VO                10.000 (*)
+VTF               10.000    
+XCJC               1.000 (*)
+XTB                0.000 (*)
+XTF              500.003m   
+XTI                3.000 (*)
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node          Voltage  Node          Voltage  Node          Voltage 
+1             12.000   2              1.304   3            185.529m 
+4             12.000   5             12.000   6             10.909  
+7             10.909   8              0.000   9              0.000  
+U_MOD_PHM      0.000   11             1.000   12             0.000  
+OUT           14.000   X2.VMOD        0.000  
+
+DC Operating Point Inductor Current
+===================================
+ Inductor     Current   Inductor     Current   Inductor     Current 
+L1            48.261m  L3            -0.007f  L2           -10.485n 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:                 D1
+Using model:           1N659
+
+Capacitance Terms:
+CAP                   1.108p
+
+Current Terms:
+ID                  -10.485n
+
+Resistance Terms:
+REQ                   1.912G
+
+Voltage Terms:
+VD                  -10.909 
+
+Power DC Terms:
+PD                  114.387n
+PS                    0.000 
+
+DC Pin Currents:
+Id                  -10.485n
+
+Condition:
+State                    OFF
+
+Device Variables:
+area                  1.000 
+ic                    0.000 
+
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors NPN
+====================================================================
+Instance:                 Q2
+Using model:           2N918
+
+Beta Terms:
+BETADC               77.406 
+BETAAC               93.241 
+
+Capacitance Terms:
+CPI                 239.223p
+CMU                   1.643p
+CBX                   0.000 
+CJS                   0.000 
+
+Conductance Terms:
+GM                    1.186 
+
+Current Terms:
+IB                  563.396u
+IC                   43.610m
+
+Resistance Terms:
+RPI                  78.635 
+RX                    0.000 
+RO                    2.538K
+
+Voltage Terms:
+VBE                   1.118 
+VBC                 -10.696 
+VCE                  11.814 
+
+Frequency Terms:
+FT                783.495MEG
+
+Power DC Terms:
+PD                  515.861m
+PS                    0.000 
+
+DC Pin Currents:
+Ib                  563.396u
+Ic                   43.610m
+Ie                  -44.174m
+Is                    0.000 
+
+Condition:
+State                    HOT
+
+Device Variables:
+area                  1.000 
+vbe                   0.000 
+vce                   0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                  R3              R1              R2              R4
+V                    -10.696          -1.091         -10.909          -1.304 
+Power DC Terms:
+PD                    49.743m        595.041m          5.950           5.329m
+
+DC Pin Currents:
+Ir                    -4.651m       -545.455m       -545.455m         -4.087m
+
+Device Variables:
+tc1                    0.000           0.000           0.000           0.000 
+tc2                    0.000           0.000           0.000           0.000 
+
+
+Instance:                  R5           V2.RS              R6           V3.RS
+V                   -185.529m          0.000           0.000           0.000 
+Power DC Terms:
+PD                     8.195m          0.000           0.000           0.000 
+
+DC Pin Currents:
+Ir                   -44.174m          0.000           0.000           0.000 
+
+Device Variables:
+tc1                    0.000           0.000           0.000           0.000 
+tc2                    0.000           0.000           0.000           0.000 
+
+
+Instance:               V4.RS           X2.R2
+V                      0.000           0.000 
+Power DC Terms:
+PD                     0.000           0.000 
+
+DC Pin Currents:
+Ir                     0.000           0.000 
+
+Device Variables:
+tc1                    0.000           0.000 
+tc2                    0.000           0.000 
+
+
+
+Operating Point for Devices of Type Inductor
+============================================
+Instance:                  L1              L3              L2
+V                      0.000           0.000           0.000 
+Power DC Terms:
+PS                     0.000           0.000           0.000 
+
+DC Pin Currents:
+Il                    48.261m         -0.007f        -10.485n
+
+Device Variables:
+ic                     0.000           0.000           0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                  C3              C8              C5              C1
+V                    -10.696         -10.909           9.605           1.304 
+Power DC Terms:
+PS                     0.000           0.000           0.000           0.000 
+
+DC Pin Currents:
+Ic                     0.000           0.000           0.000           0.000 
+
+Device Variables:
+ic                     0.000           0.000           0.000           0.000 
+
+
+Instance:                  C4              C2              C6           X2.C1
+V                    185.529m        -12.000          12.000           0.000 
+Power DC Terms:
+PS                     0.000           0.000           0.000           0.000 
+
+DC Pin Currents:
+Ic                     0.000           0.000           0.000           0.000 
+
+Device Variables:
+ic                     0.000           0.000           0.000           0.000 
+
+
+
+Operating Point for Devices of Type Sine Source
+===============================================
+Instance:                  V2              V3              V4
+Using model:                5           U_MOD           U_MOD
+V                      0.000           0.000           0.000 
+Power DC Terms:
+PG                     0.000           0.000           0.000 
+
+DC Pin Currents:
+ISource                0.000           0.000           0.000 
+
+
+
+Operating Point for Devices of Type Dependent Source
+====================================================
+Instance:               X2.G
+V                     0.000 
+Power DC Terms:
+PG                    0.000 
+
+DC Pin Currents:
+ISource               0.000 
+
+
+
+Operating Point for Devices of Type Function Source
+===================================================
+Instance:                 E1          X2.VCO
+V                     1.000          14.000 
+Power DC Terms:
+PG                    0.000           0.000 
+
+DC Pin Currents:
+ISource               0.000           0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                 V1
+V                    12.000 
+Power DC Terms:
+PG                    7.125 
+
+DC Pin Currents:
+ISource            -593.715m
+
+
