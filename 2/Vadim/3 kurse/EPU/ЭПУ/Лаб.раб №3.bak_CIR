@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=255
-TXCnt=118
+NLCnt=88
+TXCnt=28
 
 [shapedef]
 Name=And.root
@@ -33,12 +33,6 @@ Line=26,0,48,0
 Current=32,8,16,8
 
 [shapedef]
-Name=Bigor.root
-Root="Or.root",0,16,0
-Arc=1,-12,11,12 , 6,12,6,-12
-Arc=1,36,11,60 , 6,60,6,36
-
-[shapedef]
 Name=DFF
 Rectangle=0,-8,64,56
 FColor=None
@@ -56,12 +50,6 @@ Line=8,24,0,32
 Line=64,0,72,0
 Line=32,60,32,72
 Line=32,-12,32,-24
-
-[shapedef]
-Name=Fixed
-Line=8,0,32,0
-Line=8,0,0,-8
-Line=8,0,0,8
 
 [shapedef]
 Name=Ground
@@ -84,28 +72,6 @@ Ellipse=40,-2,44,2
 FColor=None
 Line=44,0,47,0
 Line=46,0,48,0
-
-[shapedef]
-Name=Or.root
-Line=42,8,48,8
-Line=0,0,10,0
-Line=0,16,10,16
-Line=24,-4,6,-4
-Line=6,20,24,20
-Arc=5,-4,43,34 , 42,8,24,-4
-Arc=0,-4,12,20 , 6,20,6,-4
-Arc=5,-18,43,20 , 24,20,42,8
-
-[shapedef]
-Name=Or2
-Root="Or.root",0,0,0
-
-[shapedef]
-Name=Or5
-Root="Bigor.root",0,-8,0
-Line=0,16,12,16
-Line=0,0,10,0
-Line=0,32,10,32
 
 [shapedef]
 Name=Plus.root
@@ -216,7 +182,7 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
-Used=3
+Used=5
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -239,8 +205,8 @@ Pin="PinA",0,0,-3,-7
 Name=Pulse Source
 Definition=Pulse source
 Shape=Pulse_Source
-Mask=4865
-Used=8
+Mask=5377
+Used=13
 memo=Pulse Source
 Label Offset=18,13,15,9
 PinCnt=2
@@ -294,47 +260,6 @@ Pin="11",d,-2,13
 Pin="12",d,-2,11
 Pin="13",d,-2,9
 
-[compdef]
-Name=Or5
-Definition=OR
-Shape=Or5
-Mask=4096
-Data1=5
-memo=5 Input Generic OR Gate
-Label Offset=14,12,-1,13
-PinCnt=6
-Pin="In0",0,0,-9,-1
-Pin="In1",0,1,-19,4
-Pin="In2",0,2,-19,7
-Pin="In3",0,3,-19,10
-Pin="In4",0,4,-9,16
-Pin="Out",6,2,-4,-4
-
-[compdef]
-Name=Or2
-Definition=OR
-Shape=Or2
-Mask=4099
-Used=2
-Data1=2
-memo=2 Input Generic OR Gate
-Label Offset=15,4,7,10
-PinCnt=3
-Pin="In0",0,0,-6,-3
-Pin="In1",0,2,-6,-2
-Pin="Out",6,1,-7,-1
-
-[compdef]
-Name=Fixed Digital
-Definition=DIGITAL STATE
-Shape=Fixed
-Mask=3840
-Used=1
-memo=Provides a fixed digital state
-Label Offset=-14,-7,-6,-27
-PinCnt=1
-Pin="Out",4,0,-8,-3
-
 [TitleBlockDef]
 Name=DefaultOld
 Rectangle=-24,-25,232,76
@@ -354,7 +279,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=2,3, 0,452, -8,-31, 132,0,900,462
+Window Placement=0,1, 0,452, -8,-31, 178,5,946,467
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -421,7 +346,7 @@ Font=Calibri
 [Comp]
 Name=7474
 Style=ShowPinText
-Px=920,288
+Px=904,232
 
 [Attr]
 ON=68,8,PART
@@ -446,7 +371,7 @@ V=UX1
 [Comp]
 Name=7474
 Style=ShowPinText
-Px=784,288
+Px=768,232
 
 [Attr]
 ON=68,8,PART
@@ -471,7 +396,7 @@ V=UX1
 [Comp]
 Name=7474
 Style=ShowPinText
-Px=656,288
+Px=640,232
 
 [Attr]
 ON=68,8,PART
@@ -496,7 +421,7 @@ V=UX1
 [Comp]
 Name=7474
 Style=ShowPinText
-Px=504,288
+Px=488,232
 
 [Attr]
 ON=68,7,PART
@@ -519,14 +444,14 @@ ON=68,83,COMPNAME
 V=UX1
 
 [Wire]
-Pxs=728,336,744,336
+Pxs=712,280,728,280
 
 [Wire]
-Pxs=992,336,1016,336
+Pxs=976,280,1000,280
 
 [Comp]
 Name=Inverter
-Px=768,248
+Px=752,192
 Rot=4
 
 [Attr]
@@ -563,7 +488,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=768,376
+Px=752,320
 Rot=4
 
 [Attr]
@@ -600,7 +525,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=640,248
+Px=624,192
 Rot=4
 
 [Attr]
@@ -637,7 +562,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=488,248
+Px=472,192
 Rot=4
 
 [Attr]
@@ -674,7 +599,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=904,376
+Px=888,320
 Rot=4
 
 [Attr]
@@ -711,7 +636,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=904,248
+Px=888,192
 Rot=4
 
 [Attr]
@@ -748,7 +673,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=640,376
+Px=624,320
 Rot=4
 
 [Attr]
@@ -785,7 +710,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=488,376
+Px=472,320
 Rot=4
 
 [Attr]
@@ -821,7 +746,7 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=728,288,744,288
+Pxs=712,232,728,232
 
 [Comp]
 Name=Inverter
@@ -861,115 +786,85 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=688,248,688,264
+Pxs=672,192,672,208
 
 [Wire]
-Pxs=688,360,688,376
+Pxs=672,304,672,320
 
 [Wire]
-Pxs=816,360,816,376
+Pxs=800,304,800,320
 
 [Wire]
-Pxs=816,248,816,264
+Pxs=800,192,800,208
 
 [Wire]
-Pxs=952,248,952,264
+Pxs=936,192,936,208
 
 [Wire]
-Pxs=952,360,952,376
+Pxs=936,304,936,320
 
 [Wire]
-Pxs=536,360,536,376
+Pxs=520,304,520,320
 
 [Wire]
-Pxs=536,248,536,264
+Pxs=520,192,520,208
 
 [Wire]
-Pxs=992,288,1008,288
+Pxs=976,232,992,232
 
 [Wire]
-Pxs=856,288,864,288
+Pxs=840,232,848,232
 
 [Wire]
-Pxs=576,336,584,336
+Pxs=560,280,568,280
 
 [Wire]
-Pxs=1128,536,1136,536
+Pxs=560,232,568,232
 
 [Wire]
-Pxs=576,288,584,288
+Pxs=840,280,848,280
 
 [Wire]
-Pxs=856,336,864,336
+Pxs=448,192,464,192
 
 [Wire]
-Pxs=464,248,480,248
+Pxs=456,320,464,320
 
 [Wire]
-Pxs=472,376,480,376
+Pxs=608,192,624,192
 
 [Wire]
-Pxs=624,248,640,248
+Pxs=608,320,616,320
 
 [Wire]
-Pxs=624,376,632,376
+Pxs=736,192,752,192
 
 [Wire]
-Pxs=752,248,768,248
+Pxs=736,320,752,320
 
 [Wire]
-Pxs=752,376,768,376
+Pxs=872,192,880,192
 
 [Wire]
-Pxs=888,248,896,248
-
-[Wire]
-Pxs=896,376,904,376
+Pxs=880,320,888,320
 
 [Wire]
 Pxs=216,288,232,288
 
 [Wire]
-Pxs=1008,288,1016,288
+Pxs=992,232,1000,232
 
 [Wire]
-Pxs=480,248,488,248
+Pxs=464,192,472,192
 
 [Wire]
-Pxs=896,248,904,248
+Pxs=880,192,888,192
 
 [Wire]
-Pxs=632,376,640,376
+Pxs=616,320,624,320
 
 [Wire]
-Pxs=480,376,488,376
-
-[Wire]
-Pxs=1128,512,1136,512
-
-[Wire]
-Pxs=1136,520,1152,520
-
-[Wire]
-Pxs=1136,544,1152,544
-
-[Wire]
-Pxs=1128,664,1136,664
-
-[Wire]
-Pxs=1136,672,1144,672
-
-[Wire]
-Pxs=1216,528,1232,528
-
-[Wire]
-Pxs=1216,680,1224,680
-
-[Wire]
-Pxs=1232,528,1240,528
-
-[Wire]
-Pxs=1224,680,1232,680
+Pxs=464,320,472,320
 
 [Comp]
 Name=Ground
@@ -1003,40 +898,6 @@ Rot=1
 
 [Wire]
 Pxs=120,416,120,424
-
-[Comp]
-Name=Pulse Source
-Px=128,248
-Rot=3
-
-[Attr]
-ON=-29,-24,PART
-V=V9
-
-[Attr]
-ON=-22,-39,MODEL
-V=IMPULSE2
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Pulse Source
-Px=128,336
-Rot=3
-
-[Attr]
-ON=-29,-24,PART
-V=V10
-
-[Attr]
-ON=-22,-39,MODEL
-V=PULSE
-
-[Attr]
-ON=0,0,PACKAGE
-V
 
 [Comp]
 Name=Pulse Source
@@ -1263,28 +1124,10 @@ Pxs=280,1256,296,1256
 [Wire]
 Pxs=144,200,184,200
 
-[Wire]
-Pxs=1144,672,1168,672
-
-[Wire]
-Pxs=1136,664,1168,664
-
-[Wire]
-Pxs=1136,536,1168,536
-
-[Wire]
-Pxs=1152,520,1168,520
-
-[Wire]
-Pxs=1136,512,1168,512
-
-[Wire]
-Pxs=1152,544,1168,544
-
 [Comp]
 Name=7474
 Style=ShowPinText
-Px=344,296
+Px=328,240
 
 [Attr]
 ON=68,7,PART
@@ -1308,7 +1151,7 @@ V=UX1
 
 [Comp]
 Name=Inverter
-Px=328,256
+Px=312,200
 Rot=4
 
 [Attr]
@@ -1345,7 +1188,7 @@ V
 
 [Comp]
 Name=Inverter
-Px=328,384
+Px=312,328
 Rot=4
 
 [Attr]
@@ -1381,1307 +1224,124 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=376,368,376,384
+Pxs=360,312,360,328
 
 [Wire]
-Pxs=376,256,376,272
+Pxs=360,200,360,216
 
 [Wire]
-Pxs=416,344,424,344
+Pxs=400,288,408,288
 
 [Wire]
-Pxs=416,296,424,296
+Pxs=400,240,408,240
 
 [Wire]
-Pxs=304,256,320,256
+Pxs=288,200,304,200
 
 [Wire]
-Pxs=312,384,320,384
+Pxs=296,328,304,328
 
 [Wire]
-Pxs=320,256,328,256
+Pxs=304,200,312,200
 
 [Wire]
-Pxs=320,384,328,384
+Pxs=304,328,312,328
 
 [Comp]
-Name=Or5
-Px=1168,512
+Name=Pulse Source
+Color=#000000
+FColor=#000000
+Px=128,248
+Rot=5
 
 [Attr]
-ON=14,12,PART
-V=U46
+ON=15,-24,PART
+V=V1
+Color=#000000
+
+[Attr]
+ON=15,-37,MODEL
+V=PS
 Style=8192
+Height=-10
+Color=#000000
 
 [Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
+ON=0,0,COST
+V
+Color=#000000
 
 [Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
+ON=0,0,POWER
+V
+Color=#000000
+
+[Comp]
+Name=Pulse Source
+Px=88,240
+Rot=3
 
 [Attr]
-ON=14,57,MNTYMXDLY
-V=0
+ON=-29,-24,PART
+V=V16
 
 [Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
+ON=-22,-39,MODEL
+V=IMPULSE2
 
 [Attr]
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1136,528,1152,528
-
-[Wire]
-Pxs=1152,528,1168,528
-
 [Comp]
-Name=Or5
-Px=1168,664
+Name=Pulse Source
+Color=#000000
+FColor=#000000
+Px=128,336
+Rot=5
 
 [Attr]
-ON=14,12,PART
-V=U47
+ON=15,-24,PART
+V=V2
+Color=#000000
+
+[Attr]
+ON=15,-37,MODEL
+V=PG
 Style=8192
+Height=-10
+Color=#000000
 
 [Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
+ON=0,0,COST
 V
+Color=#000000
 
-[Wire]
-Pxs=1144,680,1168,680
-
-[Wire]
-Pxs=1144,688,1168,688
-
-[Wire]
-Pxs=1144,696,1168,696
+[Attr]
+ON=0,0,POWER
+V
+Color=#000000
 
 [Comp]
-Name=Or5
-Px=912,448
+Name=Pulse Source
+Px=72,336
+Rot=3
 
 [Attr]
-ON=14,12,PART
-V=U48
-Style=8192
+ON=-29,-24,PART
+V=V17
 
 [Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
+ON=-22,-39,MODEL
+V=PULSE
 
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Comp]
-Name=Or5
-Px=912,528
-
-[Attr]
-ON=14,12,PART
-V=U49
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=872,448,912,448
-
-[Comp]
-Name=Or2
-Px=976,504
-
-[Attr]
-ON=15,4,PART
-V=U50
-
-[Attr]
-ON=15,19,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=15,34,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=15,49,MNTYMXDLY
-V=0
-
-[Attr]
-ON=15,64,IO_LEVEL
-V=0
-
-[Attr]
-ON=15,79,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=15,94,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=960,464,976,464
-
-[Wire]
-Pxs=976,464,976,504
-
-[Wire]
-Pxs=976,520,976,544
-
-[Wire]
-Pxs=960,544,976,544
-
-[Wire]
-Pxs=1024,512,1032,512
-
-[Wire]
-Pxs=904,480,912,480
-
-[Wire]
-Pxs=896,472,912,472
-
-[Wire]
-Pxs=888,464,912,464
-
-[Wire]
-Pxs=880,456,912,456
-
-[Wire]
-Pxs=872,528,912,528
-
-[Wire]
-Pxs=904,560,912,560
-
-[Wire]
-Pxs=896,552,912,552
-
-[Wire]
-Pxs=896,544,912,544
-
-[Wire]
-Pxs=880,536,912,536
-
-[Comp]
-Name=Or5
-Px=912,624
-
-[Attr]
-ON=14,12,PART
-V=U51
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Or5
-Px=912,704
-
-[Attr]
-ON=14,12,PART
-V=U52
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=872,624,912,624
-
-[Comp]
-Name=Or2
-Px=976,680
-
-[Attr]
-ON=15,4,PART
-V=U53
-
-[Attr]
-ON=15,19,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=15,34,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=15,49,MNTYMXDLY
-V=0
-
-[Attr]
-ON=15,64,IO_LEVEL
-V=0
-
-[Attr]
-ON=15,79,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=15,94,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=960,640,976,640
-
-[Wire]
-Pxs=976,640,976,680
-
-[Wire]
-Pxs=976,696,976,720
-
-[Wire]
-Pxs=960,720,976,720
-
-[Wire]
-Pxs=1024,688,1032,688
-
-[Wire]
-Pxs=904,656,912,656
-
-[Wire]
-Pxs=896,648,912,648
-
-[Wire]
-Pxs=872,704,912,704
-
-[Wire]
-Pxs=904,736,912,736
-
-[Wire]
-Pxs=896,720,912,720
-
-[Wire]
-Pxs=880,712,912,712
-
-[Wire]
-Pxs=880,632,912,632
-
-[Wire]
-Pxs=888,640,912,640
-
-[Wire]
-Pxs=896,728,904,728
-
-[Wire]
-Pxs=904,728,912,728
-
-[Wire]
-Pxs=640,528,648,528
-
-[Wire]
-Pxs=640,504,648,504
-
-[Wire]
-Pxs=648,512,664,512
-
-[Wire]
-Pxs=648,536,664,536
-
-[Wire]
-Pxs=640,656,648,656
-
-[Wire]
-Pxs=648,664,656,664
-
-[Wire]
-Pxs=728,520,744,520
-
-[Wire]
-Pxs=728,672,736,672
-
-[Wire]
-Pxs=744,520,752,520
-
-[Wire]
-Pxs=736,672,744,672
-
-[Wire]
-Pxs=656,664,680,664
-
-[Wire]
-Pxs=648,648,680,648
-
-[Wire]
-Pxs=648,528,680,528
-
-[Wire]
-Pxs=664,512,680,512
-
-[Wire]
-Pxs=648,504,680,504
-
-[Wire]
-Pxs=664,536,680,536
-
-[Comp]
-Name=Or5
-Px=680,504
-
-[Attr]
-ON=14,12,PART
-V=U54
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=648,520,664,520
-
-[Wire]
-Pxs=664,520,680,520
-
-[Comp]
-Name=Or5
-Px=680,656
-
-[Attr]
-ON=14,12,PART
-V=U55
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=656,672,680,672
-
-[Wire]
-Pxs=656,680,680,680
-
-[Wire]
-Pxs=648,696,680,696
-
-[Wire]
-Pxs=416,536,432,536
-
-[Wire]
-Pxs=416,512,424,512
-
-[Wire]
-Pxs=424,520,440,520
-
-[Wire]
-Pxs=424,544,440,544
-
-[Wire]
-Pxs=416,664,456,664
-
-[Wire]
-Pxs=424,672,432,672
-
-[Wire]
-Pxs=504,528,520,528
-
-[Wire]
-Pxs=504,680,512,680
-
-[Wire]
-Pxs=520,528,528,528
-
-[Wire]
-Pxs=512,680,520,680
-
-[Wire]
-Pxs=432,672,456,672
-
-[Wire]
-Pxs=440,520,456,520
-
-[Wire]
-Pxs=424,512,456,512
-
-[Wire]
-Pxs=440,544,456,544
-
-[Comp]
-Name=Or5
-Px=456,512
-
-[Attr]
-ON=14,12,PART
-V=U56
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=424,528,440,528
-
-[Wire]
-Pxs=440,528,456,528
-
-[Comp]
-Name=Or5
-Px=456,664
-
-[Attr]
-ON=14,12,PART
-V=U57
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=432,680,456,680
-
-[Wire]
-Pxs=432,688,456,688
-
-[Wire]
-Pxs=432,696,456,696
-
-[Wire]
-Pxs=432,536,456,536
-
-[Comp]
-Name=Or5
-Px=208,464
-
-[Attr]
-ON=14,12,PART
-V=U58
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Or5
-Px=208,544
-
-[Attr]
-ON=14,12,PART
-V=U59
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=168,464,208,464
-
-[Comp]
-Name=Or2
-Px=272,520
-
-[Attr]
-ON=15,4,PART
-V=U60
-
-[Attr]
-ON=15,19,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=15,34,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=15,49,MNTYMXDLY
-V=0
-
-[Attr]
-ON=15,64,IO_LEVEL
-V=0
-
-[Attr]
-ON=15,79,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=15,94,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=256,480,272,480
-
-[Wire]
-Pxs=272,480,272,520
-
-[Wire]
-Pxs=272,536,272,560
-
-[Wire]
-Pxs=256,560,272,560
-
-[Wire]
-Pxs=320,528,328,528
-
-[Wire]
-Pxs=200,496,208,496
-
-[Wire]
-Pxs=192,488,208,488
-
-[Wire]
-Pxs=184,480,208,480
-
-[Wire]
-Pxs=176,472,208,472
-
-[Wire]
-Pxs=168,544,208,544
-
-[Wire]
-Pxs=200,576,208,576
-
-[Wire]
-Pxs=192,568,208,568
-
-[Wire]
-Pxs=192,560,208,560
-
-[Wire]
-Pxs=176,552,208,552
-
-[Comp]
-Name=Or5
-Px=208,640
-
-[Attr]
-ON=14,12,PART
-V=U61
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Or5
-Px=208,720
-
-[Attr]
-ON=14,12,PART
-V=U62
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=168,640,208,640
-
-[Comp]
-Name=Or2
-Px=272,696
-
-[Attr]
-ON=15,4,PART
-V=U63
-
-[Attr]
-ON=15,19,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=15,34,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=15,49,MNTYMXDLY
-V=0
-
-[Attr]
-ON=15,64,IO_LEVEL
-V=0
-
-[Attr]
-ON=15,79,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=15,94,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=256,656,272,656
-
-[Wire]
-Pxs=272,656,272,696
-
-[Wire]
-Pxs=272,712,272,736
-
-[Wire]
-Pxs=256,736,272,736
-
-[Wire]
-Pxs=320,704,328,704
-
-[Wire]
-Pxs=200,672,208,672
-
-[Wire]
-Pxs=192,664,208,664
-
-[Wire]
-Pxs=168,720,208,720
-
-[Wire]
-Pxs=176,648,208,648
-
-[Wire]
-Pxs=184,656,208,656
-
-[Comp]
-Name=Fixed Digital
-Px=136,720
-
-[Attr]
-ON=-14,-7,PART
-V=U64
-
-[Attr]
-ON=-6,-7,VALUE
-V=1
-Style=8192
-
-[Attr]
-ON=-14,23,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,38,IO_LEVEL
-V=0
-
-[Attr]
-ON=-14,53,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-14,68,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=200,752,208,752
-
-[Wire]
-Pxs=192,744,208,744
-
-[Wire]
-Pxs=184,736,208,736
-
-[Wire]
-Pxs=176,728,208,728
-
-[Wire]
-Pxs=1304,536,1312,536
-
-[Wire]
-Pxs=1304,512,1312,512
-
-[Wire]
-Pxs=1312,520,1328,520
-
-[Wire]
-Pxs=1312,544,1328,544
-
-[Wire]
-Pxs=1304,664,1312,664
-
-[Wire]
-Pxs=1312,672,1320,672
-
-[Wire]
-Pxs=1392,528,1408,528
-
-[Wire]
-Pxs=1392,680,1400,680
-
-[Wire]
-Pxs=1408,528,1416,528
-
-[Wire]
-Pxs=1400,680,1408,680
-
-[Wire]
-Pxs=1320,672,1344,672
-
-[Wire]
-Pxs=1312,664,1344,664
-
-[Wire]
-Pxs=1312,536,1344,536
-
-[Wire]
-Pxs=1328,520,1344,520
-
-[Wire]
-Pxs=1312,512,1344,512
-
-[Wire]
-Pxs=1328,544,1344,544
-
-[Comp]
-Name=Or5
-Px=1344,512
-
-[Attr]
-ON=14,12,PART
-V=U65
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=1312,528,1328,528
-
-[Comp]
-Name=Or5
-Px=1344,664
-
-[Attr]
-ON=14,12,PART
-V=U66
-Style=8192
-
-[Attr]
-ON=14,27,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=14,42,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,57,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,72,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,87,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=1320,680,1344,680
-
-[Wire]
-Pxs=1320,688,1344,688
-
-[Wire]
-Pxs=1320,696,1344,696
-
-[Wire]
-Pxs=1328,528,1344,528
-
-[Wire]
-Pxs=648,648,648,656
-
-[Wire]
-Pxs=680,648,680,656
-
-[Wire]
-Pxs=680,688,680,696
-
-[Comp]
-Name=Fixed Digital
-Px=384,664
-
-[Attr]
-ON=-14,-7,PART
-V=U67
-
-[Attr]
-ON=-6,-7,VALUE
-V=1
-Style=8192
-
-[Attr]
-ON=-14,23,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-14,38,IO_LEVEL
-V=0
-
-[Attr]
-ON=-14,53,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-14,68,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Grid Text]
-Text="q21"
-Px=432,536
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="S2"
-Px=1032,512
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
 
 [Grid Text]
 Text="gg1"
-Px=232,288
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=1144,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="gg1"
-Px=1136,664
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=1152,544
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=1136,536
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q51"
-Px=1152,520
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="ZZ"
-Px=1136,512
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="r1"
-Px=1224,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="s1"
-Px=1232,528
+Px=216,232
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2689,7 +1349,7 @@ CBorder=None
 
 [Grid Text]
 Text="g1"
-Px=472,296
+Px=456,240
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2697,7 +1357,7 @@ CBorder=None
 
 [Grid Text]
 Text="r4"
-Px=480,376
+Px=464,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2705,7 +1365,7 @@ CBorder=None
 
 [Grid Text]
 Text="r3"
-Px=632,376
+Px=616,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2713,7 +1373,7 @@ CBorder=None
 
 [Grid Text]
 Text="r2"
-Px=768,376
+Px=752,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2721,7 +1381,7 @@ CBorder=None
 
 [Grid Text]
 Text="r1"
-Px=896,376
+Px=880,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2729,7 +1389,7 @@ CBorder=None
 
 [Grid Text]
 Text="s1"
-Px=896,248
+Px=880,192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2737,7 +1397,7 @@ CBorder=None
 
 [Grid Text]
 Text="s2"
-Px=768,248
+Px=752,192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2745,7 +1405,7 @@ CBorder=None
 
 [Grid Text]
 Text="s3"
-Px=640,248
+Px=624,192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2753,7 +1413,7 @@ CBorder=None
 
 [Grid Text]
 Text="s4"
-Px=480,248
+Px=464,192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2761,7 +1421,7 @@ CBorder=None
 
 [Grid Text]
 Text="q11"
-Px=1016,336
+Px=1000,280
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2769,7 +1429,7 @@ CBorder=None
 
 [Grid Text]
 Text="q1"
-Px=1008,288
+Px=992,232
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2777,7 +1437,7 @@ CBorder=None
 
 [Grid Text]
 Text="q21"
-Px=864,336
+Px=848,280
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2785,7 +1445,7 @@ CBorder=None
 
 [Grid Text]
 Text="q2"
-Px=864,288
+Px=848,232
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2793,7 +1453,7 @@ CBorder=None
 
 [Grid Text]
 Text="q31"
-Px=744,336
+Px=728,280
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2801,7 +1461,7 @@ CBorder=None
 
 [Grid Text]
 Text="q3"
-Px=744,288
+Px=728,232
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2809,7 +1469,7 @@ CBorder=None
 
 [Grid Text]
 Text="q41"
-Px=584,336
+Px=568,280
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2817,7 +1477,7 @@ CBorder=None
 
 [Grid Text]
 Text="q4"
-Px=584,288
+Px=568,232
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2866,7 +1526,7 @@ CBorder=None
 
 [Grid Text]
 Text="g2"
-Px=312,304
+Px=296,248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2874,7 +1534,7 @@ CBorder=None
 
 [Grid Text]
 Text="r5"
-Px=320,384
+Px=304,328
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2882,7 +1542,7 @@ CBorder=None
 
 [Grid Text]
 Text="s5"
-Px=320,256
+Px=304,200
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2890,7 +1550,7 @@ CBorder=None
 
 [Grid Text]
 Text="q51"
-Px=424,344
+Px=408,288
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2898,647 +1558,7 @@ CBorder=None
 
 [Grid Text]
 Text="q5"
-Px=424,296
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=1152,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=1144,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q3"
-Px=1144,688
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q2"
-Px=1144,696
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q51"
-Px=880,456
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="SS"
-Px=872,448
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=904,480
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=888,464
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=896,472
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=880,536
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="GG"
-Px=872,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=904,560
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=896,544
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q3"
-Px=896,552
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="R2"
-Px=1032,688
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=880,632
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="gg1"
-Px=872,624
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=904,656
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=888,640
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=896,648
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=880,712
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="GG"
-Px=872,704
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=904,736
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=896,720
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q3"
-Px=904,728
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=656,664
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="gg1"
-Px=648,656
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=664,536
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=648,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=664,512
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="gg1"
-Px=648,504
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="r3"
-Px=736,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="s3"
-Px=744,520
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=664,520
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=656,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=656,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=648,696
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q51"
-Px=432,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=440,544
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q51"
-Px=440,520
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="gg1"
-Px=424,512
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="r4"
-Px=512,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="s4"
-Px=520,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=440,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=432,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=432,688
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=432,696
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="S5"
-Px=328,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=176,472
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="GG"
-Px=168,464
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=200,496
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=184,480
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q2"
-Px=192,488
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=176,552
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="GG"
-Px=168,544
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q1"
-Px=200,576
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=192,560
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=192,568
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="R5"
-Px=328,704
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=176,648
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="GG"
-Px=168,640
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=200,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=184,656
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=192,664
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=176,728
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=184,736
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=192,744
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=200,752
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q41"
-Px=1320,672
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q5"
-Px=1312,664
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=1328,544
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=1312,536
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q4"
-Px=1328,520
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q51"
-Px=1312,512
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="F2"
-Px=1400,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="F1"
-Px=1408,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=1328,528
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q31"
-Px=1320,680
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q21"
-Px=1320,688
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="q11"
-Px=1320,696
+Px=408,240
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3698,9 +1718,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,148
+SB 3=172,98
 Scale 3=1.3333333333333333
-Px=1101,448
+Px=605,405
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -3760,7 +1780,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=63,6
+SB 0=0,13
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -3800,6 +1820,15 @@ Text=*** 1ns Impulse Source
 Text=.MODEL IMPULSE PUL (P1=0.25u P2=0.25u P3=0.75u P4=0.75u P5=20u)
 Text=.MODEL IMPULSE4 PUL (P1=5.2u P2=5.2u P3=5.5u P4=5.5u P5=20u)
 Text=.MODEL IMPULSE5 PUL (P1=8.2u P2=8.2u P3=8.5u P4=8.5u P5=20u)
+Text=;**** Pasted from "D:\Uchoba\PE2-18\2\Vadim\3 kurse\EPU\›œ”\LR_03-1.CIR" Section="LR_03-1"
+Text=.MODEL PS PUL (VZERO=0
+Text=+ VONE=5 P1=600n P2=610n
+Text=+ P3=2500n P4=2510n P5=5u)
+Text=;**** Pasted from "D:\Uchoba\PE2-18\2\Vadim\3 kurse\EPU\›œ”\LR_03-1.CIR" Section="LR_03-1"
+Text=.MODEL PG PUL (VZERO=0
+Text=+ VONE=5 P1=000n P2=10n
+Text=+ P3=300n P4=310n P5=1u)
+Text=
 
 [InfoPage]
 InfoPage=True
