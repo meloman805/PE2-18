@@ -1,0 +1,230 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic AC of ÐÃÐ                             ***
+***                           21.12.2020 17:28:37                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=1e+006 (Mag, Degrees)
+==============================================
+Node             Voltage  Node             Voltage  Node             Voltage 
+VC                   0,0  VE                   0,0  3                    0,0 
+4                    0,0  5         19.59m,-132.61  6         906.66m,439.5u 
+7           396.78m,-133  8                    1,0  IN       906.66m,-57.24u 
+OUT         396.78m,-133 
+
+
+AC values for Diode (Mag, Degrees)
+==================================
+Instance:                    X1.D5                 X1.D3                 X1.D4
+
+Power AC Terms:
+PD                             0,0             157.43f,0             157.43f,0
+PS                             0,0                   0,0                   0,0
+
+AC Pin Currents:
+Id                             0,0          396.78f,-133            396.78f,47
+
+Device Variables:
+area                        1.000                 1.000                 1.000 
+ic                          0.000                 0.000                 0.000 
+
+
+Instance:                    X1.D1                 X1.D2
+
+Power AC Terms:
+PD                         0.01f,0               0.01f,0
+PS                             0,0                   0,0
+
+AC Pin Currents:
+Id                    2.9f,-133.02            2.9f,46.98
+
+Device Variables:
+area                        1.000                 1.000 
+ic                          0.000                 0.000 
+
+
+
+AC values for Bipolar Junction Transistors NPN (Mag, Degrees)
+=============================================================
+Instance:                    X1.Q1                 X1.Q2
+
+Power AC Terms:
+PG                  11.44u,-102.47          45.7u,-16.07
+PD                 8.63n,4.19E-020          5.19n,-0.14f
+PS                             0,0                   0,0
+
+AC Pin Currents:
+Ib                   28.83n,-179.1        17.31n,897.42m
+Ic                    51.9u,-179.1        51.93u,898.23m
+Ie                  51.93u,898.94m         51.95u,-179.1
+Is                             0,0                   0,0
+
+Device Variables:
+area                        1.000                 1.000 
+vbe                         0.000                 0.000 
+vce                         0.000                 0.000 
+
+
+
+AC values for Resistor (Mag, Degrees)
+=====================================
+Instance:                        R1                    R2                    R3
+
+Power AC Terms:
+PD                         56.46n,0    120.89u,-4.90E-020           1.09u,5.54f
+
+AC Pin Currents:
+Ir                    2.88u,-132.61          133.33u,-180          2.9u,-133.02
+
+Device Variables:
+tc1                          0.000                 0.000                 0.000 
+tc2                          0.000                 0.000                 0.000 
+
+
+Instance:                        R5                    R4                X1.Rc1
+
+Power AC Terms:
+PD                         12.45u,0                   0,0          12.37u,3.92f
+
+AC Pin Currents:
+Ir                  133.35u,555.94u                   0,0          37.4u,136.98
+
+Device Variables:
+tc1                          0.000                 0.000                 0.000 
+tc2                          0.000                 0.000                 0.000 
+
+
+Instance:                    X1.Rc2                X1.Re1                X1.Re2
+
+Power AC Terms:
+PD                         12.38u,0           8.34u,0.18f               8.35u,0
+
+AC Pin Currents:
+Ir                    37.42u,-42.98         51.93u,-179.1        51.95u,898.23m
+
+Device Variables:
+tc1                          0.000                 0.000                 0.000 
+tc2                          0.000                 0.000                 0.000 
+
+
+Instance:                     X1.Re                 X1.Rp                 X1.R2
+
+Power AC Terms:
+PD                          8.98n,0                   0,0          0.82f,-3.44f
+
+AC Pin Currents:
+Ir                  20.11n,-924.51m                   0,0           90.6p,47.27
+
+Device Variables:
+tc1                          0.000                 0.000                 0.000 
+tc2                          0.000                 0.000                 0.000 
+
+
+Instance:                    X1.Ro2             X1.ROUTAC
+
+Power AC Terms:
+PD                           6.3m,0        420.91p,-3.52f
+
+AC Pin Currents:
+Ir                      15.88m,-133          2.9u,-133.02
+
+Device Variables:
+tc1                          0.000                 0.000 
+tc2                          0.000                 0.000 
+
+
+
+AC values for Capacitor (Mag, Degrees)
+======================================
+Instance:                        C1                 X1.C1                 X1.Ce
+
+Power AC Terms:
+PS                        1.05n,-90            23.81u,-90           125.34f,-90
+
+AC Pin Currents:
+Ic                  133.35u,555.95u              36u,-133        280.63f,-90.92
+
+Device Variables:
+ic                           0.000                 0.000                 0.000 
+
+
+Instance:                     X1.C3
+
+Power AC Terms:
+PS                        29.7u,-90
+
+AC Pin Currents:
+Ic                       74.82u,-43
+
+Device Variables:
+ic                           0.000 
+
+
+
+AC values for SPICE Poly (Mag, Degrees)
+=======================================
+Instance:                    X1.I3                 X1.V2                 X1.V1
+
+Power AC Terms:
+PG                 203.65n,-179.98                   0,0               0.02f,0
+
+AC Pin Currents:
+ISource            513.08n,-133.02         74.86u,134.77            5.8f,46.98
+
+
+Instance:                    X1.I1                 X1.I2
+
+Power AC Terms:
+PG                     0.23f,48.19        677.85p,-89.73
+
+AC Pin Currents:
+ISource            25.32p,-924.51m            74.82u,-43
+
+
+
+AC values for SPICE Source (Mag, Degrees)
+=========================================
+Instance:                       V1                    V2                    V3
+
+Power AC Terms:
+PG                             0,0                   0,0                   0,0
+
+AC Pin Currents:
+ISource                        0,0                   0,0            396.78f,47
+
+
+Instance:                       V4                X1.IEE                X1.VS1
+
+Power AC Terms:
+PG                             0,0                   0,0                   0,0
+
+AC Pin Currents:
+ISource              31.63n,179.74                   0,0           90.6p,47.27
+
+
+Instance:                    X1.VC                 X1.VE                X1.VLP
+
+Power AC Terms:
+PG                             0,0                   0,0                   0,0
+
+AC Pin Currents:
+ISource                 396.78f,47          396.78f,-133          2.9f,-133.02
+
+
+Instance:                   X1.VLN                X1.VS2                    V6
+
+Power AC Terms:
+PG                             0,0                   0,0      133.35u,-555.94u
+
+AC Pin Currents:
+ISource                 2.9f,46.98          2.9u,-133.02          133.35u,-180
+
+
