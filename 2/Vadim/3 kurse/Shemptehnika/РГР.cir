@@ -229,13 +229,13 @@ Rot=3
 Page=3
 
 [Attr]
-ON=-22,-27,VALUE
-V=15
+ON=-23,-41,PART
+V=V1
 Style=8192
 
 [Attr]
-ON=-23,-41,PART
-V=V1
+ON=-22,-27,VALUE
+V=15
 Style=8192
 
 [Comp]
@@ -251,13 +251,13 @@ Rot=3
 Page=3
 
 [Attr]
-ON=-26,-27,VALUE
-V=-15
+ON=-23,-41,PART
+V=V2
 Style=8192
 
 [Attr]
-ON=-23,-41,PART
-V=V2
+ON=-26,-27,VALUE
+V=-15
 Style=8192
 
 [Comp]
@@ -599,7 +599,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.66666666666666663
+Scale=1
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -745,9 +745,8 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=55,121
 Scale 3=0.66666666666666663
-Px=263,635
+Px=769,123
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -807,7 +806,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=15,1
+SB 0=15,0
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1372,7 +1371,7 @@ CBorder=#000000
 w=0
 AliasID1=1
 Page="1"
-Pos=794.14517190296453,20.983459026170198,1317.8251629357649,26.784363177805798
+Pos=31964.398939133836,14.184999999999977,81622.412551077126,18.348045397225729
 Font=Height=-26,FStyle=0,Color=#000000,Name=Arial
 Format=3
 FormatY=3
@@ -1388,7 +1387,7 @@ CBorder=#000000
 w=0
 AliasID1=1
 Page="1"
-Pos=20000.000000000018,17.34232452594917,87134.992891366943,21.128625472887769
+Pos=794.14517190296453,20.983459026170198,1317.8251629357649,26.784363177805798
 Font=Height=-26,FStyle=0,Color=#000000,Name=Arial
 Format=3
 FormatY=3
@@ -1782,7 +1781,7 @@ Plt=1
 Page=1
 AliasID=2
 XExp=F
-YExp=17.342db
+YExp=14.185db
 XRng=1e+7,0.1
 YRng=30,-5
 Options=LINEARY
