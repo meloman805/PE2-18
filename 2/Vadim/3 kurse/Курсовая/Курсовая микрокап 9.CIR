@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=231
-TXCnt=39
+NLCnt=229
+TXCnt=37
 
 [shapedef]
 Name=a_dip8
@@ -327,7 +327,6 @@ Name=And2
 Definition=AND
 Shape=And2
 Mask=4867
-Used=6
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -341,7 +340,6 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
-Used=3
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -366,7 +364,6 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=3840
-Used=26
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -391,7 +388,6 @@ Name=Stim4
 Definition=STIM
 Shape=STIM4
 Mask=5120
-Used=1
 Data2=4
 memo=4-Bit Digital Stimulus
 Label Offset=4,25,19,16
@@ -406,7 +402,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=28
+Used=38
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -418,7 +414,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=281
+Used=284
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -429,7 +425,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=762
+Used=751
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -441,7 +437,7 @@ Name=ISource
 Definition=Isource
 Shape=ISource
 Mask=4608
-Used=1
+Used=2
 memo=Constant current source
 Label Offset=15,9,-30,13
 PinCnt=2
@@ -482,6 +478,7 @@ Name=AtoD8
 Definition=ADC
 Shape=ATOD08
 Mask=20480
+Used=5
 Data1=8
 memo=8-Bit AtoD Converter
 Label Offset=7,160,-173,4
@@ -506,7 +503,7 @@ Name=DClock
 Definition=Macro
 Shape=StimClock
 Mask=4096
-Used=2
+Used=5
 memo=Digital Clock Stimulus Macro
 Link=http://www.spectrum-soft.com/news/fall2003/dclock.shtm
 Label Offset=29,10,12,21
@@ -518,6 +515,7 @@ Name=INA118E_BB
 Definition=Subckt
 Shape=Opamp8_RG_In
 Mask=4224
+Used=2
 memo=Precision, Low Power Instrumentation Amplifier
 Label Offset=67,33,-10,55
 PinCnt=8
@@ -549,7 +547,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 0,0,870,332
+Window Placement=2,3, -1,-1, -8,-31, 263,349,1133,681
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -2118,7 +2116,7 @@ Page=3
 
 [Comp]
 Name=Resistor
-Px=840,832
+Px=1240,1216
 Rot=7
 
 [Attr]
@@ -2127,8 +2125,8 @@ V=Rin
 Style=8192
 
 [Attr]
-ON=11,23,RESISTANCE
-V=3
+ON=10,23,RESISTANCE
+V=10
 Style=8192
 
 [Attr]
@@ -2137,7 +2135,7 @@ V
 
 [Comp]
 Name=ISource
-Px=840,984
+Px=1240,1368
 Rot=2
 
 [Attr]
@@ -2156,13 +2154,13 @@ V
 
 [Comp]
 Name=Ground
-Px=840,984
+Px=1240,1368
 Rot=1
 
 [Comp]
 Name=AD8561_AD
 Style=ShowPinText
-Px=1064,784
+Px=1504,1128
 
 [Attr]
 ON=20,42,PART
@@ -2180,7 +2178,7 @@ V=DIP8
 [Comp]
 Name=AD8561_AD
 Style=ShowPinText
-Px=1064,952
+Px=1504,1296
 
 [Attr]
 ON=20,42,PART
@@ -2197,7 +2195,7 @@ V=DIP8
 
 [Comp]
 Name=And2
-Px=1160,880
+Px=1600,1224
 Rot=4
 
 [Attr]
@@ -2234,32 +2232,32 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1136,784,1160,784
+Pxs=1576,1128,1600,1128
 
 [Wire]
-Pxs=1160,784,1160,864
+Pxs=1600,1128,1600,1208
 
 [Wire]
-Pxs=1160,880,1160,952
+Pxs=1600,1224,1600,1296
 
 [Wire]
-Pxs=1136,952,1160,952
+Pxs=1576,1296,1600,1296
 
 [Comp]
 Name=Ground
-Px=1136,800
+Px=1576,1144
 Rot=4
 
 [Comp]
 Name=Ground
-Px=1136,968
+Px=1576,1312
 Rot=4
 
 [Comp]
 Name=Battery
-Px=1000,968
+Px=1440,1312
 Rot=4
-COff=7,1012,978,-118,47
+COff=7,1452,1322,-118,47
 
 [Attr]
 ON=19,23,PART
@@ -2268,7 +2266,7 @@ Style=8192
 
 [Attr]
 ON=12,10,VALUE
-V=0.246
+V=0.114
 Style=8192
 
 [Attr]
@@ -2277,9 +2275,9 @@ V
 
 [Comp]
 Name=Battery
-Px=1000,784
+Px=1440,1128
 Rot=4
-COff=7,1011,759,12,-47
+COff=7,1451,1103,12,-47
 
 [Attr]
 ON=16,-37,PART
@@ -2288,7 +2286,7 @@ Style=8192
 
 [Attr]
 ON=11,-25,VALUE
-V=0.738
+V=0.343
 Style=8192
 
 [Attr]
@@ -2297,27 +2295,27 @@ V
 
 [Comp]
 Name=Ground
-Px=1048,816
+Px=1488,1160
 Rot=1
 
 [Comp]
 Name=Ground
-Px=1000,784
+Px=1440,1128
 Rot=2
 
 [Comp]
 Name=Ground
-Px=1000,968
+Px=1440,1312
 Rot=2
 
 [Comp]
 Name=Ground
-Px=1048,984
+Px=1488,1328
 Rot=1
 
 [Comp]
 Name=Battery
-Px=1048,720
+Px=1488,1064
 Rot=7
 
 [Attr]
@@ -2336,9 +2334,9 @@ V
 
 [Comp]
 Name=Battery
-Px=1048,872
+Px=1488,1216
 Rot=7
-COff=7,1067,891,63,-104
+COff=7,1507,1235,63,-104
 
 [Attr]
 ON=15,4,PART
@@ -2356,31 +2354,31 @@ V
 
 [Comp]
 Name=Ground
-Px=1048,720
+Px=1488,1064
 Rot=3
 
 [Comp]
 Name=Ground
-Px=1048,872
+Px=1488,1216
 Rot=3
 
 [Wire]
-Pxs=520,872,536,872
+Pxs=488,872,504,872
 
 [Wire]
-Pxs=968,800,1048,800
+Pxs=1408,1144,1488,1144
 
 [Wire]
-Pxs=968,952,1048,952
+Pxs=1408,1296,1488,1296
 
 [Wire]
-Pxs=1048,920,1048,936
+Pxs=1488,1264,1488,1280
 
 [Comp]
 Name=Resistor
-Px=840,752
+Px=1240,1128
 Rot=1
-COff=7,849,778,-32,-7
+COff=7,1249,1154,-32,-7
 
 [Attr]
 ON=8,14,PART
@@ -2389,7 +2387,7 @@ Style=8192
 
 [Attr]
 ON=9,26,RESISTANCE
-V=9.1
+V=9.1k
 Style=8192
 
 [Attr]
@@ -2397,42 +2395,43 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=840,800,840,832
+Pxs=1240,1176,1240,1200
 
 [Comp]
 Name=Ground
-Px=840,744
+Px=1240,1104
 Rot=3
 
 [Wire]
-Pxs=840,744,840,752
+Pxs=1240,1104,1240,1128
 
 [Wire]
-Pxs=840,880,840,936
+Pxs=1240,1264,1240,1296
 
 [Wire]
-Pxs=360,816,448,816
+Pxs=328,816,416,816
 
 [Wire]
-Pxs=264,888,320,888
+Pxs=232,896,296,896
 
 [Comp]
 Name=Ground
-Px=328,848
+Px=296,848
 Rot=5
 
 [Wire]
-Pxs=328,848,360,848
+Pxs=296,848,328,848
 
 [Wire]
 Pxs=120,168,120,200
 
 [Wire]
-Pxs=968,800,968,920
+Pxs=1408,1144,1408,1264
 
 [Comp]
 Name=Voltage Source
-Px=320,840
+Enable=False
+Px=296,848
 Rot=7
 
 [Attr]
@@ -2466,7 +2465,7 @@ Style=256
 [Comp]
 Name=Battery
 Enable=False
-Px=264,848
+Px=232,848
 Rot=7
 
 [Attr]
@@ -2484,16 +2483,15 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=264,840,320,840
+Pxs=232,848,296,848
 
 [Wire]
-Pxs=360,928,448,928
+Pxs=328,928,416,928
 
 [Comp]
 Name=AtoD8
 Style=ShowPinText
-Enable=False
-Px=1440,768
+Px=808,800
 
 [Attr]
 ON=7,160,PART
@@ -2530,8 +2528,7 @@ V
 
 [Comp]
 Name=DClock
-Enable=False
-Px=1344,832
+Px=712,864
 
 [Attr]
 ON=26,-24,PART
@@ -2555,27 +2552,24 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1248,880,1424,880
-Enable=False
+Pxs=688,912,744,912
 
 [Comp]
 Name=Ground
-Enable=False
-Px=1472,984
+Px=840,1016
 Rot=7
 
 [Wire]
-Pxs=1472,744,1472,776
-Enable=False
+Pxs=840,744,840,808
 
 [Wire]
-Pxs=632,872,632,888
+Pxs=600,872,600,888
 
 [Comp]
 Name=Battery
-Px=632,1008
+Px=600,1008
 Rot=5
-COff=7,590,983,-118,47
+COff=7,558,983,-118,47
 
 [Attr]
 ON=-36,-38,PART
@@ -2584,7 +2578,7 @@ Style=8192
 
 [Attr]
 ON=-42,-25,VALUE
-V=1.125
+V=0.1659
 Style=8192
 
 [Attr]
@@ -2593,12 +2587,12 @@ V
 
 [Comp]
 Name=Ground
-Px=688,944
+Px=656,944
 Rot=7
 
 [Comp]
 Name=Resistor
-Px=608,896
+Px=576,896
 Rot=7
 
 [Attr]
@@ -2607,8 +2601,8 @@ V=R6
 Style=8192
 
 [Attr]
-ON=-37,25,RESISTANCE
-V=44k
+ON=-50,27,RESISTANCE
+V=1.4MEG
 Style=8192
 
 [Attr]
@@ -2616,60 +2610,60 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=632,936,632,960
+Pxs=600,936,600,960
 
 [Wire]
-Pxs=624,904,632,904
+Pxs=592,904,600,904
 
 [Wire]
-Pxs=624,896,624,904
+Pxs=592,896,592,904
 
 [Wire]
-Pxs=608,896,624,896
+Pxs=576,896,592,896
 
 [Wire]
-Pxs=624,920,632,920
+Pxs=592,920,600,920
 
 [Wire]
-Pxs=624,920,624,944
+Pxs=592,920,592,944
 
 [Wire]
-Pxs=608,944,624,944
+Pxs=576,944,592,944
 
 [Wire]
-Pxs=968,920,968,952
+Pxs=1408,1264,1408,1296
 
 [Comp]
 Name=Ground
-Px=632,1008
+Px=600,1008
 Rot=7
 
 [Wire]
-Pxs=320,888,360,888
+Pxs=296,896,328,896
 
 [Wire]
-Pxs=912,920,928,920
+Pxs=1352,1264,1368,1264
 
 [Comp]
 Name=Ground
-Px=504,848
+Px=472,848
 Rot=3
 
 [Wire]
-Pxs=360,896,360,928
+Pxs=328,896,328,928
 
 [Wire]
-Pxs=448,896,448,928
+Pxs=416,896,416,928
 
 [Wire]
-Pxs=360,816,360,848
+Pxs=328,816,328,848
 
 [Wire]
-Pxs=448,816,448,848
+Pxs=416,816,416,848
 
 [Comp]
 Name=Resistor
-Px=416,848
+Px=384,848
 Rot=7
 
 [Attr]
@@ -2679,7 +2673,7 @@ Style=8192
 
 [Attr]
 ON=-38,25,RESISTANCE
-V=43k
+V=470k
 Style=8192
 
 [Attr]
@@ -2687,29 +2681,29 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=416,848,440,848
+Pxs=384,848,408,848
 
 [Wire]
-Pxs=440,848,440,864
+Pxs=408,848,408,864
 
 [Wire]
-Pxs=440,864,448,864
+Pxs=408,864,416,864
 
 [Wire]
-Pxs=416,896,440,896
+Pxs=384,896,408,896
 
 [Wire]
-Pxs=440,880,440,896
+Pxs=408,880,408,896
 
 [Wire]
-Pxs=440,880,448,880
+Pxs=408,880,416,880
 
 [Wire]
-Pxs=552,872,632,872
+Pxs=520,872,600,872
 
 [Comp]
 Name=INA118E_BB
-Px=632,888
+Px=600,888
 
 [Attr]
 ON=67,32,PART
@@ -2726,7 +2720,7 @@ V=DIP8
 
 [Comp]
 Name=INA118E_BB
-Px=448,896
+Px=416,896
 Rot=4
 
 [Attr]
@@ -2743,7 +2737,7 @@ ON=67,-78,PACKAGE
 V=DIP8
 
 [Wire]
-Pxs=536,872,552,872
+Pxs=504,872,520,872
 
 [Wire]
 Pxs=488,240,488,272
@@ -2795,7 +2789,7 @@ Style=8192
 
 [Attr]
 ON=7,-39,RESISTANCE
-V=4.3k
+V=10k
 Style=8192
 
 [Attr]
@@ -2814,7 +2808,7 @@ Style=8192
 
 [Attr]
 ON=8,-41,RESISTANCE
-V=1.25k
+V=343
 Style=8192
 
 [Attr]
@@ -2845,117 +2839,120 @@ Rot=7
 Pxs=408,1256,464,1256
 
 [Wire]
-Pxs=1416,832,1424,832
-Enable=False
+Pxs=784,864,792,864
 
 [Wire]
-Pxs=928,920,968,920
+Pxs=1368,1264,1408,1264
 
 [Wire]
-Pxs=704,912,720,912
+Pxs=624,952,624,960
 
 [Wire]
-Pxs=656,952,656,960
+Pxs=656,936,656,944
 
 [Wire]
-Pxs=688,936,688,944
+Pxs=624,872,624,880
 
 [Wire]
-Pxs=656,872,656,880
+Pxs=744,912,792,912
 
 [Wire]
-Pxs=704,912,704,920
+Pxs=1240,1296,1240,1320
 
 [Wire]
-Pxs=320,840,328,840
+Pxs=1240,1200,1240,1216
 
-[Wire]
-Pxs=264,888,264,896
+[Comp]
+Name=Battery
+Px=840,696
+Rot=7
 
-[Wire]
-Pxs=264,840,264,848
+[Attr]
+ON=15,6,PART
+V=V19
+Style=8192
 
-[Wire]
-Pxs=360,888,360,896
+[Attr]
+ON=17,18,VALUE
+V=5
+Style=8192
 
-[Wire]
-Pxs=328,840,328,848
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=840,696
+Rot=3
 
 [Grid Text]
 Text="Out7"
-Px=1520,960
+Px=888,992
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out6"
-Px=1520,944
+Px=888,976
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out5"
-Px=1520,928
+Px=888,960
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out4"
-Px=1520,912
+Px=888,944
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out3"
-Px=1520,896
+Px=888,928
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out2"
-Px=1520,880
+Px=888,912
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out1"
-Px=1520,864
+Px=888,896
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Out0"
-Px=1520,848
+Px=888,880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Uout2"
-Px=928,920
+Px=1368,1264
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2963,7 +2960,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=656,880
+Px=624,880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2971,7 +2968,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=656,960
+Px=624,960
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2979,7 +2976,7 @@ CBorder=None
 
 [Grid Text]
 Text="Compare2"
-Px=1160,952
+Px=1600,1296
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2987,7 +2984,7 @@ CBorder=None
 
 [Grid Text]
 Text="Compare1"
-Px=1160,784
+Px=1600,1128
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2995,7 +2992,7 @@ CBorder=None
 
 [Grid Text]
 Text="Uout"
-Px=552,872
+Px=520,872
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3003,20 +3000,10 @@ CBorder=None
 
 [Grid Text]
 Text="Uout2"
-Px=1376,880
+Px=744,912
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
-CBorder=None
-
-[Grid Text]
-Text="Uref"
-Px=1472,760
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -3119,7 +3106,7 @@ CBorder=None
 
 [Grid Text]
 Text="Uref"
-Px=360,848
+Px=328,848
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3127,7 +3114,7 @@ CBorder=None
 
 [Grid Text]
 Text="Uin"
-Px=360,896
+Px=328,896
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3135,7 +3122,7 @@ CBorder=None
 
 [Grid Text]
 Text="d"
-Px=1208,872
+Px=1648,1216
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3150,13 +3137,11 @@ Px=512,1224
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Uin"
-Px=864,904
-Angle=358
+Px=1240,1296
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3164,7 +3149,7 @@ CBorder=None
 
 [Grid Text]
 Text="Uref"
-Px=864,816
+Px=1240,1200
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3172,7 +3157,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=472,912
+Px=440,912
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3180,7 +3165,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=472,832
+Px=440,832
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3195,14 +3180,7 @@ Px=816,1248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="Uout2"
-Px=704,920
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
+Enable=False
 CBorder=None
 
 [Grid Text]
@@ -3228,9 +3206,9 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1.3333333333333333
+Scale=1
 GridUser=10
-ShapeGroups="Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow","GOST"
+ShapeGroups="Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -3345,10 +3323,10 @@ TEXTINC=No
 TOGGLETEXT=No
 TOGGLEMODE=No
 TOLERANCE=No
-ALIGNLEFT=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
@@ -3374,9 +3352,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,205
-Scale 3=1.3333333333333333
-Px=228,1118
+SB 3=516,721
+Scale 3=1
+Px=1486,1435
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -3681,7 +3659,7 @@ PIE=No
 LEFTBRK=No
 RIGHTBRK=No
 BOTHBRK=No
-META=No
+META=Yes
 POLYCLOS=No
 SCALE=Yes
 CURSOR=Yes
@@ -3767,10 +3745,10 @@ TOGGLEMODE=No
 REMOVEALLTEXT=No
 AUTOSCALEX=No
 LABELALLMINOR=No
-ALIGNLEFT=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
 
 [APage]
 Analysis=Transient
@@ -3902,7 +3880,7 @@ PIE=No
 LEFTBRK=No
 RIGHTBRK=No
 BOTHBRK=No
-META=No
+META=Yes
 POLYCLOS=No
 SCALE=Yes
 CURSOR=Yes
@@ -3988,10 +3966,10 @@ TOGGLEMODE=No
 REMOVEALLTEXT=No
 AUTOSCALEX=No
 LABELALLMINOR=No
-ALIGNLEFT=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
 
 [APage]
 Analysis=AC
@@ -4097,7 +4075,7 @@ PIE=No
 LEFTBRK=No
 RIGHTBRK=No
 BOTHBRK=No
-META=No
+META=Yes
 POLYCLOS=No
 SCALE=Yes
 CURSOR=Yes
@@ -4183,10 +4161,10 @@ TOGGLEMODE=No
 REMOVEALLTEXT=No
 AUTOSCALEX=No
 LABELALLMINOR=No
-ALIGNLEFT=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
 
 [Monte Carlo Options]
 Analysis=Transient
@@ -4957,7 +4935,7 @@ TextPx=1288,112
 
 [Pane]
 Analysis=Transient
-CurrentPage 0="2"
+CurrentPage 0="4"
 
 [Pane]
 Analysis=AC
