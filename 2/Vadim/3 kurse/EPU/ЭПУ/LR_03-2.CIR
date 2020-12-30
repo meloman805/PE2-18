@@ -168,7 +168,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=281
+Used=291
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -339,7 +339,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=0,1, -1,-1, -8,-31, 0,37,1022,737
+Window Placement=2,3, -1,-1, -8,-31, 0,37,1022,737
 Default Object=Color=#000080
 Default Object Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Default Object Apply Border To Text=No
@@ -427,7 +427,7 @@ Rot=7
 Name=Arrow
 Color=#000000
 FColor=#000000
-Px=1656,80
+Px=1664,80
 
 [Attr]
 ON=-8,2,TEXT
@@ -710,7 +710,7 @@ Color=#000000
 Name=7404
 Color=#000000
 FColor=#000000
-Px=1872,528
+Px=2072,824
 
 [Attr]
 ON=20,10,PART
@@ -753,7 +753,7 @@ Color=#000000
 Name=7410
 Color=#000000
 FColor=#000000
-Px=1856,576
+Px=2056,872
 
 [Attr]
 ON=10,20,PART
@@ -796,7 +796,7 @@ Color=#000000
 Name=7413
 Color=#000000
 FColor=#000000
-Px=1856,672
+Px=2056,968
 
 [Attr]
 ON=13,29,PART
@@ -839,7 +839,7 @@ Color=#000000
 Name=7408
 Color=#000000
 FColor=#000000
-Px=1856,616
+Px=2056,912
 
 [Attr]
 ON=3,37,PART
@@ -3062,7 +3062,7 @@ Pxs=288,592,568,592
 
 [Comp]
 Name=Pulse Source
-Px=728,1232
+Px=712,1752
 Rot=3
 
 [Attr]
@@ -3080,7 +3080,7 @@ V
 
 [Comp]
 Name=Pulse Source
-Px=864,1240
+Px=848,1760
 Rot=3
 
 [Attr]
@@ -3098,12 +3098,12 @@ V
 
 [Comp]
 Name=Ground
-Px=728,1232
+Px=712,1752
 Rot=7
 
 [Comp]
 Name=And2
-Px=728,1168
+Px=712,1688
 Rot=3
 
 [Attr]
@@ -3140,11 +3140,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=728,1168,728,1184
+Pxs=712,1688,712,1704
 
 [Comp]
 Name=Fixed Digital
-Px=744,1184
+Px=728,1704
 Rot=5
 
 [Attr]
@@ -3178,12 +3178,12 @@ V
 
 [Comp]
 Name=Ground
-Px=864,1240
+Px=848,1760
 Rot=7
 
 [Comp]
 Name=And2
-Px=864,1168
+Px=848,1688
 Rot=3
 
 [Attr]
@@ -3221,7 +3221,7 @@ V
 
 [Comp]
 Name=Fixed Digital
-Px=880,1192
+Px=864,1712
 Rot=5
 
 [Attr]
@@ -3254,20 +3254,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=864,1168,864,1192
+Pxs=848,1688,848,1712
 
 [Wire]
-Pxs=880,1160,880,1168
+Pxs=864,1680,864,1688
 
 [Wire]
-Pxs=872,1120,872,1144
+Pxs=856,1640,856,1664
 
 [Wire]
-Pxs=744,1152,744,1168
+Pxs=728,1672,728,1688
 
 [Grid Text]
 Text="FF"
-Px=736,1120
+Px=720,1640
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3355,7 +3355,7 @@ CBorder=None
 
 [Grid Text]
 Text="FF"
-Px=1656,72
+Px=1664,72
 Height=-10
 FStyle=4
 Color=#000000
@@ -3399,7 +3399,7 @@ CBorder=None
 
 [Grid Text]
 Text="FF1"
-Px=1712,216
+Px=1720,224
 Height=-10
 FStyle=4
 Color=#000000
@@ -3421,7 +3421,7 @@ CBorder=None
 
 [Grid Text]
 Text="FF1"
-Px=872,1120
+Px=856,1640
 Height=-10
 FStyle=4
 Color=#000000
@@ -3438,7 +3438,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=4
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Main2","Electrolytic","GroundArrow"
 CalcRMS=False
@@ -3584,9 +3584,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=630,860
-Scale 3=1
-Px=959,1077
+SB 3=0,77
+Scale 3=4
+Px=791,1628
 WinBackGround Color=#FFFFFF
 Select Color=#008080
 Anchor Color=#000000
@@ -3631,6 +3631,7 @@ Type=Text
 Print=True
 Enable=True
 Name=Text
+SB 0=58,12
 Font=Height=-16,FStyle=0,Color=#FF0000,Name=Courier New
 Comment Color=#808080
 WinBackGround Color=#FFFFFF
@@ -3646,7 +3647,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=0,2
+SB 0=58,2
 Font=Height=-16,FStyle=0,Color=#FF0000,Name=Courier New
 Comment Color=#808080
 WinBackGround Color=#FFFFFF
@@ -3685,16 +3686,16 @@ Text=+  TSWHL3=3.310NS TSWHL4=3.310NS
 Text=+  TSWLH1=2.115NS TSWLH2=2.115NS
 Text=+  TSWLH3=2.115NS TSWLH4=2.115NS
 Text=+  DIGPOWER="DIGIFPWR")
-Text=.MODEL PS PUL (P1=4600n P2=4610n P3=5000n P4=5010n P5=15u)
+Text=.MODEL PS PUL (P1=4550n P2=4560n P3=4650n P4=4660n P5=15u)
 Text=.MODEL PG PUL (P1=510n P2=515n P3=800n P4=810n)
 
 [Text Area]
 Section=0
 Page=2
 Text=
-Text=.MODEL PZ PUL (P1=149n P2=165n P3=900n P4=1010n P5=15u)
-Text=.MODEL 22 PUL (P1=4500n P2=4510n P3=4800n P4=4850n P5=20u)
-Text=.MODEL 33 PUL (P1=8800n P2=8810n P3=9500n P4=9510n P5=15u)
+Text=.MODEL PZ PUL (P1=149n P2=165n P3=400n P4=401n P5=15u)
+Text=.MODEL 22 PUL (P1=3500n P2=3550n P3=3800n P4=3805n P5=20u)
+Text=.MODEL 33 PUL (P1=4800n P2=4810n P3=5500n P4=5510n P5=15u)
 Text=.MODEL 1 UGATE ()
 
 [InfoPage]
@@ -3935,7 +3936,7 @@ CBorder=None
 w=2
 AliasID1=2
 Page="1"
-Pos=8.5691489361702124e-006,3.5075757575757556,0,0
+Pos=3.5903426791277255e-006,3.4032258064516121,0,0
 Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Text="4"
 JustifyH=Left
@@ -3948,20 +3949,7 @@ CBorder=None
 w=2
 AliasID1=2
 Page="1"
-Pos=4.0822784810126581e-006,3.3139534883720936,0,0
-Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
-Text="4"
-JustifyH=Left
-JustifyV=Top
-
-[AObject]
-Analysis=Transient
-Object=Text
-CBorder=None
-w=2
-AliasID1=2
-Page="1"
-Pos=3.0949948927477019e-006,3.430693069306928,3522.73,4947.5900000000001
+Pos=2.5934579439252334e-006,3.3467741935483866,3522.73,4947.5900000000001
 Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Text="3"
 JustifyH=Left
@@ -3974,7 +3962,7 @@ CBorder=None
 w=2
 AliasID1=2
 Page="1"
-Pos=2.10929519918284e-006,3.430693069306928,2601.0100000000002,4947.5900000000001
+Pos=1.5965732087227413e-006,3.3467741935483866,2601.0100000000002,4947.5900000000001
 Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Text="2"
 JustifyH=Left
@@ -3987,7 +3975,7 @@ CBorder=None
 w=2
 AliasID1=2
 Page="1"
-Pos=1.1031664964249239e-006,3.3811881188118789,1679.29,4989.5200000000004
+Pos=6.2305295950155759e-007,3.2338709677419351,1679.29,4989.5200000000004
 Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Text="1"
 JustifyH=Left
@@ -4000,33 +3988,7 @@ CBorder=None
 w=2
 AliasID1=2
 Page="1"
-Pos=7.5957446808510634e-006,3.5606060606060588,0,0
-Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
-Text="3"
-JustifyH=Left
-JustifyV=Top
-
-[AObject]
-Analysis=Transient
-Object=Text
-CBorder=None
-w=2
-AliasID1=2
-Page="1"
-Pos=6.6063829787234041e-006,3.5606060606060588,0,0
-Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
-Text="2"
-JustifyH=Left
-JustifyV=Top
-
-[AObject]
-Analysis=Transient
-Object=Text
-CBorder=None
-w=2
-AliasID1=2
-Page="1"
-Pos=5.6010638297872337e-006,3.5606060606060588,0,0
+Pos=5.0856697819314633e-006,3.5725806451612896,0,0
 Font=Height=-37,FStyle=4,Color=#000000,Name=Arial
 Text="1"
 JustifyH=Left
@@ -4478,7 +4440,7 @@ IgnoreExprErrors=False
 
 [WaveForm]
 Analysis=Transient
-Plt=2
+Plt=3
 Page=1
 AliasID=1
 XExp=T
@@ -4507,7 +4469,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=1
+Plt=2
 Page=1
 AliasID=4
 XExp=T
@@ -4536,7 +4498,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=3
+Plt=1
 Page=1
 AliasID=2
 XExp=T

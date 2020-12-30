@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=285
+NLCnt=288
 TXCnt=116
 
 [shapedef]
@@ -210,6 +210,7 @@ Name=7474
 Definition=Subckt
 Shape=DFF
 Mask=20864
+Used=1
 memo=Dual D-Type Positive Edge Triggered Flip-Flops With  Preset And Clear
 Label Offset=68,8,12,1
 PinCnt=6
@@ -238,7 +239,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=278
+Used=291
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -249,7 +250,7 @@ Name=Pulse Source
 Definition=Pulse source
 Shape=Pulse_Source
 Mask=4865
-Used=8
+Used=16
 memo=Pulse Source
 Label Offset=18,13,15,9
 PinCnt=2
@@ -261,7 +262,7 @@ Name=And2
 Definition=AND
 Shape=And2
 Mask=4867
-Used=4
+Used=6
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -275,7 +276,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=28
+Used=30
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -338,7 +339,7 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=3840
-Used=1
+Used=26
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -385,7 +386,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=0,1, 0,452, -8,-31, 132,0,900,462
+Window Placement=2,3, 0,452, -8,-31, 132,0,900,462
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -1003,11 +1004,6 @@ Pxs=1264,528,1272,528
 [Wire]
 Pxs=1256,680,1264,680
 
-[Comp]
-Name=Ground
-Px=48,432
-Rot=1
-
 [Wire]
 Pxs=160,200,176,200
 
@@ -1052,7 +1048,7 @@ V
 
 [Comp]
 Name=Pulse Source
-Px=48,432
+Px=80,320
 Rot=3
 
 [Attr]
@@ -1178,7 +1174,7 @@ Px=264,1160
 Rot=1
 
 [Wire]
-Pxs=312,1104,328,1104
+Pxs=312,1104,320,1104
 
 [Comp]
 Name=K155KP5
@@ -2474,9 +2470,6 @@ Pxs=1424,528,1440,528
 Pxs=1424,680,1432,680
 
 [Wire]
-Pxs=1440,528,1448,528
-
-[Wire]
 Pxs=1432,680,1440,680
 
 [Wire]
@@ -3326,7 +3319,7 @@ V
 
 [Comp]
 Name=Animated Digital Switch
-Px=120,280
+Px=40,344
 
 [Attr]
 ON=14,24,PART
@@ -3369,30 +3362,30 @@ Px=104,312
 Rot=7
 
 [Comp]
-Name=Battery
-Px=80,320
-Rot=3
-
-[Attr]
-ON=-31,-28,PART
-V=V16
-Style=8192
-
-[Attr]
-ON=-17,-43,VALUE
-V=5
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
 Name=Ground
 Px=80,320
 Rot=7
 
 [Wire]
-Pxs=152,288,176,288
+Pxs=72,352,176,352
+
+[Wire]
+Pxs=320,1104,328,1104
+
+[Wire]
+Pxs=1440,528,1448,528
+
+[Wire]
+Pxs=48,392,48,432
+
+[Wire]
+Pxs=176,288,176,352
+
+[Wire]
+Pxs=104,264,104,288
+
+[Wire]
+Pxs=104,288,176,288
 
 [Grid Text]
 Text="q21"
@@ -3636,7 +3629,7 @@ CBorder=None
 
 [Grid Text]
 Text="F2"
-Px=320,1096
+Px=320,1104
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3644,7 +3637,7 @@ CBorder=None
 
 [Grid Text]
 Text="F1"
-Px=352,1240
+Px=328,1256
 Angle=64
 GridSnap=True
 JustifyH=Left
@@ -4277,7 +4270,7 @@ CBorder=None
 
 [Grid Text]
 Text="F2"
-Px=1432,680
+Px=1456,680
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4285,7 +4278,7 @@ CBorder=None
 
 [Grid Text]
 Text="F1"
-Px=1440,528
+Px=1472,520
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4331,7 +4324,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.5
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
@@ -4477,9 +4470,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,44
-Scale 3=1
-Px=291,864
+SB 3=0,158
+Scale 3=0.5
+Px=231,379
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -4539,7 +4532,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=63,6
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
