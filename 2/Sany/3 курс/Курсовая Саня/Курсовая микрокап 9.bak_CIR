@@ -4,7 +4,7 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=2048,1152
+Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
 NLCnt=224
@@ -297,6 +297,7 @@ Name=K155KP5
 Definition=Subckt
 Shape=K155KP5
 Mask=128
+Used=22
 memo=Селектор-мультиплексор данных на 8 каналов без стробирования
 Label Offset=0,146,-152,12
 PinCnt=12
@@ -317,7 +318,8 @@ Pin="13",d,-2,9
 Name=And2
 Definition=AND
 Shape=And2
-Mask=4867
+Mask=5123
+Used=59
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -331,6 +333,7 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
+Used=26
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -343,7 +346,7 @@ Name=Stim1
 Definition=STIM
 Shape=STIM1
 Mask=5123
-Used=1
+Used=6
 Data2=1
 memo=1-Bit Digital Stimulus
 Label Offset=-10,-6,13,20
@@ -354,7 +357,8 @@ Pin="Out0",9,0,-5,-3
 Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
-Mask=3840
+Mask=2048
+Used=117
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -365,6 +369,7 @@ Name=And3
 Definition=AND
 Shape=And3
 Mask=4096
+Used=9
 Data1=3
 memo=3 Input Generic AND Gate
 Label Offset=13,5,7,10
@@ -379,6 +384,7 @@ Name=Stim4
 Definition=STIM
 Shape=STIM4
 Mask=5120
+Used=13
 Data2=4
 memo=4-Bit Digital Stimulus
 Label Offset=4,25,19,16
@@ -393,7 +399,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=41
+Used=38
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -405,7 +411,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=291
+Used=315
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -415,8 +421,8 @@ Pin="PinA",0,0,-3,-7
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
-Mask=7937
-Used=756
+Mask=6401
+Used=788
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -445,7 +451,6 @@ Name=AtoD8
 Definition=ADC
 Shape=ATOD08
 Mask=20480
-Used=5
 Data1=8
 memo=8-Bit AtoD Converter
 Label Offset=7,160,-173,4
@@ -470,7 +475,7 @@ Name=DClock
 Definition=Macro
 Shape=StimClock
 Mask=4096
-Used=5
+Used=4
 memo=Digital Clock Stimulus Macro
 Link=http://www.spectrum-soft.com/news/fall2003/dclock.shtm
 Label Offset=29,10,12,21
@@ -482,7 +487,6 @@ Name=INA118E_BB
 Definition=Subckt
 Shape=Opamp8_RG_In
 Mask=4224
-Used=2
 memo=Precision, Low Power Instrumentation Amplifier
 Label Offset=67,33,-10,55
 PinCnt=8
@@ -526,7 +530,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 263,349,1133,681
+Window Placement=2,3, -1,-1, -9,-38, 0,0,1226,479
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -535,8 +539,7 @@ NodeVoltageFormat=2
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 26,26,1188,404
-Window Placement in AC Analysis=2,3, -1,-1, -8,-31, 182,182,1360,576
+Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 32,32,1696,592
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
@@ -2104,8 +2107,8 @@ V=Rin
 Style=8192
 
 [Attr]
-ON=11,23,RESISTANCE
-V=4.0K
+ON=10,23,RESISTANCE
+V=5K
 Style=8192
 
 [Attr]
@@ -2347,7 +2350,7 @@ Style=8192
 
 [Attr]
 ON=17,29,RESISTANCE
-V=36k
+V=5k
 Style=8192
 
 [Attr]
@@ -2465,7 +2468,7 @@ Style=8192
 
 [Attr]
 ON=-42,-25,VALUE
-V=0.85219
+V=2
 Style=8192
 
 [Attr]
@@ -2489,7 +2492,7 @@ Style=8192
 
 [Attr]
 ON=-51,27,RESISTANCE
-V=240k
+V=75k
 Style=8192
 
 [Attr]
@@ -2557,7 +2560,7 @@ Style=8192
 
 [Attr]
 ON=-38,26,RESISTANCE
-V=71k
+V=50k
 Style=8192
 
 [Attr]
@@ -3143,9 +3146,9 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.66666666666666663
+Scale=1
 GridUser=10
-ShapeGroups="Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
+ShapeGroups="Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow","GOST"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -3289,9 +3292,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=969,836
+SB 3=284,816
 Scale 3=0.66666666666666663
-Px=1283,1111
+Px=1019,1181
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -3478,7 +3481,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -8,-31, 26,26,1188,404
+Window Placement=2,3, -1,-1, -9,-38, 32,32,1696,592
 Font=Height=-32,FStyle=0,Color=#000000,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -3543,13 +3546,13 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=13
-MonPageWidth=66
-MonPlotWidth=21
-MonExprXWidth=142
-MonExprYWidth=260
-MonRangeXWidth=90
-MonRangeYWidth=90
+MonMaxShow=19
+MonPageWidth=81
+MonPlotWidth=25
+MonExprXWidth=159
+MonExprYWidth=339
+MonRangeXWidth=111
+MonRangeYWidth=111
 AnimateWait=None
 AnimateWaitTime=500
 AnimatePressAfter=0
@@ -3701,7 +3704,6 @@ Name="4"
 
 [AC]
 WinID=2
-Window Placement=2,3, -1,-1, -8,-31, 182,182,1360,576
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -3759,13 +3761,6 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=3
-MonPageWidth=66
-MonPlotWidth=21
-MonExprXWidth=142
-MonExprYWidth=260
-MonRangeXWidth=90
-MonRangeYWidth=90
 AnimateWait=None
 AnimateWaitTime=500
 AnimatePressAfter=0
