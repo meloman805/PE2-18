@@ -333,7 +333,7 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
-Used=26
+Used=28
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -1847,7 +1847,7 @@ V
 Pxs=544,464,800,464
 
 [Wire]
-Pxs=576,304,576,456
+Pxs=576,304,576,368
 
 [Wire]
 Pxs=576,456,800,456
@@ -1965,92 +1965,10 @@ V
 Pxs=728,184,768,184
 
 [Wire]
-Pxs=600,272,600,360
+Pxs=544,328,544,392
 
 [Wire]
-Pxs=544,328,544,368
-
-[Comp]
-Name=Inverter
-Px=600,360
-Rot=7
-
-[Attr]
-ON=-10,9,PART
-V=U36
-Style=8192
-
-[Attr]
-ON=-64,36,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=-54,51,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-18,66,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-18,81,IO_LEVEL
-V=0
-
-[Attr]
-ON=-71,96,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-70,111,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Inverter
-Px=544,368
-Rot=7
-
-[Attr]
-ON=-10,12,PART
-V=U37
-Style=8192
-
-[Attr]
-ON=-64,36,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=-54,51,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-18,66,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-18,81,IO_LEVEL
-V=0
-
-[Attr]
-ON=-71,96,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-70,111,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=544,416,544,464
-
-[Wire]
-Pxs=600,408,600,448
+Pxs=600,272,600,448
 
 [Comp]
 Name=Battery
@@ -2229,7 +2147,7 @@ Style=8192
 
 [Attr]
 ON=12,10,VALUE
-V=0.441
+V=2.22
 Style=8192
 
 [Attr]
@@ -2249,7 +2167,7 @@ Style=8192
 
 [Attr]
 ON=11,-25,VALUE
-V=0.842
+V=3.08
 Style=8192
 
 [Attr]
@@ -2350,7 +2268,7 @@ Style=8192
 
 [Attr]
 ON=17,29,RESISTANCE
-V=5k
+V=9k
 Style=8192
 
 [Attr]
@@ -2676,7 +2594,7 @@ Style=8192
 
 [Attr]
 ON=7,-39,RESISTANCE
-V=10k
+V=3k
 Style=8192
 
 [Attr]
@@ -2695,7 +2613,7 @@ Style=8192
 
 [Attr]
 ON=8,-41,RESISTANCE
-V=2055
+V=2k
 Style=8192
 
 [Attr]
@@ -2799,6 +2717,88 @@ Pxs=840,792,840,808
 
 [Wire]
 Pxs=1368,1264,1408,1264
+
+[Comp]
+Name=Inverter
+Px=576,368
+Rot=7
+
+[Attr]
+ON=-11,14,PART
+V=U37
+Style=8192
+
+[Attr]
+ON=-64,36,TIMING MODEL
+V=D0_GATE
+
+[Attr]
+ON=-54,51,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=-18,66,MNTYMXDLY
+V=0
+
+[Attr]
+ON=-18,81,IO_LEVEL
+V=0
+
+[Attr]
+ON=-71,96,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-70,111,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=576,416,576,456
+
+[Comp]
+Name=Inverter
+Px=544,392
+Rot=7
+
+[Attr]
+ON=-11,14,PART
+V=U73
+Style=8192
+
+[Attr]
+ON=-64,36,TIMING MODEL
+V=D0_GATE
+
+[Attr]
+ON=-54,51,I/O MODEL
+V=IO_STD
+
+[Attr]
+ON=-18,66,MNTYMXDLY
+V=0
+
+[Attr]
+ON=-18,81,IO_LEVEL
+V=0
+
+[Attr]
+ON=-71,96,POWER NODE
+V=$G_DPWR
+
+[Attr]
+ON=-70,111,GROUND NODE
+V=$G_DGND
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=544,440,544,464
 
 [Grid Text]
 Text="Õ21 "
@@ -3292,9 +3292,8 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=284,816
-Scale 3=0.66666666666666663
-Px=1019,1181
+Scale 3=1
+Px=299,428
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
