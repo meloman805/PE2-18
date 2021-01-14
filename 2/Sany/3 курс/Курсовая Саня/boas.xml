@@ -14,7 +14,7 @@
     <ExportPage4>True</ExportPage4>
     <LockPage1>True</LockPage1>
     <LockPage2>True</LockPage2>
-    <LockPage3>True</LockPage3>
+    <LockPage3>False</LockPage3>
     <LockPage4>True</LockPage4>
     <ExportSch>True</ExportSch>
     <LockDocs>False</LockDocs>
@@ -59,6 +59,7 @@
     </Position>
     <Position id="15">
       <Value>XS4</Value>
+      <Value>XS6</Value>
     </Position>
     <Position id="17">
       <Value>C5</Value>
@@ -140,6 +141,7 @@
     </Position>
     <Position id="53">
       <Value>R1</Value>
+      <Value>R2</Value>
       <Value>R14</Value>
     </Position>
     <Position id="55">
@@ -181,7 +183,7 @@
     <peline num="1" oboz="DD7" name="74HC40510" comment="" underline="False" type="None" />
     <peline num="" oboz="" name="" comment="" underline="False" type="None" />
     <peline num="" oboz="" name="Резисторы" comment="" underline="False" type="ElementGroup" />
-    <peline num="1" oboz="R1" name="0.125Вт 0805 51 кОм, 5%, Чип резистор (SMD)" comment="" underline="False" type="None" />
+    <peline num="2" oboz="R1, R2" name="0.125Вт 0805 51 кОм, 5%, Чип резистор (SMD)" comment="" underline="False" type="None" />
     <peline num="1" oboz="R10" name="0.125Вт 0805 15Ом, 5%, Чип резистор (SMD)" comment="" underline="False" type="None" />
     <peline num="1" oboz="R11" name="0.125Вт 0805 82Ом, 5%, Чип резистор (SMD)" comment="" underline="False" type="None" />
     <peline num="1" oboz="R12" name="0.125Вт 0805 200 кОм, 5%, Чип резистор (SMD)" comment="" underline="False" type="None" />
@@ -202,6 +204,7 @@
     <peline num="1" oboz="XS3" name="XS 3Pin (A)" comment="" underline="False" type="None" />
     <peline num="1" oboz="XS4" name="XS Датчик" comment="" underline="False" type="None" />
     <peline num="1" oboz="XS5" name="XS 2Pin_1" comment="" underline="False" type="None" />
+    <peline num="1" oboz="XS6" name="XS Датчик" comment="" underline="False" type="None" />
   </pelines>
   <vplines>
     <vpline num="8" oboz="" name="ECAP SMD, 1 мкФ, 50В, Конденсатор электролитический " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
@@ -216,7 +219,7 @@
     <vpline num="1" oboz="" name="XS 2Pin (D)" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="1" oboz="" name="XS 2Pin_1" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="1" oboz="" name="XS 3Pin (A)" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
-    <vpline num="1" oboz="" name="XS Датчик" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
+    <vpline num="2" oboz="" name="XS Датчик" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="Конденсаторы" comment="" underline="False" type="ElementGroup" merge="False" vhodit="" post="" />
     <vpline num="18" oboz="" name="Кер.ЧИП конд. 0.1 мкФ " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
@@ -254,7 +257,7 @@
     <vpline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="Резисторы" comment="" underline="False" type="ElementGroup" merge="False" vhodit="" post="" />
-    <vpline num="2" oboz="" name="0.125Вт 0805 51 кОм, 5%, " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
+    <vpline num="3" oboz="" name="0.125Вт 0805 51 кОм, 5%, " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="Чип резистор (SMD) " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="1" oboz="" name="0.125Вт 0805 160 кОм, 5%, " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
     <vpline num="" oboz="" name="Чип резистор (SMD) " comment="" underline="False" type="None" merge="False" vhodit="" post="" />
@@ -264,13 +267,13 @@
   <speclines>
     <specline num="" oboz="" name="Документация" comment="" underline="True" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="РАЗВОДКА" name="Сборочный чертеж" comment="*)А2, А1" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="*)" pos="" posinelement="0" />
+    <specline num="" oboz="РАЗВОДКА" name="Сборочный чертеж" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="Схема электрическая" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А1" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="Перечень элементов" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А4" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="" name="Ведомость покупных" comment="*)А4, А3" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="*)" pos="" posinelement="0" />
+    <specline num="" oboz="" name="Ведомость покупных" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="изделий" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="Детали" comment="" underline="True" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
@@ -292,7 +295,8 @@
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="1" oboz="" name="Гнездо XS 3Pin (A)" comment="XS3" underline="False" type="None" merge="False" needtu="True" GroupLine1="Гнезда" GroupLine2="" format="" pos="13" posinelement="1" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="1" oboz="" name="Гнездо XS Датчик" comment="XS4" underline="False" type="None" merge="False" needtu="True" GroupLine1="Гнезда" GroupLine2="" format="" pos="15" posinelement="1" />
+    <specline num="2" oboz="" name="Гнездо XS Датчик" comment="XS4, " underline="False" type="None" merge="False" needtu="True" GroupLine1="Гнезда" GroupLine2="" format="" pos="15" posinelement="1" />
+    <specline num="" oboz="" name="" comment="XS6" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="18" oboz="" name="Конденсатор Кер.ЧИП конд. " comment="C5-C11, " underline="False" type="None" merge="False" needtu="True" GroupLine1="Конденсаторы" GroupLine2="" format="" pos="17" posinelement="1" />
     <specline num="" oboz="" name="0.1 мкФ X7R 50В 10% 0805 " comment="C13-C18, C21-C24," underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
@@ -315,7 +319,6 @@
     <specline num="1" oboz="" name="Микросхема INA118E_BB_1" comment="DA5" underline="False" type="None" merge="False" needtu="True" GroupLine1="Микросхемы" GroupLine2="" format="" pos="31" posinelement="1" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="1" oboz="" name="Микросхема И №1 (4 компонента)" comment="DD1" underline="False" type="None" merge="False" needtu="True" GroupLine1="Микросхемы" GroupLine2="" format="" pos="33" posinelement="1" />
-    <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="1" oboz="" name="Микросхема И №2 (2 компонента)" comment="DD4" underline="False" type="None" merge="False" needtu="True" GroupLine1="Микросхемы" GroupLine2="" format="" pos="35" posinelement="1" />
     <specline num="1" oboz="" name="Микросхема НЕ №3 (4 компонента)" comment="DD2" underline="False" type="None" merge="False" needtu="True" GroupLine1="Микросхемы" GroupLine2="" format="" pos="37" posinelement="1" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
@@ -340,7 +343,7 @@
     <specline num="4" oboz="" name="Резистор 0.125Вт 0805 5кОм, " comment="R19-R22" underline="False" type="None" merge="False" needtu="True" GroupLine1="Резисторы" GroupLine2="" format="" pos="51" posinelement="1" />
     <specline num="" oboz="" name="5%, Чип резистор (SMD) " comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="2" oboz="" name="Резистор 0.125Вт 0805 51 кОм, " comment="R1, " underline="False" type="None" merge="False" needtu="True" GroupLine1="Резисторы" GroupLine2="" format="" pos="53" posinelement="1" />
+    <specline num="3" oboz="" name="Резистор 0.125Вт 0805 51 кОм, " comment="R1, R2, " underline="False" type="None" merge="False" needtu="True" GroupLine1="Резисторы" GroupLine2="" format="" pos="53" posinelement="1" />
     <specline num="" oboz="" name="5%, Чип резистор (SMD) " comment="R14" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="1" oboz="" name="Резистор 0.125Вт 0805 160 кОм, " comment="R13" underline="False" type="None" merge="False" needtu="True" GroupLine1="Резисторы" GroupLine2="" format="" pos="55" posinelement="1" />
