@@ -1,0 +1,63 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient Analysis of ка4                         ***
+***                            23.01.2021 2:41:56                            ***
+********************************************************************************
+Limits
+======
+Time Range               55u
+Maximum Time Step        1E-7
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type UDAC
+=========================================
+Instance:            U2   
+TSWMN            1.000n   
+TSWMX            2.000n   
+TSWTY            1.000n   
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage 
+OUT1          0.000   10           15.000  
+
+DC Operating Point Digital States
+=================================
+Node     State Node     State Node     State Node     State Node     State
+B7       0     B6       0     B5       0     B4       0     B3       0    
+B2       0     B1       0     B0       0    
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1
+V                  15.000 
+Power DC Terms:
+PG                  0.000 
+
+DC Pin Currents:
+ISource             0.000 
+
+

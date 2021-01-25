@@ -1,0 +1,176 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient Analysis of ка5                         ***
+***                            24.01.2021 1:30:41                            ***
+********************************************************************************
+Limits
+======
+Time Range               55u
+Maximum Time Step        1E-7
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type Resistor
+=============================================
+Instance:              RS              RL   
+Using model:          RM1             RM1   
+CP              UNDEFINED(*)    UNDEFINED(*)
+LS              UNDEFINED(*)    UNDEFINED(*)
+NM                 1.000 (*)       1.000 (*)
+R                  1.000           1.000    
+T_ABS           UNDEFINED(*)    UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)    UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)    UNDEFINED(*)
+TC1                0.000 (*)       0.000 (*)
+TC2                0.000 (*)       0.000 (*)
+TCE                0.000 (*)       0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Capacitor
+==============================================
+Instance:              C1              C2   
+Using model:          CM1             CM1   
+C                  1.000           1.000    
+LS              UNDEFINED(*)    UNDEFINED(*)
+RP              UNDEFINED(*)    UNDEFINED(*)
+RS              UNDEFINED(*)    UNDEFINED(*)
+T_ABS           UNDEFINED(*)    UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)    UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)    UNDEFINED(*)
+TC1                0.000 (*)       0.000 (*)
+TC2                0.000 (*)       0.000 (*)
+VC1                0.000 (*)       0.000 (*)
+VC2                0.000 (*)       0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Inductor
+=============================================
+Instance:              L1              L2   
+Using model:          IM1             IM1   
+CP              UNDEFINED(*)    UNDEFINED(*)
+IL1                0.000 (*)       0.000 (*)
+IL2                0.000 (*)       0.000 (*)
+L                  1.000           1.000    
+RS              UNDEFINED(*)    UNDEFINED(*)
+T_ABS           UNDEFINED(*)    UNDEFINED(*)
+T_MEASURED      UNDEFINED(*)    UNDEFINED(*)
+T_REL_GLOBAL    UNDEFINED(*)    UNDEFINED(*)
+T_REL_LOCAL     UNDEFINED(*)    UNDEFINED(*)
+TC1                0.000 (*)       0.000 (*)
+TC2                0.000 (*)       0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type UDAC
+=========================================
+Instance:              U1   
+TSWMN             10.000n(*)
+TSWMX             10.000n(*)
+TSWTY             10.000n(*)
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1             7.031   2             7.031   OUT_LP        7.031  
+OUT2         14.063   5            15.000  
+
+DC Operating Point Inductor Current
+===================================
+Inductor     Current  Inductor     Current 
+L1          140.625m  L2          140.625m 
+
+DC Operating Point Digital States
+=================================
+Node     State Node     State Node     State Node     State
+B3       1     B2       1     B1       1     B0       1    
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                  RS              RL
+Using model:              RM1             RM1
+V                     -7.031          -7.031 
+Power DC Terms:
+PD                   988.770m        988.770m
+
+DC Pin Currents:
+Ir                  -140.625m       -140.625m
+
+Device Variables:
+tc1                    0.000           0.000 
+tc2                    0.000           0.000 
+
+
+
+Operating Point for Devices of Type Inductor
+============================================
+Instance:                  L1              L2
+Using model:              IM1             IM1
+V                      0.000           0.000 
+Power DC Terms:
+PS                     0.000           0.000 
+
+DC Pin Currents:
+Il                   140.625m        140.625m
+
+Device Variables:
+ic                     0.000           0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                  C1              C2
+Using model:              CM1             CM1
+V                      7.031           7.031 
+Power DC Terms:
+PS                     0.000           0.000 
+
+DC Pin Currents:
+Ic                     0.000           0.000 
+
+Device Variables:
+ic                     0.000           0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                 V3
+V                    15.000 
+Power DC Terms:
+PG                    0.000 
+
+DC Pin Currents:
+ISource               0.000 
+
+

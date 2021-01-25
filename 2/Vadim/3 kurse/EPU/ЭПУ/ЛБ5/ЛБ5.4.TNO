@@ -1,0 +1,106 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient Analysis of ка5                         ***
+***                            24.01.2021 2:31:54                            ***
+********************************************************************************
+Limits
+======
+Time Range               20u
+Maximum Time Step        1E-8
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type Pulse
+==========================================
+Instance:             V2   
+Using model:    TRIANGLE   
+P1                0.000    
+P2                5.000u   
+P3                5.000u   
+P4               10.000u   
+P5               10.000u   
+VONE             20.000    
+VZERO            -5.000    
+
+
+
+Model parameters for devices of type UADC
+=========================================
+Instance:             U3   
+TPCSMN            1.000n   
+TPCSMX            2.000n   
+TPCSTY            2.000n   
+TPDSMN            0.000    
+TPDSMX            0.000    
+TPDSTY            0.000    
+TPSDMN            0.000    
+TPSDMX            0.000    
+TPSDTY            0.000    
+
+
+
+Model parameters for devices of type UDAC
+=========================================
+Instance:             U2   
+TSWMN             1.000n   
+TSWMX             2.000n   
+TSWTY             1.000n   
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+OUT1          7.471   2            15.000   IN           -5.000  
+
+DC Operating Point Digital States
+=================================
+Node       State Node       State Node       State Node       State
+B7         X     B6         X     B5         X     B4         X    
+B3         X     B2         X     B1         X     B0         X    
+CONVERT    0     STATUS     0     OVER-RANGE X    
+
+
+Operating Point for Devices of Type Pulse
+=========================================
+Instance:                 V2
+Using model:        TRIANGLE
+V                    -5.000 
+Power DC Terms:
+PG                    0.000 
+
+DC Pin Currents:
+ISource               0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                V1
+V                   15.000 
+Power DC Terms:
+PG                   0.000 
+
+DC Pin Currents:
+ISource              0.000 
+
+
