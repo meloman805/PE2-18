@@ -4,10 +4,10 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1920,1080
+Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=58
+NLCnt=56
 TXCnt=1
 
 [shapedef]
@@ -118,69 +118,12 @@ Line=7,5,7,9
 Root="Plus.root",41,7,0
 Current=32,16,16,16
 
-[shapedef]
-Name=R_gost
-Current=32,8,16,8
-Rectangle=14,-4,34,4
-FColor=None
-Line=0,0,14,0
-Line=34,0,48,0
-
-[shapedef]
-Name=C_gost
-Line=0,0,22,0
-Line=22,-8,22,8
-Line=25,-8,25,8
-Line=25,0,48,0
-Current=32,12,16,12
-
-[shapedef]
-Name=VT_NPN_gost
-Line=24,-24,24,-11
-Line=24,24,24,11
-Line=0,0,15,0
-Line=15,-9,15,9
-Line=24,-11,15,-6
-Line=24,11,15,6
-Line=24,11,20,7
-Line=19,10,24,11
-Current=32,24,32,16
-Current=0,-8,8,-8
-Current=32,-24,32,-16
-
-[shapedef]
-Name=L_gost
-Current=31,8,15,8
-Arc=5,-6,15,5 , 19,0,3,0
-Ellipse=44,-6,47,-3
-Line=48,0,42,0
-Line=5,0,0,0
-Arc=14,-6,24,5 , 28,0,12,0
-Arc=23,-6,33,5 , 37,0,21,0
-Arc=32,-6,42,5 , 46,0,30,0
-
-[shapedef]
-Name=E_gost
-Line=0,0,12,0
-Line=36,0,48,0
-Current=32,16,16,16
-Ellipse=12,-12,36,12
-FColor=None
-Line=16,0,32,0
-Line=32,0,24,-2
-Line=32,0,24,2
-
-[shapedef]
-Name=Ground_GOST
-Line=1,0,13,0
-Line=13,-8,13,8
-
 [compdef]
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
-Mask=6401
-Used=788
+Mask=7937
+Used=755
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -192,7 +135,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4864
-Used=24
+Used=12
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -204,7 +147,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=313
+Used=284
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -214,8 +157,8 @@ Pin="PinA",0,0,-3,-7
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=7937
-Used=384
+Mask=7681
+Used=362
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -227,7 +170,7 @@ Name=NPN
 Definition=NPN
 Shape=NPN
 Mask=4097
-Used=111
+Used=107
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -251,8 +194,8 @@ Pin="Minus",0,0,-10,-5
 Name=Inductor
 Definition=Inductor
 Shape=Inductor
-Mask=6401
-Used=56
+Mask=7681
+Used=43
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -260,7 +203,7 @@ Pin="Plus",6,0,-5,-9
 Pin="Minus",0,0,-3,-9
 
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 0,0,1290,592
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1290,592
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -287,7 +230,7 @@ Show Grid Text=True
 
 [Comp]
 Name=Resistor
-Px=704,280
+Px=760,256
 Rot=1
 
 [Attr]
@@ -306,7 +249,7 @@ V
 
 [Comp]
 Name=Voltage Source
-Px=704,408
+Px=760,384
 Rot=3
 
 [Attr]
@@ -334,18 +277,18 @@ Style=256
 
 [Comp]
 Name=Ground
-Px=704,408
+Px=760,384
 Rot=7
 
 [Wire]
-Pxs=704,192,704,272
+Pxs=760,184,760,248
 
 [Wire]
-Pxs=704,328,704,344
+Pxs=760,304,760,320
 
 [Comp]
 Name=Capacitor
-Px=648,272
+Px=704,248
 Rot=7
 
 [Attr]
@@ -363,26 +306,26 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=648,272,704,272
+Pxs=704,248,760,248
 
 [Wire]
-Pxs=704,272,704,280
+Pxs=760,248,760,256
 
 [Wire]
-Pxs=648,320,680,320
+Pxs=704,296,736,296
 
 [Wire]
-Pxs=680,320,680,344
+Pxs=736,296,736,320
 
 [Wire]
-Pxs=680,344,704,344
+Pxs=736,320,760,320
 
 [Wire]
-Pxs=704,344,704,360
+Pxs=760,320,760,336
 
 [Comp]
 Name=NPN
-Px=840,264
+Px=840,248
 
 [Attr]
 ON=37,-17,PART
@@ -398,14 +341,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=704,272,840,272
-
-[Wire]
-Pxs=840,264,840,272
+Pxs=760,248,840,248
 
 [Comp]
 Name=Resistor
-Px=864,288
+Px=864,272
 Rot=1
 
 [Attr]
@@ -424,7 +364,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=864,376
+Px=864,360
 Rot=1
 
 [Attr]
@@ -443,7 +383,7 @@ V
 
 [Comp]
 Name=Capacitor
-Px=920,384
+Px=920,368
 Rot=7
 
 [Attr]
@@ -461,34 +401,34 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=864,336,864,344
+Pxs=864,320,864,328
 
 [Wire]
-Pxs=920,360,920,384
+Pxs=920,344,920,368
 
 [Wire]
-Pxs=864,360,920,360
+Pxs=864,344,920,344
 
 [Wire]
-Pxs=864,360,864,376
+Pxs=864,344,864,360
 
 [Wire]
-Pxs=864,424,864,432
+Pxs=864,408,864,416
 
 [Wire]
-Pxs=864,432,920,432
+Pxs=864,416,920,416
 
 [Wire]
-Pxs=864,432,864,456
+Pxs=864,416,864,440
 
 [Comp]
 Name=Ground
-Px=864,456
+Px=864,440
 Rot=7
 
 [Comp]
 Name=Capacitor
-Px=952,344
+Px=952,328
 Rot=4
 
 [Attr]
@@ -506,14 +446,14 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=864,344,952,344
+Pxs=864,328,952,328
 
 [Wire]
-Pxs=864,344,864,360
+Pxs=864,328,864,344
 
 [Comp]
 Name=Voltage Source
-Px=1040,408
+Px=1040,392
 Rot=3
 
 [Attr]
@@ -536,18 +476,18 @@ Style=256
 
 [Comp]
 Name=Ground
-Px=1040,408
+Px=1040,392
 Rot=7
 
 [Wire]
-Pxs=1000,344,1040,344
+Pxs=1000,328,1040,328
 
 [Wire]
-Pxs=1040,344,1040,360
+Pxs=1040,328,1040,344
 
 [Comp]
 Name=Battery
-Px=376,144
+Px=640,136
 Rot=3
 
 [Attr]
@@ -565,7 +505,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=704,144
+Px=760,136
 Rot=1
 
 [Attr]
@@ -583,13 +523,13 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=704,88,704,144
+Pxs=760,80,760,136
 
 [Wire]
-Pxs=376,88,704,88
+Pxs=640,80,760,80
 
 [Wire]
-Pxs=376,88,376,96
+Pxs=640,80,640,88
 
 [Comp]
 Name=Capacitor
@@ -631,7 +571,7 @@ V
 
 [Comp]
 Name=Capacitor
-Px=1128,232
+Px=1040,224
 Rot=4
 
 [Attr]
@@ -649,16 +589,13 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=864,240,928,240
+Pxs=864,224,928,224
 
 [Wire]
-Pxs=1128,232,1128,240
+Pxs=760,80,960,80
 
 [Wire]
-Pxs=704,88,960,88
-
-[Wire]
-Pxs=960,88,960,104
+Pxs=960,80,960,104
 
 [Wire]
 Pxs=928,104,960,104
@@ -673,20 +610,20 @@ Pxs=960,104,1000,104
 Pxs=1000,104,1000,120
 
 [Wire]
-Pxs=1000,168,1000,240
+Pxs=1000,168,1000,224
 
 [Wire]
-Pxs=928,168,928,240
+Pxs=928,168,928,224
 
 [Wire]
-Pxs=928,240,1000,240
+Pxs=928,224,1000,224
 
 [Wire]
-Pxs=1000,240,1128,240
+Pxs=1000,224,1040,224
 
 [Comp]
 Name=Resistor
-Px=1232,272
+Px=1144,264
 Rot=1
 
 [Attr]
@@ -705,23 +642,23 @@ V
 
 [Comp]
 Name=Ground
-Px=1232,320
+Px=1144,312
 Rot=7
 
 [Wire]
-Pxs=1176,232,1232,232
+Pxs=1088,224,1144,224
 
 [Wire]
-Pxs=1232,232,1232,272
+Pxs=1144,224,1144,264
 
 [Comp]
 Name=Ground
-Px=376,144
+Px=640,136
 Rot=7
 
 [Grid Text]
 Text="rn"
-Px=1232,320
+Px=1144,312
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -735,9 +672,9 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.66666666666666663
+Scale=1
 GridUser=10
-ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
+ShapeGroups="Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -859,7 +796,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="ËÐ5"
+Name="LR5"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -881,9 +818,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=327,0
-Scale 3=0.66666666666666663
-Px=416,271
+SB 3=265,0
+Scale 3=1
+Px=1103,477
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

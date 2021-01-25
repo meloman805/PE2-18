@@ -12,7 +12,7 @@
     <ExportPage2>True</ExportPage2>
     <ExportPage3>True</ExportPage3>
     <ExportPage4>True</ExportPage4>
-    <LockPage1>True</LockPage1>
+    <LockPage1>False</LockPage1>
     <LockPage2>True</LockPage2>
     <LockPage3>False</LockPage3>
     <LockPage4>True</LockPage4>
@@ -267,13 +267,13 @@
   <speclines>
     <specline num="" oboz="" name="Документация" comment="" underline="True" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="РАЗВОДКА" name="Сборочный чертеж" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
+    <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02 СБ" name="Сборочный чертеж" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А2" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="" name="Схема электрическая" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А1" pos="" posinelement="0" />
+    <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  Э" name="Схема электрическая" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А1" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="" name="Перечень элементов" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А4" pos="" posinelement="0" />
+    <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  ПЭ" name="Перечень элементов" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А4" pos="" posinelement="0" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
-    <specline num="" oboz="" name="Ведомость покупных" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
+    <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  ВП" name="Ведомость покупных" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А3" pos="" posinelement="0" />
     <specline num="" oboz="" name="изделий" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="2" />
     <specline num="" oboz="" name="" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
     <specline num="" oboz="" name="Детали" comment="" underline="True" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="" posinelement="0" />
@@ -363,9 +363,9 @@
   <razdels>
     <razdel name="docs" np="False">
       <specline num="" oboz="РАЗВОДКА" name="Сборочный чертеж" comment="*)А2, А1" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="*)" pos="" id="lineSB1" posinelement="0" />
-      <specline num="" oboz="" name="Схема электрическая" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А1" pos="" id="lineSch1" posinelement="0" />
-      <specline num="" oboz="" name="Перечень элементов" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А4" pos="" id="linePE1" posinelement="0" />
-      <specline num="" oboz="" name="Ведомость покупных  изделий" comment="*)А4, А3" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="*)" pos="" id="lineVP1" posinelement="0" />
+      <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  Э" name="Схема электрическая" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А1" pos="" id="lineSch1" posinelement="0" />
+      <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  ПЭ" name="Перечень элементов" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="А4" pos="" id="linePE1" posinelement="0" />
+      <specline num="" oboz="СФ МЭИ КР ПЭ2-18 11.03.04 02  ВП" name="Ведомость покупных  изделий" comment="*)А4, А3" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="*)" pos="" id="lineVP1" posinelement="0" />
     </razdel>
     <razdel name="detali" np="False">
       <specline num="1" oboz="РАЗВОДКА" name="Плата двусторонняя" comment="" underline="False" type="None" merge="False" needtu="False" GroupLine1="" GroupLine2="" format="" pos="1" id="lineBDetail1" posinelement="0" />
