@@ -8,15 +8,7 @@ Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
 NLCnt=19
-TXCnt=1
-
-[shapedef]
-Name=Battery
-Line=0,0,22,0
-Line=22,-3,22,3
-Line=26,-7,26,7
-Line=26,0,48,0
-Current=32,8,16,8
+TXCnt=2
 
 [shapedef]
 Name=Ground
@@ -68,6 +60,15 @@ Ellipse=31,-1,33,1
 FColor=#0000FF
 
 [shapedef]
+Name=Sine_Source
+Root="Vsource.root",0,0,0
+Line=24,-6,26,-4
+Line=26,-4,26,-2
+Line=26,-2,22,2
+Line=22,2,22,4
+Line=22,4,24,6
+
+[shapedef]
 Name=SPICE_V
 Root="Vsource.root",0,0,0
 
@@ -88,17 +89,6 @@ Rectangle=14,-4,34,4
 FColor=None
 Line=0,0,14,0
 Line=34,0,48,0
-
-[shapedef]
-Name=E_gost
-Line=0,0,12,0
-Line=36,0,48,0
-Current=32,16,16,16
-Ellipse=12,-12,36,12
-FColor=None
-Line=16,0,32,0
-Line=32,0,24,-2
-Line=32,0,24,2
 
 [shapedef]
 Name=VT_NMOS_gost
@@ -163,18 +153,6 @@ Pin="Plus",6,0,-5,-6
 Pin="Minus",0,0,-20,-6
 
 [compdef]
-Name=Battery
-Definition=Battery
-Shape=Battery
-Mask=4865
-Used=45
-memo=Battery
-Label Offset=19,7,10,13
-PinCnt=2
-Pin="Plus",6,0,-4,-5
-Pin="Minus",0,0,-10,-5
-
-[compdef]
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
@@ -186,8 +164,20 @@ PinCnt=2
 Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
+[compdef]
+Name=Sine Source
+Definition=Sine source
+Shape=Sine_Source
+Mask=4865
+Used=19
+memo=Sine Source
+Label Offset=18,12,15,12
+PinCnt=2
+Pin="Plus",6,0,-6,-6
+Pin="Minus",0,0,-19,-6
+
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 0,0,1290,555
+Window Placement=2,3, -1,-1, -9,-38, 379,260,1669,815
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -255,7 +245,7 @@ Style=8192
 
 [Attr]
 ON=-232,-41,VALUE
-V=DC 0 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
+V=DC 0 AC 1 0 Pulse 0 8 0 1n 1n 1m 2m
 
 [Attr]
 ON=0,0,PACKAGE
@@ -263,7 +253,7 @@ V
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
+V=DC 0 AC 1 0 Pulse 0 8 0 1n 1n 1m 2m
 Style=256
 
 [Attr]
@@ -273,24 +263,6 @@ Style=256
 
 [Wire]
 Pxs=232,256,232,312
-
-[Comp]
-Name=Battery
-Px=592,288
-Rot=3
-
-[Attr]
-ON=-23,-27,PART
-V=V2
-Style=8192
-
-[Attr]
-ON=-22,-41,VALUE
-V=12
-
-[Attr]
-ON=0,0,PACKAGE
-V
 
 [Wire]
 Pxs=416,288,592,288
@@ -319,7 +291,7 @@ Style=8192
 
 [Attr]
 ON=-16,-38,RESISTANCE
-V=0
+V=10
 Style=8192
 
 [Attr]
@@ -359,6 +331,33 @@ Pxs=416,216,416,232
 
 [Wire]
 Pxs=416,232,464,232
+
+[Comp]
+Name=Sine Source
+Px=592,288
+Rot=3
+
+[Attr]
+ON=-28,-26,PART
+V=V2
+Style=8192
+
+[Attr]
+ON=-21,-40,MODEL
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Grid Text]
+Text="U=(1.5)*(4+1.121/1.139)=7.47"
+Px=104,144
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Formula=True
+CBorder=None
 
 [Grid Text]
 Text="Out"
@@ -500,7 +499,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="À·2.3"
+Name="À·2.7"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -524,7 +523,7 @@ Scale 1=1
 Scale 2=1
 SB 3=0,96
 Scale 3=0.5
-Px=285,175
+Px=310,191
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -614,6 +613,8 @@ Page=1
 [Text Area]
 Section=0
 Page=2
+Text=
+Text=.MODEL 1 SIN (A=10 F=1k)
 
 [InfoPage]
 InfoPage=True
@@ -694,7 +695,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=4
+MonMaxShow=5
 MonPageWidth=81
 MonPlotWidth=25
 MonExprXWidth=159
@@ -729,6 +730,8 @@ Num Out High="TMAX"
 Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Num Out Format=3
 Num Out HideNonSelected=False
+Wav SampleRate=11025
+Wav Nbits=16
 AutoSaveWave=False
 Wave Format=16E
 State Variables Format=5E
@@ -1292,8 +1295,8 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=1u
-TStep=1n
+TRange=5m
+TStep=1u
 NPts=51
 Temp=27
 RetraceRuns=1
@@ -1329,7 +1332,31 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=2
+Plt=3
+AliasID=5
+XExp=T
+YExp=V(V2)
+XRng=AutoAlways
+YRng=AutoAlways
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=4
 AliasID=2
 XExp=T
 YExp=IG(M1)
@@ -1353,7 +1380,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=3
+Plt=5
 AliasID=3
 XExp=T
 YExp=VG(M1)
@@ -1377,7 +1404,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=4
+Plt=6
 AliasID=4
 XExp=T
 YExp=ID(M1)
@@ -1614,6 +1641,26 @@ Analysis=ImDistortion
 
 [Pane]
 Analysis=Stability
+
+[Stepping]
+Analysis=Transient
+Index=1
+Parameter Type=Component
+Name=R2
+Param=value
+From=10
+To=100
+Value=90
+
+[Stepping]
+Analysis=Transient
+Index=2
+Parameter Type=Component
+Name=V2
+Param=A
+From=10
+To=100
+Value=90
 
 [Watch]
 Analysis=Transient
