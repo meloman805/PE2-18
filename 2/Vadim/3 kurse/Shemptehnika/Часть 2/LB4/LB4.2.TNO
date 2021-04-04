@@ -1,0 +1,418 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient Analysis of LB4                         ***
+***                           31.03.2021 10:56:53                            ***
+********************************************************************************
+Limits
+======
+Time Range               2m
+Maximum Time Step        1u
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type Diode
+==========================================
+Instance:            X1.D5            X1.D3            X1.D4            X1.D1   
+LEVEL                    1(*)             1(*)             1(*)             1(*)
+AF                  1.000 (*)        1.000 (*)        1.000 (*)        1.000 (*)
+BV                  0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+CJO                 0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+EG                  1.110 (*)        1.110 (*)        1.110 (*)        1.110 (*)
+FC                500.000m(*)      500.000m(*)      500.000m(*)      500.000m(*)
+IBV               100.000p(*)      100.000p(*)      100.000p(*)      100.000p(*)
+IBVL                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+IKF                 0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+IS                 10.000f(*)       10.000f(*)       10.000f(*)       10.000f(*)
+ISR                 0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+KF                  0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+M                 500.000m(*)      500.000m(*)      500.000m(*)      500.000m(*)
+N                   1.000 (*)        1.000 (*)        1.000 (*)        1.000 (*)
+NBV                 1.000 (*)        1.000 (*)        1.000 (*)        1.000 (*)
+NBVL                1.000 (*)        1.000 (*)        1.000 (*)        1.000 (*)
+NR                  2.000 (*)        2.000 (*)        2.000 (*)        2.000 (*)
+RL                  0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+RS                  0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+T_ABS            UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)     UNDEFINED(*)
+TBV1                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+TBV2                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+TIKF                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+TRS1                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+TRS2                0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+TT                  0.000 (*)        0.000 (*)        0.000 (*)        0.000 (*)
+VJ                  1.000 (*)        1.000 (*)        1.000 (*)        1.000 (*)
+XTI                 3.000 (*)        3.000 (*)        3.000 (*)        3.000 (*)
+(*) Default Parameter
+
+
+
+Instance:            X1.D2   
+LEVEL                    1(*)
+AF                  1.000 (*)
+BV                  0.000 (*)
+CJO                 0.000 (*)
+EG                  1.110 (*)
+FC                500.000m(*)
+IBV               100.000p(*)
+IBVL                0.000 (*)
+IKF                 0.000 (*)
+IS                 10.000f(*)
+ISR                 0.000 (*)
+KF                  0.000 (*)
+M                 500.000m(*)
+N                   1.000 (*)
+NBV                 1.000 (*)
+NBVL                1.000 (*)
+NR                  2.000 (*)
+RL                  0.000 (*)
+RS                  0.000 (*)
+T_ABS            UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)
+TBV1                0.000 (*)
+TBV2                0.000 (*)
+TIKF                0.000 (*)
+TRS1                0.000 (*)
+TRS2                0.000 (*)
+TT                  0.000 (*)
+VJ                  1.000 (*)
+XTI                 3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Jfet PJF
+=============================================
+Instance:            X1.J1            X1.J2   
+AF                  1.000 (*)        1.000 (*)
+ALPHA               0.000 (*)        0.000 (*)
+BETA              100.000u(*)      100.000u(*)
+BETATCE             0.000 (*)        0.000 (*)
+CGD                 0.000 (*)        0.000 (*)
+CGS                 0.000 (*)        0.000 (*)
+FC                500.000m(*)      500.000m(*)
+IS                 10.000f(*)       10.000f(*)
+ISR                 0.000 (*)        0.000 (*)
+KF                  0.000 (*)        0.000 (*)
+LAMBDA              0.000 (*)        0.000 (*)
+M                 500.000m(*)      500.000m(*)
+N                   1.000 (*)        1.000 (*)
+NR                  2.000 (*)        2.000 (*)
+PB                  1.000 (*)        1.000 (*)
+RD                  0.000 (*)        0.000 (*)
+RS                  0.000 (*)        0.000 (*)
+T_ABS            UNDEFINED(*)     UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)     UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)     UNDEFINED(*)
+VK                  0.000 (*)        0.000 (*)
+VTO                -2.000 (*)       -2.000 (*)
+VTOTC               0.000 (*)        0.000 (*)
+XTI                 3.000 (*)        3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Opamp
+==========================================
+Instance:               X1   
+Using model:         LF147   
+LEVEL                    3   
+A                 100.000K   
+C                  10.000p   
+CMRR              100.000K(*)
+GBW               4.000MEG   
+IBIAS              50.000p   
+IOFF               25.000p   
+IOSC               20.000m(*)
+PD                 25.000m(*)
+PM                 60.000 (*)
+ROUTAC             50.000    
+ROUTDC             75.000    
+SRN              17.500MEG   
+SRP              13.000MEG   
+T_ABS            UNDEFINED(*)
+T_MEASURED       UNDEFINED(*)
+T_REL_GLOBAL     UNDEFINED(*)
+T_REL_LOCAL      UNDEFINED(*)
+TYPE                3.000    
+VCC                15.000 (*)
+VEE               -15.000 (*)
+VNS               -12.900    
+VOFF                1.000m(*)
+VPS                12.900    
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1            -1.014m  VC          -15.000   OUT         -51.685m 
+VE           15.000   5             0.000   6             0.000  
+7          -506.770u 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:               X1.D5            X1.D3            X1.D4            X1.D1
+
+Capacitance Terms:
+CAP                    0.000            0.000            0.000            0.000 
+
+Current Terms:
+ID                   -30.010p         -12.962p         -12.858p         -20.011p
+
+Resistance Terms:
+REQ                    1.000T           1.000T           1.000T           1.000T
+
+Voltage Terms:
+VD                   -30.000          -12.952          -12.848          -20.001 
+
+Power DC Terms:
+PD                   900.300p         167.876p         165.208p         400.220p
+PS                     0.000            0.000            0.000            0.000 
+
+DC Pin Currents:
+Id                   -30.010p         -12.962p         -12.858p         -20.011p
+
+Condition:
+State                     HOT              HOT              HOT              HOT
+
+Device Variables:
+area                   1.000            1.000            1.000            1.000 
+ic                     0.000            0.000            0.000            0.000 
+
+
+Instance:               X1.D2
+
+Capacitance Terms:
+CAP                    0.000 
+
+Current Terms:
+ID                   -20.009p
+
+Resistance Terms:
+REQ                    1.000T
+
+Voltage Terms:
+VD                   -19.999 
+
+Power DC Terms:
+PD                   400.180p
+PS                     0.000 
+
+DC Pin Currents:
+Id                   -20.009p
+
+Condition:
+State                     HOT
+
+Device Variables:
+area                   1.000 
+ic                     0.000 
+
+
+
+Operating Point for Devices of Type Jfet PJF
+============================================
+Instance:               X1.J1            X1.J2
+
+Capacitance Terms:
+CGS                    0.000            0.000 
+CGD                    0.000            0.000 
+
+Conductance Terms:
+GM                   252.141u         252.146u
+GDS                    0.000            0.000 
+
+Current Terms:
+ID                   -88.068u         -88.071u
+
+Voltage Terms:
+VGS                    1.301            1.300 
+VDS                  -13.348          -13.348 
+VGD                   14.650           14.649 
+
+Power DC Terms:
+PD                     1.176m           1.176m
+PS                     0.000            0.000 
+
+DC Pin Currents:
+Ig                    78.451p          53.449p
+Id                   -88.068u         -88.071u
+Is                    88.068u          88.071u
+
+Condition:
+State                     HOT              HOT
+
+Device Variables:
+area                   1.000            1.000 
+vds                    0.000            0.000 
+vgs                    0.000            0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:               X1.Rc1           X1.Rc2           X1.Re1           X1.Re2
+V                    -350.410m        -350.424m         -88.068u         -88.071u
+Power DC Terms:
+PD                     30.860u          30.862u           7.756n           7.757n
+
+DC Pin Currents:
+Ir                    -88.068u         -88.071u         -88.068u         -88.071u
+
+Device Variables:
+tc1                     0.000            0.000            0.000            0.000 
+tc2                     0.000            0.000            0.000            0.000 
+
+
+Instance:                X1.Re            X1.Rp            X1.R2           X1.Ro2
+V                      -1.301           30.000           13.010u         -51.711m
+Power DC Terms:
+PD                      1.482u          19.750m           1.693f         106.959u
+
+DC Pin Currents:
+Ir                     -1.139u         658.333u         130.099p          -2.068m
+
+Device Variables:
+tc1                     0.000            0.000            0.000            0.000 
+tc2                     0.000            0.000            0.000            0.000 
+
+
+Instance:            X1.ROUTAC               R5               R1               R2
+V                     -25.336u          50.672m           0.000            0.000 
+Power DC Terms:
+PD                     12.838p          25.676n           0.000            0.000 
+
+DC Pin Currents:
+Ir                   -506.717n         506.717n           0.000            0.000 
+
+Device Variables:
+tc1                     0.000            0.000            0.000            0.000 
+tc2                     0.000            0.000            0.000            0.000 
+
+
+Instance:                   R3               R4
+V                     506.770u        -506.770u
+Power DC Terms:
+PD                    256.816p         256.816p
+
+DC Pin Currents:
+Ir                    506.770n        -506.770n
+
+Device Variables:
+tc1                     0.000            0.000 
+tc2                     0.000            0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                X1.C1            X1.Ce            X1.C3               C1
+V                      13.531u           1.301          -51.724m         -51.685m
+Power DC Terms:
+PS                      0.000            0.000            0.000            0.000 
+
+DC Pin Currents:
+Ic                      0.000            0.000            0.000            0.000 
+
+Device Variables:
+ic                      0.000            0.000            0.000            0.000 
+
+
+Instance:                   C2               C3
+V                       0.000          506.770u
+Power DC Terms:
+PS                      0.000            0.000 
+
+DC Pin Currents:
+Ic                      0.000            0.000 
+
+Device Variables:
+ic                      0.000            0.000 
+
+
+
+Operating Point for Devices of Type Opamp
+=========================================
+Instance:                  X1
+Using model:            LF147
+Condition:
+State                     LIN
+
+
+
+Operating Point for Devices of Type SPICE Poly
+==============================================
+Instance:               X1.I3            X1.V2            X1.V1            X1.I1
+V                    -51.711m           0.000         -506.717u         -13.010u
+Power DC Terms:
+PG                   106.985u           0.000            0.001f         -42.551f
+
+DC Pin Currents:
+ISource                2.069m        -631.968n           1.013f          -3.271n
+
+
+Instance:               X1.I2
+V                     13.010u
+Power DC Terms:
+PG                    44.244f
+
+DC Pin Currents:
+ISource               -3.401n
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:              X1.IEE           X1.VS1            X1.VC            X1.VE
+V                    -16.301            0.000            2.100            2.100 
+Power DC Terms:
+PG                    -2.853m           0.000          -27.220p         -27.002p
+
+DC Pin Currents:
+ISource             -175.000u         130.099p          12.962p          12.858p
+
+
+Instance:              X1.VLP           X1.VLN           X1.VS2               V1
+V                     20.000           20.000            0.000          -15.000 
+Power DC Terms:
+PG                   400.210p         400.190p           0.000           12.517m
+
+DC Pin Currents:
+ISource              -20.011p         -20.009p        -506.717n         834.472u
+
+
+Instance:                  V2
+V                     15.000 
+Power DC Terms:
+PG                    12.500m
+
+DC Pin Currents:
+ISource             -833.333u
+
+

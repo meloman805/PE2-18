@@ -1,0 +1,1471 @@
+********************************************************************************
+***                       Micro-Cap 11.0.1.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Transient Analysis of LB4                         ***
+***                            30.03.2021 9:52:43                            ***
+********************************************************************************
+Limits
+======
+Time Range               10
+Maximum Time Step        1m
+Number of Points         51
+Temperature              Linear 27
+Retrace Runs             1
+Run Options              Normal
+State Variables          Zero
+Operating Point          On
+Operating Point Only     Off
+Auto Scale Ranges        Off
+Accumulate Plots         Off
+Fixed Time Step          Off
+Periodic Steady State    Off
+Ignore Expression Errors Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+Model parameters for devices of type Diode
+==========================================
+Instance:             X1.D5             X1.D3             X1.D4             X1.D1   
+LEVEL                     1(*)              1(*)              1(*)              1(*)
+AF                   1.000 (*)         1.000 (*)         1.000 (*)         1.000 (*)
+BV                   0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+CJO                  0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+EG                   1.110 (*)         1.110 (*)         1.110 (*)         1.110 (*)
+FC                 500.000m(*)       500.000m(*)       500.000m(*)       500.000m(*)
+IBV                100.000p(*)       100.000p(*)       100.000p(*)       100.000p(*)
+IBVL                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+IKF                  0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+IS                  10.000f(*)        10.000f(*)        10.000f(*)        10.000f(*)
+ISR                  0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+KF                   0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+M                  500.000m(*)       500.000m(*)       500.000m(*)       500.000m(*)
+N                    1.000 (*)         1.000 (*)         1.000 (*)         1.000 (*)
+NBV                  1.000 (*)         1.000 (*)         1.000 (*)         1.000 (*)
+NBVL                 1.000 (*)         1.000 (*)         1.000 (*)         1.000 (*)
+NR                   2.000 (*)         2.000 (*)         2.000 (*)         2.000 (*)
+RL                   0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+RS                   0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+T_ABS             UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_MEASURED        UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_REL_GLOBAL      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_REL_LOCAL       UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+TBV1                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+TBV2                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+TIKF                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+TRS1                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+TRS2                 0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+TT                   0.000 (*)         0.000 (*)         0.000 (*)         0.000 (*)
+VJ                   1.000 (*)         1.000 (*)         1.000 (*)         1.000 (*)
+XTI                  3.000 (*)         3.000 (*)         3.000 (*)         3.000 (*)
+(*) Default Parameter
+
+
+
+Instance:             X1.D2                D1                D2   
+Using model:             NA             1N458             1N458   
+LEVEL                     1(*)              1(*)              1(*)
+AF                   1.000 (*)         1.000 (*)         1.000 (*)
+BV                   0.000 (*)       150.000           150.000    
+CJO                  0.000 (*)         4.505p            4.505p   
+EG                   1.110 (*)         1.110 (*)         1.110 (*)
+FC                 500.000m(*)       500.000m(*)       500.000m(*)
+IBV                100.000p(*)       100.000p          100.000p   
+IBVL                 0.000 (*)         0.000 (*)         0.000 (*)
+IKF                  0.000 (*)         0.000 (*)         0.000 (*)
+IS                  10.000f(*)        29.055p           29.055p   
+ISR                  0.000 (*)         0.000 (*)         0.000 (*)
+KF                   0.000 (*)         0.000 (*)         0.000 (*)
+M                  500.000m(*)       385.099m          385.099m   
+N                    1.000 (*)         1.425             1.425    
+NBV                  1.000 (*)         1.000 (*)         1.000 (*)
+NBVL                 1.000 (*)         1.000 (*)         1.000 (*)
+NR                   2.000 (*)         2.000 (*)         2.000 (*)
+RL                   0.000 (*)     125.018MEG        125.018MEG   
+RS                   0.000 (*)       910.706m          910.706m   
+T_ABS             UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_MEASURED        UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_REL_GLOBAL      UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+T_REL_LOCAL       UNDEFINED(*)      UNDEFINED(*)      UNDEFINED(*)
+TBV1                 0.000 (*)         0.000 (*)         0.000 (*)
+TBV2                 0.000 (*)         0.000 (*)         0.000 (*)
+TIKF                 0.000 (*)         0.000 (*)         0.000 (*)
+TRS1                 0.000 (*)         0.000 (*)         0.000 (*)
+TRS2                 0.000 (*)         0.000 (*)         0.000 (*)
+TT                   0.000 (*)         5.000u            5.000u   
+VJ                   1.000 (*)       700.000m          700.000m   
+XTI                  3.000 (*)         3.000 (*)         3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Bipolar Junction Transistors NPN
+=====================================================================
+Instance:             X1.Q1             X1.Q2   
+LEVEL                     1(*)              1(*)
+AF                   1.000 (*)         1.000 (*)
+BF                 100.000 (*)       100.000 (*)
+BR                   1.000 (*)         1.000 (*)
+CJC                  0.000 (*)         0.000 (*)
+CJE                  0.000 (*)         0.000 (*)
+CJS                  0.000 (*)         0.000 (*)
+EG                   1.110 (*)         1.110 (*)
+FC                 500.000m(*)       500.000m(*)
+GAMMA               10.000p(*)        10.000p(*)
+IKF                  0.000 (*)         0.000 (*)
+IKR                  0.000 (*)         0.000 (*)
+IRB                  0.000 (*)         0.000 (*)
+IS                   0.100f(*)         0.100f(*)
+ISC                  0.000 (*)         0.000 (*)
+ISE                  0.000 (*)         0.000 (*)
+ISS                  0.000 (*)         0.000 (*)
+ITF                  0.000 (*)         0.000 (*)
+KF                   0.000 (*)         0.000 (*)
+MJC                330.000m(*)       330.000m(*)
+MJE                330.000m(*)       330.000m(*)
+MJS                  0.000 (*)         0.000 (*)
+NC                   2.000 (*)         2.000 (*)
+NE                   1.500 (*)         1.500 (*)
+NF                   1.000 (*)         1.000 (*)
+NK                 500.000m(*)       500.000m(*)
+NR                   1.000 (*)         1.000 (*)
+NS                   1.000 (*)         1.000 (*)
+PTF                  0.000 (*)         0.000 (*)
+QCO                  0.000 (*)         0.000 (*)
+QUASIMOD             0.000 (*)         0.000 (*)
+RB                   0.000 (*)         0.000 (*)
+RBM                  0.000 (*)         0.000 (*)
+RC                   0.000 (*)         0.000 (*)
+RCO                  0.000 (*)         0.000 (*)
+RE                   0.000 (*)         0.000 (*)
+T_ABS             UNDEFINED(*)      UNDEFINED(*)
+T_MEASURED        UNDEFINED(*)      UNDEFINED(*)
+T_REL_GLOBAL      UNDEFINED(*)      UNDEFINED(*)
+T_REL_LOCAL       UNDEFINED(*)      UNDEFINED(*)
+TF                   0.000 (*)         0.000 (*)
+TR                   0.000 (*)         0.000 (*)
+TRB1                 0.000 (*)         0.000 (*)
+TRB2                 0.000 (*)         0.000 (*)
+TRC1                 0.000 (*)         0.000 (*)
+TRC2                 0.000 (*)         0.000 (*)
+TRE1                 0.000 (*)         0.000 (*)
+TRE2                 0.000 (*)         0.000 (*)
+TRM1                 0.000 (*)         0.000 (*)
+TRM2                 0.000 (*)         0.000 (*)
+VAF                  0.000 (*)         0.000 (*)
+VAR                  0.000 (*)         0.000 (*)
+VG                   1.206 (*)         1.206 (*)
+VJC                750.000m(*)       750.000m(*)
+VJE                750.000m(*)       750.000m(*)
+VJS                750.000m(*)       750.000m(*)
+VO                  10.000 (*)        10.000 (*)
+VTF                  0.000 (*)         0.000 (*)
+XCJC                 1.000 (*)         1.000 (*)
+XTB                  0.000 (*)         0.000 (*)
+XTF                  0.000 (*)         0.000 (*)
+XTI                  3.000 (*)         3.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type BSIM4 NMOS
+===============================================
+Instance:                 M1   
+Using model:        $BSIM3_N   
+LEVEL                     14   
+A0                    1.000 (*)
+A1                    0.000 (*)
+A2                    1.000 (*)
+ACDE                  1.000 (*)
+ACNQSMOD              0.000 (*)
+ADOS                  1.000 (*)
+AF                    1.000 (*)
+AGIDL                 0.000 (*)
+AGISL              UNDEFINED(*)
+AGS                   0.000 (*)
+AIGBACC              13.600m(*)
+AIGBINV              11.100m(*)
+AIGC                 13.600m(*)
+AIGD                 13.600m(*)
+AIGS               UNDEFINED(*)
+AIGSD                13.600m(*)
+ALPHA0                0.000 (*)
+ALPHA1                0.000 (*)
+AT                   33.000K(*)
+B0                    0.000 (*)
+B1                    0.000 (*)
+BDOS                  1.000 (*)
+BETA0                 0.000 (*)
+BG0SUB                1.160 (*)
+BGIDL                 2.300G(*)
+BGISL              UNDEFINED(*)
+BIGBACC               1.710m(*)
+BIGBINV             949.000u(*)
+BIGC                  1.710m(*)
+BIGD                  1.710m(*)
+BIGS               UNDEFINED(*)
+BIGSD                 1.710m(*)
+BINFLAG               0.000 (*)
+BINUNIT               1.000 (*)
+BVD                UNDEFINED(*)
+BVS                  10.000 (*)
+CAPMOD                2.000 (*)
+CDSC                240.000u(*)
+CDSCB                 0.000 (*)
+CDSCD                 0.000 (*)
+CF                 UNDEFINED(*)
+CGBO                  0.000 (*)
+CGDL                  0.000 (*)
+CGDO                  0.000 (*)
+CGIDL               500.000m(*)
+CGISL              UNDEFINED(*)
+CGSL                  0.000 (*)
+CGSO                  0.000 (*)
+CIGBACC              75.000m(*)
+CIGBINV               6.000m(*)
+CIGC                 75.000m(*)
+CIGD                 75.000m(*)
+CIGS               UNDEFINED(*)
+CIGSD                75.000m(*)
+CIT                   0.000 (*)
+CJD                UNDEFINED(*)
+CJS                 500.000u(*)
+CJSWD              UNDEFINED(*)
+CJSWGD             UNDEFINED(*)
+CJSWGS             UNDEFINED(*)
+CJSWS               500.000p(*)
+CKAPPAD            UNDEFINED(*)
+CKAPPAS             600.000m(*)
+CLC                 100.000n(*)
+CLE                 600.000m(*)
+CVCHARGEMOD           0.000 (*)
+DELTA                10.000m(*)
+DIOMOD                1.000 (*)
+DLC                UNDEFINED(*)
+DLCIG              UNDEFINED(*)
+DLCIGD             UNDEFINED(*)
+DMCG                  0.000 (*)
+DMCGT                 0.000 (*)
+DMCI               UNDEFINED(*)
+DMDG                  0.000 (*)
+DROUT               560.000m(*)
+DSUB               UNDEFINED(*)
+DTOX                  0.000 (*)
+DVT0                  2.200 (*)
+DVT0W                 0.000 (*)
+DVT1                530.000m(*)
+DVT1W               5.300MEG(*)
+DVT2                -32.000m(*)
+DVT2W               -32.000m(*)
+DVTP0                 0.000 (*)
+DVTP1                 0.000 (*)
+DVTP2                 0.000 (*)
+DVTP3                 0.000 (*)
+DVTP4                 0.000 (*)
+DVTP5                 0.000 (*)
+DWB                   0.000 (*)
+DWC                UNDEFINED(*)
+DWG                   0.000 (*)
+DWJ                UNDEFINED(*)
+EASUB                 4.050 (*)
+EF                    1.000 (*)
+EGIDL               800.000m(*)
+EGISL              UNDEFINED(*)
+EIGBINV               1.100 (*)
+EM                 41.000MEG(*)
+EOT                   1.500n(*)
+EPSRGATE             11.700 (*)
+EPSROX                3.900 (*)
+EPSRSUB              11.700 (*)
+ETA0                 80.000m(*)
+ETAB                -70.000m(*)
+EU                    1.670 (*)
+FGIDL                 0.000 (*)
+FGISL              UNDEFINED(*)
+FNOIMOD               1.000 (*)
+FPROUT                0.000 (*)
+GAMMA1                0.000 (*)
+GAMMA2                0.000 (*)
+GBMIN                 1.000p(*)
+GDSNOI                1.000 (*)
+GEOMOD                0.000 (*)
+GIDLMOD               0.000 (*)
+IGBMOD                0.000 (*)
+IGCMOD                0.000 (*)
+IJTHDFWD           UNDEFINED(*)
+IJTHDREV           UNDEFINED(*)
+IJTHSFWD            100.000m(*)
+IJTHSREV            100.000m(*)
+JSD                UNDEFINED(*)
+JSS                 100.000u(*)
+JSWD               UNDEFINED(*)
+JSWGD              UNDEFINED(*)
+JSWGS                 0.000 (*)
+JSWS                  0.000 (*)
+JTSD               UNDEFINED(*)
+JTSS                  0.000 (*)
+JTSSWD             UNDEFINED(*)
+JTSSWGD            UNDEFINED(*)
+JTSSWGS               0.000 (*)
+JTSSWS                0.000 (*)
+JTWEFF                0.000 (*)
+K1                    0.000 (*)
+K2                    0.000 (*)
+K2WE                  0.000 (*)
+K3                   80.000 (*)
+K3B                   0.000 (*)
+KETA                -47.000m(*)
+KF                    0.000 (*)
+KGIDL                 0.000 (*)
+KGISL              UNDEFINED(*)
+KT1                -110.000m(*)
+KT1L                  0.000 (*)
+KT2                  22.000m(*)
+KU0                   0.000 (*)
+KU0WE                 0.000 (*)
+KVSAT                 0.000 (*)
+KVTH0                 0.000 (*)
+KVTH0WE               0.000 (*)
+LA0                   0.000 (*)
+LA1                   0.000 (*)
+LA2                   0.000 (*)
+LACDE                 0.000 (*)
+LAGIDL                0.000 (*)
+LAGISL             UNDEFINED(*)
+LAGS                  0.000 (*)
+LAIGBACC              0.000 (*)
+LAIGBINV              0.000 (*)
+LAIGC                 0.000 (*)
+LAIGD                 0.000 (*)
+LAIGS                 0.000 (*)
+LAIGSD                0.000 (*)
+LALPHA0               0.000 (*)
+LALPHA1               0.000 (*)
+LAMBDA                0.000 (*)
+LAT                   0.000 (*)
+LB0                   0.000 (*)
+LB1                   0.000 (*)
+LBETA0                0.000 (*)
+LBGIDL                0.000 (*)
+LBGISL             UNDEFINED(*)
+LBIGBACC              0.000 (*)
+LBIGBINV              0.000 (*)
+LBIGC                 0.000 (*)
+LBIGD                 0.000 (*)
+LBIGS                 0.000 (*)
+LBIGSD                0.000 (*)
+LC                    5.000n(*)
+LCDSC                 0.000 (*)
+LCDSCB                0.000 (*)
+LCDSCD                0.000 (*)
+LCF                   0.000 (*)
+LCGDL                 0.000 (*)
+LCGIDL                0.000 (*)
+LCGISL             UNDEFINED(*)
+LCGSL                 0.000 (*)
+LCIGBACC              0.000 (*)
+LCIGBINV              0.000 (*)
+LCIGC                 0.000 (*)
+LCIGD                 0.000 (*)
+LCIGS                 0.000 (*)
+LCIGSD                0.000 (*)
+LCIT                  0.000 (*)
+LCKAPPAD              0.000 (*)
+LCKAPPAS              0.000 (*)
+LCLC                  0.000 (*)
+LCLE                  0.000 (*)
+LDELTA                0.000 (*)
+LDROUT                0.000 (*)
+LDSUB                 0.000 (*)
+LDVT0                 0.000 (*)
+LDVT0W                0.000 (*)
+LDVT1                 0.000 (*)
+LDVT1W                0.000 (*)
+LDVT2                 0.000 (*)
+LDVT2W                0.000 (*)
+LDVTP0                0.000 (*)
+LDVTP1                0.000 (*)
+LDVTP2                0.000 (*)
+LDVTP3                0.000 (*)
+LDVTP4                0.000 (*)
+LDVTP5                0.000 (*)
+LDWB                  0.000 (*)
+LDWG                  0.000 (*)
+LEFFEOT               1.000 (*)
+LEGIDL                0.000 (*)
+LEGISL             UNDEFINED(*)
+LEIGBINV              0.000 (*)
+LETA0                 0.000 (*)
+LETAB                 0.000 (*)
+LEU                   0.000 (*)
+LFGIDL                0.000 (*)
+LFGISL             UNDEFINED(*)
+LFPROUT               0.000 (*)
+LGAMMA1               0.000 (*)
+LGAMMA2               0.000 (*)
+LINT                  0.000 (*)
+LINTNOI               0.000 (*)
+LK1                   0.000 (*)
+LK2                   0.000 (*)
+LK2WE                 0.000 (*)
+LK3                   0.000 (*)
+LK3B                  0.000 (*)
+LKETA                 0.000 (*)
+LKGIDL                0.000 (*)
+LKGISL             UNDEFINED(*)
+LKT1                  0.000 (*)
+LKT1L                 0.000 (*)
+LKT2                  0.000 (*)
+LKU0                  0.000 (*)
+LKU0WE                0.000 (*)
+LKVTH0                0.000 (*)
+LKVTH0WE              0.000 (*)
+LL                    0.000 (*)
+LLAMBDA               0.000 (*)
+LLC                UNDEFINED(*)
+LLN                   1.000 (*)
+LLODKU0               0.000 (*)
+LLODVTH               0.000 (*)
+LLP                   0.000 (*)
+LLPE0                 0.000 (*)
+LLPEB                 0.000 (*)
+LMAX               UNDEFINED(*)
+LMIN               UNDEFINED(*)
+LMINV                 0.000 (*)
+LMINVCV               0.000 (*)
+LMOIN                 0.000 (*)
+LNDEP                 0.000 (*)
+LNFACTOR              0.000 (*)
+LNGATE                0.000 (*)
+LNIGBACC              0.000 (*)
+LNIGBINV              0.000 (*)
+LNIGC                 0.000 (*)
+LNOFF                 0.000 (*)
+LNSD                  0.000 (*)
+LNSUB                 0.000 (*)
+LNTOX                 0.000 (*)
+LODETA0               1.000 (*)
+LODK2                 1.000 (*)
+LP                   10.000n(*)
+LPCLM                 0.000 (*)
+LPDIBLC1              0.000 (*)
+LPDIBLC2              0.000 (*)
+LPDIBLCB              0.000 (*)
+LPDITS                0.000 (*)
+LPDITSD               0.000 (*)
+LPE0                174.000n(*)
+LPEB                  0.000 (*)
+LPHIN                 0.000 (*)
+LPIGCD                0.000 (*)
+LPOXEDGE              0.000 (*)
+LPRT                  0.000 (*)
+LPRWB                 0.000 (*)
+LPRWG                 0.000 (*)
+LPSCBE1               0.000 (*)
+LPSCBE2               0.000 (*)
+LPVAG                 0.000 (*)
+LRDSW                 0.000 (*)
+LRDW                  0.000 (*)
+LREF               UNDEFINED(*)
+LRGIDL                0.000 (*)
+LRGISL             UNDEFINED(*)
+LRSW                  0.000 (*)
+LTETA0                0.000 (*)
+LTNFACTOR             0.000 (*)
+LTVFBSDOFF            0.000 (*)
+LTVOFF                0.000 (*)
+LTVOFFCV              0.000 (*)
+LU0                   0.000 (*)
+LUA                   0.000 (*)
+LUA1                  0.000 (*)
+LUB                   0.000 (*)
+LUB1                  0.000 (*)
+LUC                   0.000 (*)
+LUC1                  0.000 (*)
+LUCS                  0.000 (*)
+LUCSTE                0.000 (*)
+LUD                   0.000 (*)
+LUD1                  0.000 (*)
+LUP                   0.000 (*)
+LUTE                  0.000 (*)
+LVBM                  0.000 (*)
+LVBX                  0.000 (*)
+LVFB                  0.000 (*)
+LVFBCV                0.000 (*)
+LVFBSDOFF             0.000 (*)
+LVOFF                 0.000 (*)
+LVOFFCV               0.000 (*)
+LVSAT                 0.000 (*)
+LVTH0                 0.000 (*)
+LVTL                  0.000 (*)
+LW                    0.000 (*)
+LW0                   0.000 (*)
+LWC                UNDEFINED(*)
+LWL                   0.000 (*)
+LWLC               UNDEFINED(*)
+LWN                   1.000 (*)
+LWR                   0.000 (*)
+LXJ                   0.000 (*)
+LXN                   0.000 (*)
+LXRCRG1               0.000 (*)
+LXRCRG2               0.000 (*)
+LXT                   0.000 (*)
+MINV                  0.000 (*)
+MINVCV                0.000 (*)
+MJD                UNDEFINED(*)
+MJS                 500.000m(*)
+MJSWD              UNDEFINED(*)
+MJSWGD             UNDEFINED(*)
+MJSWGS             UNDEFINED(*)
+MJSWS               330.000m(*)
+MOBMOD                0.000 (*)
+MOIN                 15.000 (*)
+MTRLCOMPATMOD         0.000 (*)
+MTRLMOD               0.000 (*)
+NDEP              1.700E+017(*)
+NFACTOR               1.000 (*)
+NGATE                 0.000 (*)
+NGCON                 1.000 (*)
+NI0SUB               14.500G(*)
+NIGBACC               1.000 (*)
+NIGBINV               3.000 (*)
+NIGC                  1.000 (*)
+NJD                UNDEFINED(*)
+NJS                   1.000 (*)
+NJTS                 20.000 (*)
+NJTSD              UNDEFINED(*)
+NJTSSW               20.000 (*)
+NJTSSWD            UNDEFINED(*)
+NJTSSWG              20.000 (*)
+NJTSSWGD           UNDEFINED(*)
+NLEV               UNDEFINED(*)
+NOFF                  1.000 (*)
+NOIA              6.250E+041(*)
+NOIB              3.125E+026(*)
+NOIC                  8.750G(*)
+NSD               1.000E+020(*)
+NSUB              60000.000T(*)
+NTNOI                 1.000 (*)
+NTOX                  1.000 (*)
+PA0                   0.000 (*)
+PA1                   0.000 (*)
+PA2                   0.000 (*)
+PACDE                 0.000 (*)
+PAGIDL                0.000 (*)
+PAGISL             UNDEFINED(*)
+PAGS                  0.000 (*)
+PAIGBACC              0.000 (*)
+PAIGBINV              0.000 (*)
+PAIGC                 0.000 (*)
+PAIGD                 0.000 (*)
+PAIGS                 0.000 (*)
+PAIGSD                0.000 (*)
+PALPHA0               0.000 (*)
+PALPHA1               0.000 (*)
+PARAMCHK              1.000 (*)
+PAT                   0.000 (*)
+PB0                   0.000 (*)
+PB1                   0.000 (*)
+PBD                UNDEFINED(*)
+PBETA0                0.000 (*)
+PBGIDL                0.000 (*)
+PBGISL             UNDEFINED(*)
+PBIGBACC              0.000 (*)
+PBIGBINV              0.000 (*)
+PBIGC                 0.000 (*)
+PBIGD                 0.000 (*)
+PBIGS                 0.000 (*)
+PBIGSD                0.000 (*)
+PBS                   1.000 (*)
+PBSWD              UNDEFINED(*)
+PBSWGD             UNDEFINED(*)
+PBSWGS             UNDEFINED(*)
+PBSWS                 1.000 (*)
+PCDSC                 0.000 (*)
+PCDSCB                0.000 (*)
+PCDSCD                0.000 (*)
+PCF                   0.000 (*)
+PCGDL                 0.000 (*)
+PCGIDL                0.000 (*)
+PCGISL             UNDEFINED(*)
+PCGSL                 0.000 (*)
+PCIGBACC              0.000 (*)
+PCIGBINV              0.000 (*)
+PCIGC                 0.000 (*)
+PCIGD                 0.000 (*)
+PCIGS                 0.000 (*)
+PCIGSD                0.000 (*)
+PCIT                  0.000 (*)
+PCKAPPAD              0.000 (*)
+PCKAPPAS              0.000 (*)
+PCLC                  0.000 (*)
+PCLE                  0.000 (*)
+PCLM                  1.300 (*)
+PDELTA                0.000 (*)
+PDIBLC1             390.000m(*)
+PDIBLC2               8.600m(*)
+PDIBLCB               0.000 (*)
+PDITS                 0.000 (*)
+PDITSD                0.000 (*)
+PDITSL                0.000 (*)
+PDROUT                0.000 (*)
+PDSUB                 0.000 (*)
+PDVT0                 0.000 (*)
+PDVT0W                0.000 (*)
+PDVT1                 0.000 (*)
+PDVT1W                0.000 (*)
+PDVT2                 0.000 (*)
+PDVT2W                0.000 (*)
+PDVTP0                0.000 (*)
+PDVTP1                0.000 (*)
+PDVTP2                0.000 (*)
+PDVTP3                0.000 (*)
+PDVTP4                0.000 (*)
+PDVTP5                0.000 (*)
+PDWB                  0.000 (*)
+PDWG                  0.000 (*)
+PEGIDL                0.000 (*)
+PEGISL             UNDEFINED(*)
+PEIGBINV              0.000 (*)
+PERMOD                1.000 (*)
+PETA0                 0.000 (*)
+PETAB                 0.000 (*)
+PEU                   0.000 (*)
+PFGIDL                0.000 (*)
+PFGISL             UNDEFINED(*)
+PFPROUT               0.000 (*)
+PGAMMA1               0.000 (*)
+PGAMMA2               0.000 (*)
+PHIG                  4.050 (*)
+PHIN                  0.000 (*)
+PIGCD                 1.000 (*)
+PK1                   0.000 (*)
+PK2                   0.000 (*)
+PK2WE                 0.000 (*)
+PK3                   0.000 (*)
+PK3B                  0.000 (*)
+PKETA                 0.000 (*)
+PKGIDL                0.000 (*)
+PKGISL             UNDEFINED(*)
+PKT1                  0.000 (*)
+PKT1L                 0.000 (*)
+PKT2                  0.000 (*)
+PKU0                  0.000 (*)
+PKU0WE                0.000 (*)
+PKVTH0                0.000 (*)
+PKVTH0WE              0.000 (*)
+PLAMBDA               0.000 (*)
+PLP                   0.000 (*)
+PLPE0                 0.000 (*)
+PLPEB                 0.000 (*)
+PMINV                 0.000 (*)
+PMINVCV               0.000 (*)
+PMOIN                 0.000 (*)
+PNDEP                 0.000 (*)
+PNFACTOR              0.000 (*)
+PNGATE                0.000 (*)
+PNIGBACC              0.000 (*)
+PNIGBINV              0.000 (*)
+PNIGC                 0.000 (*)
+PNOFF                 0.000 (*)
+PNSD                  0.000 (*)
+PNSUB                 0.000 (*)
+PNTOX                 0.000 (*)
+POXEDGE               1.000 (*)
+PPCLM                 0.000 (*)
+PPDIBLC1              0.000 (*)
+PPDIBLC2              0.000 (*)
+PPDIBLCB              0.000 (*)
+PPDITS                0.000 (*)
+PPDITSD               0.000 (*)
+PPHIN                 0.000 (*)
+PPIGCD                0.000 (*)
+PPOXEDGE              0.000 (*)
+PPRT                  0.000 (*)
+PPRWB                 0.000 (*)
+PPRWG                 0.000 (*)
+PPSCBE1               0.000 (*)
+PPSCBE2               0.000 (*)
+PPVAG                 0.000 (*)
+PRDSW                 0.000 (*)
+PRDW                  0.000 (*)
+PRGIDL                0.000 (*)
+PRGISL             UNDEFINED(*)
+PRSW                  0.000 (*)
+PRT                   0.000 (*)
+PRWB                  0.000 (*)
+PRWG                  1.000 (*)
+PSCBE1            424.000MEG(*)
+PSCBE2               10.000u(*)
+PTETA0                0.000 (*)
+PTNFACTOR             0.000 (*)
+PTVFBSDOFF            0.000 (*)
+PTVOFF                0.000 (*)
+PTVOFFCV              0.000 (*)
+PU0                   0.000 (*)
+PUA                   0.000 (*)
+PUA1                  0.000 (*)
+PUB                   0.000 (*)
+PUB1                  0.000 (*)
+PUC                   0.000 (*)
+PUC1                  0.000 (*)
+PUCS                  0.000 (*)
+PUCSTE                0.000 (*)
+PUD                   0.000 (*)
+PUD1                  0.000 (*)
+PUP                   0.000 (*)
+PUTE                  0.000 (*)
+PVAG                  0.000 (*)
+PVBM                  0.000 (*)
+PVBX                  0.000 (*)
+PVFB                  0.000 (*)
+PVFBCV                0.000 (*)
+PVFBSDOFF             0.000 (*)
+PVOFF                 0.000 (*)
+PVOFFCV               0.000 (*)
+PVSAT                 0.000 (*)
+PVTH0                 0.000 (*)
+PVTL                  0.000 (*)
+PW0                   0.000 (*)
+PWR                   0.000 (*)
+PXJ                   0.000 (*)
+PXN                   0.000 (*)
+PXRCRG1               0.000 (*)
+PXRCRG2               0.000 (*)
+PXT                   0.000 (*)
+RBDB                 50.000 (*)
+RBDBX0              100.000 (*)
+RBDBY0              100.000 (*)
+RBODYMOD              0.000 (*)
+RBPB                 50.000 (*)
+RBPBX0              100.000 (*)
+RBPBXL                0.000 (*)
+RBPBXNF               0.000 (*)
+RBPBXW                0.000 (*)
+RBPBY0              100.000 (*)
+RBPBYL                0.000 (*)
+RBPBYNF               0.000 (*)
+RBPBYW                0.000 (*)
+RBPD                 50.000 (*)
+RBPD0                50.000 (*)
+RBPDL                 0.000 (*)
+RBPDNF                0.000 (*)
+RBPDW                 0.000 (*)
+RBPS                 50.000 (*)
+RBPS0                50.000 (*)
+RBPSL                 0.000 (*)
+RBPSNF                0.000 (*)
+RBPSW                 0.000 (*)
+RBSB                 50.000 (*)
+RBSBX0              100.000 (*)
+RBSBY0              100.000 (*)
+RBSDBXL               0.000 (*)
+RBSDBXNF              0.000 (*)
+RBSDBXW               0.000 (*)
+RBSDBYL               0.000 (*)
+RBSDBYNF              0.000 (*)
+RBSDBYW               0.000 (*)
+RDSMOD                0.000 (*)
+RDSW                200.000 (*)
+RDSWMIN               0.000 (*)
+RDW                 100.000 (*)
+RDWMIN                0.000 (*)
+RGATEMOD              0.000 (*)
+RGIDL                 1.000 (*)
+RGISL              UNDEFINED(*)
+RNOIA               577.000m(*)
+RNOIB               516.400m(*)
+RNOIC               395.000m(*)
+RSH                   0.000 (*)
+RSHG                100.000m(*)
+RSW                 100.000 (*)
+RSWMIN                0.000 (*)
+SAREF                 1.000u(*)
+SBREF                 1.000u(*)
+SCREF                 1.000u(*)
+STETA0                0.000 (*)
+STK2                  0.000 (*)
+T_ABS              UNDEFINED(*)
+T_MEASURED         UNDEFINED(*)
+T_REL_GLOBAL       UNDEFINED(*)
+T_REL_LOCAL        UNDEFINED(*)
+TBGASUB             702.000u(*)
+TBGBSUB               1.108K(*)
+TCJ                   0.000 (*)
+TCJSW                 0.000 (*)
+TCJSWG                0.000 (*)
+TEMPEOT             300.150 (*)
+TEMPMOD               0.000 (*)
+TETA0                 0.000 (*)
+TKU0                  0.000 (*)
+TNFACTOR              0.000 (*)
+TNJTS                 0.000 (*)
+TNJTSD             UNDEFINED(*)
+TNJTSSW               0.000 (*)
+TNJTSSWD           UNDEFINED(*)
+TNJTSSWG              0.000 (*)
+TNJTSSWGD          UNDEFINED(*)
+TNOIA                 1.500 (*)
+TNOIB                 3.500 (*)
+TNOIC                 0.000 (*)
+TNOIMOD               0.000 (*)
+TNOM               UNDEFINED(*)
+TOXE                  3.000n(*)
+TOXM               UNDEFINED(*)
+TOXP               UNDEFINED(*)
+TOXREF                3.000n(*)
+TPB                   0.000 (*)
+TPBSW                 0.000 (*)
+TPBSWG                0.000 (*)
+TRNQSMOD              0.000 (*)
+TVFBSDOFF             0.000 (*)
+TVOFF                 0.000 (*)
+TVOFFCV               0.000 (*)
+U0                   67.000m(*)
+UA                 UNDEFINED(*)
+UA1                   1.000n(*)
+UB                1.000E-019(*)
+UB1                  -0.001f(*)
+UC                 UNDEFINED(*)
+UC1                UNDEFINED(*)
+UCS                   1.670 (*)
+UCSTE                -4.775m(*)
+UD                    0.000 (*)
+UD1                   0.000 (*)
+UP                    0.000 (*)
+UTE                  -1.500 (*)
+VBM                  -3.000 (*)
+VBX                   0.000 (*)
+VDDEOT                1.500 (*)
+VERSION                4.6.5(*)
+VFB                  -1.000 (*)
+VFBCV                -1.000 (*)
+VFBSDOFF              0.000 (*)
+VOFF                -80.000m(*)
+VOFFCV                0.000 (*)
+VOFFCVL               0.000 (*)
+VOFFL                 0.000 (*)
+VSAT                 80.000K(*)
+VTH0                700.000m(*)
+VTH0M                 0.000 (*)
+VTL                 200.000K(*)
+VTSD               UNDEFINED(*)
+VTSS                 10.000 (*)
+VTSSWD             UNDEFINED(*)
+VTSSWGD            UNDEFINED(*)
+VTSSWGS              10.000 (*)
+VTSSWS               10.000 (*)
+W0                    2.500u(*)
+WA0                   0.000 (*)
+WA1                   0.000 (*)
+WA2                   0.000 (*)
+WACDE                 0.000 (*)
+WAGIDL                0.000 (*)
+WAGISL             UNDEFINED(*)
+WAGS                  0.000 (*)
+WAIGBACC              0.000 (*)
+WAIGBINV              0.000 (*)
+WAIGC                 0.000 (*)
+WAIGD                 0.000 (*)
+WAIGS                 0.000 (*)
+WAIGSD                0.000 (*)
+WALPHA0               0.000 (*)
+WALPHA1               0.000 (*)
+WAT                   0.000 (*)
+WB0                   0.000 (*)
+WB1                   0.000 (*)
+WBETA0                0.000 (*)
+WBGIDL                0.000 (*)
+WBGISL             UNDEFINED(*)
+WBIGBACC              0.000 (*)
+WBIGBINV              0.000 (*)
+WBIGC                 0.000 (*)
+WBIGD                 0.000 (*)
+WBIGS                 0.000 (*)
+WBIGSD                0.000 (*)
+WCDSC                 0.000 (*)
+WCDSCB                0.000 (*)
+WCDSCD                0.000 (*)
+WCF                   0.000 (*)
+WCGDL                 0.000 (*)
+WCGIDL                0.000 (*)
+WCGISL             UNDEFINED(*)
+WCGSL                 0.000 (*)
+WCIGBACC              0.000 (*)
+WCIGBINV              0.000 (*)
+WCIGC                 0.000 (*)
+WCIGD                 0.000 (*)
+WCIGS                 0.000 (*)
+WCIGSD                0.000 (*)
+WCIT                  0.000 (*)
+WCKAPPAD              0.000 (*)
+WCKAPPAS              0.000 (*)
+WCLC                  0.000 (*)
+WCLE                  0.000 (*)
+WDELTA                0.000 (*)
+WDROUT                0.000 (*)
+WDSUB                 0.000 (*)
+WDVT0                 0.000 (*)
+WDVT0W                0.000 (*)
+WDVT1                 0.000 (*)
+WDVT1W                0.000 (*)
+WDVT2                 0.000 (*)
+WDVT2W                0.000 (*)
+WDVTP0                0.000 (*)
+WDVTP1                0.000 (*)
+WDVTP2                0.000 (*)
+WDVTP3                0.000 (*)
+WDVTP4                0.000 (*)
+WDVTP5                0.000 (*)
+WDWB                  0.000 (*)
+WDWG                  0.000 (*)
+WEB                   0.000 (*)
+WEC                   0.000 (*)
+WEFFEOT              10.000 (*)
+WEGIDL                0.000 (*)
+WEGISL             UNDEFINED(*)
+WEIGBINV              0.000 (*)
+WETA0                 0.000 (*)
+WETAB                 0.000 (*)
+WEU                   0.000 (*)
+WFGIDL                0.000 (*)
+WFGISL             UNDEFINED(*)
+WFPROUT               0.000 (*)
+WGAMMA1               0.000 (*)
+WGAMMA2               0.000 (*)
+WINT                  0.000 (*)
+WK1                   0.000 (*)
+WK2                   0.000 (*)
+WK2WE                 0.000 (*)
+WK3                   0.000 (*)
+WK3B                  0.000 (*)
+WKETA                 0.000 (*)
+WKGIDL                0.000 (*)
+WKGISL             UNDEFINED(*)
+WKT1                  0.000 (*)
+WKT1L                 0.000 (*)
+WKT2                  0.000 (*)
+WKU0                  0.000 (*)
+WKU0WE                0.000 (*)
+WKVTH0                0.000 (*)
+WKVTH0WE              0.000 (*)
+WL                    0.000 (*)
+WLAMBDA               0.000 (*)
+WLC                UNDEFINED(*)
+WLN                   1.000 (*)
+WLOD                  0.000 (*)
+WLODKU0               0.000 (*)
+WLODVTH               0.000 (*)
+WLP                   0.000 (*)
+WLPE0                 0.000 (*)
+WLPEB                 0.000 (*)
+WMAX               UNDEFINED(*)
+WMIN               UNDEFINED(*)
+WMINV                 0.000 (*)
+WMINVCV               0.000 (*)
+WMOIN                 0.000 (*)
+WNDEP                 0.000 (*)
+WNFACTOR              0.000 (*)
+WNGATE                0.000 (*)
+WNIGBACC              0.000 (*)
+WNIGBINV              0.000 (*)
+WNIGC                 0.000 (*)
+WNOFF                 0.000 (*)
+WNSD                  0.000 (*)
+WNSUB                 0.000 (*)
+WNTOX                 0.000 (*)
+WPCLM                 0.000 (*)
+WPDIBLC1              0.000 (*)
+WPDIBLC2              0.000 (*)
+WPDIBLCB              0.000 (*)
+WPDITS                0.000 (*)
+WPDITSD               0.000 (*)
+WPEMOD                0.000 (*)
+WPHIN                 0.000 (*)
+WPIGCD                0.000 (*)
+WPOXEDGE              0.000 (*)
+WPRT                  0.000 (*)
+WPRWB                 0.000 (*)
+WPRWG                 0.000 (*)
+WPSCBE1               0.000 (*)
+WPSCBE2               0.000 (*)
+WPVAG                 0.000 (*)
+WR                    1.000 (*)
+WRDSW                 0.000 (*)
+WRDW                  0.000 (*)
+WREF               UNDEFINED(*)
+WRGIDL                0.000 (*)
+WRGISL             UNDEFINED(*)
+WRSW                  0.000 (*)
+WTETA0                0.000 (*)
+WTNFACTOR             0.000 (*)
+WTVFBSDOFF            0.000 (*)
+WTVOFF                0.000 (*)
+WTVOFFCV              0.000 (*)
+WU0                   0.000 (*)
+WUA                   0.000 (*)
+WUA1                  0.000 (*)
+WUB                   0.000 (*)
+WUB1                  0.000 (*)
+WUC                   0.000 (*)
+WUC1                  0.000 (*)
+WUCS                  0.000 (*)
+WUCSTE                0.000 (*)
+WUD                   0.000 (*)
+WUD1                  0.000 (*)
+WUP                   0.000 (*)
+WUTE                  0.000 (*)
+WVBM                  0.000 (*)
+WVBX                  0.000 (*)
+WVFB                  0.000 (*)
+WVFBCV                0.000 (*)
+WVFBSDOFF             0.000 (*)
+WVOFF                 0.000 (*)
+WVOFFCV               0.000 (*)
+WVSAT                 0.000 (*)
+WVTH0                 0.000 (*)
+WVTL                  0.000 (*)
+WW                    0.000 (*)
+WW0                   0.000 (*)
+WWC                UNDEFINED(*)
+WWL                   0.000 (*)
+WWLC               UNDEFINED(*)
+WWN                   1.000 (*)
+WWR                   0.000 (*)
+WXJ                   0.000 (*)
+WXN                   0.000 (*)
+WXRCRG1               0.000 (*)
+WXRCRG2               0.000 (*)
+WXT                   0.000 (*)
+XGL                   0.000 (*)
+XGW                   0.000 (*)
+XJ                  150.000n(*)
+XJBVD              UNDEFINED(*)
+XJBVS                 1.000 (*)
+XL                    0.000 (*)
+XN                    3.000 (*)
+XPART                 0.000 (*)
+XRCRG1               12.000 (*)
+XRCRG2                1.000 (*)
+XT                  155.000n(*)
+XTID               UNDEFINED(*)
+XTIS                  3.000 (*)
+XTSD               UNDEFINED(*)
+XTSS                 20.000m(*)
+XTSSWD             UNDEFINED(*)
+XTSSWGD            UNDEFINED(*)
+XTSSWGS              20.000m(*)
+XTSSWS               20.000m(*)
+XW                    0.000 (*)
+(*) Default Parameter
+
+
+
+Model parameters for devices of type Opamp
+==========================================
+Instance:                X1   
+Using model:       $GENERIC   
+LEVEL                     3   
+A                  200.000K(*)
+C                   30.000p(*)
+CMRR               100.000K(*)
+GBW                2.500MEG   
+IBIAS               30.000p   
+IOFF                 3.000p   
+IOSC                20.000m(*)
+PD                  25.000m(*)
+PM                  60.000 (*)
+ROUTAC              50.000    
+ROUTDC              75.000    
+SRN                5.000MEG   
+SRP                5.000MEG   
+T_ABS             UNDEFINED(*)
+T_MEASURED        UNDEFINED(*)
+T_REL_GLOBAL      UNDEFINED(*)
+T_REL_LOCAL       UNDEFINED(*)
+TYPE                 1.000 (*)
+VCC                 15.000 (*)
+VEE                -15.000 (*)
+VNS                -13.000 (*)
+VOFF                 2.000m   
+VPS                 13.000 (*)
+(*) Default Parameter
+
+
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+VC           15.000   VE          -15.000   3          -238.814n 
+4             1.935m  OUT           5.452m  6          -238.814n 
+7           773.802u  8           154.642u  9           386.901u 
+10          154.642u  11            5.451m 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:                X1.D5             X1.D3             X1.D4             X1.D1
+
+Capacitance Terms:
+CAP                     0.000             0.000             0.000             0.000 
+
+Current Terms:
+ID                    -30.010p          -13.005p          -13.015p          -20.010p
+
+Resistance Terms:
+REQ                     1.000T            1.000T            1.000T            1.000T
+
+Voltage Terms:
+VD                    -30.000           -12.995           -13.005           -20.000 
+
+Power DC Terms:
+PD                    900.300p          168.988p          169.272p          400.186p
+PS                      0.000             0.000             0.000             0.000 
+
+DC Pin Currents:
+Id                    -30.010p          -13.005p          -13.015p          -20.010p
+
+Condition:
+State                      HOT               HOT               HOT               HOT
+
+Device Variables:
+area                    1.000             1.000             1.000             1.000 
+ic                      0.000             0.000             0.000             0.000 
+
+
+Instance:                X1.D2                D1                D2
+Using model:                NA             1N458             1N458
+
+Capacitance Terms:
+CAP                     0.000             4.523p            4.495p
+
+Current Terms:
+ID                    -20.010p           46.861p          -47.603p
+
+Resistance Terms:
+REQ                     1.000T        112.237MEG        115.212MEG
+
+Voltage Terms:
+VD                    -20.000             5.297m           -5.451m
+
+Power DC Terms:
+PD                    400.214p          248.205f          259.495f
+PS                      0.000             0.000             0.000 
+
+DC Pin Currents:
+Id                    -20.010p           46.861p          -47.603p
+
+Condition:
+State                      HOT               OFF               OFF
+
+Device Variables:
+area                    1.000             1.000             1.000 
+ic                      0.000             0.000             0.000 
+
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors NPN
+====================================================================
+Instance:                X1.Q1             X1.Q2
+
+Beta Terms:
+BETADC                4.519MEG          5.517MEG
+BETAAC                2.381MEG          2.632MEG
+
+Capacitance Terms:
+CPI                     0.000             0.000 
+CMU                     0.000             0.000 
+CBX                     0.000             0.000 
+CJS                     0.000             0.000 
+
+Conductance Terms:
+GM                      2.888m            2.888m
+
+Current Terms:
+IB                     16.529p           13.538p
+IC                     74.688u           74.684u
+
+Resistance Terms:
+RPI                 824.518MEG        911.358MEG
+RX                      0.000             0.000 
+RO                      1.000T            1.000T
+
+Voltage Terms:
+VBE                   707.105m          705.178m
+VBC                   -14.840           -14.842 
+VCE                    15.547            15.547 
+
+Frequency Terms:
+FT                  45959.004T        45956.583T
+
+Power DC Terms:
+PD                      1.161m            1.161m
+PS                      0.000             0.000 
+
+DC Pin Currents:
+Ib                     16.529p           13.538p
+Ic                     74.688u           74.684u
+Ie                    -74.688u          -74.684u
+Is                      0.000             0.000 
+
+Condition:
+State                      HOT               HOT
+
+Device Variables:
+area                    1.000             1.000 
+vbe                     0.000             0.000 
+vce                     0.000             0.000 
+
+
+
+Operating Point for Devices of Type BSIM4 NMOS
+==============================================
+Instance:                   M1
+Using model:          $BSIM3_N
+
+Capacitance Terms:
+capbd                   5.001f
+capbs                   5.001f
+capbs                   4.999f
+cbb                    42.832f
+cbd                     0.387f
+cbg                   -42.848f
+cbs                     0.051f
+cdb                    -0.020f
+cdd                     0.118f
+cdg                    -0.129f
+cds                     0.032f
+cgb                   -42.790f
+cgd                    -0.141f
+cgg                    43.108f
+cgs                    -0.176f
+csb                    -0.021f
+csd                     0.058f
+csg                    -0.131f
+css                     0.093f
+
+Conductance Terms:
+gds                    23.303n
+gm                    619.070p
+gmbs                   94.969p
+
+Current Terms:
+ibd                     0.387f
+ibs                    -0.387f
+id                     18.205p
+igb                     0.000 
+igcd                    0.000 
+igcs                    0.000 
+igd                     0.000 
+igidl                   0.000 
+igisl                   0.000 
+igs                     0.000 
+isub                    0.000 
+
+Charge Terms:
+qb                      0.000 
+gcrg                    0.000 
+qd                      0.000 
+qdef                    0.000 
+qg                      0.000 
+qs                      0.000 
+gtau                    0.000 
+
+Voltage Terms:
+vbs                  -386.901u
+vds                  -773.802u
+vdsat                  45.331m
+vgs                  -619.160u
+vth                   198.879m
+
+Device Variables:
+l                       5.000u
+w                       5.000u
+nf                      1.000 
+sa                      0.000 
+sb                      0.000 
+sd                      0.000 
+sca                     0.000 
+scb                     0.000 
+scc                     0.000 
+sc                      0.000 
+ad                      0.000 
+as                      0.000 
+nrd                     0.000 
+nrs                     0.000 
+pd                      0.000 
+ps                      0.000 
+min                     0.000 
+rbdb                   50.000 
+rbsb                   50.000 
+rbpb                   50.000 
+rbps                   50.000 
+rbpd                   50.000 
+delvto                  0.000 
+xgw                     0.000 
+ngcon                   1.000 
+vds                     0.000 
+vgs                     0.000 
+vbs                     0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                X1.Rc1            X1.Rc2            X1.Re1            X1.Re2
+V                      158.492m          158.484m          132.736m          132.729m
+Power DC Terms:
+PD                      11.837u           11.836u            9.914u            9.913u
+
+DC Pin Currents:
+Ir                      74.688u           74.684u           74.688u           74.684u
+
+Device Variables:
+tc1                      0.000             0.000             0.000             0.000 
+tc2                      0.000             0.000             0.000             0.000 
+
+
+Instance:                 X1.Re             X1.Rp             X1.R2            X1.Ro2
+V                     -837.907m           30.000            -1.292u            5.470m
+Power DC Terms:
+PD                     526.566n           20.500m            0.017f            1.197u
+
+DC Pin Currents:
+Ir                    -628.430n          683.333u          -12.920p          218.792u
+
+Device Variables:
+tc1                      0.000             0.000             0.000             0.000 
+tc2                      0.000             0.000             0.000             0.000 
+
+
+Instance:             X1.ROUTAC                R1                R2                R3
+V                       17.593u            0.000           238.814n            1.161m
+Power DC Terms:
+PD                       6.190p            0.000             0.003f          408.294p
+
+DC Pin Currents:
+Ir                     351.857n            0.000            13.538p          351.746n
+
+Device Variables:
+tc1                      0.000             0.000             0.000             0.000 
+tc2                      0.000             0.000             0.000             0.000 
+
+
+Instance:                    R4                R5                R6                R7
+V                        3.518m         -773.802u        2.711E-020         -154.642u
+Power DC Terms:
+PD                       1.237n          272.168p        1.469E-042            7.247f
+
+DC Pin Currents:
+Ir                     351.763n         -351.728n        5.421E-023          -46.861p
+
+Device Variables:
+tc1                      0.000             0.000             0.000             0.000 
+tc2                      0.000             0.000             0.000             0.000 
+
+
+Instance:                    R8
+V                     -944.641n
+Power DC Terms:
+PD                       0.089f
+
+DC Pin Currents:
+Ir                     -94.464p
+
+Device Variables:
+tc1                      0.000 
+tc2                      0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                 X1.C1             X1.Ce             X1.C3                C1
+V                        8.352u          837.907m            5.471m            5.452m
+Power DC Terms:
+PS                       0.000             0.000             0.000             0.000 
+
+DC Pin Currents:
+Ic                       0.000             0.000             0.000             0.000 
+
+Device Variables:
+ic                       0.000             0.000             0.000             0.000 
+
+
+Instance:                    C2                C3
+V                     -238.814n         -154.642u
+Power DC Terms:
+PS                       0.000             0.000 
+
+DC Pin Currents:
+Ic                       0.000             0.000 
+
+Device Variables:
+ic                       0.000             0.000 
+
+
+
+Operating Point for Devices of Type Opamp
+=========================================
+Instance:                   X1
+Using model:          $GENERIC
+Condition:
+State                      LIN
+
+
+
+Operating Point for Devices of Type SPICE Poly
+==============================================
+Instance:                X1.I3             X1.V2             X1.V1             X1.I1
+V                       5.470m            0.000           351.857u            1.292u
+Power DC Terms:
+PG                      1.199u            0.000         2.476E-019            5.102f
+
+DC Pin Currents:
+ISource              -219.143u         -980.288n           -0.704f           -3.949n
+
+
+Instance:                X1.I2
+V                      -1.292u
+Power DC Terms:
+PG                     -5.085f
+
+DC Pin Currents:
+ISource                -3.936n
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                   V1                V2            X1.IEE            X1.VS1
+V                      15.000           -15.000            14.162             0.000 
+Power DC Terms:
+PG                     12.491m           12.500m           -2.124m            0.000 
+
+DC Pin Currents:
+ISource              -832.705u          833.333u          150.000u          -12.920p
+
+
+Instance:                X1.VC             X1.VE            X1.VLP            X1.VLN
+V                       2.000             2.000            20.000            20.000 
+Power DC Terms:
+PG                    -26.009p          -26.031p          400.193p          400.207p
+
+DC Pin Currents:
+ISource                13.005p           13.015p          -20.010p          -20.010p
+
+
+Instance:               X1.VS2
+V                       0.000 
+Power DC Terms:
+PG                      0.000 
+
+DC Pin Currents:
+ISource               351.857n
+
+
