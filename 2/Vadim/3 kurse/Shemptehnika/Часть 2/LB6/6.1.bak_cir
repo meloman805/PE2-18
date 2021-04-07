@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=35
-TXCnt=2
+NLCnt=44
+TXCnt=3
 
 [shapedef]
 Name=Capacitor
@@ -173,7 +173,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=426
+Used=427
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -219,7 +219,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7425
-Used=855
+Used=856
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -311,16 +311,10 @@ Pxs=592,352,592,368
 Pxs=592,352,616,352
 
 [Wire]
-Pxs=752,304,816,304
+Pxs=752,304,864,304
 
 [Wire]
 Pxs=864,304,968,304
-
-[Wire]
-Pxs=816,192,816,304
-
-[Wire]
-Pxs=816,304,864,304
 
 [Wire]
 Pxs=592,256,616,256
@@ -351,7 +345,7 @@ V=V1
 
 [Attr]
 ON=11,-7,VALUE
-V=12
+V=9
 Style=8192
 
 [Attr]
@@ -359,14 +353,14 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=544,304,616,304
+Pxs=536,304,576,304
 
 [Wire]
 Pxs=448,328,512,328
 
 [Comp]
 Name=Ground
-Px=752,352
+Px=752,360
 Rot=7
 
 [Wire]
@@ -379,7 +373,7 @@ Rot=7
 
 [Attr]
 ON=17,-24,PART
-V=D1
+V=D2
 Style=8192
 
 [Attr]
@@ -411,7 +405,7 @@ Style=8192
 
 [Attr]
 ON=-19,-23,RESISTANCE
-V=1
+V=100
 Style=8192
 
 [Attr]
@@ -429,8 +423,8 @@ V=C3
 Style=8192
 
 [Attr]
-ON=-36,-39,CAPACITANCE
-V=1n
+ON=-33,17,CAPACITANCE
+V=0.000000455
 Style=8192
 
 [Attr]
@@ -471,7 +465,7 @@ Pxs=344,328,360,328
 
 [Comp]
 Name=Capacitor
-Px=544,416
+Px=536,416
 Rot=5
 
 [Attr]
@@ -481,7 +475,7 @@ Style=8192
 
 [Attr]
 ON=12,-40,CAPACITANCE
-V=1n
+V=1u
 Style=8192
 
 [Attr]
@@ -490,15 +484,12 @@ V
 
 [Comp]
 Name=Ground
-Px=544,416
+Px=536,416
 Rot=7
-
-[Wire]
-Pxs=544,304,544,368
 
 [Comp]
 Name=Resistor
-Px=544,304
+Px=536,304
 Rot=6
 
 [Attr]
@@ -508,12 +499,72 @@ Style=8192
 
 [Attr]
 ON=-29,-40,RESISTANCE
-V=1
+V=60
 Style=8192
 
 [Attr]
 ON=0,0,PACKAGE
 V
+
+[Comp]
+Name=Resistor
+Px=536,264
+Rot=5
+
+[Attr]
+ON=10,-24,PART
+V=R1
+Style=8192
+
+[Attr]
+ON=10,-38,RESISTANCE
+V=1870
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=536,216,592,216
+
+[Wire]
+Pxs=536,264,536,304
+
+[Wire]
+Pxs=576,304,616,304
+
+[Wire]
+Pxs=536,304,536,368
+
+[Wire]
+Pxs=488,280,488,304
+
+[Wire]
+Pxs=488,280,616,280
+
+[Wire]
+Pxs=752,352,752,360
+
+[Wire]
+Pxs=448,216,448,264
+
+[Wire]
+Pxs=448,216,536,216
+
+[Wire]
+Pxs=424,216,424,264
+
+[Wire]
+Pxs=424,216,448,216
+
+[Grid Text]
+Text="Uc"
+Px=576,304
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
 
 [Grid Text]
 Text="In"
@@ -685,9 +736,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=293,97
+SB 3=0,74
 Scale 3=0.66666666666666663
-Px=565,290
+Px=461,355
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -747,7 +798,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=0,2
+SB 0=58,2
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -782,7 +833,7 @@ Section=0
 Page=2
 Text=*** From file C:\MC11\library\UTILITY.LBR
 Text=*** 1ns Impulse Source
-Text=.MODEL IMPULSE PUL (P1=0 P2=0 P3=10u P4=10u P5=20u VONE=1G)
+Text=.MODEL IMPULSE PUL (P1=0 P2=0 P3=10u P4=10u P5=3m VONE=1G)
 
 [InfoPage]
 InfoPage=True
@@ -1023,7 +1074,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=100u
+TRange=5m
 TStep=0
 NPts=51
 Temp=27
@@ -1036,6 +1087,7 @@ IgnoreExprErrors=False
 
 [WaveForm]
 Analysis=Transient
+Plt=1
 AliasID=1
 XExp=T
 YExp=v(Uc)
@@ -1059,6 +1111,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
+Plt=2
 AliasID=2
 XExp=T
 YExp=v(Out)
@@ -1082,7 +1135,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=1
+Plt=3
 AliasID=3
 XExp=T
 YExp=V(V2)
@@ -1132,6 +1185,17 @@ Analysis=ImDistortion
 
 [Pane]
 Analysis=Stability
+
+[Stepping]
+Analysis=Transient
+Index=1
+Status=On
+Parameter Type=Component
+Name=C3
+Param=value
+From=227.5n
+To=9100n
+Value=136.5n
 
 [Watch]
 Analysis=Transient
