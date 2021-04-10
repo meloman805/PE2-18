@@ -3,7 +3,7 @@
 ***                                                                          ***
 ***                                                                          ***
 ***                         Transient Analysis of 6                          ***
-***                           10.04.2021 16:04:18                            ***
+***                           10.04.2021 16:30:37                            ***
 ********************************************************************************
 Limits
 ======
@@ -14,11 +14,22 @@ Temperature              Linear 27
 Retrace Runs             1
 Run Options              Normal
 State Variables          Zero
-Operating Point          On
+Operating Point          Off
 Operating Point Only     Off
 Auto Scale Ranges        Off
 Accumulate Plots         Off
 Fixed Time Step          Off
 Periodic Steady State    Off
 Ignore Expression Errors Off
+
+Stepping Options
+================
+Stepping is Nested
+
+Step What  R1 value
+From       1k
+To         10k
+Step Value 100
+Method     Linear
+
 
