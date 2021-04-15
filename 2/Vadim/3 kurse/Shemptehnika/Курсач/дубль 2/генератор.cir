@@ -7,8 +7,25 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=28
-TXCnt=2
+NLCnt=52
+TXCnt=4
+
+[shapedef]
+Name=Amp
+Line=16,-24,16,24
+Line=56,0,16,-24
+Line=56,0,16,24
+Line=56,0,72,0
+Line=0,0,0,0
+Line=0,0,16,0
+
+[shapedef]
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
 
 [shapedef]
 Name=Capacitor
@@ -19,6 +36,23 @@ Line=26,0,48,0
 Current=32,12,16,12
 Ellipse=29,-7,31,-5
 FColor=#0000FF
+
+[shapedef]
+Name=Circle.root
+Ellipse=20,-12,44,12
+FColor=None
+Line=0,0,19,0
+Line=32,32,32,12
+Line=64,0,44,0
+PolyClosed=3
+PolyLine=13,-3
+PolyLine=18,0
+PolyLine=13,3
+PolyClosed=3
+PolyLine=32,14
+PolyLine=35,19
+PolyLine=29,19
+Line=18,0,20,0
 
 [shapedef]
 Name=Fixed
@@ -34,6 +68,15 @@ Line=18,-4,18,4
 Line=24,0,24,0
 
 [shapedef]
+Name=Plt.root
+Rectangle=16,-24,64,24
+FColor=None
+Line=0,0,16,0
+Line=22,0,58,0
+Line=40,-18,40,18
+Line=64,0,80,0
+
+[shapedef]
 Name=Resistor_Euro
 Rectangle=12,-4,36,4
 FColor=None
@@ -42,6 +85,12 @@ Line=48,0,36,0
 Current=32,8,16,8
 Ellipse=31,-1,33,1
 FColor=#0000FF
+
+[shapedef]
+Name=Sum
+Root="Circle.root",0,0,0
+Line=27,0,37,0
+Line=32,-5,32,5
 
 [shapedef]
 Name=R_gost
@@ -60,9 +109,42 @@ Line=25,0,48,0
 Current=32,12,16,12
 
 [shapedef]
+Name=E_gost
+Line=0,0,12,0
+Line=36,0,48,0
+Current=32,16,16,16
+Ellipse=12,-12,36,12
+FColor=None
+Line=16,0,32,0
+Line=32,0,24,-2
+Line=32,0,24,2
+
+[shapedef]
 Name=Ground_GOST
 Line=1,0,13,0
 Line=13,-8,13,8
+
+[shapedef]
+Name=НЕ
+Line=0,0,8,0
+Rectangle=8,-16,32,16
+FColor=None
+Line=32,0,40,0
+Ellipse=29,-3,35,3
+FColor=None
+Text="1"
+TextInfo=17,-6,25,9 , -11,0,"Arial"
+
+[shapedef]
+Name=ограничитель
+Root="Plt.root",0,0,0
+Line=32,16,48,-16
+Line=48,-16,56,-16
+Line=24,16,32,16
+Line=9,-3,16,0
+Line=9,3,16,0
+Line=70,-3,77,0
+Line=70,3,77,0
 
 [shapedef]
 Name=Timer555
@@ -108,7 +190,7 @@ Name=555_2
 Definition=Macro
 Shape=Timer555
 Mask=4096
-Used=1
+Used=4
 Label Offset=0,0,0,0
 PinCnt=8
 Pin="Reset",a,0,0,-13,0
@@ -121,11 +203,33 @@ Pin="Out",a,17,6
 Pin="Gnd",a,17,12
 
 [compdef]
+Name=Fixed Analog
+Definition=ANALOG STATE
+Shape=Fixed
+Mask=2048
+Used=7
+memo=Provides a fixed DC voltage
+Label Offset=-14,-7,-6,-27
+PinCnt=1
+Pin="Out",4,0,-8,-3
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=1793
+Used=415
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=424
+Used=433
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -133,22 +237,11 @@ Pin="Plus",6,0,-3,-5
 Pin="Minus",0,0,-14,-5
 
 [compdef]
-Name=Ground
-Definition=Ground
-Shape=Ground
-Mask=1793
-Used=394
-memo=Ground
-Label Offset=0,0,0,0
-PinCnt=1
-Pin="PinA",0,0,-3,-7
-
-[compdef]
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
-Mask=7425
-Used=853
+Mask=7937
+Used=866
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -156,18 +249,65 @@ Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
 [compdef]
-Name=Fixed Analog
-Definition=ANALOG STATE
-Shape=Fixed
-Mask=2048
-Used=2
-memo=Provides a fixed DC voltage
-Label Offset=-14,-7,-6,-27
-PinCnt=1
-Pin="Out",4,0,-8,-3
+Name=ограничитель
+Definition=Macro
+Shape=ограничитель
+Mask=4096
+Used=3
+Label Offset=31,-54,27,24
+PinCnt=2
+Pin="PinA",a,0,0,-6,-2
+Pin="PinB",a,10,0
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=4865
+Used=69
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[compdef]
+Name=усилитель
+Definition=Macro
+Shape=Amp
+Mask=4096
+Used=4
+Label Offset=27,-46,23,22
+PinCnt=2
+Pin="PinA",a,0,0,-11,-2
+Pin="PinB",a,9,0
+
+[compdef]
+Name=сумматор2
+Definition=Macro
+Shape=Sum
+Mask=4096
+Used=5
+Label Offset=27,-43,14,15
+PinCnt=3
+Pin="PINA",a,0,0,-12,-2
+Pin="PINB",a,4,4,4,2
+Pin="PINC",a,8,0
+
+[compdef]
+Name=НЕ
+Definition=Macro
+Shape=НЕ
+Mask=4096
+Used=15
+memo=Идеальный инвертор
+Label Offset=15,-45,19,6
+PinCnt=2
+Pin="In",a,0,0,-4,0
+Pin="Out",a,5,0,-3,0
 
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 0,0,1315,555
+Window Placement=2,3, -1,-1, -9,-38, 0,0,678,332
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -176,12 +316,12 @@ NodeVoltageFormat=2
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 32,32,1696,591
+Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 256,256,1920,815
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
-Show Voltages=False
+Show Voltages=True
 Show Current=False
 Show Power=False
 Show Condition=False
@@ -193,7 +333,7 @@ Show Grid Text=True
 
 [Comp]
 Name=555_2
-Px=616,256
+Px=576,264
 
 [Attr]
 ON=0,0,PART
@@ -208,130 +348,30 @@ V=555_2
 ON=0,0,PACKAGE
 V
 
-[Comp]
-Name=Capacitor
-Px=592,416
-Rot=5
-
-[Attr]
-ON=12,-26,PART
-V=C1
-Style=8192
-
-[Attr]
-ON=12,-40,CAPACITANCE
-V=1n
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Ground
-Px=592,416
-Rot=7
+[Wire]
+Pxs=552,360,552,416
 
 [Wire]
-Pxs=592,352,592,368
+Pxs=552,360,576,360
 
 [Wire]
-Pxs=592,352,616,352
-
-[Comp]
-Name=Capacitor
-Px=496,416
-Rot=5
-
-[Attr]
-ON=12,-26,PART
-V=C2
-Style=8192
-
-[Attr]
-ON=12,-40,CAPACITANCE
-V=10n
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Ground
-Px=496,416
-Rot=7
+Pxs=712,312,928,312
 
 [Wire]
-Pxs=496,328,496,368
+Pxs=552,264,576,264
 
 [Wire]
-Pxs=496,328,528,328
+Pxs=552,224,552,264
 
 [Wire]
-Pxs=528,328,600,328
-
-[Comp]
-Name=Resistor
-Px=496,288
-Rot=5
-
-[Attr]
-ON=10,-24,PART
-V=R1
-Style=8192
-
-[Attr]
-ON=10,-38,RESISTANCE
-V=1k
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
+Pxs=736,224,736,264
 
 [Wire]
-Pxs=496,288,496,328
-
-[Wire]
-Pxs=752,304,816,304
-
-[Wire]
-Pxs=864,304,968,304
-
-[Wire]
-Pxs=496,192,496,240
-
-[Wire]
-Pxs=496,192,816,192
-
-[Wire]
-Pxs=816,192,816,304
-
-[Wire]
-Pxs=816,304,864,304
-
-[Wire]
-Pxs=592,256,616,256
-
-[Wire]
-Pxs=592,216,592,256
-
-[Wire]
-Pxs=592,216,776,216
-
-[Wire]
-Pxs=776,216,776,256
-
-[Wire]
-Pxs=752,256,776,256
-
-[Wire]
-Pxs=776,216,880,216
+Pxs=712,264,736,264
 
 [Comp]
 Name=Fixed Analog
-Px=912,216
+Px=872,224
 Rot=2
 
 [Attr]
@@ -347,26 +387,401 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=600,304,616,304
+[Comp]
+Name=Ground
+Px=712,368
+Rot=7
 
 [Wire]
-Pxs=600,304,600,328
+Pxs=712,360,712,368
 
 [Wire]
-Pxs=600,328,616,328
+Pxs=552,312,576,312
+
+[Wire]
+Pxs=552,312,552,336
+
+[Wire]
+Pxs=552,336,576,336
+
+[Wire]
+Pxs=552,224,736,224
+
+[Wire]
+Pxs=736,224,840,224
+
+[Wire]
+Pxs=408,416,424,416
+
+[Wire]
+Pxs=472,416,552,416
+
+[Comp]
+Name=Capacitor
+Px=376,408
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=C1
+Style=8192
+
+[Attr]
+ON=11,-42,CAPACITANCE
+V=0.155u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=376,408
+Rot=7
+
+[Wire]
+Pxs=376,360,432,360
+
+[Wire]
+Pxs=504,336,504,360
+
+[Wire]
+Pxs=504,336,552,336
+
+[Comp]
+Name=Resistor
+Px=432,224
+Rot=7
+
+[Attr]
+ON=-23,10,PART
+V=R1
+Style=8192
+
+[Attr]
+ON=-23,23,RESISTANCE
+V=200k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=472,288
+Rot=4
+
+[Attr]
+ON=-23,10,PART
+V=R2
+Style=8192
+
+[Attr]
+ON=-28,23,RESISTANCE
+V=1k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=520,288,576,288
+
+[Wire]
+Pxs=432,288,472,288
+
+[Wire]
+Pxs=432,264,432,272
+
+[Wire]
+Pxs=432,272,432,288
+
+[Wire]
+Pxs=432,288,432,360
+
+[Wire]
+Pxs=432,360,504,360
+
+[Wire]
+Pxs=432,224,552,224
+
+[Comp]
+Name=ограничитель
+Px=120,472
+
+[Attr]
+ON=32,-49,PART
+V=X39
+Style=8192
+Font=Arial
+
+[Attr]
+ON=31,-39,FILE
+V=ограничитель
+Font=Arial
+
+[Attr]
+ON=31,-9,Param:LOW
+V=0.1
+Font=Arial
+
+[Attr]
+ON=31,6,Param:HIGH
+V=1
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Attr]
+ON=0,28,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Arial
+
+[Comp]
+Name=Battery
+Px=72,552
+Rot=3
+
+[Attr]
+ON=6,-16,PART
+V=V_Regulirovania
+Style=8192
+Font=Arial
+
+[Attr]
+ON=-10,-43,VALUE
+V=1
+Font=Arial
+
+[Attr]
+ON=0,28,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Comp]
+Name=Ground
+Px=72,560
+Rot=1
+
+[Wire]
+Pxs=72,472,120,472
+
+[Wire]
+Pxs=72,552,72,560
+
+[Comp]
+Name=усилитель
+Px=264,472
+
+[Attr]
+ON=27,-46,PART
+V=X46
+Style=8192
+Font=Arial
+
+[Attr]
+ON=27,-31,FILE
+V=усилитель
+Font=Arial
+
+[Attr]
+ON=27,-1,Param:GAIN
+V=4.88
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Attr]
+ON=0,28,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Arial
+
+[Wire]
+Pxs=200,472,264,472
+
+[Comp]
+Name=сумматор2
+Px=336,472
+
+[Attr]
+ON=27,-43,PART
+V=X47
+Style=8192
+Font=Arial
+
+[Attr]
+ON=27,-28,FILE
+V=сумматор2
+Font=Arial
+
+[Attr]
+ON=27,2,Param:KA
+V=1
+Font=Arial
+
+[Attr]
+ON=27,17,Param:KB
+V=1
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Attr]
+ON=0,28,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Arial
+
+[Comp]
+Name=Battery
+Px=368,552
+Rot=3
+
+[Attr]
+ON=17,-34,PART
+V=V9
+Style=8192
+Font=Arial
+
+[Attr]
+ON=-10,-43,VALUE
+V=0.111
+Font=Arial
+
+[Attr]
+ON=0,28,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Comp]
+Name=Ground
+Px=368,560
+Rot=1
+
+[Wire]
+Pxs=368,552,368,560
+
+[Wire]
+Pxs=72,472,72,504
+
+[Comp]
+Name=НЕ
+Px=928,312
+
+[Attr]
+ON=15,-45,PART
+V=X48
+Style=8192
+
+[Attr]
+ON=15,-31,FILE
+V=НЕ
+
+[Attr]
+ON=15,-3,Param:VH
+V=10
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=968,312,976,312
+
+[Wire]
+Pxs=992,312,992,320
+
+[Wire]
+Pxs=976,312,992,312
+
+[Wire]
+Pxs=400,472,424,472
+
+[Wire]
+Pxs=424,472,424,480
+
+[Wire]
+Pxs=424,416,424,472
+
+[Wire]
+Pxs=424,416,472,416
 
 [Grid Text]
-Text="Out"
-Px=864,304
+Text="Uc"
+Px=504,336
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
 CBorder=None
 
 [Grid Text]
-Text="Uc"
-Px=528,328
+Text="In"
+Px=472,416
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Out"
+Px=976,312
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="ограничитель напряжения 1-5 В"
+Px=56,416
+Height=-12
+Color=#FF0000
+Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -380,7 +795,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.5
+Scale=1
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -504,7 +919,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="6.2"
+Name="генератор"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -526,9 +941,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=276,80
-Scale 3=0.5
-Px=677,132
+SB 3=0,16
+Scale 3=1
+Px=1156,641
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -573,7 +988,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Text
-SB 0=0,1
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -589,6 +1003,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
+SB 0=22,3
 Font=Height=-16,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -615,12 +1030,16 @@ Search Color=#FFFF00
 [Text Area]
 Section=0
 Page=1
-Text=.OPTIONS ITL1=100       
-Text=.OPTIONS PIVREL=0.001       
+Text=.OPTIONS ITL1=100
+Text=.OPTIONS PIVREL=0.001
 
 [Text Area]
 Section=0
 Page=2
+Text=*** From file C:\MC11\library\UTILITY.LBR
+Text=*** 5V Triangle Wave
+Text=.MODEL TRIANGLE PUL (P1=0 P2=200u P3=200u P4=400u P5=400u VONE=11 VZERO=4.5)
+Text=.MODEL 1 SIN (A=5 F=1)
 
 [InfoPage]
 InfoPage=True
@@ -636,7 +1055,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -9,-38, 32,32,1696,591
+Window Placement=2,3, -1,-1, -9,-38, 256,256,1920,815
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -849,6 +1268,111 @@ ALIGNBOTTOM=Yes
 Analysis=Transient
 Name="Main"
 
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.011551404262744421,6.5451683911314245,0.012544928608773286,7.9077470864362454
+Posm=5.4032766225582867
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.01674136813930208,4.0926415713748794,0.026827416899650281,6.4719947596913183
+Posm=3.5838059231253943
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.01685823379191962,2.087159665795423,0.026827414047928339,4.3646809706507037
+Posm=1.8746061751732832
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.034234364411524824,6.4845600151031384,0.04639768594641739,9.0522082448323147
+Posm=5.8574879227053147
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.017598816644429253,6.4851484071348207,0.027989435290327533,7.8175415603329146
+Posm=6.1594202898550732
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.006914739352744427,6.5451683933711768,0.0079761373127444236,6.5451683920305479
+Posm=5.0120772946859908
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+w2=1
+AliasID2=2
+Pos=0.0093168382587733023,7.9077470902531015,0.010551348550831041,9.2862328449478095
+Posm=7.4879227053140101
+Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Format=3
+
 [Monte Carlo Options]
 Analysis=Transient
 Status=Off
@@ -861,13 +1385,13 @@ Seed=0
 [Performance]
 Analysis=Transient
 WinID=7
-Window Placement=2,3, -1,-1, -9,-38, 160,160,1824,719
+Window Placement=2,3, -1,-1, -9,-38, 96,96,1760,655
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=Frequency(v(Out),1,2) vs R1
+Title=Frequency(v(Out),1,1) vs V1
 AutoTitle=Yes
 ShowWin=False
 Grid Color=#808080
@@ -1008,7 +1532,7 @@ ALIGNBOTTOM=Yes
 
 [Performance WaveForm]
 ;Transient
-PMExpression=Frequency(v(Out),1,2)
+PMExpression=Frequency(v(Out),1,1)
 XData=1000
 VFmtX=3
 VFmtY=3
@@ -1029,12 +1553,12 @@ AliasID=1
 Enable=0
 Auto Scale X=Yes
 Auto Scale Y=Yes
-Range Min X=0
-Range Min Y=0
-Range Max X=12500
-Range Max Y=100000
-Range Grid X=2500
-Range Grid Y=20000
+Range Min X=2.2500000000000004
+Range Min Y=40000
+Range Max X=6.0000000000000009
+Range Max Y=240000
+Range Grid X=0.75000000000000011
+Range Grid Y=40000
 Range Bold X=0
 Range Bold Y=0
 LinearX=True
@@ -1043,13 +1567,195 @@ LinearY=True
 [Performance]
 Analysis=Transient
 WinID=8
-Window Placement=2,3, -1,-1, -9,-38, 224,224,1888,783
+Window Placement=2,3, -1,-1, -9,-38, 160,160,1824,719
 Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=Width(v(Out),1,3,5) vs R1
+Title=Width(v(Out),1,2,1) vs R1
+AutoTitle=Yes
+ShowWin=False
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=True
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+AlignZ=False
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=3
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=False
+Number of Grids X=5
+Number of Grids Y=5
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Waveform Header=True
+Num Out HideNonSelected=False
+Num Out Allow Dup Y Expr=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+POLYCLOS=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+SELNEXT=Yes
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
+
+[APage]
+
+[Performance WaveForm]
+;Transient
+PMExpression=Width(v(Out),1,2,1)
+XData=1000
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+CS=Normal
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+PlotNum=1
+AliasID=1
+Enable=0
+Auto Scale X=Yes
+Auto Scale Y=Yes
+Range Min X=0
+Range Min Y=0
+Range Max X=12500
+Range Max Y=0.010000000000000002
+Range Grid X=2500
+Range Grid Y=0.0020000000000000005
+Range Bold X=0
+Range Bold Y=0
+LinearX=True
+LinearY=True
+
+[Performance]
+Analysis=Transient
+WinID=9
+Window Placement=2,3, -1,-1, -9,-38, 0,0,1664,559
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title=Frequency(v(Uc),1,1) vs 
 AutoTitle=Yes
 ShowWin=False
 Grid Color=#808080
@@ -1190,7 +1896,7 @@ ALIGNBOTTOM=Yes
 
 [Performance WaveForm]
 ;Transient
-PMExpression=Width(v(Out),1,3,5)
+PMExpression=Frequency(v(Uc),1,1)
 XData=1000
 VFmtX=3
 VFmtY=3
@@ -1213,10 +1919,10 @@ Auto Scale X=Yes
 Auto Scale Y=Yes
 Range Min X=0
 Range Min Y=0
-Range Max X=12500
-Range Max Y=0.00010000000000000005
-Range Grid X=2500
-Range Grid Y=2.0000000000000008e-005
+Range Max X=0
+Range Max Y=7.5
+Range Grid X=0
+Range Grid Y=0
 Range Bold X=0
 Range Bold Y=0
 LinearX=True
@@ -1224,7 +1930,7 @@ LinearY=True
 
 [Limits]
 Analysis=Transient
-TRange=1000u
+TRange=50m
 TStep=0
 NPts=51
 Temp=27
@@ -1240,10 +1946,11 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=v(Uc)
-XRng=AutoAlways
+YExp=v(V1)
+XRng=0.05,0
 YRng=AutoAlways
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -1261,13 +1968,14 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=1
+Plt=2
 AliasID=2
 XExp=T
 YExp=v(Out)
-XRng=AutoAlways
+XRng=0.05,0
 YRng=AutoAlways
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1285,10 +1993,14 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-AliasID=-1
-XRng=AutoAlways
+Plt=3
+AliasID=3
+XExp=T
+YExp=v(In)
+XRng=0.05,0
 YRng=AutoAlways
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Enable=Enable
 Line Color=#008000
 Text Color=#008000
@@ -1312,6 +2024,8 @@ PlaceText=True
 
 [Limits]
 Analysis=DynamicDC
+Temp=27
+SliderPer=10
 PlaceText=True
 
 [Pane]
@@ -1336,13 +2050,20 @@ Analysis=Stability
 [Stepping]
 Analysis=Transient
 Index=1
-Status=On
 Parameter Type=Component
-Name=R1
-Param=value
-From=1k
-To=10k
-Value=50
+Name=V1
+Param=dc.value
+From=1
+To=5
+Value=1
+
+[Stepping]
+Analysis=Transient
+Index=2
+Parameter Type=Component
+From=4k
+To=8K
+Value=4k
 
 [Watch]
 Analysis=Transient
@@ -1353,6 +2074,22 @@ ExprPercentWidth=80
 Var Width=125
 Nominal Width=90
 Tol Width=190
+
+[Slider]
+Analysis=Transient
+Link="V_REGULIROVANIA"
+Min="0.1"
+Max="1"
+Default="990m"
+Format=7
+Method=Linear
+Show=True
+Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
+StepSize="1%"
+MRUDockID=59421
+Floating=False
+LocalOffset=True
+Rect=-2,-2,149,158
 
 [OPMethods]
 Analysis=Transient
