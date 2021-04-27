@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=232
-TXCnt=36
+NLCnt=235
+TXCnt=34
 
 [shapedef]
 Name=Amp
@@ -323,61 +323,15 @@ FColor=None
 Line=32,8,40,-7
 
 [compdef]
-Name=Battery
-Definition=Battery
-Shape=Battery
-Mask=4865
-Used=69
-memo=Battery
-Label Offset=19,7,10,13
-PinCnt=2
-Pin="Plus",6,0,-4,-5
-Pin="Minus",0,0,-10,-5
-
-[compdef]
 Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=415
+Used=416
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
-
-[compdef]
-Name=ограничитель
-Definition=Macro
-Shape=ограничитель
-Mask=4096
-Used=3
-Label Offset=31,-54,27,24
-PinCnt=2
-Pin="PinA",a,0,0,-6,-2
-Pin="PinB",a,10,0
-
-[compdef]
-Name=сумматор2
-Definition=Macro
-Shape=Sum
-Mask=4096
-Used=5
-Label Offset=27,-43,14,15
-PinCnt=3
-Pin="PINA",a,0,0,-12,-2
-Pin="PINB",a,4,4,4,2
-Pin="PINC",a,8,0
-
-[compdef]
-Name=усилитель
-Definition=Macro
-Shape=Amp
-Mask=4096
-Used=4
-Label Offset=27,-46,23,22
-PinCnt=2
-Pin="PinA",a,0,0,-11,-2
-Pin="PinB",a,9,0
 
 [compdef]
 Name=управляемый источник тока с ограничением напряжения
@@ -474,6 +428,17 @@ Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
 [compdef]
+Name=усилитель
+Definition=Macro
+Shape=Amp
+Mask=4096
+Used=6
+Label Offset=27,-46,23,22
+PinCnt=2
+Pin="PinA",a,0,0,-11,-2
+Pin="PinB",a,9,0
+
+[compdef]
 Name=переклЮчатель
 Definition=Macro
 Shape=commutator
@@ -498,6 +463,18 @@ Pin="InS",a,0,0,-10,-1
 Pin="InR",a,0,6,-11,-2
 Pin="Out1",a,6,0,-2,0
 Pin="Out2",a,6,6,-2,-2
+
+[compdef]
+Name=сумматор2
+Definition=Macro
+Shape=Sum
+Mask=4096
+Used=6
+Label Offset=27,-43,14,15
+PinCnt=3
+Pin="PINA",a,0,0,-12,-2
+Pin="PINB",a,4,4,4,2
+Pin="PINC",a,8,0
 
 [compdef]
 Name=Diode
@@ -527,6 +504,29 @@ Pin="Cont",a,0,12,-10,-1
 Pin="Vcc",a,17,0
 Pin="Out",a,17,6
 Pin="Gnd",a,17,12
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=4865
+Used=70
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[compdef]
+Name=ограничитель
+Definition=Macro
+Shape=ограничитель
+Mask=4096
+Used=3
+Label Offset=31,-54,27,24
+PinCnt=2
+Pin="PinA",a,0,0,-6,-2
+Pin="PinB",a,10,0
 
 [compdef]
 Name=D-триггер
@@ -569,11 +569,12 @@ PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
 Window Placement in Transient Analysis=2,3, 0,606, -9,-38, 0,26,678,454
+Window Placement in DC Analysis=2,3, -1,-1, -9,-38, 224,224,1888,783
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
-Show Voltages=False
+Show Voltages=True
 Show Current=False
 Show Power=False
 Show Condition=True
@@ -623,154 +624,6 @@ ON=0,70,#Field5
 V=Page $page of $maxpage
 Font=Calibri
 
-[Wire]
-Pxs=856,888,904,888
-Page=3
-
-[Wire]
-Pxs=856,888,856,920
-Page=3
-
-[Comp]
-Name=Battery
-Px=856,968
-Rot=3
-Page=3
-
-[Attr]
-ON=6,-16,PART
-V=V1
-Style=8192
-
-[Attr]
-ON=-10,-43,VALUE
-V=1
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=856,968,856,976
-Page=3
-
-[Comp]
-Name=Ground
-Px=856,976
-Rot=1
-Page=3
-
-[Comp]
-Name=ограничитель
-Px=904,888
-Page=3
-
-[Attr]
-ON=32,-49,PART
-V=X1
-Style=8192
-
-[Attr]
-ON=31,-39,FILE
-V=ограничитель
-
-[Attr]
-ON=31,-9,Param:LOW
-V=1
-
-[Attr]
-ON=31,6,Param:HIGH
-V=5
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=984,888,1008,888
-Page=3
-
-[Comp]
-Name=сумматор2
-Px=1008,888
-Page=3
-
-[Attr]
-ON=27,-43,PART
-V=X2
-Style=8192
-
-[Attr]
-ON=27,-28,FILE
-V=сумматор2
-
-[Attr]
-ON=27,2,Param:KA
-V=-1
-
-[Attr]
-ON=27,17,Param:KB
-V=1
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Battery
-Px=1040,968
-Rot=3
-Page=3
-
-[Attr]
-ON=17,-34,PART
-V=V2
-Style=8192
-
-[Attr]
-ON=-10,-43,VALUE
-V=1.415
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=1040,968,1040,976
-Page=3
-
-[Comp]
-Name=Ground
-Px=1040,976
-Rot=1
-Page=3
-
-[Wire]
-Pxs=1072,888,1112,888
-Page=3
-
-[Comp]
-Name=усилитель
-Px=1112,888
-Page=3
-
-[Attr]
-ON=27,-46,PART
-V=X3
-Style=8192
-
-[Attr]
-ON=27,-31,FILE
-V=усилитель
-
-[Attr]
-ON=27,-1,Param:GAIN
-V=1
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
 [Comp]
 Name=Ground
 Px=1160,984
@@ -794,7 +647,7 @@ V=управляемый источник тока с ограничением напряжения
 
 [Attr]
 ON=-31,45,Param:KUI
-V=0.0019
+V=0.019
 
 [Attr]
 ON=-14,60,Param:VMAX
@@ -937,7 +790,7 @@ V=управляемый источник тока с ограничением напряжения
 
 [Attr]
 ON=-31,45,Param:KUI
-V=0.0019
+V=0.019
 
 [Attr]
 ON=-14,60,Param:VMAX
@@ -2340,15 +2193,11 @@ Pxs=2592,784,2616,784
 Page=3
 
 [Wire]
-Pxs=1256,728,2616,728
-Page=3
-
-[Wire]
 Pxs=2600,1368,2624,1368
 Page=3
 
 [Wire]
-Pxs=2616,728,2616,784
+Pxs=2616,728,2616,760
 Page=3
 
 [Wire]
@@ -2703,17 +2552,17 @@ V=10
 Font=Calibri
 
 [Attr]
-ON=0,0,PACKAGE
-V
-Font=Calibri
-
-[Attr]
 ON=0,0,COST
 V
 Font=Calibri
 
 [Attr]
 ON=0,0,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
 V
 Font=Calibri
 
@@ -2727,10 +2576,6 @@ Page=3
 
 [Wire]
 Pxs=3184,624,3184,632
-Page=3
-
-[Wire]
-Pxs=1256,728,1256,888
 Page=3
 
 [Wire]
@@ -2759,6 +2604,137 @@ V
 
 [Wire]
 Pxs=1224,984,1240,984
+Page=3
+
+[Comp]
+Name=сумматор2
+Px=1256,664
+Rot=1
+Page=3
+
+[Attr]
+ON=27,-43,PART
+V=X28
+Style=8192
+
+[Attr]
+ON=27,-28,FILE
+V=сумматор2
+
+[Attr]
+ON=27,2,Param:KA
+V=-1
+
+[Attr]
+ON=27,17,Param:KB
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=1192,696,1192,800
+Page=3
+
+[Comp]
+Name=Battery
+Px=1192,848
+Rot=3
+Page=3
+
+[Attr]
+ON=6,-16,PART
+V=V11
+Style=8192
+
+[Attr]
+ON=-10,-43,VALUE
+V=5.509
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=1192,848,1192,856
+Page=3
+
+[Comp]
+Name=Ground
+Px=1192,856
+Rot=1
+Page=3
+
+[Wire]
+Pxs=1224,760,1224,768
+Page=3
+
+[Wire]
+Pxs=1256,728,1256,768
+Page=3
+
+[Wire]
+Pxs=1224,768,1256,768
+Page=3
+
+[Wire]
+Pxs=1256,768,1256,888
+Page=3
+
+[Wire]
+Pxs=1192,696,1224,696
+Page=3
+
+[Wire]
+Pxs=2536,640,2536,760
+Page=3
+
+[Wire]
+Pxs=2536,760,2616,760
+Page=3
+
+[Wire]
+Pxs=2616,760,2616,784
+Page=3
+
+[Wire]
+Pxs=1256,664,1256,672
+Page=3
+
+[Comp]
+Name=усилитель
+Px=1552,640
+Rot=2
+Page=3
+
+[Attr]
+ON=27,-46,PART
+V=X29
+Style=8192
+
+[Attr]
+ON=27,-31,FILE
+V=усилитель
+
+[Attr]
+ON=27,-1,Param:GAIN
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=1552,640,2536,640
+Page=3
+
+[Wire]
+Pxs=1256,640,1480,640
+Page=3
+
+[Wire]
+Pxs=1256,640,1256,664
 Page=3
 
 [Grid Text]
@@ -2972,22 +2948,6 @@ Page=3
 CBorder=None
 
 [Grid Text]
-Text="Dynamic DC"
-Text="Temperature=27"
-Text="Displaying DC Condition"
-BannerDC=True
-Px=944,392
-Height=-15
-Color=#800000
-Font=Arial
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CFill=#C0C0C0
-CBorder=#000000
-
-[Grid Text]
 Text="prygol1"
 Px=1616,1400
 GridSnap=True
@@ -3008,16 +2968,6 @@ CBorder=None
 [Grid Text]
 Text="Impuls1"
 Px=1920,1440
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="ограничитель напряжения 1-5 В"
-Px=840,832
-Color=#FF0000
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3113,7 +3063,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=1.3333333333333333
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
@@ -3304,9 +3254,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=1346,566
-Scale 3=1
-Px=2150,1052
+SB 3=1231,555
+Scale 3=1.3333333333333333
+Px=1969,735
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -3431,7 +3381,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=8
+MonMaxShow=9
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -3595,8 +3545,8 @@ AliasID1=14
 Page="1"
 w2=6
 AliasID2=14
-Pos=0.036161906171652922,11.48025398397499,0.039300275703242654,11.881127441223407
-Posm=5.390625
+Pos=0.038025873261766083,3.6442720234169794,0.038519906409621038,5.9577642524400876
+Posm=0.77586206896551724
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -3611,8 +3561,8 @@ AliasID1=14
 Page="1"
 w2=6
 AliasID2=14
-Pos=0.031205970663651831,0.046477616738202866,0.03365509427607162,5.77982416836395
-Posm=2.34375
+Pos=0.048617413158349075,11.169955968682103,0.051126517967092527,11.881127501324634
+Posm=5.6896551724137927
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -3627,8 +3577,8 @@ AliasID1=14
 Page="1"
 w2=6
 AliasID2=14
-Pos=0.028662244820346388,3.9204786365335057e-005,0.03118297651649778,11.881127500744144
-Posm=3.28125
+Pos=0.040044774007781073,2.9453152282781283,0.041312673143176236,0.032762033658634331
+Posm=0.51724137931034486
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -3643,61 +3593,221 @@ AliasID1=14
 Page="1"
 w2=6
 AliasID2=14
-Pos=0.02616565257642952,5.9369107223618593,0.028662348251549508,11.17238499492958
-Posm=1.875
+Pos=0.031464978185973116,6.9104354504659762,0.031464978185973116,6.9104354504659762
+Posm=4.1379310344827589
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=6
-AliasID1=14
-Page="1"
-w2=6
-AliasID2=14
-Pos=0.023654574592253685,2.8616963130010422,0.02616565257642952,5.9369107223618593
-Posm=0.234375
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
+[DC]
+WinID=3
+Window Placement=2,3, -1,-1, -9,-38, 224,224,1888,783
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+AlignZ=False
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=3
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=False
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+AutoScaleRanges=False
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=3
+MonPageWidth=81
+MonPlotWidth=25
+MonExprXWidth=159
+MonExprYWidth=289
+MonRangeXWidth=111
+MonRangeYWidth=111
+AnimateWait=None
+AnimateWaitTime=500
+AnimatePressAfter=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=True
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Measurement Values=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Low="DCMIN"
+Num Out High="DCMAX"
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Format=3
+Num Out HideNonSelected=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
 
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=7
-AliasID1=4
-Page="2"
-w2=7
-AliasID2=4
-Pos=0.033638970663654212,-1.5708323530816415e-005,0.0349852779206535,-4.3023362650274066e-006
-Posm=-0.0020087082728592158
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=7
-AliasID1=4
-Page="2"
-w2=7
-AliasID2=4
-Pos=0.028631669546767453,-1.5711876244495215e-005,0.030271738121906151,-3.772981926886132e-006
-Posm=-0.0021538461538461533
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
+[Tools]
+Pos=Top
+SELECT=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+POLYCLOS=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+SELNEXT=Yes
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNBOTTOM=Yes
 
 [Monte Carlo Options]
 Analysis=Transient
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Monte Carlo Options]
+Analysis=DC
 Status=Off
 Zero Tolerance=False
 Eliminate Outliers=False
@@ -3932,6 +4042,33 @@ NOFmtY=3
 [WaveForm]
 Analysis=Transient
 Plt=9
+Page=1
+AliasID=5
+XExp=T
+YExp=v(In)
+XRng=0.06,0.02
+YRng=15,0
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=2
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=10
 Page=2
 AliasID=4
 XExp=T
@@ -3952,6 +4089,82 @@ ScaleFactorY="None"
 ScaleUnitsX="Auto"
 ScaleUnitsY="Auto"
 SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[Limits]
+Analysis=DC
+I1Range=10,0,.5
+NPts=51
+Temp=27
+MaxChng=5
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+Sweep1 type=Auto
+Sweep2 type=None
+
+[WaveForm]
+Analysis=DC
+Plt=1
+AliasID=1
+XExp=DCINPUT1
+YExp=v(treug)
+XRng=Auto
+YRng=Auto
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=DC
+AliasID=-1
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=DC
+AliasID=-1
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
 SFmtY=3
 NOFmtX=3
 NOFmtY=3
@@ -3993,6 +4206,11 @@ Analysis=Transient
 Format=3
 ExprPercentWidth=80
 
+[Watch]
+Analysis=DC
+Format=3
+ExprPercentWidth=80
+
 [WCTolerance]
 Var Width=125
 Nominal Width=90
@@ -4013,6 +4231,22 @@ MRUDockID=59421
 Floating=False
 LocalOffset=True
 Rect=-2,-2,53,158
+
+[Slider]
+Analysis=Transient
+Link="V11"
+Min="1"
+Max="5"
+Default="5"
+Format=7
+Method=Linear
+Show=False
+Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
+StepSize="1%"
+MRUDockID=59421
+Floating=False
+LocalOffset=True
+Rect=-2,-2,46,158
 
 [OPMethods]
 Analysis=Transient
