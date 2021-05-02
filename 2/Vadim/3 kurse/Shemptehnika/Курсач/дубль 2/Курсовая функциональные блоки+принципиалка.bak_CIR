@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=352
-TXCnt=64
+NLCnt=422
+TXCnt=78
 
 [shapedef]
 Name=Amp
@@ -170,6 +170,102 @@ Name=Sum
 Root="Circle.root",0,0,0
 Line=27,0,37,0
 Line=32,-5,32,5
+
+[shapedef]
+Name=Switch_Quad
+Line=-8,-8,16,-8
+Line=-8,8,16,8
+Line=-8,24,48,24
+Line=-8,40,8,40
+Line=-8,56,8,56
+PolyClosed=3
+PolyLine=16,-16
+PolyLine=16,0
+PolyLine=32,-8
+FColor=None
+PolyClosed=3
+PolyLine=36,11
+PolyLine=40,5
+PolyLine=44,11
+Line=40,-5,40,-5
+Line=40,-8,40,-7
+Line=32,-8,38,-8
+Ellipse=16,4,24,12
+FColor=None
+Line=22,11,44,3
+Line=44,11,48,11
+Line=48,11,48,24
+Line=40,-3,40,-4
+Line=40,1,40,0
+Line=112,-8,88,-8
+Line=112,8,88,8
+Line=112,24,56,24
+PolyClosed=3
+PolyLine=88,-16
+PolyLine=88,0
+PolyLine=72,-8
+FColor=None
+PolyClosed=3
+PolyLine=68,11
+PolyLine=64,5
+PolyLine=60,11
+Line=64,-8,64,-7
+Line=72,-8,66,-8
+Ellipse=80,4,88,12
+FColor=None
+Line=82,11,60,3
+Line=60,11,56,11
+Line=56,11,56,24
+Line=64,-3,64,-4
+Line=64,1,64,0
+Line=14,40,18,40
+Root="Plus.root",88,40,0
+Line=112,104,88,104
+Line=112,88,88,88
+Line=112,72,56,72
+PolyClosed=3
+PolyLine=88,112
+PolyLine=88,96
+PolyLine=72,104
+FColor=None
+PolyClosed=3
+PolyLine=68,85
+PolyLine=64,91
+PolyLine=60,85
+Line=64,104,64,103
+Line=72,104,66,104
+Ellipse=80,84,88,92
+FColor=None
+Line=82,85,60,93
+Line=60,85,56,85
+Line=56,85,56,72
+Line=64,99,64,100
+Line=64,95,64,96
+Line=-8,104,16,104
+Line=-8,88,16,88
+Line=-8,72,48,72
+PolyClosed=3
+PolyLine=16,112
+PolyLine=16,96
+PolyLine=32,104
+FColor=None
+PolyClosed=3
+PolyLine=36,85
+PolyLine=40,91
+PolyLine=44,85
+Line=40,104,40,103
+Line=32,104,38,104
+Ellipse=16,84,24,92
+FColor=None
+Line=22,85,44,93
+Line=44,85,48,85
+Line=48,85,48,72
+Line=40,99,40,100
+Line=40,95,40,96
+Line=96,40,112,40
+Line=96,56,112,56
+Rectangle=8,-24,96,120
+FColor=None
 
 [shapedef]
 Name=R_gost
@@ -419,7 +515,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=456
+Used=445
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -452,7 +548,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=441
+Used=434
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -501,7 +597,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=14
+Used=8
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -550,7 +646,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=76
+Used=73
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -596,7 +692,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=906
+Used=899
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -673,6 +769,62 @@ Pin="Collector",3,-3,4,14
 Pin="Base",0,0,-18,-3
 Pin="Emitter",3,3,5,1
 
+[compdef]
+Name=LT1018
+Definition=Subckt
+Shape=Opamp5
+Mask=4224
+Used=2
+memo=Micropower Dual Comparator Vs=40V
+Label Offset=51,34,-8,44
+PinCnt=5
+Pin="3",a,0,0,-3,-4
+Pin="2",a,0,6,-3,18
+Pin="7",a,4,-1,6,15
+Pin="4",a,4,7,6,0
+Pin="6",a,9,3,-3,-3
+
+[compdef]
+Name=MAX934_MX
+Definition=Subckt
+Shape=Opamp5
+Mask=4224
+Used=1
+memo=Quad, Ultra Low-Power Comparator with 2% Accurate Reference
+Label Offset=53,32,-5,46
+PinCnt=5
+Pin="1",a,0,0,-3,-2
+Pin="2",a,0,6,-4,-2
+Pin="3",a,4,-1,7,16
+Pin="4",a,4,7,7,-2
+Pin="97",a,9,3,-13,-3
+
+[compdef]
+Name=MAX4602
+Definition=Subckt
+Shape=Switch_Quad
+Mask=4224
+Used=1
+memo=2.5ohm, Quad, SPST, CMOS Analog Switches
+Label Offset=49,121,27,38
+PinCnt=16
+Pin="1",a,-1,-1,-3,-2
+Pin="2",a,-1,1,-3,-1
+Pin="3",a,-1,3,-3,-1
+Pin="4",a,-1,5,-3,-1
+Pin="5",a,-1,7,-3,-1
+Pin="6",a,-1,9,-3,-1
+Pin="7",a,-1,11,-3,-1
+Pin="8",a,-1,13,-3,-1
+Pin="9",a,14,13,-2,-1
+Pin="10",a,14,11,-5,-1
+Pin="11",a,14,9,-5,-1
+Pin="12",a,14,7,-5,-1
+Pin="13",a,14,5,-5,-1
+Pin="14",a,14,3,-5,-1
+Pin="15",a,14,1,-5,-1
+Pin="16",a,14,-1,-5,-1
+
 [TitleBlockDef]
 Name=DefaultOld
 Rectangle=-24,-25,232,76
@@ -692,7 +844,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=1,2, 0,781, -9,-38, 107,198,868,530
+Window Placement=2,3, 199,781, -9,-38, 473,236,1151,568
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -708,7 +860,7 @@ Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
 Show Voltages=True
-Show Current=True
+Show Current=False
 Show Power=False
 Show Condition=True
 Show Pin Connections=False
@@ -1522,7 +1674,7 @@ Style=8192
 
 [Attr]
 ON=-10,-43,VALUE
-V=1
+V=135m
 
 [Attr]
 ON=0,0,PACKAGE
@@ -2344,7 +2496,7 @@ Page=3
 
 [Comp]
 Name=Opamp
-Px=1280,2208
+Px=1184,2704
 Rot=4
 Page=3
 
@@ -2363,13 +2515,13 @@ V
 
 [Comp]
 Name=Ground
-Px=1312,2152
+Px=1216,2648
 Rot=3
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1400,2184
+Px=1304,2680
 Rot=6
 Page=3
 
@@ -2388,28 +2540,28 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1248,2160,1280,2160
+Pxs=1152,2656,1184,2656
 Page=3
 
 [Wire]
-Pxs=1248,2096,1248,2160
+Pxs=1152,2592,1152,2656
 Page=3
 
 [Wire]
-Pxs=1248,2096,1400,2096
+Pxs=1152,2592,1304,2592
 Page=3
 
 [Wire]
-Pxs=1400,2096,1400,2184
+Pxs=1304,2592,1304,2680
 Page=3
 
 [Wire]
-Pxs=1400,2184,1400,2232
+Pxs=1304,2680,1304,2728
 Page=3
 
 [Comp]
 Name=Opamp
-Px=1280,2368
+Px=1184,2864
 Rot=4
 Page=3
 
@@ -2428,13 +2580,13 @@ V
 
 [Comp]
 Name=Ground
-Px=1312,2312
+Px=1216,2808
 Rot=3
 Page=3
 
 [Comp]
 Name=Opamp
-Px=1280,2544
+Px=1184,3040
 Rot=4
 Page=3
 
@@ -2453,13 +2605,13 @@ V
 
 [Comp]
 Name=Ground
-Px=1312,2488
+Px=1216,2984
 Rot=3
 Page=3
 
 [Comp]
 Name=Diode
-Px=1352,2344
+Px=1256,2840
 Rot=4
 Page=3
 
@@ -2477,12 +2629,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1400,2344,1400,2448
+Pxs=1304,2840,1304,2944
 Page=3
 
 [Comp]
 Name=Diode
-Px=1400,2520
+Px=1304,3016
 Rot=2
 Page=3
 
@@ -2500,32 +2652,32 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1280,2280,1280,2320
+Pxs=1184,2776,1184,2816
 Page=3
 
 [Wire]
-Pxs=1280,2280,1400,2280
+Pxs=1184,2776,1304,2776
 Page=3
 
 [Wire]
-Pxs=1400,2280,1400,2344
+Pxs=1304,2776,1304,2840
 Page=3
 
 [Wire]
-Pxs=1280,2448,1280,2496
+Pxs=1184,2944,1184,2992
 Page=3
 
 [Wire]
-Pxs=1280,2448,1400,2448
+Pxs=1184,2944,1304,2944
 Page=3
 
 [Wire]
-Pxs=1400,2448,1400,2520
+Pxs=1304,2944,1304,3016
 Page=3
 
 [Comp]
 Name=Battery
-Px=1264,2256
+Px=1168,2752
 Rot=3
 Page=3
 
@@ -2536,7 +2688,7 @@ Style=8192
 
 [Attr]
 ON=-10,-43,VALUE
-V=3
+V=1
 
 [Attr]
 ON=0,0,PACKAGE
@@ -2544,17 +2696,17 @@ V
 
 [Comp]
 Name=Ground
-Px=1264,2264
+Px=1168,2760
 Rot=1
 Page=3
 
 [Wire]
-Pxs=1264,2256,1264,2264
+Pxs=1168,2752,1168,2760
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1112,2368
+Px=1016,2864
 Page=3
 
 [Attr]
@@ -2572,20 +2724,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1312,2376,1312,2384
+Pxs=1216,2872,1216,2880
 Page=3
 
 [Wire]
-Pxs=1160,2368,1216,2368
+Pxs=1064,2864,1120,2864
 Page=3
 
 [Wire]
-Pxs=1072,2368,1112,2368
+Pxs=976,2864,1016,2864
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1104,2544
+Px=1008,3040
 Page=3
 
 [Attr]
@@ -2603,16 +2755,16 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1064,2544,1104,2544
+Pxs=968,3040,1008,3040
 Page=3
 
 [Wire]
-Pxs=1152,2544,1216,2544
+Pxs=1056,3040,1120,3040
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1216,2384
+Px=1120,2880
 Rot=7
 Page=3
 
@@ -2631,22 +2783,22 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1216,2368,1216,2384
+Pxs=1120,2864,1120,2880
 Page=3
 
 [Comp]
 Name=Ground
-Px=1216,2432
+Px=1120,2928
 Rot=7
 Page=3
 
 [Wire]
-Pxs=1216,2368,1280,2368
+Pxs=1120,2864,1184,2864
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1216,2560
+Px=1120,3056
 Rot=7
 Page=3
 
@@ -2665,22 +2817,22 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1216,2544,1216,2560
+Pxs=1120,3040,1120,3056
 Page=3
 
 [Comp]
 Name=Ground
-Px=1216,2608
+Px=1120,3104
 Rot=7
 Page=3
 
 [Wire]
-Pxs=1216,2544,1280,2544
+Pxs=1120,3040,1184,3040
 Page=3
 
 [Comp]
 Name=Opamp
-Px=2176,2152
+Px=2080,2648
 Rot=4
 Page=3
 
@@ -2698,16 +2850,16 @@ ON=0,0,PACKAGE
 V=DIP14
 
 [Wire]
-Pxs=2208,2096,2208,2104
+Pxs=2112,2592,2112,2600
 Page=3
 
 [Wire]
-Pxs=2208,2160,2208,2168
+Pxs=2112,2656,2112,2664
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2144,2168
+Px=2048,2664
 Rot=1
 Page=3
 
@@ -2727,13 +2879,13 @@ V
 
 [Comp]
 Name=Ground
-Px=2144,2216
+Px=2048,2712
 Rot=7
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2136,2048
+Px=2040,2544
 Rot=2
 Page=3
 
@@ -2753,29 +2905,29 @@ V
 
 [Comp]
 Name=Ground
-Px=2088,2048
+Px=1992,2544
 Rot=7
 Page=3
 
 [Wire]
-Pxs=2136,2048,2160,2048
+Pxs=2040,2544,2064,2544
 Page=3
 
 [Wire]
-Pxs=2160,2048,2160,2104
+Pxs=2064,2544,2064,2600
 Page=3
 
 [Wire]
-Pxs=2160,2104,2176,2104
+Pxs=2064,2600,2080,2600
 Page=3
 
 [Wire]
-Pxs=2160,2048,2184,2048
+Pxs=2064,2544,2088,2544
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2184,2048
+Px=2088,2544
 Page=3
 
 [Attr]
@@ -2793,20 +2945,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2232,2048,2256,2048
+Pxs=2136,2544,2160,2544
 Page=3
 
 [Wire]
-Pxs=2256,2048,2256,2128
+Pxs=2160,2544,2160,2624
 Page=3
 
 [Wire]
-Pxs=2248,2128,2256,2128
+Pxs=2152,2624,2160,2624
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2560,1992
+Px=2464,2488
 Rot=5
 Page=3
 
@@ -2826,7 +2978,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=2656,1992
+Px=2560,2488
 Rot=5
 Page=3
 
@@ -2846,10 +2998,10 @@ V
 
 [Comp]
 Name=PNP
-Px=2584,2048
+Px=2488,2544
 Rot=6
 Page=3
-COff=23,2584,2062,-55,-10
+COff=8,2208,1776,-55,-10
 
 [Attr]
 ON=-53,-13,PART
@@ -2866,9 +3018,9 @@ V
 
 [Comp]
 Name=PNP
-Px=2632,2048
+Px=2536,2544
 Page=3
-COff=23,2632,2062,-15,-27
+COff=23,2280,1763,-15,-27
 
 [Attr]
 ON=37,-13,PART
@@ -2885,10 +3037,10 @@ V
 
 [Comp]
 Name=NPN
-Px=2536,2152
+Px=2440,2648
 Page=3
-COff=8,2560,2176,-31,-32
-COff=23,2536,2166,-17,5
+COff=8,2184,1856,-31,-32
+COff=23,2184,1867,-17,5
 
 [Attr]
 ON=-5,-25,PART
@@ -2904,48 +3056,48 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2560,1992,2560,2024
+Pxs=2464,2488,2464,2520
 Page=3
 
 [Wire]
-Pxs=2656,1992,2656,2024
+Pxs=2560,2488,2560,2520
 Page=3
 
 [Wire]
-Pxs=2584,2048,2616,2048
+Pxs=2488,2544,2520,2544
 Page=3
 
 [Wire]
-Pxs=2560,2072,2560,2096
+Pxs=2464,2568,2464,2592
 Page=3
 
 [Wire]
-Pxs=2616,2048,2616,2096
+Pxs=2520,2544,2520,2592
 Page=3
 
 [Wire]
-Pxs=2560,2096,2616,2096
+Pxs=2464,2592,2520,2592
 Page=3
 
 [Wire]
-Pxs=2616,2048,2632,2048
+Pxs=2520,2544,2536,2544
 Page=3
 
 [Wire]
-Pxs=2560,2096,2560,2128
+Pxs=2464,2592,2464,2624
 Page=3
 
 [Wire]
-Pxs=2560,1944,2656,1944
+Pxs=2464,2440,2560,2440
 Page=3
 
 [Wire]
-Pxs=2656,1944,2736,1944
+Pxs=2560,2440,2640,2440
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2560,2264
+Px=2464,2760
 Rot=5
 Page=3
 
@@ -2965,13 +3117,13 @@ V
 
 [Comp]
 Name=Ground
-Px=2560,2264
+Px=2464,2760
 Rot=7
 Page=3
 
 [Comp]
 Name=Opamp
-Px=2432,2128
+Px=2336,2624
 Page=3
 
 [Attr]
@@ -2988,36 +3140,36 @@ ON=0,0,PACKAGE
 V=TO-5C_8
 
 [Wire]
-Pxs=2504,2152,2536,2152
+Pxs=2408,2648,2440,2648
 Page=3
 
 [Wire]
-Pxs=2256,2128,2432,2128
+Pxs=2160,2624,2336,2624
 Page=3
 
 [Wire]
-Pxs=2408,2176,2432,2176
+Pxs=2312,2672,2336,2672
 Page=3
 
 [Wire]
-Pxs=2408,2176,2408,2216
+Pxs=2312,2672,2312,2712
 Page=3
 
 [Wire]
-Pxs=2408,2216,2560,2216
+Pxs=2312,2712,2464,2712
 Page=3
 
 [Wire]
-Pxs=2560,2176,2560,2216
+Pxs=2464,2672,2464,2712
 Page=3
 
 [Wire]
-Pxs=2656,2072,2656,2352
+Pxs=2560,2568,2560,2848
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2552,2472
+Px=2456,2968
 Rot=5
 Page=3
 
@@ -3037,7 +3189,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=2648,2472
+Px=2552,2968
 Rot=5
 Page=3
 
@@ -3056,48 +3208,48 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2552,2472,2552,2504
+Pxs=2456,2968,2456,3000
 Page=3
 
 [Wire]
-Pxs=2648,2472,2648,2504
+Pxs=2552,2968,2552,3000
 Page=3
 
 [Wire]
-Pxs=2576,2528,2608,2528
+Pxs=2480,3024,2512,3024
 Page=3
 
 [Wire]
-Pxs=2552,2552,2552,2576
+Pxs=2456,3048,2456,3072
 Page=3
 
 [Wire]
-Pxs=2608,2528,2608,2576
+Pxs=2512,3024,2512,3072
 Page=3
 
 [Wire]
-Pxs=2552,2576,2608,2576
+Pxs=2456,3072,2512,3072
 Page=3
 
 [Wire]
-Pxs=2608,2528,2624,2528
+Pxs=2512,3024,2528,3024
 Page=3
 
 [Wire]
-Pxs=2552,2576,2552,2608
+Pxs=2456,3072,2456,3104
 Page=3
 
 [Wire]
-Pxs=2552,2424,2648,2424
+Pxs=2456,2920,2552,2920
 Page=3
 
 [Wire]
-Pxs=2648,2424,2728,2424
+Pxs=2552,2920,2632,2920
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2552,2744
+Px=2456,3240
 Rot=5
 Page=3
 
@@ -3117,13 +3269,13 @@ V
 
 [Comp]
 Name=Ground
-Px=2552,2744
+Px=2456,3240
 Rot=7
 Page=3
 
 [Comp]
 Name=Opamp
-Px=2424,2608
+Px=2328,3104
 Page=3
 
 [Attr]
@@ -3140,32 +3292,32 @@ ON=0,0,PACKAGE
 V=TO-5C_8
 
 [Wire]
-Pxs=2496,2632,2528,2632
+Pxs=2400,3128,2432,3128
 Page=3
 
 [Wire]
-Pxs=2328,2608,2424,2608
+Pxs=2232,3104,2328,3104
 Page=3
 
 [Wire]
-Pxs=2400,2656,2424,2656
+Pxs=2304,3152,2328,3152
 Page=3
 
 [Wire]
-Pxs=2400,2656,2400,2696
+Pxs=2304,3152,2304,3192
 Page=3
 
 [Wire]
-Pxs=2400,2696,2552,2696
+Pxs=2304,3192,2456,3192
 Page=3
 
 [Wire]
-Pxs=2552,2656,2552,2696
+Pxs=2456,3152,2456,3192
 Page=3
 
 [Comp]
 Name=Battery
-Px=1080,2704
+Px=984,3200
 Rot=3
 Page=3
 
@@ -3184,38 +3336,38 @@ V
 
 [Comp]
 Name=Ground
-Px=1080,2712
+Px=984,3208
 Rot=1
 Page=3
 
 [Wire]
-Pxs=1080,2704,1080,2712
+Pxs=984,3200,984,3208
 Page=3
 
 [Wire]
-Pxs=1312,2552,1312,2560
+Pxs=1216,3048,1216,3056
 Page=3
 
 [Wire]
-Pxs=1312,2216,1312,2224
+Pxs=1216,2712,1216,2720
 Page=3
 
 [Wire]
-Pxs=1264,2208,1280,2208
+Pxs=1168,2704,1184,2704
 Page=3
 
 [Wire]
-Pxs=2104,2152,2144,2152
+Pxs=2008,2648,2048,2648
 Page=3
 
 [Comp]
 Name=PNP
-Px=2528,2632
+Px=2432,3128
 Rot=4
 Page=3
-COff=8,2552,2608,-43,-24
-COff=8,2552,2656,-12,17
-COff=23,2528,2646,-45,-23
+COff=8,2176,2336,-45,-23
+COff=8,2200,2312,-43,-24
+COff=23,2176,2347,-12,17
 
 [Attr]
 ON=37,-2,PART
@@ -3232,7 +3384,7 @@ V
 
 [Comp]
 Name=NPN
-Px=2576,2528
+Px=2480,3024
 Rot=2
 Page=3
 
@@ -3251,10 +3403,10 @@ V
 
 [Comp]
 Name=NPN
-Px=2624,2528
+Px=2528,3024
 Rot=4
 Page=3
-COff=23,2624,2542,-15,7
+COff=23,2272,2243,-15,7
 
 [Attr]
 ON=37,2,PART
@@ -3270,16 +3422,279 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2328,2448,2328,2608
+Pxs=2232,2944,2232,3104
+Page=3
+
+[Comp]
+Name=Ground
+Px=2776,2944
+Rot=7
+Page=3
+
+[Comp]
+Name=Ground
+Px=2896,2944
+Rot=7
 Page=3
 
 [Wire]
-Pxs=2656,2352,2752,2352
+Pxs=2560,2848,2656,2848
+Page=3
+
+[Wire]
+Pxs=2984,2848,2984,3048
+Page=3
+
+[Wire]
+Pxs=2896,2848,2984,2848
+Page=3
+
+[Comp]
+Name=Ground
+Px=2976,2392
+Rot=7
+Page=3
+
+[Comp]
+Name=Ground
+Px=2976,2576
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2704,2336,2704,2568
+Page=3
+
+[Wire]
+Pxs=2704,2568,2704,2648
+Page=3
+
+[Wire]
+Pxs=2704,2800,2944,2800
+Page=3
+
+[Wire]
+Pxs=2704,2800,2704,2864
+Page=3
+
+[Wire]
+Pxs=2704,2864,2776,2864
+Page=3
+
+[Wire]
+Pxs=2896,2832,3128,2832
+Page=3
+
+[Wire]
+Pxs=2720,2504,3040,2504
+Page=3
+
+[Wire]
+Pxs=2720,2504,2720,2832
+Page=3
+
+[Wire]
+Pxs=3016,2360,3208,2360
+Page=3
+
+[Wire]
+Pxs=3016,2544,3424,2544
+Page=3
+
+[Comp]
+Name=Capacitor
+Px=2368,2336
+Page=3
+
+[Attr]
+ON=17,12,PART
+V=C3
+Style=8192
+
+[Attr]
+ON=18,27,CAPACITANCE
+V=1u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=2368,2336
+Rot=1
+Page=3
+
+[Wire]
+Pxs=2416,2336,2448,2336
+Page=3
+
+[Wire]
+Pxs=2704,2336,2944,2336
+Page=3
+
+[Comp]
+Name=Fixed Analog
+Px=2912,2520
+Page=3
+
+[Attr]
+ON=-14,-7,PART
+V=V17
+
+[Attr]
+ON=-4,-6,VALUE
+V=0
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2880,2384,2944,2384
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2056,2152
+Px=2816,2384
+Page=3
+
+[Attr]
+ON=13,6,PART
+V=R34
+Style=8192
+
+[Attr]
+ON=14,17,RESISTANCE
+V=500
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2864,2384,2880,2384
+Page=3
+
+[Wire]
+Pxs=2776,2384,2816,2384
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2880,2400
+Rot=7
+Page=3
+
+[Attr]
+ON=-31,11,PART
+V=R35
+Style=8192
+
+[Attr]
+ON=-22,26,RESISTANCE
+V=2k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2880,2384,2880,2400
+Page=3
+
+[Comp]
+Name=Ground
+Px=2880,2448
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2704,2568,2944,2568
+Page=3
+
+[Wire]
+Pxs=2720,2832,2776,2832
+Page=3
+
+[Comp]
+Name=Ground
+Px=2968,2704
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2704,2648,2936,2648
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2768,2696
+Page=3
+
+[Attr]
+ON=13,6,PART
+V=R48
+Style=8192
+
+[Attr]
+ON=14,17,RESISTANCE
+V=1.5k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2816,2696,2872,2696
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2872,2712
+Rot=7
+Page=3
+
+[Attr]
+ON=-31,11,PART
+V=R49
+Style=8192
+
+[Attr]
+ON=-22,26,RESISTANCE
+V=1k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2872,2696,2872,2712
+Page=3
+
+[Comp]
+Name=Ground
+Px=2872,2760
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2872,2696,2936,2696
+Page=3
+
+[Wire]
+Pxs=3008,2672,3032,2672
+Page=3
+
+[Comp]
+Name=Resistor
+Px=1960,2648
 Page=3
 
 [Attr]
@@ -3297,16 +3712,16 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2144,2152,2144,2168
+Pxs=2048,2648,2048,2664
 Page=3
 
 [Wire]
-Pxs=2144,2152,2176,2152
+Pxs=2048,2648,2080,2648
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2056,2096
+Px=1960,2592
 Page=3
 
 [Attr]
@@ -3324,20 +3739,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2104,2096,2144,2096
+Pxs=2008,2592,2048,2592
 Page=3
 
 [Wire]
-Pxs=2144,2096,2144,2152
+Pxs=2048,2592,2048,2648
 Page=3
 
 [Wire]
-Pxs=1400,2232,1472,2232
+Pxs=1304,2728,1328,2728
 Page=3
 
 [Comp]
 Name=Opamp
-Px=1872,2288
+Px=1776,2784
 Rot=4
 Page=3
 
@@ -3356,7 +3771,7 @@ V=DIP14
 
 [Comp]
 Name=Resistor
-Px=1784,2288
+Px=1688,2784
 Page=3
 
 [Attr]
@@ -3374,16 +3789,16 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1832,2288,1856,2288
+Pxs=1736,2784,1760,2784
 Page=3
 
 [Wire]
-Pxs=1736,2288,1784,2288
+Pxs=1640,2784,1688,2784
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1856,2304
+Px=1760,2800
 Rot=7
 Page=3
 
@@ -3403,67 +3818,250 @@ V
 
 [Comp]
 Name=Ground
-Px=1856,2352
+Px=1760,2848
 Rot=7
 Page=3
 
 [Wire]
-Pxs=1856,2288,1856,2304
+Pxs=1760,2784,1760,2800
 Page=3
 
 [Wire]
-Pxs=1856,2288,1872,2288
+Pxs=1760,2784,1776,2784
 Page=3
 
 [Wire]
-Pxs=1840,2152,1840,2208
+Pxs=1744,2648,1744,2704
 Page=3
 
 [Wire]
-Pxs=1840,2208,1952,2208
+Pxs=1744,2704,1856,2704
 Page=3
 
 [Wire]
-Pxs=1952,2208,1952,2264
+Pxs=1856,2704,1856,2760
 Page=3
 
 [Wire]
-Pxs=1944,2264,1952,2264
+Pxs=1848,2760,1856,2760
 Page=3
 
 [Wire]
-Pxs=1840,2208,1840,2240
+Pxs=1744,2704,1744,2736
 Page=3
 
 [Comp]
 Name=Ground
-Px=1904,2232
+Px=1808,2728
 Rot=3
 Page=3
 
 [Wire]
-Pxs=1840,2152,2056,2152
+Pxs=1744,2648,1960,2648
 Page=3
 
 [Wire]
-Pxs=1400,2232,1400,2280
+Pxs=1304,2728,1304,2776
 Page=3
 
 [Wire]
-Pxs=1840,2240,1872,2240
+Pxs=1744,2736,1776,2736
 Page=3
 
 [Wire]
-Pxs=1568,2232,1704,2232
+Pxs=2896,2864,2944,2864
 Page=3
 
 [Wire]
-Pxs=1672,2096,2056,2096
+Pxs=2944,2800,2944,2864
+Page=3
+
+[Wire]
+Pxs=2736,2696,2768,2696
+Page=3
+
+[Wire]
+Pxs=2448,2336,2704,2336
+Page=3
+
+[Wire]
+Pxs=3040,2504,3096,2504
+Page=3
+
+[Comp]
+Name=LT1018
+Px=2944,2336
+Page=3
+
+[Attr]
+ON=51,34,PART
+V=X82
+Style=8192
+
+[Attr]
+ON=51,49,NAME
+V=LT1018
+
+[Attr]
+ON=51,79,PACKAGE
+V=PDIP8
+
+[Attr]
+ON=51,94,GATE
+V=A
+
+[Attr]
+ON=51,109,COMPNAME
+V=UX79
+
+[Comp]
+Name=LT1018
+Px=2944,2520
+Page=3
+
+[Attr]
+ON=51,34,PART
+V=X83
+Style=8192
+
+[Attr]
+ON=51,49,NAME
+V=LT1018
+
+[Attr]
+ON=51,79,PACKAGE
+V=PDIP8
+
+[Attr]
+ON=51,94,GATE
+V=A
+
+[Attr]
+ON=51,109,COMPNAME
+V=UX79
+
+[Wire]
+Pxs=2704,2648,2704,2800
+Page=3
+
+[Wire]
+Pxs=2944,2864,4920,2864
+Page=3
+
+[Wire]
+Pxs=3032,2672,4176,2672
+Page=3
+
+[Comp]
+Name=MAX934_MX
+Px=2936,2648
+Page=3
+
+[Attr]
+ON=53,32,PART
+V=X97
+Style=8192
+
+[Attr]
+ON=53,47,NAME
+V=MAX934_MX
+
+[Attr]
+ON=53,77,PACKAGE
+V=SO-16
+
+[Attr]
+ON=53,92,GATE
+V=B
+
+[Attr]
+ON=53,107,COMPNAME
+V=UX96
+
+[Comp]
+Name=Resistor
+Px=2944,2744
+Page=3
+
+[Attr]
+ON=13,6,PART
+V=R95
+Style=8192
+
+[Attr]
+ON=14,17,RESISTANCE
+V=100
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2992,2744,3048,2744
+Page=3
+
+[Comp]
+Name=Resistor
+Px=3048,2760
+Rot=7
+Page=3
+
+[Attr]
+ON=-31,11,PART
+V=R96
+Style=8192
+
+[Attr]
+ON=-30,22,RESISTANCE
+V=452
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=3048,2744,3048,2760
+Page=3
+
+[Comp]
+Name=Ground
+Px=3048,2808
+Rot=7
+Page=3
+
+[Wire]
+Pxs=3048,2744,3104,2744
+Page=3
+
+[Wire]
+Pxs=2912,2744,2944,2744
+Page=3
+
+[Wire]
+Pxs=2968,2624,3104,2624
+Page=3
+
+[Wire]
+Pxs=2968,2624,2968,2640
+Page=3
+
+[Wire]
+Pxs=1472,2728,1528,2728
+Page=3
+
+[Wire]
+Pxs=1576,2592,1960,2592
+Page=3
+
+[Wire]
+Pxs=1328,2728,1376,2728
 Page=3
 
 [Comp]
 Name=Battery
-Px=1184,2704
+Px=1088,3200
 Rot=3
 Page=3
 
@@ -3482,17 +4080,17 @@ V
 
 [Comp]
 Name=Ground
-Px=1184,2712
+Px=1088,3208
 Rot=1
 Page=3
 
 [Wire]
-Pxs=1184,2704,1184,2712
+Pxs=1088,3200,1088,3208
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1472,2232
+Px=1376,2728
 Page=3
 
 [Attr]
@@ -3510,12 +4108,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1520,2232,1568,2232
+Pxs=1424,2728,1472,2728
 Page=3
 
 [Comp]
 Name=Resistor
-Px=1568,2248
+Px=1472,2744
 Rot=7
 Page=3
 
@@ -3534,18 +4132,18 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1568,2232,1568,2248
+Pxs=1472,2728,1472,2744
 Page=3
 
 [Comp]
 Name=Ground
-Px=1568,2296
+Px=1472,2792
 Rot=7
 Page=3
 
 [Comp]
 Name=Opamp
-Px=1704,2232
+Px=1608,2728
 Rot=4
 Page=3
 
@@ -3563,66 +4161,122 @@ ON=0,0,PACKAGE
 V=DIP14
 
 [Wire]
-Pxs=1672,2096,1672,2152
+Pxs=1576,2592,1576,2648
 Page=3
 
 [Wire]
-Pxs=1672,2152,1784,2152
+Pxs=1576,2648,1688,2648
 Page=3
 
 [Wire]
-Pxs=1784,2152,1784,2208
+Pxs=1688,2648,1688,2704
 Page=3
 
 [Wire]
-Pxs=1776,2208,1784,2208
+Pxs=1680,2704,1688,2704
 Page=3
 
 [Wire]
-Pxs=1672,2152,1672,2184
+Pxs=1576,2648,1576,2680
 Page=3
 
 [Comp]
 Name=Ground
-Px=1736,2176
+Px=1640,2672
 Rot=3
 Page=3
 
 [Wire]
-Pxs=1672,2184,1704,2184
+Pxs=1576,2680,1608,2680
 Page=3
 
 [Wire]
-Pxs=2648,2552,2760,2552
+Pxs=1528,2728,1608,2728
 Page=3
 
 [Wire]
-Pxs=2760,2552,3080,2552
+Pxs=2552,3048,2664,3048
 Page=3
 
 [Wire]
-Pxs=2464,2184,2464,2200
+Pxs=2664,3048,2984,3048
 Page=3
 
 [Wire]
-Pxs=2456,2664,2456,2672
+Pxs=2776,2896,2776,2912
 Page=3
 
 [Wire]
-Pxs=2752,2352,2872,2352
+Pxs=2896,2896,2896,2912
+Page=3
+
+[Comp]
+Name=MAX4602
+Px=2784,2840
+Page=3
+
+[Attr]
+ON=49,121,PART
+V=X106
+Style=8192
+
+[Attr]
+ON=49,136,NAME
+V=MAX4602
+
+[Attr]
+ON=49,166,PACKAGE
+V=SSOP16
+
+[Wire]
+Pxs=2776,2912,2776,2928
 Page=3
 
 [Wire]
-Pxs=2256,2128,2256,2360
+Pxs=2776,2928,2776,2944
 Page=3
 
 [Wire]
-Pxs=2456,2672,2456,2680
+Pxs=2896,2928,2896,2944
+Page=3
+
+[Wire]
+Pxs=2896,2912,2896,2928
+Page=3
+
+[Wire]
+Pxs=2368,2680,2368,2696
+Page=3
+
+[Wire]
+Pxs=2360,3160,2360,3168
+Page=3
+
+[Wire]
+Pxs=2768,2880,2776,2880
+Page=3
+
+[Comp]
+Name=Ground
+Px=2768,2880
+Rot=2
+Page=3
+
+[Wire]
+Pxs=2656,2848,2776,2848
+Page=3
+
+[Wire]
+Pxs=2160,2624,2160,2856
+Page=3
+
+[Wire]
+Pxs=2360,3168,2360,3176
 Page=3
 
 [Comp]
 Name=Opamp
-Px=2376,2408
+Px=2280,2904
 Rot=4
 Page=3
 
@@ -3641,21 +4295,21 @@ V=DIP14
 
 [Comp]
 Name=Ground
-Px=2376,2408
+Px=2280,2904
 Rot=7
 Page=3
 
 [Wire]
-Pxs=2448,2384,2472,2384
+Pxs=2352,2880,2376,2880
 Page=3
 
 [Wire]
-Pxs=2256,2360,2296,2360
+Pxs=2160,2856,2200,2856
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2344,2360
+Px=2248,2856
 Rot=2
 Page=3
 
@@ -3675,7 +4329,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=2432,2296
+Px=2336,2792
 Rot=2
 Page=3
 
@@ -3694,35 +4348,35 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2344,2360,2360,2360
+Pxs=2248,2856,2264,2856
 Page=3
 
 [Wire]
-Pxs=2360,2296,2384,2296
+Pxs=2264,2792,2288,2792
 Page=3
 
 [Wire]
-Pxs=2360,2296,2360,2360
+Pxs=2264,2792,2264,2856
 Page=3
 
 [Wire]
-Pxs=2360,2360,2376,2360
+Pxs=2264,2856,2280,2856
 Page=3
 
 [Wire]
-Pxs=2432,2296,2472,2296
+Pxs=2336,2792,2376,2792
 Page=3
 
 [Wire]
-Pxs=2472,2296,2472,2384
+Pxs=2376,2792,2376,2880
 Page=3
 
 [Wire]
-Pxs=2328,2448,2472,2448
+Pxs=2232,2944,2376,2944
 Page=3
 
 [Wire]
-Pxs=2472,2384,2472,2448
+Pxs=2376,2880,2376,2944
 Page=3
 
 [Grid Text]
@@ -4025,7 +4679,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=2456,2672
+Px=2360,3168
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4034,7 +4688,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE1"
-Px=2464,2200
+Px=2368,2696
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4043,7 +4697,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE1"
-Px=2208,2096
+Px=2112,2592
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4052,7 +4706,7 @@ CBorder=None
 
 [Grid Text]
 Text="JJ"
-Px=2760,2552
+Px=2664,3048
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4061,7 +4715,7 @@ CBorder=None
 
 [Grid Text]
 Text="J"
-Px=2752,2352
+Px=2656,2848
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4070,7 +4724,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=1736,2240
+Px=1640,2736
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4079,7 +4733,7 @@ CBorder=None
 
 [Grid Text]
 Text="qq"
-Px=1592,2144
+Px=1528,2728
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4088,7 +4742,7 @@ CBorder=None
 
 [Grid Text]
 Text="q"
-Px=1448,2168
+Px=1328,2728
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4097,7 +4751,25 @@ CBorder=None
 
 [Grid Text]
 Text="Буфер"
-Px=1888,2360
+Px=1792,2856
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="yImpuls2"
+Px=3032,2672
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="ss"
+Px=3016,3016
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4106,7 +4778,25 @@ CBorder=None
 
 [Grid Text]
 Text="s"
-Px=2728,2320
+Px=2632,2816
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="ytreug"
+Px=2448,2336
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="yzarayd"
+Px=3040,2504
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4115,7 +4805,25 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1904,2296
+Px=1808,2792
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="Ключ"
+Px=2792,2992
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="Компаратор"
+Px=2896,2288
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4124,7 +4832,7 @@ CBorder=None
 
 [Grid Text]
 Text="Источник тока заряда"
-Px=2336,2088
+Px=2240,2584
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4133,7 +4841,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=2464,2120
+Px=2976,2512
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4142,7 +4850,34 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=2736,1944
+Px=2976,2328
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2896,2880
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2368,2616
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2640,2440
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4151,7 +4886,7 @@ CBorder=None
 
 [Grid Text]
 Text="Ограничитель"
-Px=1288,2080
+Px=1192,2576
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4160,7 +4895,7 @@ CBorder=None
 
 [Grid Text]
 Text="Нижний порог ограничения 1В"
-Px=1064,2504
+Px=968,3000
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4169,7 +4904,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1072,2368
+Px=976,2864
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4178,7 +4913,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1312,2384
+Px=1216,2880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4187,7 +4922,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1312,2224
+Px=1216,2720
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4196,7 +4931,7 @@ CBorder=None
 
 [Grid Text]
 Text="Верхний порог ограничения 5В"
-Px=1064,2328
+Px=968,2824
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4205,7 +4940,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1064,2544
+Px=968,3040
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4214,7 +4949,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1312,2560
+Px=1216,3056
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4223,7 +4958,7 @@ CBorder=None
 
 [Grid Text]
 Text="Сумматор"
-Px=1944,2056
+Px=1848,2552
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4232,7 +4967,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=2208,2168
+Px=2112,2664
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4241,7 +4976,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=2456,2600
+Px=2360,3096
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4250,7 +4985,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1080,2656
+Px=984,3152
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4259,7 +4994,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE1"
-Px=2728,2424
+Px=2632,2920
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4268,7 +5003,7 @@ CBorder=None
 
 [Grid Text]
 Text="Источник тока разряда"
-Px=2352,2576
+Px=2256,3072
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4277,7 +5012,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=1736,2288
+Px=2776,2384
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4285,8 +5020,8 @@ Page=3
 CBorder=None
 
 [Grid Text]
-Text="VE1"
-Px=1184,2656
+Text="Компаратор"
+Px=2888,2480
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4294,8 +5029,8 @@ Page=3
 CBorder=None
 
 [Grid Text]
-Text="VE1"
-Px=2408,2352
+Text="Компаратор,выделяюзий средний импульс"
+Px=2736,2616
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4304,7 +5039,52 @@ CBorder=None
 
 [Grid Text]
 Text="VC1"
-Px=2408,2416
+Px=2736,2696
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=1640,2784
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2912,2744
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VE1"
+Px=1088,3152
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VE1"
+Px=2312,2848
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2312,2912
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4319,7 +5099,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=2
+Scale=1
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
@@ -4443,7 +5223,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="Курсовая функциональные блоки"
+Name="Курсовая функциональные блоки+принципиалка"
 Type=Main
 Enable=True
 CurrentPage 0=3
@@ -4510,9 +5290,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=209,139
-Scale 3=2
-Px=1551,963
+SB 3=689,2549
+Scale 3=1
+Px=1743,2964
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -4557,40 +5337,14 @@ Page=0
 [Text Area]
 Section=0
 Page=1
-Text=*** From file D:\MC11\library\UTILITY.LBR
-Text=*** Generic Diode
-Text=.MODEL $GENERIC D ()
-Text=*** From file D:\MC11\library\UTILITY.LBR
-Text=*** Generic Opamp Model
+Text=;**** Pasted from "C:\Users\Exidniy Apelsin\Desktop\Курсовая работа\Курсовая принципиальная +функциональная.CIR" Section="Курсовая принципиальная +функциональная"
 Text=.MODEL $GENERIC OPA (LEVEL=2 GBW=2.5MEG IBIAS=30p IOFF=3p ROUTAC=50 ROUTDC=75
 Text=+ SRN=5MEG SRP=5MEG VOFF=2m)
-Text=*** From file C:\MC11\library\LTOPAMP.LBR
-Text=*** JFET-input operational amplifier
-Text=.MODEL LF155A OPA (GBW=2.5MEG IBIAS=30p IOFF=3p ROUTAC=50 ROUTDC=75 SRN=7MEG
-Text=+ SRP=7MEG TYPE=3 VNS=-12.4 VPS=12.4)
-Text=*** From file C:\MC11\library\LTOPAMP.LBR
-Text=*** JFET-input operational amplifier
-Text=.MODEL LF156 OPA (GBW=5MEG IBIAS=30p IOFF=3p ROUTAC=50 ROUTDC=75 SRN=12MEG
-Text=+ SRP=12MEG TYPE=3 VNS=-12.4 VOFF=2m VPS=12.4)
-Text=*** From file C:\MC11\library\DIGIO.LIB
-Text=.MODEL D0_GATE UGATE ()
-Text=*** From file C:\MC11\library\DIGIO.LIB
-Text=.MODEL DLY_TTL UGATE (TPHLMX=15NS TPHLTY=8NS TPLHMX=22NS TPLHTY=11NS)
-Text=*** From file C:\MC11\library\LTOPAMP.LBR
-Text=*** JFET-input operational amplifier
-Text=.MODEL LF155 OPA (LEVEL=3 GBW=2.5MEG IBIAS=30p IOFF=3p ROUTAC=50 ROUTDC=75
-Text=+ SRN=7MEG SRP=7MEG TYPE=3 VNS=-12.4 VOFF=2m VPS=12.4).MODEL LF155 OPA (LEVEL=3 GBW=2.5MEG IBIAS=30p IOFF=3p ROUTAC=50 ROUTDC=75 SRN=7MEG SRP=7MEG TYPE=3 VNS=-12.4 VOFF=2m VPS=12.4)
-Text=
-Text=*** From file C:\MC11\library\NSOPAMP.LBR
-Text=*** Wide bandwidth quad JFET i/p opamp
-Text=.MODEL LF147 OPA (A=100K C=10p GBW=4MEG IBIAS=50p IOFF=25p ROUTAC=50 ROUTDC=75
-Text=+ SRN=17.5MEG SRP=13MEG TYPE=3 VNS=-12.9 VPS=12.9)
-Text=*** From file D:\MC11\library\LTOPAMP.LBR
-Text=*** High speed operational amplifier
-Text=.MODEL LT118A OPA (LEVEL=3 A=500K GBW=15MEG IBIAS=120n IOFF=6n PD=75m ROUTAC=50
-Text=+ ROUTDC=75 SRN=70MEG SRP=70MEG VNS=-12.4 VOFF=500u VPS=12.4)
-Text=*** From file D:\MC11\library\UTILITY.LBR
-Text=*** PNP Generic
+Text=.MODEL $GENERIC_P PNP (LEVEL=2)
+Text=;**** Pasted from "C:\Users\Exidniy Apelsin\Desktop\Курсовая работа\Курсовая принципиальная +функциональная.CIR" Section="Курсовая принципиальная +функциональная"
+Text=.MODEL $GENERIC D ()
+Text=.MODEL $GENERIC_P PNP (LEVEL=2)
+Text=.MODEL $GENERIC_P PNP (LEVEL=2)
 Text=.MODEL $GENERIC_P PNP (LEVEL=2)
 
 [InfoPage]
@@ -4824,38 +5578,6 @@ Name="1"
 [APage]
 Analysis=Transient
 Name="2"
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-Page="1"
-w2=1
-AliasID2=2
-Pos=0.0013321001258529747,1.2441788290381472,0.0023677379420569168,5.6753437141400358
-Posm=0.77586206896551724
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=6
-AliasID1=14
-Page="1"
-w2=6
-AliasID2=14
-Pos=0.0013200823385083331,4.7336702394321177,0.0023061105457934036,5.860373072933843
-Posm=1.5517241379310345
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
 
 [AObject]
 Analysis=Transient
@@ -5140,7 +5862,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=5m
+TRange=60m
 TStep=3u
 NPts=51
 Temp=27
@@ -5158,9 +5880,10 @@ Page=1
 AliasID=1
 XExp=T
 YExp=v(Impuls)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 WSP Title="v(Impuls) vs T"
 WSP Checked=False
@@ -5191,9 +5914,10 @@ Page=1
 AliasID=2
 XExp=T
 YExp=v(treug)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 WSP Title="v(treug) vs T"
 WSP Checked=False
@@ -5224,9 +5948,10 @@ Page=1
 AliasID=3
 XExp=T
 YExp=v(bbbb)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 CS=Normal
@@ -5252,9 +5977,10 @@ Page=1
 AliasID=11
 XExp=T
 YExp=v(Impuls1)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 CS=Normal
@@ -5280,9 +6006,10 @@ Page=1
 AliasID=8
 XExp=T
 YExp=v(Impuls2)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 CS=Normal
@@ -5308,9 +6035,10 @@ Page=1
 AliasID=13
 XExp=T
 YExp=v(prygol1)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 Line Color=#008000
@@ -5334,9 +6062,10 @@ Page=1
 AliasID=14
 XExp=T
 YExp=v(out)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 CS=Normal
@@ -5362,9 +6091,10 @@ Page=1
 AliasID=5
 XExp=T
 YExp=v(In)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=15,0
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=2
 Enable=Enable
 Line Color=#008000
@@ -5388,9 +6118,10 @@ Page=2
 AliasID=4
 XExp=T
 YExp=I(R9)
-XRng=AutoAlways
+XRng=0.06,0.02
 YRng=0.004,-0.016
 Options=LINEARX,LINEARY
+Range Grid X=0.001
 Range Grid Y=0.004
 Enable=Enable
 Line Color=#008000
