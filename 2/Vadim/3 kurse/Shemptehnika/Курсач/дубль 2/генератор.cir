@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=52
+NLCnt=54
 TXCnt=4
 
 [shapedef]
@@ -190,7 +190,7 @@ Name=555_2
 Definition=Macro
 Shape=Timer555
 Mask=4096
-Used=4
+Used=5
 Label Offset=0,0,0,0
 PinCnt=8
 Pin="Reset",a,0,0,-13,0
@@ -207,7 +207,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=7
+Used=19
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -218,7 +218,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=415
+Used=512
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -229,7 +229,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=433
+Used=443
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -241,7 +241,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=866
+Used=978
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -264,7 +264,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=69
+Used=84
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -276,7 +276,7 @@ Name=усилитель
 Definition=Macro
 Shape=Amp
 Mask=4096
-Used=4
+Used=6
 Label Offset=27,-46,23,22
 PinCnt=2
 Pin="PinA",a,0,0,-11,-2
@@ -287,7 +287,7 @@ Name=сумматор2
 Definition=Macro
 Shape=Sum
 Mask=4096
-Used=5
+Used=6
 Label Offset=27,-43,14,15
 PinCnt=3
 Pin="PINA",a,0,0,-12,-2
@@ -299,7 +299,7 @@ Name=НЕ
 Definition=Macro
 Shape=НЕ
 Mask=4096
-Used=15
+Used=18
 memo=Идеальный инвертор
 Label Offset=15,-45,19,6
 PinCnt=2
@@ -428,7 +428,7 @@ Style=8192
 
 [Attr]
 ON=11,-42,CAPACITANCE
-V=0.155u
+V=1u
 Style=8192
 
 [Attr]
@@ -510,7 +510,7 @@ Pxs=432,224,552,224
 
 [Comp]
 Name=ограничитель
-Px=120,472
+Px=96,640
 
 [Attr]
 ON=32,-49,PART
@@ -534,11 +534,6 @@ V=1
 Font=Arial
 
 [Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Attr]
 ON=0,28,COST
 V
 Font=Arial
@@ -548,9 +543,14 @@ ON=0,42,POWER
 V
 Font=Arial
 
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
 [Comp]
 Name=Battery
-Px=72,552
+Px=48,720
 Rot=3
 
 [Attr]
@@ -581,18 +581,18 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Px=72,560
+Px=48,728
 Rot=1
 
 [Wire]
-Pxs=72,472,120,472
+Pxs=48,640,96,640
 
 [Wire]
-Pxs=72,552,72,560
+Pxs=48,720,48,728
 
 [Comp]
 Name=усилитель
-Px=264,472
+Px=240,640
 
 [Attr]
 ON=27,-46,PART
@@ -611,11 +611,6 @@ V=4.88
 Font=Arial
 
 [Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Attr]
 ON=0,28,COST
 V
 Font=Arial
@@ -625,12 +620,17 @@ ON=0,42,POWER
 V
 Font=Arial
 
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
 [Wire]
-Pxs=200,472,264,472
+Pxs=176,640,240,640
 
 [Comp]
 Name=сумматор2
-Px=336,472
+Px=312,640
 
 [Attr]
 ON=27,-43,PART
@@ -654,11 +654,6 @@ V=1
 Font=Arial
 
 [Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Attr]
 ON=0,28,COST
 V
 Font=Arial
@@ -668,9 +663,14 @@ ON=0,42,POWER
 V
 Font=Arial
 
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
 [Comp]
 Name=Battery
-Px=368,552
+Px=344,720
 Rot=3
 
 [Attr]
@@ -701,14 +701,14 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Px=368,560
+Px=344,728
 Rot=1
 
 [Wire]
-Pxs=368,552,368,560
+Pxs=344,720,344,728
 
 [Wire]
-Pxs=72,472,72,504
+Pxs=48,640,48,672
 
 [Comp]
 Name=НЕ
@@ -752,6 +752,29 @@ Pxs=424,416,424,472
 [Wire]
 Pxs=424,416,472,416
 
+[Comp]
+Name=Battery
+Px=400,520
+Rot=3
+
+[Attr]
+ON=-29,-27,PART
+V=V10
+Style=8192
+
+[Attr]
+ON=-22,-41,VALUE
+V=8
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=400,520
+Rot=7
+
 [Grid Text]
 Text="Uc"
 Px=504,336
@@ -778,7 +801,7 @@ CBorder=None
 
 [Grid Text]
 Text="ограничитель напряжения 1-5 В"
-Px=56,416
+Px=32,584
 Height=-12
 Color=#FF0000
 Font=Verdana
@@ -941,9 +964,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,16
+SB 3=0,25
 Scale 3=1
-Px=1156,641
+Px=914,444
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1278,8 +1301,8 @@ w=1
 AliasID1=2
 w2=1
 AliasID2=2
-Pos=0.011551404262744421,6.5451683911314245,0.012544928608773286,7.9077470864362454
-Posm=5.4032766225582867
+Pos=0.22128211638756118,7.9754571580972939,0.36157171722467479,4.5771352677792905
+Posm=6.8236714975845416
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -1293,8 +1316,8 @@ w=1
 AliasID1=2
 w2=1
 AliasID2=2
-Pos=0.01674136813930208,4.0926415713748794,0.026827416899650281,6.4719947596913183
-Posm=3.5838059231253943
+Pos=0.28128393489350029,7.9815877094621204,0.46026207223593951,9.3725219470947252
+Posm=7.1859903381642516
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -1308,8 +1331,8 @@ w=1
 AliasID1=2
 w2=1
 AliasID2=2
-Pos=0.01685823379191962,2.087159665795423,0.026827414047928339,4.3646809706507037
-Posm=1.8746061751732832
+Pos=0.29293123163519336,1.8175847419207083,0.49023064464055438,1.8183109161539595
+Posm=0.84541062801932376
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -1323,53 +1346,8 @@ w=1
 AliasID1=2
 w2=1
 AliasID2=2
-Pos=0.034234364411524824,6.4845600151031384,0.04639768594641739,9.0522082448323147
-Posm=5.8574879227053147
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.017598816644429253,6.4851484071348207,0.027989435290327533,7.8175415603329146
-Posm=6.1594202898550732
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.006914739352744427,6.5451683933711768,0.0079761373127444236,6.5451683920305479
-Posm=5.0120772946859908
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.0093168382587733023,7.9077470902531015,0.010551348550831041,9.2862328449478095
-Posm=7.4879227053140101
+Pos=0.29852010691667508,4.5503513002646674,0.48849725554022533,6.6765081195309239
+Posm=3.0797101449275366
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -1755,7 +1733,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=Frequency(v(Uc),1,1) vs 
+Title=Frequency(v(Uc),1,1) vs
 AutoTitle=Yes
 ShowWin=False
 Grid Color=#808080
@@ -1930,7 +1908,7 @@ LinearY=True
 
 [Limits]
 Analysis=Transient
-TRange=50m
+TRange=600m
 TStep=0
 NPts=51
 Temp=27
@@ -1947,10 +1925,10 @@ Plt=1
 AliasID=1
 XExp=T
 YExp=v(V1)
-XRng=0.05,0
+XRng=0.6
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.001
+Range Grid X=0.12
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -1972,10 +1950,10 @@ Plt=2
 AliasID=2
 XExp=T
 YExp=v(Out)
-XRng=0.05,0
+XRng=0.6
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.001
+Range Grid X=0.12
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1997,10 +1975,10 @@ Plt=3
 AliasID=3
 XExp=T
 YExp=v(In)
-XRng=0.05,0
+XRng=0.6
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.001
+Range Grid X=0.12
 Enable=Enable
 Line Color=#008000
 Text Color=#008000

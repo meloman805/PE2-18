@@ -550,7 +550,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=434
+Used=443
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -562,7 +562,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=445
+Used=511
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -598,7 +598,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4864
-Used=29
+Used=34
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -622,7 +622,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=8
+Used=19
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -657,7 +657,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=73
+Used=83
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -728,7 +728,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=899
+Used=978
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -740,7 +740,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=4097
-Used=28
+Used=53
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -755,7 +755,7 @@ Name=Diode
 Definition=Diode
 Shape=Diode
 Mask=5121
-Used=105
+Used=109
 memo=Diode
 Label Offset=17,10,12,12
 PinCnt=2
@@ -767,7 +767,7 @@ Name=PNP
 Definition=PNP
 Shape=PNP
 Mask=4097
-Used=89
+Used=95
 memo=PNP Transistor
 Label Offset=37,-13,-8,35
 PinCnt=3
@@ -779,8 +779,8 @@ Pin="Emitter",3,-3,6,15
 Name=NPN
 Definition=NPN
 Shape=NPN
-Mask=4353
-Used=126
+Mask=5121
+Used=132
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -808,7 +808,7 @@ Name=MAX4602
 Definition=Subckt
 Shape=Switch_Quad
 Mask=4224
-Used=1
+Used=2
 memo=2.5ohm, Quad, SPST, CMOS Analog Switches
 Label Offset=49,121,27,38
 PinCnt=16
@@ -891,7 +891,7 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=2048
-Used=119
+Used=123
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -916,7 +916,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=2,3, 199,781, -9,-38, 473,236,1151,568
+Window Placement=1,2, 0,777, -9,-38, 824,54,1502,386
 Default Object=Color=#F382F7
 Default Object Font=Height=-18,FStyle=5,Color=#F382F7,Name=Arial
 Default Object Apply Border To Text=No
@@ -1524,7 +1524,7 @@ Style=8192
 
 [Attr]
 ON=-10,-43,VALUE
-V=1
+V=4.2
 
 [Attr]
 ON=0,0,PACKAGE
@@ -2601,7 +2601,7 @@ V
 Name=PNP
 Px=2280,1752
 Page=3
-COff=23,2280,1763,-15,-27
+COff=23,2280,1766,-15,-27
 
 [Attr]
 ON=37,-13,PART
@@ -2621,7 +2621,7 @@ Name=NPN
 Px=2184,1856
 Page=3
 COff=8,2184,1856,-31,-32
-COff=23,2184,1867,-17,5
+COff=23,2184,1870,-17,5
 
 [Attr]
 ON=-5,-25,PART
@@ -2689,7 +2689,7 @@ Style=8192
 
 [Attr]
 ON=8,-41,RESISTANCE
-V=2.5k
+V=1k
 Style=8192
 
 [Attr]
@@ -2841,7 +2841,7 @@ Style=8192
 
 [Attr]
 ON=8,-41,RESISTANCE
-V=2.5k
+V=1k
 Style=8192
 
 [Attr]
@@ -2948,7 +2948,7 @@ Rot=4
 Page=3
 COff=8,2176,2336,-45,-23
 COff=8,2200,2312,-43,-24
-COff=23,2176,2347,-12,17
+COff=23,2176,2350,-12,17
 
 [Attr]
 ON=37,-2,PART
@@ -2987,7 +2987,7 @@ Name=NPN
 Px=2272,2232
 Rot=4
 Page=3
-COff=23,2272,2243,-15,7
+COff=23,2272,2246,-15,7
 
 [Attr]
 ON=37,2,PART
@@ -6708,7 +6708,7 @@ Name=NPN
 Px=2336,2680
 Rot=4
 Page=3
-COff=23,2336,2691,-15,7
+COff=23,2336,2694,-15,7
 
 [Attr]
 ON=37,2,PART
@@ -6791,7 +6791,7 @@ V=TO-18
 Name=PNP
 Px=2040,2688
 Page=3
-COff=23,2040,2699,-15,-27
+COff=23,2040,2702,-15,-27
 
 [Attr]
 ON=37,-13,PART
@@ -8806,9 +8806,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=276,1622
+SB 3=1769,1003
 Scale 3=1.3333333333333333
-Px=1341,2243
+Px=2741,1389
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -8904,7 +8904,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -8,-31, 434,77,1200,493
+Window Placement=2,3, -1,-1, -9,-38, 434,77,1200,493
 Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -9121,6 +9121,10 @@ Name="1"
 [APage]
 Analysis=Transient
 Name="2"
+
+[APage]
+Analysis=Transient
+Name="3"
 
 [APage]
 Analysis=Transient
@@ -9425,7 +9429,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=300m
+TRange=120m
 TStep=30u
 NPts=51
 Temp=27
@@ -10271,7 +10275,7 @@ XRng=AutoAlways
 YRng=14,0
 Options=LINEARX,LINEARY
 Range Grid Y=2
-Enable=DontRun
+Enable=Enable
 CS=Normal
 Line Color=#FF00FF
 Text Color=#FF00FF
@@ -10540,7 +10544,7 @@ StepSize="15%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=-2,-2,147,158
+Rect=-2,-2,149,158
 
 [Slider]
 Analysis=Transient
@@ -10556,7 +10560,7 @@ StepSize="10%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=-2,156,55,316
+Rect=-2,156,57,316
 
 [OPMethods]
 Analysis=Transient

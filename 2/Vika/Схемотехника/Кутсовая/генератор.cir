@@ -7,17 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=54
-TXCnt=4
-
-[shapedef]
-Name=Amp
-Line=16,-24,16,24
-Line=56,0,16,-24
-Line=56,0,16,24
-Line=56,0,72,0
-Line=0,0,0,0
-Line=0,0,16,0
+NLCnt=42
+TXCnt=3
 
 [shapedef]
 Name=Battery
@@ -38,23 +29,6 @@ Ellipse=29,-7,31,-5
 FColor=#0000FF
 
 [shapedef]
-Name=Circle.root
-Ellipse=20,-12,44,12
-FColor=None
-Line=0,0,19,0
-Line=32,32,32,12
-Line=64,0,44,0
-PolyClosed=3
-PolyLine=13,-3
-PolyLine=18,0
-PolyLine=13,3
-PolyClosed=3
-PolyLine=32,14
-PolyLine=35,19
-PolyLine=29,19
-Line=18,0,20,0
-
-[shapedef]
 Name=Fixed
 Line=8,0,32,0
 Line=8,0,0,-8
@@ -68,15 +42,6 @@ Line=18,-4,18,4
 Line=24,0,24,0
 
 [shapedef]
-Name=Plt.root
-Rectangle=16,-24,64,24
-FColor=None
-Line=0,0,16,0
-Line=22,0,58,0
-Line=40,-18,40,18
-Line=64,0,80,0
-
-[shapedef]
 Name=Resistor_Euro
 Rectangle=12,-4,36,4
 FColor=None
@@ -85,12 +50,6 @@ Line=48,0,36,0
 Current=32,8,16,8
 Ellipse=31,-1,33,1
 FColor=#0000FF
-
-[shapedef]
-Name=Sum
-Root="Circle.root",0,0,0
-Line=27,0,37,0
-Line=32,-5,32,5
 
 [shapedef]
 Name=R_gost
@@ -136,17 +95,6 @@ Text="1"
 TextInfo=17,-6,25,9 , -11,0,"Arial"
 
 [shapedef]
-Name=ограничитель
-Root="Plt.root",0,0,0
-Line=32,16,48,-16
-Line=48,-16,56,-16
-Line=24,16,32,16
-Line=9,-3,16,0
-Line=9,3,16,0
-Line=70,-3,77,0
-Line=70,3,77,0
-
-[shapedef]
 Name=Timer555
 Rectangle=16,-16,120,112
 FColor=None
@@ -190,7 +138,7 @@ Name=555_2
 Definition=Macro
 Shape=Timer555
 Mask=4096
-Used=5
+Used=6
 Label Offset=0,0,0,0
 PinCnt=8
 Pin="Reset",a,0,0,-13,0
@@ -207,7 +155,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=19
+Used=20
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -218,7 +166,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=512
+Used=516
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -229,7 +177,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=443
+Used=444
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -241,7 +189,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=978
+Used=982
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -249,65 +197,31 @@ Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
 [compdef]
-Name=ограничитель
-Definition=Macro
-Shape=ограничитель
-Mask=4096
-Used=3
-Label Offset=31,-54,27,24
-PinCnt=2
-Pin="PinA",a,0,0,-6,-2
-Pin="PinB",a,10,0
-
-[compdef]
-Name=Battery
-Definition=Battery
-Shape=Battery
-Mask=4865
-Used=84
-memo=Battery
-Label Offset=19,7,10,13
-PinCnt=2
-Pin="Plus",6,0,-4,-5
-Pin="Minus",0,0,-10,-5
-
-[compdef]
-Name=усилитель
-Definition=Macro
-Shape=Amp
-Mask=4096
-Used=6
-Label Offset=27,-46,23,22
-PinCnt=2
-Pin="PinA",a,0,0,-11,-2
-Pin="PinB",a,9,0
-
-[compdef]
-Name=сумматор2
-Definition=Macro
-Shape=Sum
-Mask=4096
-Used=6
-Label Offset=27,-43,14,15
-PinCnt=3
-Pin="PINA",a,0,0,-12,-2
-Pin="PINB",a,4,4,4,2
-Pin="PINC",a,8,0
-
-[compdef]
 Name=НЕ
 Definition=Macro
 Shape=НЕ
 Mask=4096
-Used=18
+Used=19
 memo=Идеальный инвертор
 Label Offset=15,-45,19,6
 PinCnt=2
 Pin="In",a,0,0,-4,0
 Pin="Out",a,5,0,-3,0
 
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=4865
+Used=85
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 0,0,678,332
+Window Placement=2,3, 0,520, -9,-38, 64,106,830,480
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -509,208 +423,6 @@ Pxs=432,360,504,360
 Pxs=432,224,552,224
 
 [Comp]
-Name=ограничитель
-Px=96,640
-
-[Attr]
-ON=32,-49,PART
-V=X39
-Style=8192
-Font=Arial
-
-[Attr]
-ON=31,-39,FILE
-V=ограничитель
-Font=Arial
-
-[Attr]
-ON=31,-9,Param:LOW
-V=0.1
-Font=Arial
-
-[Attr]
-ON=31,6,Param:HIGH
-V=1
-Font=Arial
-
-[Attr]
-ON=0,28,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,42,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Comp]
-Name=Battery
-Px=48,720
-Rot=3
-
-[Attr]
-ON=6,-16,PART
-V=V_Regulirovania
-Style=8192
-Font=Arial
-
-[Attr]
-ON=-10,-43,VALUE
-V=1
-Font=Arial
-
-[Attr]
-ON=0,28,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,42,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Comp]
-Name=Ground
-Px=48,728
-Rot=1
-
-[Wire]
-Pxs=48,640,96,640
-
-[Wire]
-Pxs=48,720,48,728
-
-[Comp]
-Name=усилитель
-Px=240,640
-
-[Attr]
-ON=27,-46,PART
-V=X46
-Style=8192
-Font=Arial
-
-[Attr]
-ON=27,-31,FILE
-V=усилитель
-Font=Arial
-
-[Attr]
-ON=27,-1,Param:GAIN
-V=4.88
-Font=Arial
-
-[Attr]
-ON=0,28,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,42,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Wire]
-Pxs=176,640,240,640
-
-[Comp]
-Name=сумматор2
-Px=312,640
-
-[Attr]
-ON=27,-43,PART
-V=X47
-Style=8192
-Font=Arial
-
-[Attr]
-ON=27,-28,FILE
-V=сумматор2
-Font=Arial
-
-[Attr]
-ON=27,2,Param:KA
-V=1
-Font=Arial
-
-[Attr]
-ON=27,17,Param:KB
-V=1
-Font=Arial
-
-[Attr]
-ON=0,28,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,42,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Comp]
-Name=Battery
-Px=344,720
-Rot=3
-
-[Attr]
-ON=17,-34,PART
-V=V9
-Style=8192
-Font=Arial
-
-[Attr]
-ON=-10,-43,VALUE
-V=0.111
-Font=Arial
-
-[Attr]
-ON=0,28,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,42,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Comp]
-Name=Ground
-Px=344,728
-Rot=1
-
-[Wire]
-Pxs=344,720,344,728
-
-[Wire]
-Pxs=48,640,48,672
-
-[Comp]
 Name=НЕ
 Px=928,312
 
@@ -799,17 +511,6 @@ JustifyH=Left
 JustifyV=Bottom
 CBorder=None
 
-[Grid Text]
-Text="ограничитель напряжения 1-5 В"
-Px=32,584
-Height=-12
-Color=#FF0000
-Font=Verdana
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -818,7 +519,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -964,9 +665,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,25
-Scale 3=1
-Px=914,444
+SB 3=215,113
+Scale 3=0.66666666666666663
+Px=1053,574
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1301,53 +1002,8 @@ w=1
 AliasID1=2
 w2=1
 AliasID2=2
-Pos=0.22128211638756118,7.9754571580972939,0.36157171722467479,4.5771352677792905
-Posm=6.8236714975845416
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.28128393489350029,7.9815877094621204,0.46026207223593951,9.3725219470947252
-Posm=7.1859903381642516
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.29293123163519336,1.8175847419207083,0.49023064464055438,1.8183109161539595
-Posm=0.84541062801932376
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
-Format=3
-
-[AObject]
-Analysis=Transient
-Object=MeasureH
-Locked=True
-EndPoint=ArrowF
-CBorder=#000080
-w=1
-AliasID1=2
-w2=1
-AliasID2=2
-Pos=0.29852010691667508,4.5503513002646674,0.48849725554022533,6.6765081195309239
-Posm=3.0797101449275366
+Pos=0.51009640405114798,9.3593539077517196,0.65075929759039297,9.3549740607986536
+Posm=8.5144927536231894
 Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Format=3
 
@@ -1908,7 +1564,7 @@ LinearY=True
 
 [Limits]
 Analysis=Transient
-TRange=600m
+TRange=900m
 TStep=0
 NPts=51
 Temp=27
@@ -1925,10 +1581,9 @@ Plt=1
 AliasID=1
 XExp=T
 YExp=v(V1)
-XRng=0.6
+XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.12
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -1950,10 +1605,9 @@ Plt=2
 AliasID=2
 XExp=T
 YExp=v(Out)
-XRng=0.6
+XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.12
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1975,10 +1629,9 @@ Plt=3
 AliasID=3
 XExp=T
 YExp=v(In)
-XRng=0.6
+XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=0.12
 Enable=Enable
 Line Color=#008000
 Text Color=#008000
@@ -2061,7 +1714,7 @@ Max="1"
 Default="990m"
 Format=7
 Method=Linear
-Show=True
+Show=False
 Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
 StepSize="1%"
 MRUDockID=59421

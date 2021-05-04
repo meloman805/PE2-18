@@ -1,14 +1,14 @@
 [Main]
 FileType=CIR
-Version=11.01
+Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1536,864
-MCAPVersion=11.2.0.3
-Key ID=Demo
-NLCnt=837
-TXCnt=124
+Screen=1920,1080
+MCAPVersion=11.0.1.3
+Key ID=0
+NLCnt=879
+TXCnt=127
 
 [shapedef]
 Name=Amp
@@ -20,10 +20,6 @@ Line=0,0,0,0
 Line=0,0,16,0
 
 [shapedef]
-Name=And2
-Root="And.root",0,0,0
-
-[shapedef]
 Name=And.root
 Line=0,0,9,0
 Line=0,16,9,16
@@ -32,6 +28,10 @@ Line=27,20,9,20
 Line=9,-4,27,-4
 Line=40,8,48,8
 Arc=12,-4,40,20 , 28,32,28,-16
+
+[shapedef]
+Name=And2
+Root="And.root",0,0,0
 
 [shapedef]
 Name=Battery
@@ -64,6 +64,8 @@ Line=22,-8,22,8
 Line=26,-8,26,8
 Line=26,0,48,0
 Current=32,12,16,12
+Ellipse=29,-7,31,-5
+FColor=#0000FF
 
 [shapedef]
 Name=Circle.root
@@ -153,14 +155,6 @@ PolyLine=24,12
 PolyLine=24,8
 
 [shapedef]
-Name=Opamp5
-Root="Opamp.root",0,0,0
-Root="Plus.root",25,-4,0
-Root="Minus.root",25,52,0
-Line=32,56,32,34
-Line=32,-8,32,13
-
-[shapedef]
 Name=Opamp.root
 Line=0,48,6,48
 Line=0,0,5,0
@@ -172,6 +166,14 @@ Line=10,12,14,12
 Line=12,10,12,14
 Line=10,36,14,36
 Line=4,0,6,0
+
+[shapedef]
+Name=Opamp5
+Root="Opamp.root",0,0,0
+Root="Plus.root",25,-4,0
+Root="Minus.root",25,52,0
+Line=32,56,32,34
+Line=32,-8,32,13
 
 [shapedef]
 Name=Plt.root
@@ -198,25 +200,24 @@ Line=16,-4,14,-2
 Line=16,4,14,2
 
 [shapedef]
-Name=Resistor
-PolyOpen=12
-PolyLine=0,0
-PolyLine=0,0
-PolyLine=12,0
-PolyLine=14,-4
-PolyLine=18,4
-PolyLine=22,-4
-PolyLine=26,4
-PolyLine=30,-4
-PolyLine=34,4
-PolyLine=36,0
-PolyLine=48,0
-PolyLine=48,0
+Name=Resistor_Euro
+Rectangle=12,-4,36,4
+FColor=None
+Line=0,0,12,0
+Line=48,0,36,0
 Current=32,8,16,8
+Ellipse=31,-1,33,1
+FColor=#0000FF
 
 [shapedef]
 Name=SPICE_V
 Root="Vsource.root",0,0,0
+
+[shapedef]
+Name=Sum
+Root="Circle.root",0,0,0
+Line=27,0,37,0
+Line=32,-5,32,5
 
 [shapedef]
 Name=Sum3
@@ -233,12 +234,6 @@ Line=56,16,40,32
 Line=40,32,64,32
 Line=64,0,40,0
 Line=0,0,24,0
-
-[shapedef]
-Name=Sum
-Root="Circle.root",0,0,0
-Line=27,0,37,0
-Line=32,-5,32,5
 
 [shapedef]
 Name=Switch_Quad
@@ -347,20 +342,125 @@ Root="Plus.root",41,7,0
 Current=32,16,16,16
 
 [shapedef]
-Name=commutator
-Line=40,-24,40,-9
-Line=32,8,32,24
+Name=R_gost
+Current=32,8,16,8
+Rectangle=14,-4,34,4
+FColor=None
+Line=0,0,14,0
+Line=34,0,48,0
+
+[shapedef]
+Name=C_gost
+Line=0,0,22,0
+Line=22,-8,22,8
+Line=25,-8,25,8
+Line=25,0,48,0
+Current=32,12,16,12
+
+[shapedef]
+Name=VD_gost
+Line=0,0,48,0
+Current=32,16,16,16
+PolyClosed=3
+PolyLine=20,0
+PolyLine=30,-6
+PolyLine=30,6
+FColor=None
+Line=20,-6,20,6
+
+[shapedef]
+Name=VT_NPN_gost
+Line=24,-24,24,-11
+Line=24,24,24,11
+Line=0,0,15,0
+Line=15,-9,15,9
+Line=24,-11,15,-6
+Line=24,11,15,6
+Line=24,11,20,7
+Line=19,10,24,11
+Current=32,24,32,16
+Current=0,-8,8,-8
+Current=32,-24,32,-16
+
+[shapedef]
+Name=VT_PNP_gost
+Line=24,-24,24,-11
+Line=24,24,24,11
+Line=0,0,15,0
+Line=15,-9,15,9
+Line=24,-11,15,-6
+Line=24,11,15,6
+Current=32,24,32,16
+Current=0,-8,8,-8
+Current=32,-24,32,-16
+Line=15,-6,19,-10
+Line=21,-7,15,-6
+
+[shapedef]
+Name=E_gost
+Line=0,0,12,0
+Line=36,0,48,0
+Current=32,16,16,16
+Ellipse=12,-12,36,12
+FColor=None
+Line=16,0,32,0
+Line=32,0,24,-2
+Line=32,0,24,2
+
+[shapedef]
+Name=Ground_GOST
+Line=1,0,13,0
+Line=13,-8,13,8
+
+[shapedef]
+Name=RS_Trig_block
+Line=0,0,8,0
+Line=0,48,8,48
+Rectangle=8,-8,40,56
+FColor=None
+Line=20,-8,20,56
+Line=40,0,48,0
+Text="S"
+TextInfo=10,-5,19,10 , -11,0,"Arial"
+Text="R"
+TextInfo=10,42,20,57 , -11,0,"Arial"
+Text="T"
+TextInfo=26,17,36,34 , -13,0,"Arial"
+Line=40,48,48,48
+Ellipse=37,45,43,51
+FColor=None
+
+[shapedef]
+Name=И2
+Line=0,0,8,0
+Line=0,16,8,16
+Rectangle=8,-8,32,24
+FColor=None
+Line=32,8,40,8
+Text="&"
+TextInfo=17,1,26,16 , -11,0,"Arial"
+
+[shapedef]
+Name=НЕ
+Line=0,0,8,0
+Rectangle=8,-16,32,16
+FColor=None
+Line=32,0,40,0
+Ellipse=29,-3,35,3
+FColor=None
+Text="1"
+TextInfo=17,-6,25,9 , -11,0,"Arial"
+
+[shapedef]
+Name=switch_blok
+Line=32,-24,32,-4
+Line=37,-4,32,4
+Line=32,4,32,24
 Rectangle=16,-16,48,16
 FColor=None
 Line=0,0,16,0
 Line=16,0,8,-3
 Line=8,3,16,0
-Line=24,-24,24,-9
-Ellipse=22,-9,26,-5
-FColor=None
-Ellipse=38,-9,42,-5
-FColor=None
-Line=32,8,40,-7
 
 [shapedef]
 Name=Comp_block
@@ -419,45 +519,6 @@ Line=8,-3,16,0
 Line=8,3,16,0
 
 [shapedef]
-Name=RS_Trig_block
-Line=0,0,8,0
-Line=0,48,8,48
-Rectangle=8,-8,40,56
-FColor=None
-Line=20,-8,20,56
-Line=40,0,48,0
-Text="S"
-TextInfo=10,-5,19,10 , -11,0,"Arial"
-Text="R"
-TextInfo=10,42,20,57 , -11,0,"Arial"
-Text="T"
-TextInfo=26,17,36,34 , -13,0,"Arial"
-Line=40,48,48,48
-Ellipse=37,45,43,51
-FColor=None
-
-[shapedef]
-Name=switch_blok
-Line=32,-24,32,-4
-Line=37,-4,32,4
-Line=32,4,32,24
-Rectangle=16,-16,48,16
-FColor=None
-Line=0,0,16,0
-Line=16,0,8,-3
-Line=8,3,16,0
-
-[shapedef]
-Name=И2
-Line=0,0,8,0
-Line=0,16,8,16
-Rectangle=8,-8,32,24
-FColor=None
-Line=32,8,40,8
-Text="&"
-TextInfo=17,1,26,16 , -11,0,"Arial"
-
-[shapedef]
 Name=ограничитель
 Root="Plt.root",0,0,0
 Line=32,16,48,-16
@@ -469,82 +530,65 @@ Line=70,-3,77,0
 Line=70,3,77,0
 
 [shapedef]
-Name=C_gost
-Line=0,0,22,0
-Line=22,-8,22,8
-Line=25,-8,25,8
-Line=25,0,48,0
-Current=32,12,16,12
-
-[shapedef]
-Name=E_gost
-Line=0,0,12,0
-Line=36,0,48,0
-Current=32,16,16,16
-Ellipse=12,-12,36,12
+Name=Timer555
+Rectangle=16,-16,120,112
 FColor=None
-Line=16,0,32,0
-Line=32,0,24,-2
-Line=32,0,24,2
-
-[shapedef]
-Name=Ground_GOST
-Line=1,0,13,0
-Line=13,-8,13,8
-
-[shapedef]
-Name=R_gost
-Current=32,8,16,8
-Rectangle=14,-4,34,4
+Line=0,0,16,0
+Line=0,24,16,24
+Line=0,96,16,96
+Line=0,48,16,48
+Line=0,72,16,72
+Text="Cont"
+TextInfo=20,90,45,105 , -11,0,"Arial"
+Text="Res"
+TextInfo=22,-7,44,8 , -11,0,"Arial"
+Text="Disch"
+TextInfo=19,18,49,33 , -11,0,"Arial"
+Text="Thres"
+TextInfo=18,41,48,56 , -11,0,"Arial"
+Text="Trig"
+TextInfo=21,67,42,82 , -11,0,"Arial"
+Text="Vcc"
+TextInfo=95,-7,115,8 , -11,0,"Arial"
+Text="Out"
+TextInfo=95,41,115,56 , -11,0,"Arial"
+Text="Gnd"
+TextInfo=93,90,116,105 , -11,0,"Arial"
+Line=48,-16,48,112
+Line=120,0,136,0
+Line=120,48,136,48
+Line=120,96,136,96
+Line=88,-15,88,112
+Line=88,-15,88,-16
+Line=53,8,61,8
+Line=61,8,61,0
+Line=61,0,75,0
+Line=75,0,75,8
+Line=75,8,83,8
+Ellipse=13,-3,19,3
 FColor=None
-Line=0,0,14,0
-Line=34,0,48,0
 
 [shapedef]
-Name=VD_gost
-Line=0,0,48,0
-Current=32,16,16,16
-PolyClosed=3
-PolyLine=20,0
-PolyLine=30,-6
-PolyLine=30,6
+Name=commutator
+Line=40,-24,40,-9
+Line=32,8,32,24
+Rectangle=16,-16,48,16
 FColor=None
-Line=20,-6,20,6
-
-[shapedef]
-Name=VT_NPN_gost
-Line=24,-24,24,-11
-Line=24,24,24,11
-Line=0,0,15,0
-Line=15,-9,15,9
-Line=24,-11,15,-6
-Line=24,11,15,6
-Line=24,11,20,7
-Line=19,10,24,11
-Current=32,24,32,16
-Current=0,-8,8,-8
-Current=32,-24,32,-16
-
-[shapedef]
-Name=VT_PNP_gost
-Line=24,-24,24,-11
-Line=24,24,24,11
-Line=0,0,15,0
-Line=15,-9,15,9
-Line=24,-11,15,-6
-Line=24,11,15,6
-Current=32,24,32,16
-Current=0,-8,8,-8
-Current=32,-24,32,-16
-Line=15,-6,19,-10
-Line=21,-7,15,-6
+Line=0,0,16,0
+Line=16,0,8,-3
+Line=8,3,16,0
+Line=24,-24,24,-9
+Ellipse=22,-9,26,-5
+FColor=None
+Ellipse=38,-9,42,-5
+FColor=None
+Line=32,8,40,-7
 
 [compdef]
 Name=клЮч
 Definition=Macro
 Shape=switch_blok
 Mask=4608
-Used=3
 Label Offset=0,0,0,0
 PinCnt=3
 Pin="p1",a,4,-3,5,6
@@ -556,9 +600,9 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=26
+Used=444
 memo=Capacitor
-Label Offset=16,12,12,12
+Label Offset=4,-38,12,12
 PinCnt=2
 Pin="Plus",6,0,-3,-5
 Pin="Minus",0,0,-14,-5
@@ -568,7 +612,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=346
+Used=516
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -579,7 +623,7 @@ Name=компаратор
 Definition=Macro
 Shape=Comp_block
 Mask=5120
-Used=6
+Used=4
 Label Offset=0,0,0,0
 PinCnt=3
 Pin="InP",a,0,6,-9,0
@@ -591,7 +635,7 @@ Name=RS-триггер
 Definition=Macro
 Shape=RS_Trig_block
 Mask=4096
-Used=3
+Used=1
 Label Offset=19,-36,11,7
 PinCnt=4
 Pin="InS",a,0,0,-10,-1
@@ -603,8 +647,8 @@ Pin="Out2",a,6,6,-2,-2
 Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
-Mask=4865
-Used=37
+Mask=4864
+Used=34
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -616,7 +660,7 @@ Name=сумматор2
 Definition=Macro
 Shape=Sum
 Mask=4096
-Used=4
+Used=6
 Label Offset=27,-43,14,15
 PinCnt=3
 Pin="PINA",a,0,0,-12,-2
@@ -627,8 +671,8 @@ Pin="PINC",a,8,0
 Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
-Mask=3072
-Used=51
+Mask=2048
+Used=20
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -639,7 +683,7 @@ Name=И2
 Definition=Macro
 Shape=И2
 Mask=4096
-Used=3
+Used=15
 memo=Идеальный элемент 2И
 Label Offset=13,-37,12,5
 PinCnt=3
@@ -652,7 +696,7 @@ Name=ограничитель
 Definition=Macro
 Shape=ограничитель
 Mask=4096
-Used=1
+Used=3
 Label Offset=31,-54,27,24
 PinCnt=2
 Pin="PinA",a,0,0,-6,-2
@@ -662,8 +706,8 @@ Pin="PinB",a,10,0
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=6913
-Used=53
+Mask=4865
+Used=85
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -675,7 +719,6 @@ Name=управляемый источник тока с ограничением напряжения
 Definition=Macro
 Shape=I_of_V_block
 Mask=5120
-Used=2
 Label Offset=0,0,0,0
 PinCnt=3
 Pin="p1",a,5,4,5,10
@@ -687,7 +730,6 @@ Name=сумматор3
 Definition=Macro
 Shape=Sum3
 Mask=4096
-Used=1
 Label Offset=37,-39,11,37
 PinCnt=4
 Pin="PINA",a,0,0
@@ -713,7 +755,6 @@ Name=D-триггер
 Definition=Macro
 Shape=D_Trig_block
 Mask=4096
-Used=3
 Label Offset=21,-37,10,8
 PinCnt=4
 Pin="InD",a,0,0,-11,0
@@ -726,7 +767,7 @@ Name=усилитель
 Definition=Macro
 Shape=Amp
 Mask=4096
-Used=5
+Used=6
 Label Offset=27,-46,23,22
 PinCnt=2
 Pin="PinA",a,0,0,-11,-2
@@ -735,11 +776,11 @@ Pin="PinB",a,9,0
 [compdef]
 Name=Resistor
 Definition=Resistor
-Shape=Resistor
-Mask=6657
-Used=268
+Shape=Resistor_Euro
+Mask=7937
+Used=982
 memo=Resistor
-Label Offset=18,6,8,11
+Label Offset=11,-36,10,10
 PinCnt=2
 Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
@@ -748,8 +789,8 @@ Pin="Minus",0,0,-14,-4
 Name=Opamp
 Definition=Opamp
 Shape=Opamp5
-Mask=5121
-Used=42
+Mask=4097
+Used=53
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -764,7 +805,7 @@ Name=Diode
 Definition=Diode
 Shape=Diode
 Mask=5121
-Used=16
+Used=109
 memo=Diode
 Label Offset=17,10,12,12
 PinCnt=2
@@ -775,8 +816,8 @@ Pin="Cathode",0,0,-20,-8
 Name=PNP
 Definition=PNP
 Shape=PNP
-Mask=4609
-Used=22
+Mask=4097
+Used=95
 memo=PNP Transistor
 Label Offset=37,-13,-8,35
 PinCnt=3
@@ -788,8 +829,8 @@ Pin="Emitter",3,-3,6,15
 Name=NPN
 Definition=NPN
 Shape=NPN
-Mask=5633
-Used=23
+Mask=5121
+Used=132
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -802,7 +843,6 @@ Name=CD4013B
 Definition=Subckt
 Shape=Dffphch
 Mask=20608
-Used=9
 memo=Dual Type D Flip-Flop
 Label Offset=67,11,11,-2
 PinCnt=6
@@ -818,7 +858,7 @@ Name=MAX4602
 Definition=Subckt
 Shape=Switch_Quad
 Mask=4224
-Used=7
+Used=2
 memo=2.5ohm, Quad, SPST, CMOS Analog Switches
 Label Offset=49,121,27,38
 PinCnt=16
@@ -844,7 +884,7 @@ Name=LT1018
 Definition=Subckt
 Shape=Opamp5
 Mask=4224
-Used=7
+Used=2
 memo=Micropower Dual Comparator Vs=40V
 Label Offset=51,34,-8,44
 PinCnt=5
@@ -858,7 +898,8 @@ Pin="6",a,9,3,-3,-3
 Name=And2
 Definition=AND
 Shape=And2
-Mask=4867
+Mask=5123
+Used=67
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -872,7 +913,7 @@ Name=MAX934_MX
 Definition=Subckt
 Shape=Opamp5
 Mask=4224
-Used=3
+Used=1
 memo=Quad, Ultra Low-Power Comparator with 2% Accurate Reference
 Label Offset=53,32,-5,46
 PinCnt=5
@@ -887,6 +928,7 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
+Used=32
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -899,33 +941,44 @@ Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
 Mask=2048
-Used=2
+Used=123
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
 Pin="Out",4,0,-8,-3
 
-[TitleBlockDef]
-Name=DefaultOld
-Rectangle=-24,-25,232,76
-FColor=None
-Text="#Field1"
-TextInfo=-20,-21,28,-3 , -15,0,"Arial"
-Text="#Field2"
-TextInfo=-20,2,9,13 , -8,0,"Arial"
-Text="#Field3"
-TextInfo=-20,20,7,31 , -8,0,"Arial"
-Text="#Field4"
-TextInfo=-20,41,9,52 , -8,0,"Arial"
-Text="#Field5"
-TextInfo=-20,60,7,71 , -8,0,"Arial"
-Line=-24,16,232,16
-Line=-24,56,232,56
-Line=-24,36,232,36
+[compdef]
+Name=555_2
+Definition=Macro
+Shape=Timer555
+Mask=4096
+Used=6
+Label Offset=0,0,0,0
+PinCnt=8
+Pin="Reset",a,0,0,-13,0
+Pin="Disch",a,0,3,-12,0
+Pin="Thres",a,0,6,-13,-1
+Pin="Trig",a,0,9,-8,0
+Pin="Cont",a,0,12,-10,-1
+Pin="Vcc",a,17,0
+Pin="Out",a,17,6
+Pin="Gnd",a,17,12
+
+[compdef]
+Name=НЕ
+Definition=Macro
+Shape=НЕ
+Mask=4096
+Used=19
+memo=Идеальный инвертор
+Label Offset=15,-45,19,6
+PinCnt=2
+Pin="In",a,0,0,-4,0
+Pin="Out",a,5,0,-3,0
 
 [Circuit]
-Window Placement=2,3, 0,520, -8,-31, 64,106,830,480
-Default Object=Color=#F382F7
+Window Placement=2,3, 0,520, -9,-38, 64,106,830,480
+Default Object=Color=#FF0000,Width=3,Pattern=Dash
 Default Object Font=Height=-18,FStyle=5,Color=#F382F7,Name=Arial
 Default Object Apply Border To Text=No
 Default Object Apply Fill To Text=No
@@ -936,7 +989,7 @@ GridTextFormulaFormat=3
 Window Placement in Transient Analysis=1,2, 0,635, -8,-31, 0,26,766,442
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
-Title_Block=False
+Title_Block=True
 Show Nodes=False
 Show Voltages=True
 Show Current=False
@@ -949,44 +1002,12 @@ Show Attribute Text=True
 Show Grid Text=True
 
 [Object]
-Object=TitleBlock
-CBorder=#000000
-Px=824,80,1304,208
+Object=Rectangle
+Weight=3
+CBorder=#FF0000
+Pattern=Dash
+Px=2771,2090,3538,2525
 Page=3
-Rot=0
-KeepAspectRatio=True
-OneTitle=False
-Placement=BottomRight
-
-[Attr]
-ON=0,0,NAME
-V=DefaultOld
-Font=Calibri
-
-[Attr]
-ON=0,14,#Field1
-V=$name
-Font=Calibri
-
-[Attr]
-ON=0,28,#Field2
-V=$user $company
-Font=Calibri
-
-[Attr]
-ON=0,42,#Field3
-V
-Font=Calibri
-
-[Attr]
-ON=0,56,#Field4
-V=$date
-Font=Calibri
-
-[Attr]
-ON=0,70,#Field5
-V=Page $page of $maxpage
-Font=Calibri
 
 [Comp]
 Name=клЮч
@@ -2609,7 +2630,7 @@ V
 Name=PNP
 Px=2280,1752
 Page=3
-COff=23,2280,1763,-15,-27
+COff=23,2280,1766,-15,-27
 
 [Attr]
 ON=37,-13,PART
@@ -2629,7 +2650,7 @@ Name=NPN
 Px=2184,1856
 Page=3
 COff=8,2184,1856,-31,-32
-COff=23,2184,1867,-17,5
+COff=23,2184,1870,-17,5
 
 [Attr]
 ON=-5,-25,PART
@@ -2956,7 +2977,7 @@ Rot=4
 Page=3
 COff=8,2176,2336,-45,-23
 COff=8,2200,2312,-43,-24
-COff=23,2176,2347,-12,17
+COff=23,2176,2350,-12,17
 
 [Attr]
 ON=37,-2,PART
@@ -2995,7 +3016,7 @@ Name=NPN
 Px=2272,2232
 Rot=4
 Page=3
-COff=23,2272,2243,-15,7
+COff=23,2272,2246,-15,7
 
 [Attr]
 ON=37,2,PART
@@ -3334,37 +3355,6 @@ Page=3
 
 [Wire]
 Pxs=3168,1712,3168,1752
-Page=3
-
-[Comp]
-Name=Voltage Source
-Px=2952,1848
-Rot=3
-Page=3
-COff=7,2684,1805,66,8
-
-[Attr]
-ON=-36,-32,PART
-V=V30
-Style=8192
-
-[Attr]
-ON=-268,-43,VALUE
-V=DC 0 AC 1 0 Pulse 0 12 0 1n 1n 5u 70m
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Attr]
-ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 12 0 1n 1n 5u 70m
-Style=256
-
-[Comp]
-Name=Ground
-Px=2952,1848
-Rot=7
 Page=3
 
 [Wire]
@@ -3803,7 +3793,7 @@ Pxs=2192,1544,2448,1544
 Page=3
 
 [Wire]
-Pxs=2952,1784,2952,1800
+Pxs=2952,1784,2952,1840
 Page=3
 
 [Wire]
@@ -6716,7 +6706,7 @@ Name=NPN
 Px=2336,2680
 Rot=4
 Page=3
-COff=23,2336,2691,-15,7
+COff=23,2336,2694,-15,7
 
 [Attr]
 ON=37,2,PART
@@ -6799,7 +6789,7 @@ V=TO-18
 Name=PNP
 Px=2040,2688
 Page=3
-COff=23,2040,2699,-15,-27
+COff=23,2040,2702,-15,-27
 
 [Attr]
 ON=37,-13,PART
@@ -7498,6 +7488,443 @@ Page=3
 Pxs=2120,2088,2120,2152
 Page=3
 
+[Comp]
+Name=555_2
+Px=3024,2184
+Page=3
+
+[Attr]
+ON=0,0,PART
+V=X1
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=0,14,FILE
+V=555_2
+Font=Calibri
+
+[Attr]
+ON=0,28,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Wire]
+Pxs=3000,2280,3000,2336
+Page=3
+
+[Wire]
+Pxs=3000,2280,3024,2280
+Page=3
+
+[Wire]
+Pxs=3160,2232,3376,2232
+Page=3
+
+[Wire]
+Pxs=3000,2184,3024,2184
+Page=3
+
+[Wire]
+Pxs=3000,2144,3000,2184
+Page=3
+
+[Wire]
+Pxs=3184,2144,3184,2184
+Page=3
+
+[Wire]
+Pxs=3160,2184,3184,2184
+Page=3
+
+[Comp]
+Name=Fixed Analog
+Px=3320,2144
+Rot=2
+Page=3
+
+[Attr]
+ON=-14,-7,PART
+V=V49
+Font=Calibri
+
+[Attr]
+ON=11,-7,VALUE
+V=12
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=0,28,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Comp]
+Name=Ground
+Px=3160,2288
+Rot=7
+Page=3
+
+[Wire]
+Pxs=3160,2280,3160,2288
+Page=3
+
+[Wire]
+Pxs=3000,2232,3024,2232
+Page=3
+
+[Wire]
+Pxs=3000,2232,3000,2256
+Page=3
+
+[Wire]
+Pxs=3000,2256,3024,2256
+Page=3
+
+[Wire]
+Pxs=3000,2144,3184,2144
+Page=3
+
+[Wire]
+Pxs=3184,2144,3288,2144
+Page=3
+
+[Comp]
+Name=Capacitor
+Px=2824,2328
+Rot=5
+Page=3
+
+[Attr]
+ON=12,-26,PART
+V=C4
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=11,-42,CAPACITANCE
+V=1u
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=0,28,CHARGE
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,FREQ
+V
+Font=Calibri
+
+[Attr]
+ON=0,56,MODEL
+V
+Font=Calibri
+
+[Attr]
+ON=0,70,FSV
+V
+Font=Calibri
+
+[Attr]
+ON=0,84,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,98,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Comp]
+Name=Ground
+Px=2824,2328
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2824,2280,2880,2280
+Page=3
+
+[Wire]
+Pxs=2952,2256,2952,2280
+Page=3
+
+[Wire]
+Pxs=2952,2256,3000,2256
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2880,2144
+Rot=7
+Page=3
+
+[Attr]
+ON=-23,10,PART
+V=R1
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=-23,23,RESISTANCE
+V=200k
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=0,28,FREQ
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,MODEL
+V
+Font=Calibri
+
+[Attr]
+ON=0,56,FSV
+V
+Font=Calibri
+
+[Attr]
+ON=0,70,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,84,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Comp]
+Name=Resistor
+Px=2920,2208
+Rot=4
+Page=3
+
+[Attr]
+ON=-23,10,PART
+V=R2
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=-28,23,RESISTANCE
+V=1k
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=0,28,FREQ
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,MODEL
+V
+Font=Calibri
+
+[Attr]
+ON=0,56,FSV
+V
+Font=Calibri
+
+[Attr]
+ON=0,70,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,84,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Wire]
+Pxs=2968,2208,3024,2208
+Page=3
+
+[Wire]
+Pxs=2880,2208,2920,2208
+Page=3
+
+[Wire]
+Pxs=2880,2184,2880,2192
+Page=3
+
+[Wire]
+Pxs=2880,2192,2880,2208
+Page=3
+
+[Wire]
+Pxs=2880,2208,2880,2280
+Page=3
+
+[Wire]
+Pxs=2880,2280,2952,2280
+Page=3
+
+[Wire]
+Pxs=2880,2144,3000,2144
+Page=3
+
+[Comp]
+Name=НЕ
+Px=3376,2232
+Page=3
+
+[Attr]
+ON=15,-45,PART
+V=X48
+Style=8192
+Font=Calibri
+
+[Attr]
+ON=15,-31,FILE
+V=НЕ
+Font=Calibri
+
+[Attr]
+ON=15,-3,Param:VH
+V=10
+Font=Calibri
+
+[Attr]
+ON=0,28,COST
+V
+Font=Calibri
+
+[Attr]
+ON=0,42,POWER
+V
+Font=Calibri
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Calibri
+
+[Wire]
+Pxs=3416,2232,3440,2232
+Page=3
+
+[Wire]
+Pxs=3440,2232,3440,2240
+Page=3
+
+[Wire]
+Pxs=3440,1840,3440,2232
+Page=3
+
+[Wire]
+Pxs=2952,1840,3440,1840
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2824,2384
+Page=3
+
+[Attr]
+ON=-29,10,PART
+V=R132
+Style=8192
+
+[Attr]
+ON=14,17,RESISTANCE
+V=8k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2872,2384,2928,2384
+Page=3
+
+[Comp]
+Name=Resistor
+Px=2928,2400
+Rot=7
+Page=3
+
+[Attr]
+ON=-31,11,PART
+V=R133
+Style=8192
+
+[Attr]
+ON=-30,22,RESISTANCE
+V=7k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=2928,2384,2928,2400
+Page=3
+
+[Comp]
+Name=Ground
+Px=2928,2448
+Rot=7
+Page=3
+
+[Wire]
+Pxs=2792,2384,2824,2384
+Page=3
+
+[Wire]
+Pxs=2976,2336,3000,2336
+Page=3
+
+[Wire]
+Pxs=2928,2336,2928,2384
+Page=3
+
+[Wire]
+Pxs=2928,2336,2976,2336
+Page=3
+
 [Grid Text]
 Text="add2"
 Px=5048,1520
@@ -8013,7 +8440,7 @@ CBorder=None
 
 [Grid Text]
 Text="Запускающий импульс"
-Px=2968,1856
+Px=3040,2112
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8615,6 +9042,37 @@ JustifyV=Bottom
 Page=3
 CBorder=None
 
+[Grid Text]
+Text="Uc"
+Px=2952,2256
+Height=-13
+Font=Calibri
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="In"
+Px=2976,2336
+Height=-13
+Font=Calibri
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC1"
+Px=2792,2384
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -8625,7 +9083,7 @@ Splitter.ys=0
 TextQuad=4099
 Scale=1.3333333333333333
 GridUser=10
-ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow","Main11"
+ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -8814,16 +9272,15 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=447,1590
+SB 3=2336,1575
 Scale 3=1.3333333333333333
-Px=912,1942
+Px=3619,2254
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
 Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
 Grid Text RTF=False
-Grid Text Angle=0
 Grid Text GridSnap=True
 Grid Text PinIt=False
 Grid Text JustifyH=Left
@@ -8913,7 +9370,7 @@ ComponentCounts=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -8,-31, 434,77,1200,493
+Window Placement=2,3, -1,-1, -9,-38, 434,77,1200,493
 Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -10549,7 +11006,7 @@ StepSize="15%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=-2,-2,147,158
+Rect=-2,-2,149,158
 
 [Slider]
 Analysis=Transient
@@ -10565,7 +11022,7 @@ StepSize="10%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=-2,156,55,316
+Rect=-2,156,57,316
 
 [OPMethods]
 Analysis=Transient
@@ -10592,39 +11049,7 @@ Junction Gmin Stepping=0,0
 Pseudo Transient=0,0
 
 [OPMethods]
-Analysis=HmDistortion
-Standard Newton-Raphson=0,0
-Source Stepping=0,0
-Diagonal Gmin Stepping=0,0
-Junction Gmin Stepping=0,0
-Pseudo Transient=0,0
-
-[OPMethods]
-Analysis=ImDistortion
-Standard Newton-Raphson=0,0
-Source Stepping=0,0
-Diagonal Gmin Stepping=0,0
-Junction Gmin Stepping=0,0
-Pseudo Transient=0,0
-
-[OPMethods]
 Analysis=Stability
-Standard Newton-Raphson=0,0
-Source Stepping=0,0
-Diagonal Gmin Stepping=0,0
-Junction Gmin Stepping=0,0
-Pseudo Transient=0,0
-
-[OPMethods]
-Analysis=DynamicAC
-Standard Newton-Raphson=0,0
-Source Stepping=0,0
-Diagonal Gmin Stepping=0,0
-Junction Gmin Stepping=0,0
-Pseudo Transient=0,0
-
-[OPMethods]
-Analysis=DynamicDC
 Standard Newton-Raphson=0,0
 Source Stepping=0,0
 Diagonal Gmin Stepping=0,0
