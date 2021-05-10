@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=354
-TXCnt=64
+NLCnt=365
+TXCnt=60
 
 [shapedef]
 Name=Amp
@@ -419,7 +419,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=511
+Used=547
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -452,7 +452,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=443
+Used=445
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -464,7 +464,7 @@ Name=НЕ
 Definition=Macro
 Shape=НЕ
 Mask=4096
-Used=18
+Used=19
 memo=Идеальный инвертор
 Label Offset=15,-45,19,6
 PinCnt=2
@@ -550,7 +550,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=83
+Used=86
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -596,7 +596,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=978
+Used=1029
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -625,7 +625,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=4097
-Used=53
+Used=61
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -707,8 +707,8 @@ SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
-Show Voltages=True
-Show Current=True
+Show Voltages=False
+Show Current=False
 Show Power=False
 Show Condition=True
 Show Pin Connections=False
@@ -934,11 +934,11 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1448,776,1952,776
+Pxs=1448,776,1600,776
 Page=3
 
 [Wire]
-Pxs=1448,808,1928,808
+Pxs=1448,808,1560,808
 Page=3
 
 [Wire]
@@ -960,12 +960,12 @@ Rot=4
 Page=3
 
 [Wire]
-Pxs=1512,1392,1520,1392
+Pxs=1496,1528,1512,1528
 Page=3
 
 [Comp]
 Name=НЕ
-Px=1520,1392
+Px=1512,1528
 Page=3
 
 [Attr]
@@ -998,20 +998,20 @@ Pxs=1536,1000,1648,1000
 Page=3
 
 [Wire]
-Pxs=1536,1000,1536,1160
+Pxs=1536,1000,1536,1304
 Page=3
 
 [Wire]
-Pxs=1536,1160,1648,1160
+Pxs=1536,1304,1656,1304
 Page=3
 
 [Wire]
-Pxs=1560,1392,1568,1392
+Pxs=1552,1528,1560,1528
 Page=3
 
 [Comp]
 Name=И2
-Px=1568,1392
+Px=1560,1528
 Page=3
 
 [Attr]
@@ -1032,20 +1032,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1600,1504,1624,1504
+Pxs=1800,1192,1824,1192
 Page=3
 
 [Wire]
-Pxs=1608,1400,1616,1400
+Pxs=1600,1536,1608,1536
 Page=3
 
 [Wire]
-Pxs=1616,1400,1696,1400
+Pxs=1608,1536,1688,1536
 Page=3
 
 [Comp]
 Name=компаратор
-Px=1624,1552
+Px=1824,1240
 Rot=4
 Page=3
 
@@ -1068,7 +1068,7 @@ V
 
 [Comp]
 Name=Fixed Analog
-Px=1592,1552
+Px=1792,1240
 Page=3
 
 [Attr]
@@ -1168,7 +1168,7 @@ V
 
 [Comp]
 Name=компаратор
-Px=1648,1208
+Px=1656,1352
 Rot=4
 Page=3
 
@@ -1191,7 +1191,7 @@ V
 
 [Comp]
 Name=Fixed Analog
-Px=1616,1208
+Px=1624,1352
 Page=3
 
 [Attr]
@@ -1208,7 +1208,7 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1672,1528,1696,1528
+Pxs=1872,1216,1896,1216
 Page=3
 
 [Wire]
@@ -1224,12 +1224,12 @@ Pxs=1696,1120,1864,1120
 Page=3
 
 [Wire]
-Pxs=1696,1184,1808,1184
+Pxs=1704,1328,1728,1328
 Page=3
 
 [Comp]
 Name=компаратор
-Px=1696,1448
+Px=1688,1584
 Rot=4
 Page=3
 
@@ -1252,7 +1252,7 @@ V
 
 [Comp]
 Name=Fixed Analog
-Px=1664,1448
+Px=1656,1584
 Page=3
 
 [Attr]
@@ -1269,23 +1269,23 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1696,1528,1744,1528
+Pxs=1896,1216,2096,1216
 Page=3
 
 [Wire]
-Pxs=1744,1424,1776,1424
+Pxs=1736,1560,1768,1560
 Page=3
 
 [Wire]
-Pxs=1768,1240,1776,1240
+Pxs=1776,1384,1784,1384
 Page=3
 
 [Wire]
-Pxs=1776,1240,1792,1240
+Pxs=1784,1384,1800,1384
 Page=3
 
 [Wire]
-Pxs=1776,1424,1792,1424
+Pxs=1768,1560,1904,1560
 Page=3
 
 [Wire]
@@ -1302,7 +1302,7 @@ Page=3
 
 [Comp]
 Name=переклЮчатель
-Px=1816,1216
+Px=1824,1360
 Rot=7
 Page=3
 
@@ -1325,16 +1325,16 @@ V
 
 [Comp]
 Name=Ground
-Px=1792,1256
+Px=1800,1400
 Rot=7
 Page=3
 
 [Wire]
-Pxs=1808,1184,1816,1184
+Pxs=1728,1328,1824,1328
 Page=3
 
 [Wire]
-Pxs=1816,1184,1816,1216
+Pxs=1824,1328,1824,1360
 Page=3
 
 [Wire]
@@ -1346,7 +1346,7 @@ Pxs=1840,936,1864,936
 Page=3
 
 [Wire]
-Pxs=1840,1248,1864,1248
+Pxs=1848,1392,1872,1392
 Page=3
 
 [Comp]
@@ -1394,15 +1394,15 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1864,1248,1888,1248
+Pxs=1872,1392,1960,1392
 Page=3
 
 [Wire]
-Pxs=1880,1344,1928,1344
+Pxs=1640,1192,1688,1192
 Page=3
 
 [Wire]
-Pxs=1880,1376,1960,1376
+Pxs=1640,1224,1720,1224
 Page=3
 
 [Wire]
@@ -1414,20 +1414,12 @@ Pxs=1912,1072,1952,1072
 Page=3
 
 [Wire]
-Pxs=1912,1440,1920,1440
-Page=3
-
-[Wire]
-Pxs=1920,1440,1960,1440
-Page=3
-
-[Wire]
 Pxs=1928,808,1928,936
 Page=3
 
 [Comp]
 Name=сумматор2
-Px=1928,1344
+Px=1688,1192
 Page=3
 
 [Attr]
@@ -1452,33 +1444,30 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1928,1472,1992,1472
-Page=3
-
-[Wire]
 Pxs=1952,776,1952,1072
 Page=3
 
 [Comp]
 Name=сумматор2
-Px=1960,1440
+Px=1928,1424
+Rot=4
 Page=3
 
 [Attr]
-ON=27,-43,PART
+ON=27,28,PART
 V=X19
 Style=8192
 
 [Attr]
-ON=27,-28,FILE
+ON=27,28,FILE
 V=сумматор2
 
 [Attr]
-ON=27,2,Param:KA
+ON=27,-2,Param:KA
 V=1
 
 [Attr]
-ON=27,17,Param:KB
+ON=27,-17,Param:KB
 V=1
 
 [Attr]
@@ -1486,32 +1475,24 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1992,1344,2008,1344
+Pxs=1752,1192,1760,1192
 Page=3
 
 [Wire]
-Pxs=2008,1344,2040,1344
+Pxs=1800,1224,1808,1224
 Page=3
 
 [Wire]
-Pxs=2024,1440,2040,1440
+Pxs=2264,888,2312,888
 Page=3
 
 [Wire]
-Pxs=2040,1376,2048,1376
-Page=3
-
-[Wire]
-Pxs=2264,784,2312,784
-Page=3
-
-[Wire]
-Pxs=2264,784,2264,816
+Pxs=2264,888,2264,920
 Page=3
 
 [Comp]
 Name=Battery
-Px=2264,864
+Px=2264,968
 Rot=3
 Page=3
 
@@ -1529,18 +1510,18 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2264,864,2264,872
+Pxs=2264,968,2264,976
 Page=3
 
 [Comp]
 Name=Ground
-Px=2264,872
+Px=2264,976
 Rot=1
 Page=3
 
 [Comp]
 Name=ограничитель
-Px=2312,784
+Px=2312,888
 Page=3
 
 [Attr]
@@ -1565,28 +1546,28 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2392,784,2456,784
+Pxs=2392,888,2456,888
 Page=3
 
 [Wire]
-Pxs=2440,1152,2440,1208
+Pxs=1984,1008,1984,1064
 Page=3
 
 [Wire]
-Pxs=2440,1152,2544,1152
+Pxs=1984,1008,2088,1008
 Page=3
 
 [Wire]
-Pxs=2440,1208,2472,1208
+Pxs=1984,1064,1992,1064
 Page=3
 
 [Wire]
-Pxs=2440,1240,2472,1240
+Pxs=1984,1096,2016,1096
 Page=3
 
 [Comp]
 Name=усилитель
-Px=2456,784
+Px=2456,888
 Page=3
 
 [Attr]
@@ -1608,7 +1589,7 @@ V
 
 [Comp]
 Name=D-триггер
-Px=2472,1208
+Px=2016,1064
 Page=3
 
 [Attr]
@@ -1629,24 +1610,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2480,1360,2552,1360
+Pxs=2008,1232,2096,1232
 Page=3
 
 [Wire]
-Pxs=2480,1376,2552,1376
+Pxs=2064,1064,2112,1064
 Page=3
 
 [Wire]
-Pxs=2520,1208,2576,1208
-Page=3
-
-[Wire]
-Pxs=2520,1256,2544,1256
+Pxs=2064,1112,2088,1112
 Page=3
 
 [Comp]
 Name=сумматор2
-Px=2528,784
+Px=2528,888
 Page=3
 
 [Attr]
@@ -1671,12 +1648,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2544,1152,2544,1256
+Pxs=2088,1008,2088,1112
 Page=3
 
 [Comp]
 Name=переклЮчатель
-Px=2576,1336
+Px=2120,1192
 Rot=7
 Page=3
 
@@ -1699,7 +1676,7 @@ V
 
 [Comp]
 Name=Battery
-Px=2560,864
+Px=2560,968
 Rot=3
 Page=3
 
@@ -1717,12 +1694,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2560,864,2560,872
+Pxs=2560,968,2560,976
 Page=3
 
 [Comp]
 Name=Ground
-Px=2560,872
+Px=2560,976
 Rot=1
 Page=3
 
@@ -1790,15 +1767,15 @@ Rot=7
 Page=3
 
 [Wire]
-Pxs=2576,1208,2576,1336
+Pxs=2120,1064,2120,1192
 Page=3
 
 [Wire]
-Pxs=2592,784,2616,784
+Pxs=2592,888,2616,888
 Page=3
 
 [Wire]
-Pxs=2600,1368,2624,1368
+Pxs=2144,1224,2168,1224
 Page=3
 
 [Wire]
@@ -1810,7 +1787,7 @@ Pxs=2616,728,2664,728
 Page=3
 
 [Wire]
-Pxs=2616,784,2616,792
+Pxs=2616,760,2616,792
 Page=3
 
 [Comp]
@@ -1886,7 +1863,7 @@ Pxs=2624,672,2696,672
 Page=3
 
 [Wire]
-Pxs=2624,1368,2672,1368
+Pxs=2168,1224,2216,1224
 Page=3
 
 [Comp]
@@ -1943,7 +1920,7 @@ Page=3
 
 [Comp]
 Name=усилитель
-Px=2672,1368
+Px=2216,1224
 Page=3
 
 [Attr]
@@ -2008,7 +1985,7 @@ Pxs=2744,672,2768,672
 Page=3
 
 [Wire]
-Pxs=2744,1368,2776,1368
+Pxs=2288,1224,2320,1224
 Page=3
 
 [Comp]
@@ -2043,12 +2020,12 @@ V
 Font=Calibri
 
 [Wire]
-Pxs=2776,1368,2784,1368
+Pxs=2320,1224,2328,1224
 Page=3
 
 [Comp]
 Name=Resistor
-Px=2784,1368
+Px=2328,1224
 Rot=7
 Page=3
 COff=8,2760,1379,-32,60
@@ -2068,12 +2045,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=2784,1416,2784,1432
+Pxs=2328,1272,2328,1288
 Page=3
 
 [Comp]
 Name=Ground
-Px=2784,1432
+Px=2328,1288
 Rot=7
 Page=3
 
@@ -2238,13 +2215,9 @@ V=1
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1192,696,1192,800
-Page=3
-
 [Comp]
 Name=Battery
-Px=1192,848
+Px=1192,752
 Rot=3
 Page=3
 
@@ -2262,29 +2235,17 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1192,848,1192,856
+Pxs=1192,752,1192,760
 Page=3
 
 [Comp]
 Name=Ground
-Px=1192,856
+Px=1192,760
 Rot=1
 Page=3
 
 [Wire]
-Pxs=1224,760,1224,768
-Page=3
-
-[Wire]
-Pxs=1256,728,1256,768
-Page=3
-
-[Wire]
-Pxs=1224,768,1256,768
-Page=3
-
-[Wire]
-Pxs=1256,768,1256,888
+Pxs=1256,728,1256,888
 Page=3
 
 [Wire]
@@ -2297,10 +2258,6 @@ Page=3
 
 [Wire]
 Pxs=2536,760,2616,760
-Page=3
-
-[Wire]
-Pxs=2616,760,2616,784
 Page=3
 
 [Wire]
@@ -3726,16 +3683,122 @@ Pxs=2472,2384,2472,2448
 Page=3
 
 [Wire]
-Pxs=1568,1408,1568,1432
+Pxs=1560,1544,1560,1568
 Page=3
 
 [Wire]
-Pxs=1568,1432,1576,1432
+Pxs=1560,1568,1568,1568
+Page=3
+
+[Wire]
+Pxs=1192,696,1192,704
+Page=3
+
+[Wire]
+Pxs=1992,1064,2016,1064
+Page=3
+
+[Wire]
+Pxs=2112,1064,2120,1064
+Page=3
+
+[Wire]
+Pxs=1600,1192,1640,1192
+Page=3
+
+[Wire]
+Pxs=1600,776,1600,1192
+Page=3
+
+[Wire]
+Pxs=1600,776,1952,776
+Page=3
+
+[Wire]
+Pxs=1560,1224,1640,1224
+Page=3
+
+[Wire]
+Pxs=1560,808,1560,1224
+Page=3
+
+[Wire]
+Pxs=1560,808,1928,808
+Page=3
+
+[Wire]
+Pxs=2008,1232,2008,1360
+Page=3
+
+[Wire]
+Pxs=1904,1424,1928,1424
+Page=3
+
+[Wire]
+Pxs=1904,1424,1904,1560
+Page=3
+
+[Wire]
+Pxs=1992,1424,2008,1424
+Page=3
+
+[Wire]
+Pxs=2008,1360,2008,1424
+Page=3
+
+[Wire]
+Pxs=1728,1328,1728,1480
+Page=3
+
+[Wire]
+Pxs=1496,1480,1728,1480
+Page=3
+
+[Wire]
+Pxs=1496,1480,1496,1528
+Page=3
+
+[Wire]
+Pxs=1416,1568,1560,1568
+Page=3
+
+[Wire]
+Pxs=1416,1272,1416,1568
+Page=3
+
+[Wire]
+Pxs=1416,1272,1760,1272
+Page=3
+
+[Wire]
+Pxs=1760,1192,1760,1272
+Page=3
+
+[Wire]
+Pxs=1760,1192,1800,1192
 Page=3
 
 [Grid Text]
+Text="D2"
+Px=2112,1064
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="D1"
+Px=1992,1064
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
 Text="c"
-Px=1600,1504
+Px=1800,1192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3744,7 +3807,7 @@ CBorder=None
 
 [Grid Text]
 Text="a"
-Px=2040,1440
+Px=2008,1360
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3753,16 +3816,7 @@ CBorder=None
 
 [Grid Text]
 Text="c"
-Px=1568,1408
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="c"
-Px=2008,1344
+Px=1560,1544
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3771,16 +3825,7 @@ CBorder=None
 
 [Grid Text]
 Text="bbbb"
-Px=1512,1392
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="bbbb"
-Px=1808,1184
+Px=1728,1328
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3789,7 +3834,7 @@ CBorder=None
 
 [Grid Text]
 Text="treug"
-Px=1776,1240
+Px=1784,1384
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3798,16 +3843,7 @@ CBorder=None
 
 [Grid Text]
 Text="out"
-Px=2776,1368
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="b"
-Px=2480,1376
+Px=2320,1224
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3816,7 +3852,7 @@ CBorder=None
 
 [Grid Text]
 Text="zarayd"
-Px=2440,1240
+Px=1984,1096
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3825,16 +3861,7 @@ CBorder=None
 
 [Grid Text]
 Text="posled"
-Px=2624,1368
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="a"
-Px=2480,1360
+Px=2168,1224
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3843,7 +3870,7 @@ CBorder=None
 
 [Grid Text]
 Text="прямоугольный импульс (заряд+разряд)"
-Px=1880,1320
+Px=2048,1840
 Color=#FF0000
 GridSnap=True
 JustifyH=Left
@@ -3853,7 +3880,7 @@ CBorder=None
 
 [Grid Text]
 Text="Impuls1"
-Px=1776,1424
+Px=1768,1560
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3862,7 +3889,7 @@ CBorder=None
 
 [Grid Text]
 Text="для формирования 2-его прямоугольного импульса (2t1)"
-Px=1552,1144
+Px=1472,1728
 Color=#FF0000
 GridSnap=True
 JustifyH=Left
@@ -3872,7 +3899,7 @@ CBorder=None
 
 [Grid Text]
 Text="Impuls2"
-Px=1864,1248
+Px=1872,1392
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3881,7 +3908,7 @@ CBorder=None
 
 [Grid Text]
 Text="zarayd"
-Px=1880,1376
+Px=1640,1224
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3890,7 +3917,7 @@ CBorder=None
 
 [Grid Text]
 Text="razrayd"
-Px=1880,1344
+Px=1640,1192
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3935,25 +3962,7 @@ CBorder=None
 
 [Grid Text]
 Text="prygol1"
-Px=1616,1400
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="Impuls2"
-Px=1928,1472
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="Impuls1"
-Px=1920,1440
+Px=1608,1536
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3963,7 +3972,7 @@ CBorder=None
 [Grid Text]
 Text="для формирования череду"
 Text="щийся последовательности"
-Px=2440,1136
+Px=2336,1096
 Color=#FF0000
 GridSnap=True
 JustifyH=Left
@@ -3973,7 +3982,7 @@ CBorder=None
 
 [Grid Text]
 Text="нагрузка"
-Px=2712,1432
+Px=2256,1288
 Color=#FF0000
 GridSnap=True
 JustifyH=Left
@@ -3983,7 +3992,7 @@ CBorder=None
 
 [Grid Text]
 Text="b"
-Px=1696,1528
+Px=1896,1216
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -4013,8 +4022,8 @@ Page=3
 CBorder=None
 
 [Grid Text]
-Text="ограничитель напряжения 1-5 В"
-Px=2248,728
+Text="ограничитель напряжения 0.1-1 В"
+Px=2320,968
 Color=#FF0000
 GridSnap=True
 JustifyH=Left
@@ -4327,7 +4336,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=2
+Scale=0.66666666666666663
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
@@ -4518,9 +4527,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=525,436
-Scale 3=2
-Px=1699,1320
+SB 3=1846,621
+Scale 3=0.66666666666666663
+Px=2158,831
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -4680,7 +4689,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=9
+MonMaxShow=12
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -4832,6 +4841,10 @@ Name="1"
 [APage]
 Analysis=Transient
 Name="2"
+
+[APage]
+Analysis=Transient
+Name="3"
 
 [AObject]
 Analysis=Transient
@@ -5415,6 +5428,84 @@ SFmtY=3
 NOFmtX=3
 NOFmtY=3
 
+[WaveForm]
+Analysis=Transient
+Plt=1
+Page=3
+AliasID=6
+XExp=T
+YExp=V(zarayd)
+XRng=AutoAlways
+YRng=0.004,-0.016
+Options=LINEARX,LINEARY
+Range Grid Y=0.004
+Enable=Enable
+Line Color=#000000
+Text Color=#000000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=2
+Page=3
+AliasID=7
+XExp=T
+YExp=V(D1)
+XRng=AutoAlways
+YRng=0.004,-0.016
+Options=LINEARX,LINEARY
+Range Grid Y=0.004
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=3
+Page=3
+AliasID=9
+XExp=T
+YExp=V(D2)
+XRng=AutoAlways
+YRng=0.004,-0.016
+Options=LINEARX,LINEARY
+Range Grid Y=0.004
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
 [Limits]
 Analysis=DC
 I1Range=10,0,.5
@@ -5506,7 +5597,7 @@ TextPx=944,392
 
 [Pane]
 Analysis=Transient
-CurrentPage 0="1"
+CurrentPage 0="3"
 
 [Pane]
 Analysis=AC
