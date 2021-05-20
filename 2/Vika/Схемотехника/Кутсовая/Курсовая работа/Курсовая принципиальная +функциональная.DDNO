@@ -21,7 +21,7 @@ Measured minimum clock high width is 3.05e-008
 ***                                                                          ***
 ***                                                                          ***
 ***          Dynamic DC of Курсовая принципиальная +функциональная           ***
-***                           02.05.2021 23:16:50                            ***
+***                            19.05.2021 0:07:41                            ***
 ********************************************************************************
 
 *****************************************************
@@ -219,23 +219,23 @@ X107.X2.54           0.000   X107.X2.55           1.700
 X107.X2.56           0.000   X107.X2.25           0.000  
 X107.X2.50           0.000   X107.X2.51           0.000  
 X107.X2.52           0.000   $G_DGND              0.000  
-$G_DPWR              5.000   X66.X18$.AIN        -1.195  
-X66.X18$.VTH         3.000   X66.X20$.AIN        -1.249  
-X66.X20$.VTH         3.000   X66.X21$.AIN        -1.249  
-X66.X21$.VTH         3.000   X66.X22$.VIOH      160.000u 
-X66.X22$.VIOL      440.000u  X66.X22$.VDDRES      4.863  
-X66.X22$.VSSRES     49.722m  X69.X23$.AIN        -1.195  
-X69.X23$.VTH         3.000   X69.X24$.AIN        -1.249  
-X69.X24$.VTH         3.000   X69.X25$.VIOH      160.000u 
-X69.X25$.VIOL      440.000u  X69.X25$.VDDRES      4.863  
-X69.X25$.VSSRES     49.722m  X26$.1               1.847  
-X26$.2               1.161   X26$.3             580.310m 
-X31$.1             896.948m  X31$.2             205.880m 
-X31$.3             102.940m  X32$.1             896.948m 
-X32$.2             205.880m  X32$.3             102.940m 
-X33$.1             955.202m  X33$.2             264.503m 
-X33$.3             132.252m  X103.X36$.AIN       -1.229  
-X103.X36$.VTH        3.000  
+$G_DPWR              5.000   X66.X19$.AIN        -1.195  
+X66.X19$.VTH         3.000   X66.X21$.AIN        -1.249  
+X66.X21$.VTH         3.000   X66.X22$.AIN        -1.249  
+X66.X22$.VTH         3.000   X66.X23$.VIOH      160.000u 
+X66.X23$.VIOL      440.000u  X66.X23$.VDDRES      4.863  
+X66.X23$.VSSRES     49.722m  X69.X24$.AIN        -1.195  
+X69.X24$.VTH         3.000   X69.X25$.AIN        -1.249  
+X69.X25$.VTH         3.000   X69.X26$.VIOH      160.000u 
+X69.X26$.VIOL      440.000u  X69.X26$.VDDRES      4.863  
+X69.X26$.VSSRES     49.722m  X27$.1               1.847  
+X27$.2               1.161   X27$.3             580.310m 
+X32$.1             896.948m  X32$.2             205.880m 
+X32$.3             102.940m  X33$.1             896.948m 
+X33$.2             205.880m  X33$.3             102.940m 
+X34$.1             955.202m  X34$.2             264.503m 
+X34$.3             132.252m  X103.X37$.AIN       -1.229  
+X103.X37$.VTH        3.000  
 
 DC Operating Point Inductor Current
 ===================================
@@ -1099,7 +1099,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:             X66.X18$.D1          X66.X18$.D2          X66.X20$.D1
+Instance:             X66.X19$.D1          X66.X19$.D2          X66.X21$.D1
 Using model:              D74CLMP              D74CLMP              D74CLMP
 
 Capacitance Terms:
@@ -1129,7 +1129,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:             X66.X20$.D2          X66.X21$.D1          X66.X21$.D2
+Instance:             X66.X21$.D2          X66.X22$.D1          X66.X22$.D2
 Using model:              D74CLMP              D74CLMP              D74CLMP
 
 Capacitance Terms:
@@ -1159,7 +1159,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:             X69.X23$.D1          X69.X23$.D2          X69.X24$.D1
+Instance:             X69.X24$.D1          X69.X24$.D2          X69.X25$.D1
 Using model:              D74CLMP              D74CLMP              D74CLMP
 
 Capacitance Terms:
@@ -1189,7 +1189,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:             X69.X24$.D2              X26$.D1              X26$.D2
+Instance:             X69.X25$.D2              X27$.D1              X27$.D2
 Using model:              D74CLMP              D74CLMP                  D74
 
 Capacitance Terms:
@@ -1219,7 +1219,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:                 X26$.D3              X31$.D1              X31$.D2
+Instance:                 X27$.D3              X32$.D1              X32$.D2
 Using model:                  D74              D74CLMP                  D74
 
 Capacitance Terms:
@@ -1249,7 +1249,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:                 X31$.D3              X32$.D1              X32$.D2
+Instance:                 X32$.D3              X33$.D1              X33$.D2
 Using model:                  D74              D74CLMP                  D74
 
 Capacitance Terms:
@@ -1279,7 +1279,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:                 X32$.D3              X33$.D1              X33$.D2
+Instance:                 X33$.D3              X34$.D1              X34$.D2
 Using model:                  D74              D74CLMP                  D74
 
 Capacitance Terms:
@@ -1309,7 +1309,7 @@ area                       1.000                1.000                1.000
 ic                         0.000                0.000                0.000 
 
 
-Instance:                 X33$.D3         X103.X36$.D1         X103.X36$.D2
+Instance:                 X34$.D3         X103.X37$.D1         X103.X37$.D2
 Using model:                  D74              D74CLMP              D74CLMP
 
 Capacitance Terms:
@@ -1446,7 +1446,7 @@ vbe                        0.000                0.000                0.000
 vce                        0.000                0.000                0.000 
 
 
-Instance:                  X97.Q2               X97.Q5              X26$.Q1
+Instance:                  X97.Q2               X97.Q5              X27$.Q1
 Using model:              X97.QIN              X97.QOC                  Q74
 
 Beta Terms:
@@ -1498,7 +1498,7 @@ vbe                        0.000                0.000                0.000
 vce                        0.000                0.000                0.000 
 
 
-Instance:                 X31$.Q1              X32$.Q1              X33$.Q1
+Instance:                 X32$.Q1              X33$.Q1              X34$.Q1
 Using model:                  Q74                  Q74                  Q74
 
 Beta Terms:
@@ -3051,7 +3051,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:                  X97.R17               X97.RP          X66.X18$.R1
+Instance:                  X97.R17               X97.RP          X66.X19$.R1
 V                          -6.161m              11.909                3.000 
 Power DC Terms:
 PD                        261.819n              69.484m               9.000u
@@ -3064,7 +3064,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:              X66.X19$.R1          X66.X19$.R2          X66.X19$.R3
+Instance:              X66.X20$.R1          X66.X20$.R2          X66.X20$.R3
 V                           5.000                0.000                0.000 
 Power DC Terms:
 PD                         25.000n               0.000                0.000 
@@ -3077,7 +3077,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:              X66.X20$.R1          X66.X21$.R1          X66.X22$.R1
+Instance:              X66.X21$.R1          X66.X22$.R1          X66.X23$.R1
 V                           3.000                3.000              160.000u
 Power DC Terms:
 PD                          9.000u               9.000u              25.600f
@@ -3090,7 +3090,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:              X66.X22$.R2        X66.X22$.RPOW        X66.X22$.RGND
+Instance:              X66.X23$.R2        X66.X23$.RPOW        X66.X23$.RGND
 V                         440.000u             136.735m             -49.722m
 Power DC Terms:
 PD                        193.600f              59.829u              21.756u
@@ -3103,7 +3103,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:              X69.X23$.R1          X69.X24$.R1          X69.X25$.R1
+Instance:              X69.X24$.R1          X69.X25$.R1          X69.X26$.R1
 V                           3.000                3.000              160.000u
 Power DC Terms:
 PD                          9.000u               9.000u              25.600f
@@ -3116,7 +3116,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:              X69.X25$.R2        X69.X25$.RPOW        X69.X25$.RGND
+Instance:              X69.X26$.R2        X69.X26$.RPOW        X69.X26$.RGND
 V                         440.000u             136.735m             -49.722m
 Power DC Terms:
 PD                        193.600f              59.829u              21.756u
@@ -3129,7 +3129,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:                  X26$.R1              X27$.R1              X27$.R2
+Instance:                  X27$.R1              X28$.R1              X28$.R2
 V                           3.153                5.000                0.000 
 Power DC Terms:
 PD                          2.485m              25.000n               0.000 
@@ -3142,7 +3142,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:                  X27$.R3              X31$.R1              X32$.R1
+Instance:                  X28$.R3              X32$.R1              X33$.R1
 V                           0.000                4.103                4.103 
 Power DC Terms:
 PD                          0.000                4.209m               4.209m
@@ -3155,7 +3155,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:                  X33$.R1         X103.X36$.R1    X66.X22$.N1.rhigh
+Instance:                  X34$.R1         X103.X37$.R1    X66.X23$.N1.rhigh
 V                           4.045                3.000                4.813 
 Power DC Terms:
 PD                          4.090m               9.000u               2.106m
@@ -3168,7 +3168,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:         X66.X22$.N1.rlow    X69.X25$.N1.rhigh     X69.X25$.N1.rlow
+Instance:         X66.X23$.N1.rlow    X69.X26$.N1.rhigh     X69.X26$.N1.rlow
 V                        -437.555u               4.813             -437.555u
 Power DC Terms:
 PD                        191.454n               2.106m             191.454n
@@ -3181,7 +3181,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:            X28$.N1.rhigh         X28$.N1.rlow        X29$.N1.rhigh
+Instance:            X29$.N1.rhigh         X29$.N1.rlow        X30$.N1.rhigh
 V                           1.598               -3.402                1.598 
 Power DC Terms:
 PD                         13.101m              27.882m              13.101m
@@ -3194,7 +3194,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:             X29$.N1.rlow        X30$.N1.rhigh         X30$.N1.rlow
+Instance:             X30$.N1.rlow        X31$.N1.rhigh         X31$.N1.rlow
 V                          -3.402                4.800             -200.452m
 Power DC Terms:
 PD                         27.882m             135.504m               5.659m
@@ -3207,7 +3207,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:            X34$.N1.rhigh         X34$.N1.rlow        X35$.N1.rhigh
+Instance:            X35$.N1.rhigh         X35$.N1.rlow        X36$.N1.rhigh
 V                           4.800             -200.452m               4.800 
 Power DC Terms:
 PD                        135.504m               5.659m             135.504m
@@ -3220,7 +3220,7 @@ tc1                         0.000                0.000                0.000
 tc2                         0.000                0.000                0.000 
 
 
-Instance:             X35$.N1.rlow
+Instance:             X36$.N1.rlow
 V                        -200.452m
 Power DC Terms:
 PD                          5.659m
@@ -3899,7 +3899,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:              X66.X18$.C1          X66.X20$.C1          X66.X21$.C1
+Instance:              X66.X19$.C1          X66.X21$.C1          X66.X22$.C1
 V                         109.594m               0.000                0.000 
 Power DC Terms:
 PS                      1.127E-020               0.000                0.000 
@@ -3911,7 +3911,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:           X66.X22$.CLOAD          X69.X23$.C1          X69.X24$.C1
+Instance:           X66.X23$.CLOAD          X69.X24$.C1          X69.X25$.C1
 V                          50.160m             109.597m               0.000 
 Power DC Terms:
 PS                     -8.298E-026          -1.159E-020               0.000 
@@ -3923,7 +3923,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:           X69.X25$.CLOAD              X26$.C1           X28$.CLOAD
+Instance:           X69.X26$.CLOAD              X27$.C1           X29$.CLOAD
 V                          50.160m               1.080                3.402 
 Power DC Terms:
 PS                     -8.298E-026          -4.744E-021          -1.407E-023
@@ -3935,7 +3935,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:               X29$.CLOAD           X30$.CLOAD              X31$.C1
+Instance:               X30$.CLOAD           X31$.CLOAD              X32$.C1
 V                           3.402              200.452m             121.612m
 Power DC Terms:
 PS                     -1.407E-023          -7.461E-025          -1.257E-022
@@ -3947,7 +3947,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:                  X32$.C1              X33$.C1           X34$.CLOAD
+Instance:                  X33$.C1              X34$.C1           X35$.CLOAD
 V                         121.612m             180.235m             200.452m
 Power DC Terms:
 PS                      1.730E-023          -1.032E-021           2.902E-025
@@ -3959,7 +3959,7 @@ Device Variables:
 ic                          0.000                0.000                0.000 
 
 
-Instance:               X35$.CLOAD         X103.X36$.C1
+Instance:               X36$.CLOAD         X103.X37$.C1
 V                         200.452m              40.537m
 Power DC Terms:
 PS                      2.694E-025           1.905E-023
@@ -4346,7 +4346,7 @@ DC Pin Currents:
 ISource                 -216.722p              -4.789p             209.532p
 
 
-Instance:                  X47.E1          X66.X18$.E2          X66.X20$.E2
+Instance:                  X47.E1          X66.X19$.E2          X66.X21$.E2
 V                          1.040               -1.195               -1.249 
 Power DC Terms:
 PG                        21.632n               0.000                0.000 
@@ -4355,7 +4355,7 @@ DC Pin Currents:
 ISource                  -20.800n               0.000                0.000 
 
 
-Instance:             X66.X21$.E2          X69.X23$.E2          X69.X24$.E2
+Instance:             X66.X22$.E2          X69.X24$.E2          X69.X25$.E2
 V                         -1.249               -1.195               -1.249 
 Power DC Terms:
 PG                         0.000                0.000                0.000 
@@ -4364,7 +4364,7 @@ DC Pin Currents:
 ISource                    0.000                0.000                0.000 
 
 
-Instance:            X103.X36$.E2
+Instance:            X103.X37$.E2
 V                         -1.229 
 Power DC Terms:
 PG                         0.000 
@@ -5270,7 +5270,7 @@ DC Pin Currents:
 ISource                    0.000                0.000                0.000 
 
 
-Instance:             X66.X19$.V1          X66.X19$.V2              X27$.V1
+Instance:             X66.X20$.V1          X66.X20$.V2              X28$.V1
 V                          5.000                0.000                5.000 
 Power DC Terms:
 PG                         4.376m               0.000              524.712m
@@ -5279,7 +5279,7 @@ DC Pin Currents:
 ISource                 -875.115u             875.110u            -104.942m
 
 
-Instance:                 X27$.V2
+Instance:                 X28$.V2
 V                          0.000 
 Power DC Terms:
 PG                         0.000 
@@ -5291,7 +5291,7 @@ ISource                  101.147m
 
 Operating Point for Devices of Type Table Source
 ================================================
-Instance:             X39.CLIPPER          X66.X18$.E1          X66.X20$.E1
+Instance:             X39.CLIPPER          X66.X19$.E1          X66.X21$.E1
 V                          4.200                3.000                3.000 
 Power DC Terms:
 PG                       176.400n               9.000u               9.000u
@@ -5300,7 +5300,7 @@ DC Pin Currents:
 ISource                  -42.000n              -3.000u              -3.000u
 
 
-Instance:             X66.X21$.E1          X66.X22$.E1          X66.X22$.E2
+Instance:             X66.X22$.E1          X66.X23$.E1          X66.X23$.E2
 V                          3.000              160.000u             440.000u
 Power DC Terms:
 PG                         9.000u              25.600f             193.600f
@@ -5309,7 +5309,7 @@ DC Pin Currents:
 ISource                   -3.000u            -160.000p            -440.000p
 
 
-Instance:             X69.X23$.E1          X69.X24$.E1          X69.X25$.E1
+Instance:             X69.X24$.E1          X69.X25$.E1          X69.X26$.E1
 V                          3.000                3.000              160.000u
 Power DC Terms:
 PG                         9.000u               9.000u              25.600f
@@ -5318,7 +5318,7 @@ DC Pin Currents:
 ISource                   -3.000u              -3.000u            -160.000p
 
 
-Instance:             X69.X25$.E2         X103.X36$.E1
+Instance:             X69.X26$.E2         X103.X37$.E1
 V                        440.000u               3.000 
 Power DC Terms:
 PG                       193.600f               9.000u
