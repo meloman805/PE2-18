@@ -6489,9 +6489,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=2604,1436
+SB 3=2445,1706
 Scale 3=1.3333333333333333
-Px=4203,1653
+Px=3281,2003
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -6657,7 +6657,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=14
+MonMaxShow=19
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -6821,6 +6821,14 @@ Name="4"
 [APage]
 Analysis=Transient
 Name="5"
+
+[APage]
+Analysis=Transient
+Name="7"
+
+[APage]
+Analysis=Transient
+Name="8"
 
 [AC]
 WinID=2
@@ -7480,7 +7488,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=5
+Plt=6
 Page=2
 AliasID=2
 XExp=T
@@ -7856,6 +7864,168 @@ SFmtY=3
 NOFmtX=3
 NOFmtY=3
 
+[WaveForm]
+Analysis=Transient
+Plt=1
+Page=7
+AliasID=21
+XExp=T
+YExp=v(1X)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=2
+Page=7
+AliasID=22
+XExp=T
+YExp=v(yImpuls2)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=3
+Page=7
+AliasID=24
+XExp=T
+YExp=v(X)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+Page=8
+AliasID=25
+XExp=T
+YExp=v(X1)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#000000
+Text Color=#000000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=2
+Page=8
+AliasID=26
+XExp=T
+YExp=v(a)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
+[WaveForm]
+Analysis=Transient
+Plt=3
+Page=8
+AliasID=27
+XExp=T
+YExp=v(b)
+XRng=0.055,0.0089
+YRng=20,0
+Options=LINEARX,LINEARY
+Range Grid X=0.004
+Range Grid Y=2.5
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=3
+SFmtY=3
+NOFmtX=3
+NOFmtY=3
+
 [Limits]
 Analysis=AC
 FRange=1E8,1Meg
@@ -8033,7 +8203,9 @@ TextPx=1688,392
 
 [Pane]
 Analysis=Transient
-CurrentPage 0="3"
+SplitterRow 0=736
+SplitterCol 0=1861
+CurrentPage 0="2"
 
 [Pane]
 Analysis=AC

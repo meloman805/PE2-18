@@ -316,7 +316,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=7937
-Used=978
+Used=1029
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -328,7 +328,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=511
+Used=547
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -365,7 +365,7 @@ Name=MAX4602
 Definition=Subckt
 Shape=Switch_Quad
 Mask=4224
-Used=2
+Used=4
 memo=2.5ohm, Quad, SPST, CMOS Analog Switches
 Label Offset=49,121,27,38
 PinCnt=16
@@ -391,7 +391,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=443
+Used=445
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -426,7 +426,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=4097
-Used=53
+Used=61
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -453,7 +453,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=4865
-Used=83
+Used=86
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -461,7 +461,7 @@ Pin="Plus",6,0,-4,-5
 Pin="Minus",0,0,-10,-5
 
 [Circuit]
-Window Placement=2,3, -1,-1, -9,-38, 736,-2,1566,809
+Window Placement=3,3, 199,781, -9,-38, 594,4,1424,815
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -470,13 +470,13 @@ NodeVoltageFormat=2
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -9,-38, 256,256,1920,815
+Window Placement in Transient Analysis=1,2, 0,781, -9,-38, 256,256,1920,815
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
-Show Voltages=False
-Show Current=False
+Show Voltages=True
+Show Current=True
 Show Power=False
 Show Condition=False
 Show Pin Connections=False
@@ -498,7 +498,7 @@ Font=Arial
 
 [Attr]
 ON=8,-41,RESISTANCE
-V=100
+V=2500
 Style=8192
 Font=Arial
 
@@ -544,8 +544,8 @@ Style=8192
 Font=Arial
 
 [Attr]
-ON=8,-41,RESISTANCE
-V=100
+ON=8,-42,RESISTANCE
+V=1400
 Style=8192
 Font=Arial
 
@@ -622,7 +622,7 @@ Font=Arial
 
 [Attr]
 ON=7,-42,RESISTANCE
-V=375
+V=20
 Style=8192
 Font=Arial
 
@@ -947,7 +947,7 @@ Font=Arial
 
 [Attr]
 ON=8,-42,RESISTANCE
-V=375
+V=49
 Style=8192
 Font=Arial
 
@@ -1187,7 +1187,7 @@ Font=Arial
 
 [Attr]
 ON=-91,-43,VALUE
-V=DC 0 AC 1 0 Pulse 0 12 0 1u 1u 1m 2m
+V=DC 0 AC 1 0 Pulse 0 12 0 1u 1u 1m 5m
 Font=Arial
 
 [Attr]
@@ -1207,7 +1207,7 @@ Font=Arial
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 12 0 1u 1u 1m 2m
+V=DC 0 AC 1 0 Pulse 0 12 0 1u 1u 1m 5m
 Style=256
 Font=Arial
 
@@ -1241,7 +1241,7 @@ Font=Arial
 
 [Attr]
 ON=-91,-43,VALUE
-V=DC 0 AC 1 0 Pulse 0 12 1m 1u 1u 1m 2m
+V=DC 0 AC 1 0 Pulse 0 12 1m 1u 1u 1m 5m
 Font=Arial
 
 [Attr]
@@ -1261,7 +1261,7 @@ Font=Arial
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 12 1m 1u 1u 1m 2m
+V=DC 0 AC 1 0 Pulse 0 12 1m 1u 1u 1m 5m
 Style=256
 Font=Arial
 
@@ -1671,7 +1671,7 @@ Font=Arial
 
 [Attr]
 ON=-10,-43,VALUE
-V=0.1
+V=1
 Font=Arial
 
 [Attr]
@@ -2542,7 +2542,7 @@ Pxs=6960,3584,6992,3584
 Pxs=6384,3472,6648,3472
 
 [Wire]
-Pxs=5520,3592,5568,3592
+Pxs=5520,3592,5560,3592
 
 [Comp]
 Name=Battery
@@ -2955,10 +2955,7 @@ V
 Font=Arial
 
 [Wire]
-Pxs=5664,3408,5664,3592
-
-[Wire]
-Pxs=5560,3408,5664,3408
+Pxs=5560,3408,5712,3408
 
 [Comp]
 Name=Opamp
@@ -3663,9 +3660,6 @@ Pxs=7176,3440,7184,3440
 Pxs=6912,3440,6912,3496
 
 [Wire]
-Pxs=5664,3408,5712,3408
-
-[Wire]
 Pxs=7448,3792,7448,3952
 
 [Comp]
@@ -3778,6 +3772,12 @@ Pxs=8184,3856,8184,3976
 
 [Wire]
 Pxs=8184,3856,8264,3856
+
+[Wire]
+Pxs=5560,3408,5560,3592
+
+[Wire]
+Pxs=5560,3592,5568,3592
 
 [Grid Text]
 Text="CTRL2"
@@ -4187,7 +4187,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=1.3333333333333333
 GridUser=10
 ShapeGroups="GOST","Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -4333,9 +4333,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=7802,3405
-Scale 3=1
-Px=8869,3585
+SB 3=6493,3288
+Scale 3=1.3333333333333333
+Px=7857,3672
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -4669,7 +4669,7 @@ Seed=0
 [Limits]
 Analysis=Transient
 TRange=10m
-TStep=0
+TStep=1u
 NPts=51
 Temp=27
 RetraceRuns=1
@@ -4708,7 +4708,7 @@ Analysis=Transient
 Plt=2
 AliasID=3
 XExp=T
-YExp=v(CTRL1)
+YExp=v(CTRL2)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
@@ -4783,6 +4783,8 @@ PlaceText=True
 
 [Limits]
 Analysis=DynamicDC
+Temp=27
+SliderPer=10
 PlaceText=True
 
 [Pane]
