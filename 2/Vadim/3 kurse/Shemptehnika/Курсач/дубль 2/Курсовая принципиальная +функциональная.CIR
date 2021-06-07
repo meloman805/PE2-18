@@ -4,11 +4,11 @@ Version=11.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1920,1080
+Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=607
-TXCnt=100
+NLCnt=601
+TXCnt=101
 
 [shapedef]
 Name=And.root
@@ -286,77 +286,6 @@ Rectangle=8,-24,96,120
 FColor=None
 
 [shapedef]
-Name=R_gost
-Current=32,8,16,8
-Rectangle=14,-4,34,4
-FColor=None
-Line=0,0,14,0
-Line=34,0,48,0
-
-[shapedef]
-Name=C_gost
-Line=0,0,22,0
-Line=22,-8,22,8
-Line=25,-8,25,8
-Line=25,0,48,0
-Current=32,12,16,12
-
-[shapedef]
-Name=VD_gost
-Line=0,0,48,0
-Current=32,16,16,16
-PolyClosed=3
-PolyLine=20,0
-PolyLine=30,-6
-PolyLine=30,6
-FColor=None
-Line=20,-6,20,6
-
-[shapedef]
-Name=VT_NPN_gost
-Line=24,-24,24,-11
-Line=24,24,24,11
-Line=0,0,15,0
-Line=15,-9,15,9
-Line=24,-11,15,-6
-Line=24,11,15,6
-Line=24,11,20,7
-Line=19,10,24,11
-Current=32,24,32,16
-Current=0,-8,8,-8
-Current=32,-24,32,-16
-
-[shapedef]
-Name=VT_PNP_gost
-Line=24,-24,24,-11
-Line=24,24,24,11
-Line=0,0,15,0
-Line=15,-9,15,9
-Line=24,-11,15,-6
-Line=24,11,15,6
-Current=32,24,32,16
-Current=0,-8,8,-8
-Current=32,-24,32,-16
-Line=15,-6,19,-10
-Line=21,-7,15,-6
-
-[shapedef]
-Name=E_gost
-Line=0,0,12,0
-Line=36,0,48,0
-Current=32,16,16,16
-Ellipse=12,-12,36,12
-FColor=None
-Line=16,0,32,0
-Line=32,0,24,-2
-Line=32,0,24,2
-
-[shapedef]
-Name=Ground_GOST
-Line=1,0,13,0
-Line=13,-8,13,8
-
-[shapedef]
 Name=НЕ
 Line=0,0,8,0
 Rectangle=8,-16,32,16
@@ -411,7 +340,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=4097
-Used=61
+Used=37
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -425,8 +354,8 @@ Pin="VCC",4,-1,5,14
 Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
-Mask=7937
-Used=1029
+Mask=6145
+Used=838
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -438,7 +367,7 @@ Name=Diode
 Definition=Diode
 Shape=Diode
 Mask=5121
-Used=109
+Used=99
 memo=Diode
 Label Offset=17,10,12,12
 PinCnt=2
@@ -449,8 +378,8 @@ Pin="Cathode",0,0,-20,-8
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=4865
-Used=86
+Mask=5889
+Used=82
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -462,7 +391,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=547
+Used=410
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -473,7 +402,7 @@ Name=PNP
 Definition=PNP
 Shape=PNP
 Mask=4097
-Used=95
+Used=85
 memo=PNP Transistor
 Label Offset=37,-13,-8,35
 PinCnt=3
@@ -485,8 +414,8 @@ Pin="Emitter",3,-3,6,15
 Name=NPN
 Definition=NPN
 Shape=NPN
-Mask=5121
-Used=132
+Mask=4097
+Used=113
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -499,7 +428,7 @@ Name=CD4013B
 Definition=Subckt
 Shape=Dffphch
 Mask=20608
-Used=1
+Used=3
 memo=Dual Type D Flip-Flop
 Label Offset=67,11,11,-2
 PinCnt=6
@@ -515,7 +444,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=19
+Used=17
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -525,8 +454,8 @@ Pin="Out",4,0,-8,-3
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=7425
-Used=445
+Mask=6401
+Used=368
 memo=Capacitor
 Label Offset=4,-38,12,12
 PinCnt=2
@@ -538,7 +467,7 @@ Name=LT1018
 Definition=Subckt
 Shape=Opamp5
 Mask=4224
-Used=2
+Used=10
 memo=Micropower Dual Comparator Vs=40V
 Label Offset=51,34,-8,44
 PinCnt=5
@@ -553,7 +482,6 @@ Name=MAX934_MX
 Definition=Subckt
 Shape=Opamp5
 Mask=4224
-Used=2
 memo=Quad, Ultra Low-Power Comparator with 2% Accurate Reference
 Label Offset=53,32,-5,46
 PinCnt=5
@@ -568,7 +496,7 @@ Name=MAX4602
 Definition=Subckt
 Shape=Switch_Quad
 Mask=4224
-Used=4
+Used=3
 memo=2.5ohm, Quad, SPST, CMOS Analog Switches
 Label Offset=49,121,27,38
 PinCnt=16
@@ -622,8 +550,8 @@ Pin="Out",a,5,0,-3,0
 Name=Inverter
 Definition=INV
 Shape=Inv
-Mask=4611
-Used=36
+Mask=5635
+Used=3
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -636,7 +564,6 @@ Name=Or2
 Definition=OR
 Shape=Or2
 Mask=4099
-Used=21
 Data1=2
 memo=2 Input Generic OR Gate
 Label Offset=15,4,7,10
@@ -649,8 +576,7 @@ Pin="Out",6,1,-7,-1
 Name=And2
 Definition=AND
 Shape=And2
-Mask=5123
-Used=70
+Mask=4867
 Data1=2
 memo=2 Input Generic AND Gate
 Label Offset=12,21,8,8
@@ -663,8 +589,8 @@ Pin="Out",6,1,-7,-1
 Name=Fixed Digital
 Definition=DIGITAL STATE
 Shape=Fixed
-Mask=2048
-Used=125
+Mask=3840
+Used=3
 memo=Provides a fixed digital state
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -689,7 +615,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=3,3, 199,781, -9,-38, 594,4,1424,815
+Window Placement=3,1, 199,781, -8,-31, 35,133,629,944
 Default Object=Color=#F382F7
 Default Object Font=Height=-18,FStyle=5,Color=#F382F7,Name=Arial
 Default Object Apply Border To Text=No
@@ -2089,7 +2015,7 @@ Pxs=2304,1808,2304,1864
 Page=3
 
 [Wire]
-Pxs=536,1960,560,1960
+Pxs=536,1960,600,1960
 Page=3
 
 [Comp]
@@ -2556,10 +2482,6 @@ V=SSOP16
 Pxs=1424,1840,1688,1840
 Page=3
 
-[Wire]
-Pxs=560,1960,600,1960
-Page=3
-
 [Comp]
 Name=Battery
 Px=320,2432
@@ -2591,7 +2513,7 @@ Page=3
 
 [Comp]
 Name=Resistor
-Px=608,1960
+Px=600,2232
 Page=3
 
 [Attr]
@@ -2609,12 +2531,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=656,1960,704,1960
+Pxs=648,2232,696,2232
 Page=3
 
 [Comp]
 Name=Resistor
-Px=704,1976
+Px=696,2248
 Rot=7
 Page=3
 
@@ -2633,12 +2555,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=704,1960,704,1976
+Pxs=696,2232,696,2248
 Page=3
 
 [Comp]
 Name=Ground
-Px=704,2024
+Px=696,2296
 Rot=7
 Page=3
 
@@ -2888,103 +2810,6 @@ V
 Pxs=600,1776,600,1960
 Page=3
 
-[Wire]
-Pxs=600,1776,752,1776
-Page=3
-
-[Comp]
-Name=Opamp
-Px=752,1776
-Rot=4
-Page=3
-
-[Attr]
-ON=44,-43,PART
-V=X110
-Style=8192
-
-[Attr]
-ON=44,-59,MODEL
-V=$GENERIC
-
-[Attr]
-ON=0,0,PACKAGE
-V=DIP14
-
-[Comp]
-Name=Resistor
-Px=840,1752
-Rot=5
-Page=3
-
-[Attr]
-ON=-40,10,PART
-V=R133
-Style=8192
-
-[Attr]
-ON=-41,25,RESISTANCE
-V=3.81k
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=824,1752,840,1752
-Page=3
-
-[Comp]
-Name=Resistor
-Px=720,1688
-Rot=4
-Page=3
-
-[Attr]
-ON=-40,10,PART
-V=R134
-Style=8192
-
-[Attr]
-ON=-24,25,RESISTANCE
-V=1k
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=768,1688,840,1688
-Page=3
-
-[Wire]
-Pxs=840,1688,840,1704
-Page=3
-
-[Wire]
-Pxs=720,1688,720,1744
-Page=3
-
-[Wire]
-Pxs=768,1688,768,1712
-Page=3
-
-[Wire]
-Pxs=752,1712,768,1712
-Page=3
-
-[Wire]
-Pxs=752,1712,752,1728
-Page=3
-
-[Comp]
-Name=Ground
-Px=720,1744
-Rot=7
-Page=3
-
 [Comp]
 Name=Opamp
 Px=1344,1808
@@ -3051,7 +2876,7 @@ Style=8192
 
 [Attr]
 ON=-36,-23,RESISTANCE
-V=487
+V=500
 Style=8192
 
 [Attr]
@@ -3195,13 +3020,13 @@ Rot=7
 Page=3
 
 [Attr]
-ON=-27,20,PART
+ON=-36,19,PART
 V=R140
 Style=8192
 
 [Attr]
-ON=-27,34,RESISTANCE
-V=68
+ON=-26,34,RESISTANCE
+V=1.1k
 Style=8192
 
 [Attr]
@@ -3250,10 +3075,6 @@ Page=3
 Pxs=1008,1896,1040,1896
 Page=3
 
-[Wire]
-Pxs=840,1752,1224,1752
-Page=3
-
 [Comp]
 Name=Resistor
 Px=976,1944
@@ -3266,7 +3087,7 @@ Style=8192
 
 [Attr]
 ON=12,19,RESISTANCE
-V=10k
+V=15k
 Style=8192
 
 [Attr]
@@ -3315,10 +3136,6 @@ Page=3
 
 [Wire]
 Pxs=1824,1840,1872,1840
-Page=3
-
-[Wire]
-Pxs=1424,1840,1424,1896
 Page=3
 
 [Wire]
@@ -3622,15 +3439,7 @@ Pxs=1664,2312,1824,2312
 Page=3
 
 [Wire]
-Pxs=1424,1896,1432,1896
-Page=3
-
-[Wire]
 Pxs=1216,2552,1352,2552
-Page=3
-
-[Wire]
-Pxs=1216,1896,1424,1896
 Page=3
 
 [Comp]
@@ -3858,10 +3667,6 @@ Page=3
 
 [Wire]
 Pxs=2096,2520,2192,2520
-Page=3
-
-[Wire]
-Pxs=1216,1896,1216,2552
 Page=3
 
 [Wire]
@@ -5390,6 +5195,103 @@ Page=3
 Pxs=4464,2184,4464,2192
 Page=3
 
+[Comp]
+Name=Opamp
+Px=1096,1776
+Rot=4
+Page=3
+
+[Attr]
+ON=44,-43,PART
+V=X110
+Style=8192
+
+[Attr]
+ON=44,-59,MODEL
+V=$GENERIC
+
+[Attr]
+ON=0,0,PACKAGE
+V=DIP14
+
+[Comp]
+Name=Resistor
+Px=1184,1752
+Rot=5
+Page=3
+
+[Attr]
+ON=-40,10,PART
+V=R172
+Style=8192
+
+[Attr]
+ON=12,-33,RESISTANCE
+V=910
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=1168,1752,1184,1752
+Page=3
+
+[Comp]
+Name=Resistor
+Px=1048,1728
+Rot=4
+Page=3
+
+[Attr]
+ON=10,-38,PART
+V=R173
+Style=8192
+
+[Attr]
+ON=26,-23,RESISTANCE
+V=1k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=1096,1688,1184,1688
+Page=3
+
+[Wire]
+Pxs=1184,1688,1184,1704
+Page=3
+
+[Wire]
+Pxs=1096,1688,1096,1728
+Page=3
+
+[Comp]
+Name=Ground
+Px=1080,1776
+Rot=7
+Page=3
+
+[Wire]
+Pxs=1080,1776,1096,1776
+Page=3
+
+[Wire]
+Pxs=1184,1752,1224,1752
+Page=3
+
+[Wire]
+Pxs=776,1728,1048,1728
+Page=3
+
+[Wire]
+Pxs=776,1720,776,1728
+Page=3
+
 [Grid Text]
 Text="b"
 Px=4464,2184
@@ -5590,24 +5492,6 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=784,1720
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="VC"
-Px=784,1784
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Page=3
-CBorder=None
-
-[Grid Text]
-Text="VE"
 Px=2616,2384
 GridSnap=True
 JustifyH=Left
@@ -5680,7 +5564,7 @@ CBorder=None
 
 [Grid Text]
 Text="q"
-Px=560,1960
+Px=768,2144
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -6103,7 +5987,7 @@ CBorder=None
 
 [Grid Text]
 Text="Буфер"
-Px=1056,2016
+Px=1048,1856
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -6121,7 +6005,7 @@ CBorder=None
 
 [Grid Text]
 Text="Сумматор"
-Px=1112,1712
+Px=1312,1656
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -6290,6 +6174,33 @@ JustifyV=Bottom
 Page=3
 CBorder=None
 
+[Grid Text]
+Text="VE"
+Px=1128,1720
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=1128,1784
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
+[Grid Text]
+Text="Инверитрующий усилитель"
+Px=1040,1656
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+Page=3
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -6298,9 +6209,9 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=2
+Scale=2.6666666666666665
 GridUser=10
-ShapeGroups="GOST","Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
+ShapeGroups="Main","DeMorgan","Euro","Polarity","Electrolytic","Main1","Main2","GroundArrow"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -6489,9 +6400,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=1654,1256
-Scale 3=2
-Px=1952,1438
+SB 3=0,915
+Scale 3=2.6666666666666665
+Px=1141,1224
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
