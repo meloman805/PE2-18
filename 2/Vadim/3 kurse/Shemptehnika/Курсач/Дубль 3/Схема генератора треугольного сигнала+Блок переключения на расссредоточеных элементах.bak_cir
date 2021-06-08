@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=558
-TXCnt=79
+NLCnt=573
+TXCnt=80
 
 [shapedef]
 Name=Battery
@@ -405,7 +405,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=403
+Used=413
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -465,7 +465,7 @@ Name=Fixed Analog
 Definition=ANALOG STATE
 Shape=Fixed
 Mask=2048
-Used=17
+Used=18
 memo=Provides a fixed DC voltage
 Label Offset=-14,-7,-6,-27
 PinCnt=1
@@ -499,7 +499,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=5889
-Used=80
+Used=83
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -524,7 +524,7 @@ Name=сумматор2
 Definition=Macro
 Shape=Sum
 Mask=4096
-Used=13
+Used=14
 Label Offset=27,-43,14,15
 PinCnt=3
 Pin="PINA",a,0,0,-12,-2
@@ -549,7 +549,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=6145
-Used=835
+Used=846
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -574,7 +574,7 @@ Name=NPN
 Definition=NPN
 Shape=NPN
 Mask=4097
-Used=113
+Used=116
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -587,7 +587,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=4097
-Used=36
+Used=38
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -691,7 +691,7 @@ Pin="Anode",6,0,-9,-8
 Pin="Cathode",0,0,-20,-8
 
 [Circuit]
-Window Placement=0,1, -1,-1, -8,-31, -159,42,903,981
+Window Placement=0,1, -1,-1, -8,-31, 635,42,1697,981
 Default Object=Color=#FF0000,Width=4
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -730,8 +730,9 @@ Px=1048,944
 Rot=4
 
 [Attr]
-ON=-19,-33,PART
+ON=13,-70,PART
 V=X29
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -777,8 +778,9 @@ Px=1056,1032
 Rot=4
 
 [Attr]
-ON=0,-15,PART
+ON=14,-71,PART
 V=X30
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -841,8 +843,9 @@ FColor=#000000
 Px=1128,880
 
 [Attr]
-ON=19,-36,PART
+ON=14,-23,PART
 V=X34
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -886,6 +889,7 @@ Rot=7
 [Attr]
 ON=8,-2,PART
 V=X36
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -935,8 +939,9 @@ Px=952,992
 Rot=3
 
 [Attr]
-ON=-21,-15,PART
+ON=-8,-79,PART
 V=X92
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -984,8 +989,9 @@ Px=792,992
 Rot=3
 
 [Attr]
-ON=-21,-15,PART
+ON=-12,-82,PART
 V=X93
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -1091,7 +1097,7 @@ V
 Font=Arial
 
 [Wire]
-Pxs=1176,960,1208,960
+Pxs=1176,960,1200,960
 
 [Wire]
 Pxs=1104,880,1112,880
@@ -1104,8 +1110,9 @@ Px=848,920
 Rot=7
 
 [Attr]
-ON=8,-2,PART
+ON=2,-2,PART
 V=X165
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -1146,8 +1153,9 @@ FColor=#000000
 Px=1128,960
 
 [Attr]
-ON=19,-36,PART
+ON=11,-22,PART
 V=X166
+Style=8192
 Color=#000000
 Font=Arial
 
@@ -1203,7 +1211,7 @@ Pxs=1096,920,1104,920
 Pxs=1176,928,1192,928
 
 [Wire]
-Pxs=1192,856,1192,904
+Pxs=1192,856,1192,928
 
 [Wire]
 Pxs=848,856,848,920
@@ -1219,13 +1227,10 @@ Color=#000000
 Pxs=1120,928,1128,928
 
 [Wire]
-Pxs=1112,880,1128,880
-
-[Wire]
 Pxs=792,992,792,1040
 
 [Wire]
-Pxs=792,1040,824,1040
+Pxs=792,1040,952,1040
 
 [Wire]
 Pxs=952,992,952,1040
@@ -1303,11 +1308,7 @@ Font=Arial
 Pxs=872,1008,872,1016
 
 [Wire]
-Pxs=1016,1072,1016,1112
-
-[Wire]
-Pxs=1016,1032,1016,1072
-Color=#000000
+Pxs=1016,1032,1016,1112
 
 [Wire]
 Pxs=1176,1008,1192,1008
@@ -1382,7 +1383,7 @@ Style=8192
 
 [Attr]
 ON=16,-41,VALUE
-V=999m
+V=100m
 
 [Attr]
 ON=0,0,PACKAGE
@@ -1986,7 +1987,7 @@ Pxs=1160,1008,1176,1008
 Pxs=1424,1008,1424,1072
 
 [Wire]
-Pxs=1192,1008,1424,1008
+Pxs=1192,1008,1256,1008
 
 [Wire]
 Pxs=1424,1072,1448,1072
@@ -2075,7 +2076,6 @@ Pxs=1536,1144,1584,1144
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2592,1552
 Rot=5
 
@@ -2123,7 +2123,6 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2688,1552
 Rot=5
 
@@ -2171,7 +2170,6 @@ Font=Arial
 
 [Comp]
 Name=PNP
-Enable=False
 Px=2616,1608
 Rot=6
 COff=23,2616,1619,-55,-10
@@ -2209,7 +2207,6 @@ Font=Arial
 
 [Comp]
 Name=PNP
-Enable=False
 Px=2664,1608
 COff=23,2664,1619,-15,-27
 
@@ -2246,7 +2243,6 @@ Font=Arial
 
 [Comp]
 Name=NPN
-Enable=False
 Px=2568,1712
 COff=8,2592,1736,-31,-32
 COff=23,2568,1723,-17,5
@@ -2284,43 +2280,33 @@ Font=Arial
 
 [Wire]
 Pxs=2592,1552,2592,1584
-Enable=False
 
 [Wire]
 Pxs=2688,1552,2688,1584
-Enable=False
 
 [Wire]
 Pxs=2616,1608,2648,1608
-Enable=False
 
 [Wire]
 Pxs=2592,1632,2592,1656
-Enable=False
 
 [Wire]
 Pxs=2648,1608,2648,1656
-Enable=False
 
 [Wire]
 Pxs=2592,1656,2648,1656
-Enable=False
 
 [Wire]
 Pxs=2648,1608,2664,1608
-Enable=False
 
 [Wire]
 Pxs=2592,1656,2592,1688
-Enable=False
 
 [Wire]
 Pxs=2592,1504,2688,1504
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2592,1824
 Rot=5
 
@@ -2368,13 +2354,11 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2592,1824
 Rot=7
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2464,1688
 
 [Attr]
@@ -2405,31 +2389,24 @@ Font=Arial
 
 [Wire]
 Pxs=2536,1712,2568,1712
-Enable=False
 
 [Wire]
 Pxs=2440,1736,2464,1736
-Enable=False
 
 [Wire]
 Pxs=2440,1736,2440,1776
-Enable=False
 
 [Wire]
 Pxs=2440,1776,2592,1776
-Enable=False
 
 [Wire]
 Pxs=2592,1736,2592,1776
-Enable=False
 
 [Wire]
 Pxs=2688,1632,2688,1912
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2584,2032
 Rot=5
 
@@ -2477,7 +2454,6 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2680,2032
 Rot=5
 
@@ -2525,43 +2501,33 @@ Font=Arial
 
 [Wire]
 Pxs=2584,2032,2584,2064
-Enable=False
 
 [Wire]
 Pxs=2680,2032,2680,2064
-Enable=False
 
 [Wire]
 Pxs=2608,2088,2640,2088
-Enable=False
 
 [Wire]
 Pxs=2584,2112,2584,2136
-Enable=False
 
 [Wire]
 Pxs=2640,2088,2640,2136
-Enable=False
 
 [Wire]
 Pxs=2584,2136,2640,2136
-Enable=False
 
 [Wire]
 Pxs=2640,2088,2656,2088
-Enable=False
 
 [Wire]
 Pxs=2584,2136,2584,2168
-Enable=False
 
 [Wire]
 Pxs=2584,1984,2680,1984
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2584,2304
 Rot=5
 
@@ -2609,13 +2575,11 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2584,2304
 Rot=7
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2456,2168
 
 [Attr]
@@ -2646,31 +2610,24 @@ Font=Arial
 
 [Wire]
 Pxs=2528,2192,2560,2192
-Enable=False
 
 [Wire]
 Pxs=2360,2168,2456,2168
-Enable=False
 
 [Wire]
 Pxs=2432,2216,2456,2216
-Enable=False
 
 [Wire]
 Pxs=2432,2216,2432,2256
-Enable=False
 
 [Wire]
 Pxs=2432,2256,2584,2256
-Enable=False
 
 [Wire]
 Pxs=2584,2216,2584,2256
-Enable=False
 
 [Comp]
 Name=PNP
-Enable=False
 Px=2560,2192
 Rot=4
 COff=8,2584,2168,-43,-24
@@ -2710,7 +2667,6 @@ Font=Arial
 
 [Comp]
 Name=NPN
-Enable=False
 Px=2608,2088
 Rot=2
 
@@ -2747,7 +2703,6 @@ Font=Arial
 
 [Comp]
 Name=NPN
-Enable=False
 Px=2656,2088
 Rot=4
 COff=23,2656,2099,-15,7
@@ -2785,52 +2740,41 @@ Font=Arial
 
 [Wire]
 Pxs=2360,2008,2360,2168
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2904,2008
 Rot=7
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3024,2008
 Rot=7
 
 [Wire]
-Pxs=2688,1912,2904,1912
-Enable=False
+Pxs=2688,1912,2784,1912
 
 [Wire]
 Pxs=3112,1912,3112,2112
-Enable=False
 
 [Wire]
 Pxs=3024,1912,3112,1912
-Enable=False
 
 [Wire]
-Pxs=2832,1400,2832,1632
-Enable=False
+Pxs=2832,1400,2832,1680
 
 [Wire]
 Pxs=2832,1864,3072,1864
-Enable=False
 
 [Wire]
 Pxs=2832,1864,2832,1928
-Enable=False
 
 [Wire]
 Pxs=2832,1928,2904,1928
-Enable=False
 
 [Comp]
 Name=CD4013B
 Style=ShowPinText
-Enable=False
 Px=3304,1504
 
 [Attr]
@@ -2890,32 +2834,25 @@ V=UX66
 Font=Arial
 
 [Wire]
-Pxs=3256,1448,3768,1448
-Enable=False
+Pxs=3256,1448,3408,1448
 
 [Wire]
 Pxs=3024,1896,3256,1896
-Enable=False
 
 [Wire]
 Pxs=3376,1552,3376,1680
-Enable=False
 
 [Wire]
-Pxs=2848,1568,3224,1568
-Enable=False
+Pxs=2848,1560,3168,1560
 
 [Wire]
-Pxs=2848,1568,2848,1896
-Enable=False
+Pxs=2848,1560,2848,1896
 
 [Wire]
 Pxs=3336,1424,3336,1480
-Enable=False
 
 [Comp]
 Name=Capacitor
-Enable=False
 Px=2496,1400
 
 [Attr]
@@ -2967,56 +2904,20 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2496,1400
 Rot=1
 
 [Wire]
-Pxs=2544,1400,2832,1400
-Enable=False
+Pxs=2544,1400,2576,1400
 
 [Wire]
 Pxs=2832,1400,3072,1400
-Enable=False
-
-[Comp]
-Name=Fixed Analog
-Enable=False
-Px=3040,1584
-
-[Attr]
-ON=-14,-7,PART
-V=V17
-Font=Arial
-
-[Attr]
-ON=-4,-8,VALUE
-V=0
-Style=8192
-Font=Arial
-
-[Attr]
-ON=0,22,COST
-V
-Font=Arial
-
-[Attr]
-ON=0,33,POWER
-V
-Font=Arial
-
-[Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
 
 [Wire]
 Pxs=3008,1448,3072,1448
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2944,1448
 
 [Attr]
@@ -3063,15 +2964,12 @@ Font=Arial
 
 [Wire]
 Pxs=2992,1448,3008,1448
-Enable=False
 
 [Wire]
 Pxs=2904,1448,2944,1448
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3008,1464
 Rot=7
 
@@ -3119,17 +3017,14 @@ Font=Arial
 
 [Wire]
 Pxs=3008,1448,3008,1464
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3008,1512
 Rot=7
 
 [Wire]
 Pxs=2848,1896,2904,1896
-Enable=False
 
 [Comp]
 Name=CD4013B
@@ -3199,7 +3094,6 @@ Enable=False
 
 [Comp]
 Name=Fixed Analog
-Enable=False
 Px=3480,1520
 
 [Attr]
@@ -3230,7 +3124,6 @@ Font=Arial
 
 [Wire]
 Pxs=3336,1424,3552,1424
-Enable=False
 
 [Wire]
 Pxs=3552,1424,3552,1472
@@ -3242,15 +3135,12 @@ Enable=False
 
 [Wire]
 Pxs=3024,1928,3072,1928
-Enable=False
 
 [Wire]
 Pxs=3072,1864,3072,1928
-Enable=False
 
 [Comp]
 Name=LT1018
-Enable=False
 Px=3072,1400
 
 [Attr]
@@ -3311,7 +3201,6 @@ Font=Arial
 
 [Comp]
 Name=LT1018
-Enable=False
 Px=3072,1584
 
 [Attr]
@@ -3545,7 +3434,6 @@ Font=Arial
 
 [Wire]
 Pxs=3376,1680,3824,1680
-Enable=False
 
 [Wire]
 Pxs=3952,1528,3968,1528
@@ -3721,24 +3609,20 @@ Pxs=3824,1504,3824,1680
 Enable=False
 
 [Wire]
-Pxs=3224,1392,3224,1568
-Enable=False
+Pxs=3224,1392,3224,1560
 
 [Wire]
 Pxs=3968,1600,3968,1608
 Enable=False
 
 [Wire]
-Pxs=2680,2112,3112,2112
-Enable=False
+Pxs=2680,2112,2808,2112
 
 [Wire]
 Pxs=2904,1960,2904,1976
-Enable=False
 
 [Comp]
 Name=MAX4602
-Enable=False
 Px=2912,1904
 
 [Attr]
@@ -3789,41 +3673,32 @@ Font=Arial
 
 [Wire]
 Pxs=2904,1976,2904,1992
-Enable=False
 
 [Wire]
 Pxs=2904,1992,2904,2008
-Enable=False
 
 [Wire]
 Pxs=3024,1992,3024,2008
-Enable=False
 
 [Wire]
 Pxs=3024,1976,3024,1992
-Enable=False
 
 [Wire]
 Pxs=2496,1744,2496,1760
-Enable=False
 
 [Wire]
-Pxs=2488,2224,2488,2240
-Enable=False
+Pxs=2488,2224,2488,2232
 
 [Wire]
 Pxs=2896,1944,2904,1944
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2896,1944
 Rot=2
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2408,1968
 Rot=4
 
@@ -3855,21 +3730,17 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2408,1968
 Rot=7
 
 [Wire]
 Pxs=2480,1944,2504,1944
-Enable=False
 
 [Wire]
 Pxs=2288,1920,2328,1920
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2376,1920
 Rot=2
 
@@ -3917,7 +3788,6 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2464,1856
 Rot=2
 
@@ -3965,61 +3835,47 @@ Font=Arial
 
 [Wire]
 Pxs=2376,1920,2392,1920
-Enable=False
 
 [Wire]
 Pxs=2392,1856,2416,1856
-Enable=False
 
 [Wire]
 Pxs=2392,1856,2392,1920
-Enable=False
 
 [Wire]
 Pxs=2392,1920,2408,1920
-Enable=False
 
 [Wire]
 Pxs=2464,1856,2504,1856
-Enable=False
 
 [Wire]
 Pxs=2504,1856,2504,1944
-Enable=False
 
 [Wire]
 Pxs=2360,2008,2504,2008
-Enable=False
 
 [Wire]
 Pxs=2504,1944,2504,2008
-Enable=False
 
 [Wire]
 Pxs=2904,1944,2904,1960
-Enable=False
 
 [Wire]
 Pxs=3024,1944,3024,1960
-Enable=False
 
 [Wire]
-Pxs=2680,1984,2712,1984
-Enable=False
+Pxs=2680,1984,2704,1984
 
 [Wire]
-Pxs=2688,1504,2752,1504
-Enable=False
+Pxs=2688,1504,2744,1504
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3104,1456
 Rot=7
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3104,1640
 Rot=7
 
@@ -4029,31 +3885,24 @@ Enable=False
 
 [Wire]
 Pxs=3336,1576,3336,1656
-Enable=False
 
 [Wire]
 Pxs=3224,1392,3968,1392
-Enable=False
 
 [Wire]
 Pxs=3144,1424,3336,1424
-Enable=False
 
 [Wire]
 Pxs=3256,1448,3256,1896
-Enable=False
 
 [Wire]
-Pxs=3144,1608,3552,1608
-Enable=False
+Pxs=3144,1608,3184,1608
 
 [Wire]
 Pxs=3296,1504,3296,1528
-Enable=False
 
 [Comp]
 Name=Fixed Analog
-Enable=False
 Px=3264,1528
 
 [Attr]
@@ -4084,11 +3933,9 @@ Font=Arial
 
 [Wire]
 Pxs=2288,1688,2464,1688
-Enable=False
 
 [Wire]
 Pxs=2288,1688,2288,1776
-Enable=False
 
 [Comp]
 Name=Battery
@@ -4137,15 +3984,7 @@ Px=1312,1864
 Rot=7
 
 [Wire]
-Pxs=1112,1008,1128,1008
-
-[Wire]
-Pxs=2832,1632,2832,1864
-Enable=False
-
-[Wire]
-Pxs=2832,1632,3072,1632
-Enable=False
+Pxs=2832,1680,3072,1680
 
 [Comp]
 Name=Fixed Analog
@@ -4345,19 +4184,15 @@ Rot=7
 
 [Wire]
 Pxs=3072,1928,3072,2072
-Enable=False
 
 [Wire]
 Pxs=3072,2072,3136,2072
-Enable=False
 
 [Wire]
 Pxs=3448,2072,3448,2112
-Enable=False
 
 [Wire]
 Pxs=3448,2112,3592,2112
-Enable=False
 
 [Wire]
 Pxs=3592,2112,3600,2112
@@ -4365,15 +4200,12 @@ Enable=False
 
 [Wire]
 Pxs=3136,2072,3136,2416
-Enable=False
 
 [Wire]
 Pxs=3136,2072,3448,2072
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3192,2296
 
 [Attr]
@@ -4420,15 +4252,12 @@ Font=Arial
 
 [Wire]
 Pxs=3240,2296,3256,2296
-Enable=False
 
 [Wire]
 Pxs=3152,2296,3192,2296
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3256,2312
 Rot=7
 
@@ -4476,17 +4305,14 @@ Font=Arial
 
 [Wire]
 Pxs=3256,2296,3256,2312
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3256,2360
 Rot=7
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=3416,2344
 Rot=4
 
@@ -4518,25 +4344,20 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3448,2296
 Rot=3
 
 [Wire]
 Pxs=3448,2288,3448,2296
-Enable=False
 
 [Wire]
 Pxs=3448,2352,3448,2360
-Enable=False
 
 [Wire]
 Pxs=3384,2344,3392,2344
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3392,2352
 Rot=1
 
@@ -4584,17 +4405,14 @@ Font=Arial
 
 [Wire]
 Pxs=3392,2344,3392,2352
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3392,2400
 Rot=7
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3384,2296
 Rot=6
 
@@ -4642,19 +4460,15 @@ Font=Arial
 
 [Wire]
 Pxs=3392,2240,3392,2296
-Enable=False
 
 [Wire]
 Pxs=3392,2296,3416,2296
-Enable=False
 
 [Wire]
 Pxs=3392,2344,3416,2344
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3336,2344
 
 [Attr]
@@ -4701,19 +4515,15 @@ Font=Arial
 
 [Wire]
 Pxs=3384,2296,3392,2296
-Enable=False
 
 [Wire]
 Pxs=3488,2240,3488,2320
-Enable=False
 
 [Wire]
 Pxs=3392,2240,3424,2240
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3424,2240
 
 [Attr]
@@ -4760,27 +4570,21 @@ Font=Arial
 
 [Wire]
 Pxs=3472,2240,3488,2240
-Enable=False
 
 [Wire]
 Pxs=3328,2344,3328,2416
-Enable=False
 
 [Wire]
 Pxs=3328,2344,3336,2344
-Enable=False
 
 [Wire]
 Pxs=3256,2296,3336,2296
-Enable=False
 
 [Wire]
 Pxs=3136,2416,3328,2416
-Enable=False
 
 [Wire]
 Pxs=3488,2320,3520,2320
-Enable=False
 
 [Comp]
 Name=MAX4602
@@ -6397,7 +6201,6 @@ Rot=7
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2168,1800
 Rot=4
 
@@ -6429,13 +6232,11 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2200,1744
 Rot=3
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2288,1776
 Rot=6
 
@@ -6491,15 +6292,12 @@ Enable=False
 
 [Wire]
 Pxs=2136,1688,2288,1688
-Enable=False
 
 [Wire]
 Pxs=2288,1776,2288,1872
-Enable=False
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2168,1960
 Rot=4
 
@@ -6531,13 +6329,11 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2200,1904
 Rot=3
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=2168,2136
 Rot=4
 
@@ -6569,13 +6365,11 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2200,2080
 Rot=3
 
 [Comp]
 Name=Diode
-Enable=False
 Px=2240,1936
 Rot=4
 
@@ -6612,11 +6406,9 @@ Font=Arial
 
 [Wire]
 Pxs=2288,1936,2288,2040
-Enable=False
 
 [Comp]
 Name=Diode
-Enable=False
 Px=2288,2112
 Rot=2
 
@@ -6657,11 +6449,9 @@ Enable=False
 
 [Wire]
 Pxs=2168,1872,2288,1872
-Enable=False
 
 [Wire]
 Pxs=2288,1872,2288,1920
-Enable=False
 
 [Wire]
 Pxs=2168,2040,2168,2088
@@ -6669,11 +6459,9 @@ Enable=False
 
 [Wire]
 Pxs=2168,2040,2288,2040
-Enable=False
 
 [Wire]
 Pxs=2288,2040,2288,2112
-Enable=False
 
 [Comp]
 Name=Battery
@@ -6766,7 +6554,6 @@ Font=Arial
 
 [Wire]
 Pxs=2200,1968,2200,1976
-Enable=False
 
 [Wire]
 Pxs=2048,1960,2104,1960
@@ -6957,11 +6744,9 @@ Enable=False
 
 [Wire]
 Pxs=2200,2144,2200,2152
-Enable=False
 
 [Wire]
 Pxs=2200,1808,2200,1816
-Enable=False
 
 [Wire]
 Pxs=2152,1800,2168,1800
@@ -6977,14 +6762,10 @@ Pxs=1536,1096,1536,1144
 Pxs=1448,1072,1472,1072
 
 [Wire]
-Pxs=1192,904,1192,928
-
-[Wire]
 Pxs=1416,1336,1472,1336
 
 [Wire]
 Pxs=2288,1920,2288,1936
-Enable=False
 
 [Wire]
 Pxs=4040,1448,4104,1448
@@ -7003,9 +6784,6 @@ Pxs=1296,1304,1368,1304
 
 [Wire]
 Pxs=1352,1208,1368,1208
-
-[Wire]
-Pxs=824,1040,952,1040
 
 [Wire]
 Pxs=744,1040,792,1040
@@ -7233,11 +7011,6 @@ V=1
 Font=Arial
 
 [Attr]
-ON=0,0,PACKAGE
-V
-Font=Arial
-
-[Attr]
 ON=0,22,COST
 V
 Font=Arial
@@ -7246,6 +7019,166 @@ Font=Arial
 ON=0,33,POWER
 V
 Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Wire]
+Pxs=1256,1008,1424,1008
+
+[Wire]
+Pxs=1200,960,1208,960
+
+[Wire]
+Pxs=1112,880,1128,880
+
+[Wire]
+Pxs=1112,1008,1128,1008
+
+[Wire]
+Pxs=3184,1608,3552,1608
+
+[Wire]
+Pxs=2808,2112,3112,2112
+
+[Wire]
+Pxs=2488,2232,2488,2240
+
+[Wire]
+Pxs=2784,1912,2904,1912
+
+[Wire]
+Pxs=2576,1400,2832,1400
+
+[Wire]
+Pxs=3408,1448,3768,1448
+
+[Wire]
+Pxs=3168,1560,3224,1560
+
+[Wire]
+Pxs=2744,1504,2752,1504
+
+[Wire]
+Pxs=2704,1984,2712,1984
+
+[Wire]
+Pxs=3008,1584,3072,1584
+
+[Comp]
+Name=Resistor
+Px=2944,1584
+
+[Attr]
+ON=13,6,PART
+V=R140
+Style=8192
+Font=Arial
+
+[Attr]
+ON=14,17,RESISTANCE
+V=500
+Style=8192
+Font=Arial
+
+[Attr]
+ON=0,22,FREQ
+V
+Font=Arial
+
+[Attr]
+ON=0,33,MODEL
+V
+Font=Arial
+
+[Attr]
+ON=0,44,FSV
+V
+Font=Arial
+
+[Attr]
+ON=0,55,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,66,POWER
+V
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Wire]
+Pxs=2992,1584,3008,1584
+
+[Wire]
+Pxs=2904,1584,2944,1584
+
+[Comp]
+Name=Resistor
+Px=3008,1600
+Rot=7
+
+[Attr]
+ON=-31,11,PART
+V=R141
+Style=8192
+Font=Arial
+
+[Attr]
+ON=-22,26,RESISTANCE
+V=2k
+Style=8192
+Font=Arial
+
+[Attr]
+ON=0,22,FREQ
+V
+Font=Arial
+
+[Attr]
+ON=0,33,MODEL
+V
+Font=Arial
+
+[Attr]
+ON=0,44,FSV
+V
+Font=Arial
+
+[Attr]
+ON=0,55,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,66,POWER
+V
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Wire]
+Pxs=3008,1584,3008,1600
+
+[Comp]
+Name=Ground
+Px=3008,1648
+Rot=7
+
+[Wire]
+Pxs=3072,1632,3072,1680
+
+[Wire]
+Pxs=2832,1680,2832,1864
 
 [Grid Text]
 Text="Prum6upr"
@@ -7265,7 +7198,7 @@ CBorder=None
 
 [Grid Text]
 Text="Vin"
-Px=824,1040
+Px=768,1304
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7281,7 +7214,7 @@ CBorder=None
 
 [Grid Text]
 Text="Ss1"
-Px=1208,960
+Px=1200,960
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7289,7 +7222,7 @@ CBorder=None
 
 [Grid Text]
 Text="Rr1"
-Px=1192,904
+Px=1176,928
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7325,7 +7258,6 @@ Px=3184,1608
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7362,7 +7294,7 @@ CBorder=None
 
 [Grid Text]
 Text="Test"
-Px=1016,1072
+Px=1256,1008
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7414,7 +7346,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7425,7 +7356,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7436,7 +7366,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7469,7 +7398,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7502,7 +7430,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7513,7 +7440,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7524,18 +7450,16 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="yzarayd"
-Px=3168,1568
+Px=3168,1560
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7546,7 +7470,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7557,7 +7480,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7568,7 +7490,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7579,7 +7500,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7590,7 +7510,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7601,7 +7520,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7612,7 +7530,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7623,7 +7540,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7634,7 +7550,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7645,7 +7560,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7656,7 +7570,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7667,7 +7580,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7678,7 +7590,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7689,7 +7600,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7700,7 +7610,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7744,7 +7653,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7755,7 +7663,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7788,7 +7695,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7799,7 +7705,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7810,7 +7715,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7953,7 +7857,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7986,7 +7889,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7997,7 +7899,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -8030,7 +7931,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -8067,6 +7967,16 @@ JustifyV=Bottom
 CFill=#C0C0C0
 CBorder=#000000
 
+[Grid Text]
+Text="VE"
+Px=2904,1584
+Height=-12
+Font=Verdana
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -8075,7 +7985,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=2
 GridUser=10
 ShapeGroups="Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -8221,9 +8131,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=125,628
-Scale 3=1
-Px=638,1122
+SB 3=1702,455
+Scale 3=4
+Px=3878,755
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -9063,6 +8973,7 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
+Plt=5
 Page=1
 AliasID=6
 XExp=T
