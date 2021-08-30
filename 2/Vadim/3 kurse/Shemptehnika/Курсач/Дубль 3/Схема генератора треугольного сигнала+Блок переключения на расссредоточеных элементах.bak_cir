@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2048,1152
 MCAPVersion=11.0.1.3
 Key ID=0
-NLCnt=573
-TXCnt=80
+NLCnt=609
+TXCnt=97
 
 [shapedef]
 Name=Battery
@@ -33,6 +33,18 @@ PolyOpen=3
 PolyLine=24,24
 PolyLine=24,12
 PolyLine=14,2
+
+[shapedef]
+Name=Buf
+Root="Buf.root",0,0,0
+
+[shapedef]
+Name=Buf.root
+Line=8,-16,8,16
+Line=8,-16,40,0
+Line=8,16,40,0
+Line=0,0,8,0
+Line=40,0,48,0
 
 [shapedef]
 Name=Capacitor
@@ -168,6 +180,13 @@ Line=16,-4,14,-2
 Line=16,4,14,2
 
 [shapedef]
+Name=Pulse_Source
+Root="Vsource.root",0,0,0
+Line=20,-4,20,0
+Line=20,0,26,0
+Line=26,0,26,4
+
+[shapedef]
 Name=Resistor_Euro
 Rectangle=12,-4,36,4
 FColor=None
@@ -278,6 +297,16 @@ Line=96,40,112,40
 Line=96,56,112,56
 Rectangle=8,-24,96,120
 FColor=None
+
+[shapedef]
+Name=Vsource.root
+Line=0,0,12,0
+Line=36,0,48,0
+Ellipse=12,-12,36,12
+FColor=None
+Line=7,5,7,9
+Root="Plus.root",41,7,0
+Current=32,16,16,16
 
 [shapedef]
 Name=RS_Trig_block
@@ -405,7 +434,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=413
+Used=417
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -523,8 +552,8 @@ Pin="In",a,0,0
 Name=сумматор2
 Definition=Macro
 Shape=Sum
-Mask=4096
-Used=14
+Mask=5376
+Used=15
 Label Offset=27,-43,14,15
 PinCnt=3
 Pin="PINA",a,0,0,-12,-2
@@ -549,7 +578,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor_Euro
 Mask=6145
-Used=846
+Used=850
 memo=Resistor
 Label Offset=11,-36,10,10
 PinCnt=2
@@ -690,10 +719,34 @@ PinCnt=2
 Pin="Anode",6,0,-9,-8
 Pin="Cathode",0,0,-20,-8
 
+[compdef]
+Name=74ALS35A
+Definition=Subckt
+Shape=Buf
+Mask=4224
+Used=1
+memo=Hex Noninverters With Open-Collector Outputs
+Label Offset=25,8,13,21
+PinCnt=2
+Pin="1Y",d,6,0,-6,-2
+Pin="1A",d,0,0,-6,-2
+
+[compdef]
+Name=Pulse Source
+Definition=Pulse source
+Shape=Pulse_Source
+Mask=4865
+Used=15
+memo=Pulse Source
+Label Offset=18,13,15,9
+PinCnt=2
+Pin="Plus",6,0,-5,-4
+Pin="Minus",0,0,-19,-4
+
 [Circuit]
-Window Placement=0,1, -1,-1, -8,-31, 635,42,1697,981
-Default Object=Color=#FF0000,Width=4
-Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Window Placement=2,3, -1,-1, -8,-31, 556,42,1618,981
+Default Object=Color=#FF0000
+Default Object Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 Default Object Apply Border To Text=No
 Default Object Apply Fill To Text=No
 NodeVoltageFormat=2
@@ -715,6 +768,12 @@ Show Connection Warnings=False
 Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=287,896,733,1166
 
 [Comp]
 Name=Ground
@@ -924,7 +983,7 @@ Color=#000000
 Font=Arial
 
 [Wire]
-Pxs=848,856,1192,856
+Pxs=848,856,856,856
 Color=#000000
 
 [Wire]
@@ -1100,7 +1159,7 @@ Font=Arial
 Pxs=1176,960,1200,960
 
 [Wire]
-Pxs=1104,880,1112,880
+Pxs=1104,880,1128,880
 
 [Comp]
 Name=клЮч
@@ -1193,7 +1252,7 @@ Font=Arial
 Pxs=1104,880,1104,920
 
 [Wire]
-Pxs=1104,1008,1112,1008
+Pxs=1104,1008,1128,1008
 
 [Wire]
 Pxs=1104,920,1104,960
@@ -1326,7 +1385,7 @@ Pxs=1120,928,1120,952
 Name=ограничитель
 Color=#00FF00
 FColor=#00FF00
-Px=360,1016
+Px=312,1016
 Rot=4
 
 [Attr]
@@ -1373,7 +1432,7 @@ Font=Arial
 
 [Comp]
 Name=Battery
-Px=360,1064
+Px=312,1064
 Rot=5
 
 [Attr]
@@ -1391,7 +1450,7 @@ V
 
 [Comp]
 Name=Ground
-Px=360,1064
+Px=312,1064
 Rot=1
 
 [Wire]
@@ -1477,9 +1536,6 @@ Rot=7
 
 [Wire]
 Pxs=1392,1168,1416,1168
-
-[Wire]
-Pxs=1416,1168,1560,1168
 
 [Wire]
 Pxs=1304,1208,1352,1208
@@ -1569,16 +1625,13 @@ Rot=7
 Pxs=1392,1256,1408,1256
 
 [Wire]
-Pxs=1408,1256,1440,1256
-
-[Wire]
 Pxs=1304,1136,1304,1208
 
 [Comp]
 Name=компаратор
 Color=#000000
 FColor=#000000
-Px=1104,1152
+Px=1104,1160
 Rot=4
 
 [Attr]
@@ -1618,12 +1671,12 @@ Color=#000000
 Font=Arial
 
 [Wire]
-Pxs=1072,1104,1104,1104
+Pxs=1016,1112,1104,1112
 Color=#000000
 
 [Comp]
 Name=Fixed Analog
-Px=1080,1152
+Px=1072,1160
 
 [Attr]
 ON=-14,-7,PART
@@ -1652,19 +1705,7 @@ V
 Font=Arial
 
 [Wire]
-Pxs=1104,1152,1112,1152
-
-[Wire]
-Pxs=1016,1112,1072,1112
-
-[Wire]
-Pxs=1072,1104,1072,1112
-
-[Wire]
-Pxs=1152,1128,1304,1128
-
-[Wire]
-Pxs=1304,1128,1304,1136
+Pxs=1152,1136,1304,1136
 
 [Comp]
 Name=сумматор2
@@ -1846,19 +1887,10 @@ Font=Arial
 Pxs=1016,1232,1096,1232
 
 [Wire]
-Pxs=1232,1240,1272,1240
-
-[Wire]
-Pxs=1272,1240,1272,1304
+Pxs=1144,1256,1272,1256
 
 [Wire]
 Pxs=1016,1232,1016,1328
-
-[Wire]
-Pxs=1144,1256,1232,1256
-
-[Wire]
-Pxs=1232,1240,1232,1256
 
 [Comp]
 Name=сумматор2
@@ -1942,7 +1974,7 @@ Pxs=1528,1256,1544,1256
 Name=D-триггер
 Color=#000000
 FColor=#000000
-Px=1472,1024
+Px=1536,1016
 
 [Attr]
 ON=21,-37,PART
@@ -1984,31 +2016,25 @@ Font=Arial
 Pxs=1160,1008,1176,1008
 
 [Wire]
-Pxs=1424,1008,1424,1072
-
-[Wire]
 Pxs=1192,1008,1256,1008
 
 [Wire]
-Pxs=1424,1072,1448,1072
+Pxs=1488,1064,1512,1064
 
 [Wire]
-Pxs=1472,1056,1472,1072
+Pxs=1536,1048,1536,1064
 
 [Wire]
-Pxs=1520,1072,1544,1072
+Pxs=1584,1064,1608,1064
 
 [Wire]
-Pxs=1544,984,1544,1072
+Pxs=1608,976,1608,1064
 
 [Wire]
-Pxs=1472,984,1544,984
+Pxs=1536,976,1608,976
 
 [Wire]
-Pxs=1472,984,1472,1000
-
-[Wire]
-Pxs=1520,1144,1536,1144
+Pxs=1536,976,1536,992
 
 [Comp]
 Name=переклЮчатель
@@ -2054,25 +2080,19 @@ Color=#000000
 Font=Arial
 
 [Wire]
-Pxs=1528,1184,1528,1256
-
-[Wire]
 Pxs=1528,1184,1560,1184
 
 [Wire]
 Pxs=1608,1176,1624,1176
 
 [Wire]
-Pxs=1624,1176,1632,1176
+Pxs=1584,1016,1600,1016
 
 [Wire]
-Pxs=1520,1024,1536,1024
+Pxs=1600,1016,1600,1088
 
 [Wire]
-Pxs=1536,1024,1536,1096
-
-[Wire]
-Pxs=1536,1144,1584,1144
+Pxs=1584,1144,1600,1144
 
 [Comp]
 Name=Resistor
@@ -2318,7 +2338,7 @@ Font=Arial
 
 [Attr]
 ON=8,-44,RESISTANCE
-V=500
+V=510
 Style=8192
 Font=Arial
 
@@ -2539,7 +2559,7 @@ Font=Arial
 
 [Attr]
 ON=7,-42,RESISTANCE
-V=500
+V=510
 Style=8192
 Font=Arial
 
@@ -2928,7 +2948,7 @@ Font=Arial
 
 [Attr]
 ON=14,17,RESISTANCE
-V=500
+V=510
 Style=8192
 Font=Arial
 
@@ -3029,7 +3049,6 @@ Pxs=2848,1896,2904,1896
 [Comp]
 Name=CD4013B
 Style=ShowPinText
-Enable=False
 Px=3520,1496
 
 [Attr]
@@ -3090,7 +3109,6 @@ Font=Arial
 
 [Wire]
 Pxs=3512,1496,3512,1520
-Enable=False
 
 [Comp]
 Name=Fixed Analog
@@ -3127,11 +3145,9 @@ Pxs=3336,1424,3552,1424
 
 [Wire]
 Pxs=3552,1424,3552,1472
-Enable=False
 
 [Wire]
 Pxs=3552,1568,3552,1608
-Enable=False
 
 [Wire]
 Pxs=3024,1928,3072,1928
@@ -3261,23 +3277,18 @@ Font=Arial
 
 [Wire]
 Pxs=3752,1520,3768,1520
-Enable=False
 
 [Wire]
 Pxs=3768,1448,3768,1520
-Enable=False
 
 [Wire]
 Pxs=3592,1496,3680,1496
-Enable=False
 
 [Wire]
-Pxs=3712,1552,3712,1576
-Enable=False
+Pxs=3712,1552,3712,1568
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3768,1536
 Rot=1
 
@@ -3325,7 +3336,6 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3768,1600
 Rot=1
 
@@ -3337,7 +3347,7 @@ Font=Arial
 
 [Attr]
 ON=8,26,RESISTANCE
-V=702
+V=680
 Style=8192
 Font=Arial
 
@@ -3373,37 +3383,29 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3768,1648
 Rot=7
 
 [Wire]
 Pxs=3768,1520,3768,1536
-Enable=False
 
 [Wire]
 Pxs=3768,1584,3768,1592
-Enable=False
 
 [Wire]
 Pxs=3648,1544,3680,1544
-Enable=False
 
 [Wire]
 Pxs=3648,1544,3648,1592
-Enable=False
 
 [Wire]
 Pxs=3648,1592,3768,1592
-Enable=False
 
 [Wire]
 Pxs=3768,1592,3768,1600
-Enable=False
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=3680,1496
 
 [Attr]
@@ -3437,19 +3439,15 @@ Pxs=3376,1680,3824,1680
 
 [Wire]
 Pxs=3952,1528,3968,1528
-Enable=False
 
 [Wire]
 Pxs=3968,1392,3968,1528
-Enable=False
 
 [Wire]
 Pxs=3912,1560,3912,1584
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3968,1544
 Rot=1
 
@@ -3497,7 +3495,6 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=3968,1608
 Rot=1
 
@@ -3509,7 +3506,7 @@ Font=Arial
 
 [Attr]
 ON=8,26,RESISTANCE
-V=702
+V=680
 Style=8192
 Font=Arial
 
@@ -3545,33 +3542,26 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=3968,1656
 Rot=7
 
 [Wire]
 Pxs=3968,1528,3968,1544
-Enable=False
 
 [Wire]
 Pxs=3968,1592,3968,1600
-Enable=False
 
 [Wire]
 Pxs=3848,1552,3880,1552
-Enable=False
 
 [Wire]
 Pxs=3848,1552,3848,1600
-Enable=False
 
 [Wire]
 Pxs=3848,1600,3968,1600
-Enable=False
 
 [Comp]
 Name=Opamp
-Enable=False
 Px=3880,1504
 
 [Attr]
@@ -3602,18 +3592,15 @@ Font=Arial
 
 [Wire]
 Pxs=3824,1504,3880,1504
-Enable=False
 
 [Wire]
 Pxs=3824,1504,3824,1680
-Enable=False
 
 [Wire]
 Pxs=3224,1392,3224,1560
 
 [Wire]
 Pxs=3968,1600,3968,1608
-Enable=False
 
 [Wire]
 Pxs=2680,2112,2808,2112
@@ -3633,7 +3620,7 @@ Font=Arial
 
 [Attr]
 ON=49,136,NAME
-V=MAX4602
+V=MAX4601
 Font=Arial
 
 [Attr]
@@ -3881,10 +3868,9 @@ Rot=7
 
 [Wire]
 Pxs=3592,1544,3592,1752
-Enable=False
 
 [Wire]
-Pxs=3336,1576,3336,1656
+Pxs=3336,1576,3336,1752
 
 [Wire]
 Pxs=3224,1392,3968,1392
@@ -3988,8 +3974,7 @@ Pxs=2832,1680,3072,1680
 
 [Comp]
 Name=Fixed Analog
-Enable=False
-Px=3560,2064
+Px=4576,1912
 
 [Attr]
 ON=-14,-7,PART
@@ -4019,8 +4004,7 @@ Font=Arial
 
 [Comp]
 Name=LT1018
-Enable=False
-Px=3592,2064
+Px=4608,1912
 
 [Attr]
 ON=51,34,PART
@@ -4080,14 +4064,12 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3624,2120
+Px=4640,1968
 Rot=7
 
 [Comp]
 Name=Fixed Analog
-Enable=False
-Px=3560,2272
+Px=4576,2120
 
 [Attr]
 ON=-14,-7,PART
@@ -4117,8 +4099,7 @@ Font=Arial
 
 [Comp]
 Name=LT1018
-Enable=False
-Px=3592,2272
+Px=4608,2120
 
 [Attr]
 ON=51,34,PART
@@ -4178,35 +4159,21 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3624,2328
+Px=4640,2176
 Rot=7
 
 [Wire]
-Pxs=3072,1928,3072,2072
+Pxs=4152,1960,4608,1960
 
 [Wire]
-Pxs=3072,2072,3136,2072
+Pxs=4608,1960,4616,1960
 
 [Wire]
-Pxs=3448,2072,3448,2112
-
-[Wire]
-Pxs=3448,2112,3592,2112
-
-[Wire]
-Pxs=3592,2112,3600,2112
-Enable=False
-
-[Wire]
-Pxs=3136,2072,3136,2416
-
-[Wire]
-Pxs=3136,2072,3448,2072
+Pxs=4152,1864,4152,1960
 
 [Comp]
 Name=Resistor
-Px=3192,2296
+Px=4208,2144
 
 [Attr]
 ON=13,6,PART
@@ -4251,14 +4218,14 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3240,2296,3256,2296
+Pxs=4256,2144,4272,2144
 
 [Wire]
-Pxs=3152,2296,3192,2296
+Pxs=4168,2144,4208,2144
 
 [Comp]
 Name=Resistor
-Px=3256,2312
+Px=4272,2160
 Rot=7
 
 [Attr]
@@ -4304,16 +4271,16 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3256,2296,3256,2312
+Pxs=4272,2144,4272,2160
 
 [Comp]
 Name=Ground
-Px=3256,2360
+Px=4272,2208
 Rot=7
 
 [Comp]
 Name=Opamp
-Px=3416,2344
+Px=4432,2192
 Rot=4
 
 [Attr]
@@ -4344,21 +4311,21 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Px=3448,2296
+Px=4464,2144
 Rot=3
 
 [Wire]
-Pxs=3448,2288,3448,2296
+Pxs=4464,2136,4464,2144
 
 [Wire]
-Pxs=3448,2352,3448,2360
+Pxs=4464,2200,4464,2208
 
 [Wire]
-Pxs=3384,2344,3392,2344
+Pxs=4400,2192,4408,2192
 
 [Comp]
 Name=Resistor
-Px=3392,2352
+Px=4408,2200
 Rot=1
 
 [Attr]
@@ -4404,16 +4371,16 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3392,2344,3392,2352
+Pxs=4408,2192,4408,2200
 
 [Comp]
 Name=Ground
-Px=3392,2400
+Px=4408,2248
 Rot=7
 
 [Comp]
 Name=Resistor
-Px=3384,2296
+Px=4400,2144
 Rot=6
 
 [Attr]
@@ -4459,17 +4426,17 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3392,2240,3392,2296
+Pxs=4408,2088,4408,2144
 
 [Wire]
-Pxs=3392,2296,3416,2296
+Pxs=4408,2144,4432,2144
 
 [Wire]
-Pxs=3392,2344,3416,2344
+Pxs=4408,2192,4432,2192
 
 [Comp]
 Name=Resistor
-Px=3336,2344
+Px=4352,2192
 
 [Attr]
 ON=13,6,PART
@@ -4514,17 +4481,17 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3384,2296,3392,2296
+Pxs=4400,2144,4408,2144
 
 [Wire]
-Pxs=3488,2240,3488,2320
+Pxs=4504,2088,4504,2168
 
 [Wire]
-Pxs=3392,2240,3424,2240
+Pxs=4408,2088,4440,2088
 
 [Comp]
 Name=Resistor
-Px=3424,2240
+Px=4440,2088
 
 [Attr]
 ON=13,6,PART
@@ -4569,27 +4536,26 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3472,2240,3488,2240
+Pxs=4488,2088,4504,2088
 
 [Wire]
-Pxs=3328,2344,3328,2416
+Pxs=4344,2192,4344,2264
 
 [Wire]
-Pxs=3328,2344,3336,2344
+Pxs=4344,2192,4352,2192
 
 [Wire]
-Pxs=3256,2296,3336,2296
+Pxs=4272,2144,4352,2144
 
 [Wire]
-Pxs=3136,2416,3328,2416
+Pxs=4152,2264,4344,2264
 
 [Wire]
-Pxs=3488,2320,3520,2320
+Pxs=4504,2168,4536,2168
 
 [Comp]
 Name=MAX4602
-Enable=False
-Px=3784,2264
+Px=4800,2112
 
 [Attr]
 ON=49,121,PART
@@ -4639,34 +4605,27 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3752,2312
+Px=4768,2160
 Rot=7
 
 [Wire]
-Pxs=3752,2312,3776,2312
-Enable=False
+Pxs=4768,2160,4792,2160
 
 [Wire]
-Pxs=3776,2304,3776,2312
-Enable=False
+Pxs=4792,2152,4792,2160
 
 [Wire]
-Pxs=3776,2312,3776,2320
-Enable=False
+Pxs=4792,2160,4792,2168
 
 [Wire]
-Pxs=3896,2304,3896,2320
-Enable=False
+Pxs=4912,2152,4912,2168
 
 [Wire]
-Pxs=3776,2248,3776,2256
-Enable=False
+Pxs=4792,2096,4792,2104
 
 [Comp]
 Name=Inverter
-Enable=False
-Px=3808,2440
+Px=4824,2288
 Rot=4
 
 [Attr]
@@ -4721,91 +4680,70 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3664,2296,3664,2368
-Enable=False
+Pxs=4680,2144,4680,2216
 
 [Wire]
-Pxs=3664,2368,3776,2368
-Enable=False
+Pxs=4680,2216,4792,2216
 
 [Wire]
-Pxs=3664,2368,3664,2440
-Enable=False
+Pxs=4680,2216,4680,2288
 
 [Wire]
-Pxs=3664,2440,3808,2440
-Enable=False
+Pxs=4680,2288,4824,2288
 
 [Wire]
-Pxs=3856,2440,3896,2440
-Enable=False
+Pxs=4872,2288,4912,2288
 
 [Wire]
-Pxs=3896,2368,3896,2440
-Enable=False
+Pxs=4912,2216,4912,2288
 
 [Wire]
-Pxs=3520,2320,3520,2392
-Enable=False
+Pxs=4536,2168,4536,2240
 
 [Wire]
-Pxs=3520,2392,3736,2392
-Enable=False
+Pxs=4536,2240,4752,2240
 
 [Wire]
-Pxs=3520,2320,3592,2320
-Enable=False
+Pxs=4536,2168,4608,2168
 
 [Wire]
-Pxs=3736,2352,3736,2392
-Enable=False
+Pxs=4752,2200,4752,2240
 
 [Wire]
-Pxs=3736,2352,3776,2352
-Enable=False
+Pxs=4752,2200,4792,2200
 
 [Wire]
-Pxs=3712,2336,3776,2336
-Enable=False
+Pxs=4728,2184,4792,2184
 
 [Wire]
-Pxs=3712,2336,3712,2512
-Enable=False
+Pxs=4728,2184,4728,2360
 
 [Wire]
-Pxs=3896,2336,3984,2336
-Enable=False
+Pxs=4912,2184,5000,2184
 
 [Wire]
-Pxs=3984,2336,3984,2416
-Enable=False
+Pxs=5000,2184,5000,2264
 
 [Wire]
-Pxs=3712,2512,3984,2512
-Enable=False
+Pxs=4728,2360,5000,2360
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3912,2352
+Px=4928,2200
 Rot=7
 
 [Wire]
-Pxs=3896,2352,3912,2352
-Enable=False
+Pxs=4912,2200,4928,2200
 
 [Wire]
-Pxs=3984,2416,4056,2416
-Enable=False
+Pxs=5000,2264,5072,2264
 
 [Wire]
-Pxs=3984,2416,3984,2512
-Enable=False
+Pxs=5000,2264,5000,2360
 
 [Comp]
 Name=MAX4602
-Enable=False
-Px=3808,2016
+Px=4824,1864
 
 [Attr]
 ON=49,121,PART
@@ -4854,91 +4792,70 @@ V=SSOP16
 Font=Arial
 
 [Wire]
-Pxs=3784,2088,3800,2088
-Enable=False
+Pxs=4800,1936,4816,1936
 
 [Wire]
-Pxs=3784,2088,3784,2168
-Enable=False
+Pxs=4800,1936,4800,2016
 
 [Wire]
-Pxs=3784,2168,3936,2168
-Enable=False
+Pxs=4800,2016,4832,2016
 
 [Wire]
-Pxs=3944,2088,3944,2168
-Enable=False
+Pxs=4960,1936,4960,2016
 
 [Wire]
-Pxs=3920,2088,3944,2088
-Enable=False
+Pxs=4936,1936,4960,1936
 
 [Wire]
-Pxs=3920,2040,3968,2040
-Enable=False
+Pxs=4936,1888,4984,1888
 
 [Wire]
-Pxs=3968,1960,3968,2040
-Enable=False
+Pxs=4984,1808,4984,1888
 
 [Wire]
-Pxs=3776,1960,3944,1960
-Enable=False
+Pxs=4792,1808,4840,1808
 
 [Wire]
-Pxs=3776,1960,3776,2040
-Enable=False
+Pxs=4792,1808,4792,1888
 
 [Wire]
-Pxs=3776,2040,3800,2040
-Enable=False
+Pxs=4792,1888,4816,1888
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3776,2064
+Px=4792,1912
 Rot=7
 
 [Wire]
-Pxs=3776,2056,3776,2064
-Enable=False
+Pxs=4792,1904,4792,1912
 
 [Wire]
-Pxs=3776,2056,3800,2056
-Enable=False
+Pxs=4792,1904,4816,1904
 
 [Wire]
-Pxs=3776,2064,3800,2064
-Enable=False
+Pxs=4792,1912,4816,1912
 
 [Wire]
-Pxs=3800,2064,3800,2072
-Enable=False
+Pxs=4816,1912,4816,1920
 
 [Wire]
-Pxs=3920,2056,3920,2072
-Enable=False
+Pxs=4936,1904,4936,1920
 
 [Wire]
-Pxs=3664,2008,3664,2088
-Enable=False
+Pxs=4680,1856,4680,1936
 
 [Wire]
-Pxs=3664,2008,3688,2008
-Enable=False
+Pxs=4680,1856,4704,1856
 
 [Wire]
-Pxs=3664,2088,3664,2120
-Enable=False
+Pxs=4680,1936,4680,1968
 
 [Wire]
-Pxs=3664,2120,3800,2120
-Enable=False
+Pxs=4680,1968,4808,1968
 
 [Comp]
 Name=Inverter
-Enable=False
-Px=3688,1912
+Px=4704,1760
 Rot=4
 
 [Attr]
@@ -4993,67 +4910,49 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3688,1912,3688,2008
-Enable=False
+Pxs=4704,1760,4704,1856
 
 [Wire]
-Pxs=3688,2008,3800,2008
-Enable=False
+Pxs=4704,1856,4768,1856
 
 [Wire]
-Pxs=3728,1912,3736,1912
-Enable=False
+Pxs=4744,1760,4752,1760
 
 [Wire]
-Pxs=3920,1912,3920,2008
-Enable=False
+Pxs=4936,1760,4936,1856
 
 [Wire]
-Pxs=3736,1912,3920,1912
-Enable=False
+Pxs=4752,1760,4824,1760
 
 [Wire]
-Pxs=3920,2008,3960,2008
-Enable=False
+Pxs=4936,1856,4976,1856
 
 [Wire]
-Pxs=3960,2008,3960,2120
-Enable=False
+Pxs=4976,1856,4976,1968
 
 [Wire]
-Pxs=3920,2120,3960,2120
-Enable=False
+Pxs=4936,1968,4976,1968
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3952,2072
+Px=4992,1928
 Rot=7
 
 [Wire]
-Pxs=3952,2072,3952,2104
-Enable=False
+Pxs=4968,1872,4968,1928
 
 [Wire]
-Pxs=3920,2104,3952,2104
-Enable=False
+Pxs=4936,1952,4968,1952
 
 [Wire]
-Pxs=3952,2024,3952,2072
-Enable=False
+Pxs=4936,1872,4952,1872
 
 [Wire]
-Pxs=3920,2024,3952,2024
-Enable=False
-
-[Wire]
-Pxs=3656,2160,3720,2160
-Enable=False
+Pxs=4672,2008,4736,2008
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=3592,2160
+Px=4608,2008
 
 [Attr]
 ON=13,6,PART
@@ -5063,7 +4962,7 @@ Font=Arial
 
 [Attr]
 ON=14,17,RESISTANCE
-V=500
+V=510
 Style=8192
 Font=Arial
 
@@ -5098,17 +4997,14 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3640,2160,3656,2160
-Enable=False
+Pxs=4656,2008,4672,2008
 
 [Wire]
-Pxs=3552,2160,3592,2160
-Enable=False
+Pxs=4568,2008,4608,2008
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=3656,2176
+Px=4672,2024
 Rot=7
 
 [Attr]
@@ -5154,51 +5050,40 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3656,2160,3656,2176
-Enable=False
+Pxs=4672,2008,4672,2024
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3656,2224
+Px=4672,2072
 Rot=7
 
 [Wire]
-Pxs=3720,2024,3720,2160
-Enable=False
+Pxs=4736,1872,4736,2008
 
 [Wire]
-Pxs=3720,2024,3800,2024
-Enable=False
+Pxs=4736,1872,4752,1872
 
 [Wire]
-Pxs=3944,1912,3944,1960
-Enable=False
+Pxs=4960,1760,4960,1808
 
 [Wire]
-Pxs=3944,1912,4040,1912
-Enable=False
+Pxs=4960,1760,5056,1760
 
 [Wire]
-Pxs=3944,1960,3968,1960
-Enable=False
+Pxs=4960,1808,4984,1808
 
 [Wire]
-Pxs=3936,2168,3936,2216
-Enable=False
+Pxs=4952,2016,4952,2064
 
 [Wire]
-Pxs=3936,2216,4040,2216
-Enable=False
+Pxs=4952,2064,5056,2064
 
 [Wire]
-Pxs=3936,2168,3944,2168
-Enable=False
+Pxs=4952,2016,4960,2016
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=3720,2160
+Px=4736,2008
 
 [Attr]
 ON=11,-36,PART
@@ -5216,8 +5101,7 @@ V
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=3768,2208
+Px=4784,2056
 Rot=3
 
 [Attr]
@@ -5236,22 +5120,18 @@ V
 
 [Comp]
 Name=Ground
-Enable=False
-Px=3768,2208
+Px=4784,2056
 Rot=7
 
 [Wire]
-Pxs=3768,2104,3768,2160
-Enable=False
+Pxs=4784,1952,4784,2008
 
 [Wire]
-Pxs=3768,2104,3800,2104
-Enable=False
+Pxs=4784,1952,4808,1952
 
 [Comp]
 Name=Opamp
-Enable=False
-Px=4272,2344
+Px=5288,2192
 Rot=4
 
 [Attr]
@@ -5282,26 +5162,21 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=4304,2296
+Px=5320,2144
 Rot=3
 
 [Wire]
-Pxs=4304,2288,4304,2296
-Enable=False
+Pxs=5320,2136,5320,2144
 
 [Wire]
-Pxs=4304,2352,4304,2360
-Enable=False
+Pxs=5320,2200,5320,2208
 
 [Wire]
-Pxs=4224,2344,4248,2344
-Enable=False
+Pxs=5240,2192,5264,2192
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4272,2392
+Px=5288,2240
 
 [Attr]
 ON=8,4,PART
@@ -5346,19 +5221,16 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4248,2344,4248,2392
-Enable=False
+Pxs=5264,2192,5264,2240
 
 [Comp]
 Name=Ground
-Enable=False
-Px=4320,2392
+Px=5336,2240
 Rot=7
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4216,2216
+Px=5232,2064
 Rot=7
 
 [Attr]
@@ -5368,8 +5240,8 @@ Style=8192
 Font=Arial
 
 [Attr]
-ON=-30,22,RESISTANCE
-V=50k
+ON=-31,22,RESISTANCE
+V=51k
 Style=8192
 Font=Arial
 
@@ -5404,25 +5276,20 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4216,2216,4256,2216
-Enable=False
+Pxs=5232,2064,5272,2064
 
 [Wire]
-Pxs=4256,2216,4256,2296
-Enable=False
+Pxs=5272,2064,5272,2144
 
 [Wire]
-Pxs=4256,2296,4272,2296
-Enable=False
+Pxs=5272,2144,5288,2144
 
 [Wire]
-Pxs=4256,2216,4280,2216
-Enable=False
+Pxs=5272,2064,5296,2064
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4280,2216
+Px=5296,2064
 
 [Attr]
 ON=13,6,PART
@@ -5467,25 +5334,20 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4328,2216,4344,2216
-Enable=False
+Pxs=5344,2064,5360,2064
 
 [Wire]
-Pxs=4344,2216,4344,2320
-Enable=False
+Pxs=5360,2064,5360,2168
 
 [Wire]
-Pxs=4248,2344,4272,2344
-Enable=False
+Pxs=5264,2192,5288,2192
 
 [Wire]
-Pxs=4248,2392,4272,2392
-Enable=False
+Pxs=5264,2240,5288,2240
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4176,2344
+Px=5192,2192
 
 [Attr]
 ON=13,6,PART
@@ -5530,13 +5392,11 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4056,2344,4176,2344
-Enable=False
+Pxs=5072,2192,5144,2192
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4176,2304
+Px=5192,2152
 
 [Attr]
 ON=13,6,PART
@@ -5581,48 +5441,35 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4224,2304,4248,2304
-Enable=False
+Pxs=5240,2152,5264,2152
 
 [Wire]
-Pxs=4248,2304,4248,2344
-Enable=False
+Pxs=5264,2152,5264,2192
 
 [Comp]
 Name=Ground
-Enable=False
-Px=4216,2256
+Px=5232,2104
 Rot=7
 
 [Wire]
-Pxs=4216,2256,4216,2264
-Enable=False
+Pxs=5232,2104,5232,2112
 
 [Wire]
-Pxs=4016,2304,4040,2304
-Enable=False
+Pxs=5056,2064,5056,2152
 
 [Wire]
-Pxs=4040,2216,4040,2304
-Enable=False
+Pxs=5056,2152,5136,2152
 
 [Wire]
-Pxs=4040,2304,4176,2304
-Enable=False
+Pxs=5072,2192,5072,2264
 
 [Wire]
-Pxs=4056,2344,4056,2416
-Enable=False
-
-[Wire]
-Pxs=4240,1424,4240,2136
-Enable=False
+Pxs=5160,1424,5160,1456
 
 [Comp]
 Name=CD4013B
 Style=ShowPinText
-Enable=False
-Px=4112,1424
+Px=5032,1424
 
 [Attr]
 ON=1,107,PART
@@ -5681,33 +5528,26 @@ V=UX66
 Font=Arial
 
 [Wire]
-Pxs=4072,1424,4104,1424
-Enable=False
+Pxs=4992,1424,5024,1424
 
 [Wire]
-Pxs=4072,1376,4072,1424
-Enable=False
+Pxs=4992,1376,4992,1424
 
 [Wire]
-Pxs=4072,1376,4216,1376
-Enable=False
+Pxs=4992,1376,5096,1376
 
 [Wire]
-Pxs=4216,1376,4216,1472
-Enable=False
+Pxs=5136,1376,5136,1472
 
 [Wire]
-Pxs=4184,1472,4216,1472
-Enable=False
+Pxs=5104,1472,5136,1472
 
 [Wire]
-Pxs=4184,1424,4240,1424
-Enable=False
+Pxs=5104,1424,5160,1424
 
 [Comp]
 Name=Fixed Digital
-Enable=False
-Px=4112,1496
+Px=5032,1496
 
 [Attr]
 ON=-14,-7,PART
@@ -5757,8 +5597,7 @@ Font=Arial
 
 [Comp]
 Name=Fixed Digital
-Enable=False
-Px=4112,1400
+Px=5032,1400
 
 [Attr]
 ON=-14,-7,PART
@@ -5807,21 +5646,17 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4088,2136,4240,2136
-Enable=False
+Pxs=5104,1984,5256,1984
 
 [Wire]
-Pxs=4088,2136,4088,2256
-Enable=False
+Pxs=5104,1984,5104,2104
 
 [Wire]
-Pxs=3896,2256,3920,2256
-Enable=False
+Pxs=4912,2104,4936,2104
 
 [Comp]
 Name=Inverter
-Enable=False
-Px=3896,2216
+Px=4912,2064
 Rot=6
 
 [Attr]
@@ -5876,113 +5711,83 @@ V
 Font=Arial
 
 [Wire]
-Pxs=3896,2216,3920,2216
-Enable=False
+Pxs=4912,2064,4936,2064
 
 [Wire]
-Pxs=3920,2216,3920,2256
-Enable=False
+Pxs=4936,2064,4936,2104
 
 [Wire]
-Pxs=3920,2256,4088,2256
-Enable=False
+Pxs=4936,2104,5104,2104
 
 [Wire]
-Pxs=3784,2216,3848,2216
-Enable=False
+Pxs=4800,2064,4864,2064
 
 [Wire]
-Pxs=3784,2216,3784,2248
-Enable=False
+Pxs=4800,2064,4800,2096
 
 [Wire]
-Pxs=3776,2248,3784,2248
-Enable=False
+Pxs=4792,2096,4800,2096
 
 [Wire]
-Pxs=4344,2184,4344,2216
-Enable=False
+Pxs=5360,2032,5360,2064
 
 [Wire]
-Pxs=4128,2184,4344,2184
-Enable=False
+Pxs=5144,2032,5360,2032
 
 [Wire]
-Pxs=4128,2184,4128,2272
-Enable=False
+Pxs=5144,2032,5144,2120
 
 [Wire]
-Pxs=3896,2272,4128,2272
-Enable=False
+Pxs=4912,2120,5144,2120
 
 [Wire]
-Pxs=4040,1848,4040,1904
-Enable=False
+Pxs=5056,1696,5056,1760
 
 [Wire]
-Pxs=3504,1848,4040,1848
-Enable=False
+Pxs=4520,1696,5056,1696
 
 [Wire]
-Pxs=3504,1848,3504,2248
-Enable=False
+Pxs=4520,1696,4520,2096
 
 [Wire]
-Pxs=3504,2248,3728,2248
-Enable=False
+Pxs=4520,2096,4744,2096
 
 [Wire]
-Pxs=3728,2248,3728,2272
-Enable=False
+Pxs=4744,2096,4744,2120
 
 [Wire]
-Pxs=3728,2272,3776,2272
-Enable=False
+Pxs=4744,2120,4792,2120
 
 [Wire]
-Pxs=3696,2288,3776,2288
-Enable=False
+Pxs=4712,2136,4792,2136
 
 [Wire]
-Pxs=3696,2288,3696,2592
-Enable=False
+Pxs=4712,2136,4712,2440
 
 [Wire]
-Pxs=3896,2288,4000,2288
-Enable=False
+Pxs=4912,2136,5016,2136
 
 [Wire]
-Pxs=4000,2288,4000,2592
-Enable=False
+Pxs=5016,2136,5016,2440
 
 [Wire]
-Pxs=3696,2592,3856,2592
-Enable=False
+Pxs=4712,2440,4872,2440
 
 [Wire]
-Pxs=3856,2592,3856,2632
-Enable=False
+Pxs=4872,2440,4872,2480
 
 [Wire]
-Pxs=3856,2632,4272,2632
-Enable=False
+Pxs=4872,2440,5016,2440
 
 [Wire]
-Pxs=3856,2592,4000,2592
-Enable=False
+Pxs=5720,1384,5736,1384
 
 [Wire]
-Pxs=4344,2656,4360,2656
-Enable=False
-
-[Wire]
-Pxs=4304,2688,4304,2712
-Enable=False
+Pxs=5680,1416,5680,1432
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4360,2672
+Px=5736,1400
 Rot=1
 
 [Attr]
@@ -5993,7 +5798,7 @@ Font=Arial
 
 [Attr]
 ON=8,26,RESISTANCE
-V=1k
+V=100k
 Style=8192
 Font=Arial
 
@@ -6029,8 +5834,7 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4360,2736
+Px=5736,1464
 Rot=1
 
 [Attr]
@@ -6041,7 +5845,7 @@ Font=Arial
 
 [Attr]
 ON=8,26,RESISTANCE
-V=1k
+V=100k
 Style=8192
 Font=Arial
 
@@ -6077,34 +5881,27 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=4360,2784
+Px=5736,1512
 Rot=7
 
 [Wire]
-Pxs=4360,2656,4360,2672
-Enable=False
+Pxs=5736,1384,5736,1400
 
 [Wire]
-Pxs=4360,2720,4360,2728
-Enable=False
+Pxs=5736,1448,5736,1456
 
 [Wire]
-Pxs=4240,2680,4272,2680
-Enable=False
+Pxs=5616,1408,5648,1408
 
 [Wire]
-Pxs=4240,2680,4240,2728
-Enable=False
+Pxs=5616,1408,5616,1456
 
 [Wire]
-Pxs=4240,2728,4360,2728
-Enable=False
+Pxs=5616,1456,5736,1456
 
 [Comp]
 Name=Opamp
-Enable=False
-Px=4272,2632
+Px=5648,1360
 
 [Attr]
 ON=44,29,PART
@@ -6133,33 +5930,29 @@ V
 Font=Arial
 
 [Wire]
-Pxs=4360,2728,4360,2736
-Enable=False
+Pxs=5736,1456,5736,1464
 
 [Wire]
-Pxs=4360,2656,4488,2656
-Enable=False
+Pxs=5736,1384,5808,1384
 
 [Wire]
-Pxs=4488,2704,4488,2728
-Enable=False
+Pxs=5864,1432,5864,1456
 
 [Comp]
 Name=Resistor
-Enable=False
-Px=4488,2656
+Px=5864,1384
 Rot=7
-COff=7,4465,2679,-32,60
+COff=7,5835,1406,-32,60
 
 [Attr]
-ON=-24,11,PART
+ON=-30,10,PART
 V=R88
 Style=8192
 Font=Arial
 
 [Attr]
-ON=-23,23,RESISTANCE
-V=10
+ON=-29,22,RESISTANCE
+V=2
 Style=8192
 Font=Arial
 
@@ -6195,8 +5988,7 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
-Px=4488,2728
+Px=5864,1456
 Rot=7
 
 [Comp]
@@ -6284,11 +6076,9 @@ Font=Arial
 
 [Wire]
 Pxs=2136,1752,2168,1752
-Enable=False
 
 [Wire]
 Pxs=2136,1688,2136,1752
-Enable=False
 
 [Wire]
 Pxs=2136,1688,2288,1688
@@ -6445,7 +6235,6 @@ Font=Arial
 
 [Wire]
 Pxs=2168,1872,2168,1912
-Enable=False
 
 [Wire]
 Pxs=2168,1872,2288,1872
@@ -6455,7 +6244,6 @@ Pxs=2288,1872,2288,1920
 
 [Wire]
 Pxs=2168,2040,2168,2088
-Enable=False
 
 [Wire]
 Pxs=2168,2040,2288,2040
@@ -6465,7 +6253,6 @@ Pxs=2288,2040,2288,2112
 
 [Comp]
 Name=Battery
-Enable=False
 Px=2152,1848
 Rot=3
 
@@ -6497,17 +6284,14 @@ Font=Arial
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2152,1856
 Rot=1
 
 [Wire]
 Pxs=2152,1848,2152,1856
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2000,1960
 
 [Attr]
@@ -6518,7 +6302,7 @@ Font=Arial
 
 [Attr]
 ON=14,17,RESISTANCE
-V=14k
+V=13k
 Style=8192
 Font=Arial
 
@@ -6557,15 +6341,12 @@ Pxs=2200,1968,2200,1976
 
 [Wire]
 Pxs=2048,1960,2104,1960
-Enable=False
 
 [Wire]
 Pxs=1960,1960,2000,1960
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=1992,2136
 
 [Attr]
@@ -6575,8 +6356,8 @@ Style=8192
 Font=Arial
 
 [Attr]
-ON=17,18,RESISTANCE
-V=140k
+ON=16,17,RESISTANCE
+V=130k
 Style=8192
 Font=Arial
 
@@ -6612,15 +6393,12 @@ Font=Arial
 
 [Wire]
 Pxs=1952,2136,1992,2136
-Enable=False
 
 [Wire]
 Pxs=2040,2136,2104,2136
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2104,1976
 Rot=7
 
@@ -6632,7 +6410,7 @@ Font=Arial
 
 [Attr]
 ON=-22,26,RESISTANCE
-V=1k
+V=0.91k
 Style=8192
 Font=Arial
 
@@ -6668,21 +6446,17 @@ Font=Arial
 
 [Wire]
 Pxs=2104,1960,2104,1976
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2104,2024
 Rot=7
 
 [Wire]
 Pxs=2104,1960,2168,1960
-Enable=False
 
 [Comp]
 Name=Resistor
-Enable=False
 Px=2104,2152
 Rot=7
 
@@ -6694,7 +6468,7 @@ Font=Arial
 
 [Attr]
 ON=-22,26,RESISTANCE
-V=1k
+V=0.91k
 Style=8192
 Font=Arial
 
@@ -6730,17 +6504,14 @@ Font=Arial
 
 [Wire]
 Pxs=2104,2136,2104,2152
-Enable=False
 
 [Comp]
 Name=Ground
-Enable=False
 Px=2104,2200
 Rot=7
 
 [Wire]
 Pxs=2104,2136,2168,2136
-Enable=False
 
 [Wire]
 Pxs=2200,2144,2200,2152
@@ -6750,47 +6521,22 @@ Pxs=2200,1808,2200,1816
 
 [Wire]
 Pxs=2152,1800,2168,1800
-Enable=False
-
-[Wire]
-Pxs=1472,1000,1472,1024
-
-[Wire]
-Pxs=1536,1096,1536,1144
-
-[Wire]
-Pxs=1448,1072,1472,1072
-
-[Wire]
-Pxs=1416,1336,1472,1336
 
 [Wire]
 Pxs=2288,1920,2288,1936
 
 [Wire]
-Pxs=4040,1448,4104,1448
-Enable=False
-
-[Wire]
-Pxs=4040,1448,4040,1752
-Enable=False
+Pxs=4048,1440,4968,1440
 
 [Wire]
 Pxs=3592,1752,4040,1752
-Enable=False
 
 [Wire]
-Pxs=1296,1304,1368,1304
-
-[Wire]
-Pxs=1352,1208,1368,1208
-
-[Wire]
-Pxs=744,1040,792,1040
+Pxs=696,1040,792,1040
 
 [Comp]
 Name=Battery
-Px=568,1376
+Px=280,1584
 Rot=3
 
 [Attr]
@@ -6808,12 +6554,12 @@ V
 
 [Comp]
 Name=Ground
-Px=568,1376
+Px=280,1584
 Rot=7
 
 [Comp]
 Name=Opamp
-Px=552,1064
+Px=504,1064
 Rot=4
 
 [Attr]
@@ -6844,7 +6590,7 @@ Font=Arial
 
 [Comp]
 Name=Resistor
-Px=640,1040
+Px=592,1040
 Rot=5
 
 [Attr]
@@ -6890,11 +6636,11 @@ V
 Font=Arial
 
 [Wire]
-Pxs=624,1040,640,1040
+Pxs=576,1040,592,1040
 
 [Comp]
 Name=Resistor
-Px=504,1016
+Px=456,1016
 Rot=4
 
 [Attr]
@@ -6940,31 +6686,31 @@ V
 Font=Arial
 
 [Wire]
-Pxs=552,976,640,976
+Pxs=504,976,592,976
 
 [Wire]
-Pxs=640,976,640,992
+Pxs=592,976,592,992
 
 [Wire]
-Pxs=552,976,552,1016
+Pxs=504,976,504,1016
 
 [Comp]
 Name=Ground
-Px=536,1064
+Px=488,1064
 Rot=7
 
 [Wire]
-Pxs=536,1064,552,1064
+Pxs=488,1064,504,1064
 
 [Wire]
-Pxs=640,1040,680,1040
+Pxs=592,1040,632,1040
 
 [Wire]
-Pxs=440,1016,504,1016
+Pxs=392,1016,456,1016
 
 [Comp]
 Name=Battery
-Px=712,1120
+Px=664,1120
 Rot=3
 
 [Attr]
@@ -6982,12 +6728,12 @@ V
 
 [Comp]
 Name=Ground
-Px=712,1120
+Px=664,1120
 Rot=7
 
 [Comp]
 Name=сумматор2
-Px=680,1040
+Px=632,1040
 
 [Attr]
 ON=27,-43,PART
@@ -7026,45 +6772,6 @@ V
 Font=Arial
 
 [Wire]
-Pxs=1256,1008,1424,1008
-
-[Wire]
-Pxs=1200,960,1208,960
-
-[Wire]
-Pxs=1112,880,1128,880
-
-[Wire]
-Pxs=1112,1008,1128,1008
-
-[Wire]
-Pxs=3184,1608,3552,1608
-
-[Wire]
-Pxs=2808,2112,3112,2112
-
-[Wire]
-Pxs=2488,2232,2488,2240
-
-[Wire]
-Pxs=2784,1912,2904,1912
-
-[Wire]
-Pxs=2576,1400,2832,1400
-
-[Wire]
-Pxs=3408,1448,3768,1448
-
-[Wire]
-Pxs=3168,1560,3224,1560
-
-[Wire]
-Pxs=2744,1504,2752,1504
-
-[Wire]
-Pxs=2704,1984,2712,1984
-
-[Wire]
 Pxs=3008,1584,3072,1584
 
 [Comp]
@@ -7079,7 +6786,7 @@ Font=Arial
 
 [Attr]
 ON=14,17,RESISTANCE
-V=500
+V=510
 Style=8192
 Font=Arial
 
@@ -7180,6 +6887,453 @@ Pxs=3072,1632,3072,1680
 [Wire]
 Pxs=2832,1680,2832,1864
 
+[Wire]
+Pxs=1272,1256,1272,1304
+
+[Comp]
+Name=74ALS35A
+Px=1672,2800
+
+[Attr]
+ON=25,8,PART
+V=X189
+Style=8192
+
+[Attr]
+ON=25,22,NAME
+V=74ALS35A
+
+[Attr]
+ON=25,50,PACKAGE
+V=DIP14
+
+[Attr]
+ON=25,64,GATE
+V=A
+
+[Attr]
+ON=25,78,COMPNAME
+V=UX189
+
+[Comp]
+Name=Resistor
+Px=5600,1360
+
+[Attr]
+ON=11,-36,PART
+V=R142
+Style=8192
+
+[Attr]
+ON=11,-22,RESISTANCE
+V=100k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=5592,1408
+Rot=3
+
+[Attr]
+ON=11,-36,PART
+V=R143
+Style=8192
+
+[Attr]
+ON=11,-22,RESISTANCE
+V=100k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=5592,1360,5600,1360
+
+[Comp]
+Name=Ground
+Px=5592,1408
+Rot=7
+
+[Comp]
+Name=Pulse Source
+Px=1624,1728
+Rot=3
+
+[Attr]
+ON=-34,-23,PART
+V=V37
+Style=8192
+
+[Attr]
+ON=-21,-37,MODEL
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=1624,1728
+Rot=7
+
+[Comp]
+Name=сумматор2
+Px=1456,1784
+Rot=5
+
+[Attr]
+ON=14,-30,PART
+V=X190
+Style=8192
+Font=Arial
+
+[Attr]
+ON=14,-45,FILE
+V=сумматор2
+Font=Arial
+
+[Attr]
+ON=14,-60,Param:KA
+V=1
+Font=Arial
+
+[Attr]
+ON=14,-75,Param:KB
+V=1
+Font=Arial
+
+[Attr]
+ON=0,0,COST
+V
+Font=Arial
+
+[Attr]
+ON=0,0,POWER
+V
+Font=Arial
+
+[Attr]
+ON=0,0,PACKAGE
+V
+Font=Arial
+
+[Wire]
+Pxs=1504,1656,1624,1656
+
+[Wire]
+Pxs=1504,1656,1504,1664
+
+[Wire]
+Pxs=1528,1184,1528,1256
+
+[Wire]
+Pxs=1624,1656,1624,1680
+
+[Wire]
+Pxs=1504,1664,1560,1664
+
+[Wire]
+Pxs=1560,1664,1560,1784
+
+[Wire]
+Pxs=1456,1784,1560,1784
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=927,1092,1507,1378
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=738,813,1318,1087
+
+[Wire]
+Pxs=1488,1008,1488,1064
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=1518,961,1718,1240
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=1884,1654,2330,2224
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=2337,1305,4011,2347
+
+[Wire]
+Pxs=3336,1752,3592,1752
+
+[Wire]
+Pxs=5160,1456,5256,1456
+
+[Wire]
+Pxs=5248,1560,5256,1560
+
+[Wire]
+Pxs=5256,1456,5256,1560
+
+[Wire]
+Pxs=3072,1864,4152,1864
+
+[Wire]
+Pxs=4152,1960,4152,2264
+
+[Wire]
+Pxs=5256,1560,5256,1984
+
+[Wire]
+Pxs=5448,1360,5592,1360
+
+[Wire]
+Pxs=5448,1360,5448,2480
+
+[Wire]
+Pxs=4040,1448,4040,1752
+
+[Wire]
+Pxs=4872,2480,5448,2480
+
+[Wire]
+Pxs=5448,2480,5456,2480
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=4103,1632,5524,2512
+
+[Object]
+Object=Rectangle
+CBorder=#FF0000
+Pattern=Dash6
+Px=4953,1309,5909,1588
+
+[Wire]
+Pxs=3184,1608,3552,1608
+
+[Wire]
+Pxs=2808,2112,3112,2112
+
+[Wire]
+Pxs=2488,2232,2488,2240
+
+[Wire]
+Pxs=3712,1568,3712,1576
+
+[Wire]
+Pxs=2784,1912,2904,1912
+
+[Wire]
+Pxs=2576,1400,2832,1400
+
+[Wire]
+Pxs=3408,1448,3768,1448
+
+[Wire]
+Pxs=3168,1560,3224,1560
+
+[Wire]
+Pxs=2744,1504,2752,1504
+
+[Wire]
+Pxs=2704,1984,2712,1984
+
+[Wire]
+Pxs=4960,1448,5024,1448
+
+[Wire]
+Pxs=5096,1376,5136,1376
+
+[Wire]
+Pxs=5680,1432,5680,1440
+
+[Wire]
+Pxs=5808,1384,5864,1384
+
+[Wire]
+Pxs=1352,1208,1368,1208
+
+[Wire]
+Pxs=1296,1304,1368,1304
+
+[Wire]
+Pxs=1416,1336,1472,1336
+
+[Wire]
+Pxs=1200,960,1208,960
+
+[Wire]
+Pxs=1512,1064,1536,1064
+
+[Wire]
+Pxs=1600,1088,1600,1144
+
+[Wire]
+Pxs=1536,992,1536,1016
+
+[Wire]
+Pxs=1624,1176,1632,1176
+
+[Wire]
+Pxs=1416,1168,1560,1168
+
+[Wire]
+Pxs=1256,1008,1488,1008
+
+[Wire]
+Pxs=1000,856,1192,856
+Color=#000000
+
+[Wire]
+Pxs=856,856,1000,856
+Color=#000000
+
+[Wire]
+Pxs=1408,1256,1440,1256
+
+[Wire]
+Pxs=4952,1872,4968,1872
+
+[Wire]
+Pxs=4752,1872,4816,1872
+
+[Wire]
+Pxs=4808,1952,4816,1952
+
+[Wire]
+Pxs=4808,1968,4816,1968
+
+[Wire]
+Pxs=4768,1856,4816,1856
+
+[Wire]
+Pxs=4832,2016,4952,2016
+
+[Wire]
+Pxs=4824,1760,4936,1760
+
+[Wire]
+Pxs=4968,1928,4992,1928
+
+[Wire]
+Pxs=4968,1928,4968,1952
+
+[Wire]
+Pxs=4840,1808,4960,1808
+
+[Wire]
+Pxs=5136,2152,5192,2152
+
+[Wire]
+Pxs=5144,2192,5192,2192
+
+[Grid Text]
+Text="+2"
+Px=5144,2192
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="+1"
+Px=5136,2152
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="dir3+dir4"
+Px=4824,1760
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Out2-4"
+Px=4832,2016
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="dir1"
+Px=4768,1856
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Dir2"
+Px=4808,1968
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Out1+3"
+Px=4840,1808
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="in3+in4"
+Px=4952,1872
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="in2"
+Px=4808,1952
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="in1"
+Px=4752,1872
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь управляющего "
+Text="напряжеия"
+Px=480,888
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
 [Grid Text]
 Text="Prum6upr"
 Px=1352,1208
@@ -7198,10 +7352,11 @@ CBorder=None
 
 [Grid Text]
 Text="Vin"
-Px=768,1304
+Px=480,1512
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7230,7 +7385,7 @@ CBorder=None
 
 [Grid Text]
 Text="Cc"
-Px=1448,1072
+Px=1512,1064
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7238,7 +7393,7 @@ CBorder=None
 
 [Grid Text]
 Text="T"
-Px=1536,1096
+Px=1600,1088
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7246,7 +7401,7 @@ CBorder=None
 
 [Grid Text]
 Text="D"
-Px=1472,1000
+Px=1536,992
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -7304,7 +7459,7 @@ CBorder=None
 
 [Grid Text]
 Text="ts"
-Px=1112,880
+Px=1000,856
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7314,7 +7469,7 @@ CBorder=None
 
 [Grid Text]
 Text="ts2"
-Px=1112,1008
+Px=856,856
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7376,7 +7531,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7387,7 +7541,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7408,7 +7561,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7419,7 +7571,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7620,7 +7771,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7631,7 +7781,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7642,7 +7791,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7667,29 +7815,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=3624,2056
-Height=-12
-Font=Verdana
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Enable=False
-CBorder=None
-
-[Grid Text]
-Text="VC"
-Px=3624,2264
-Height=-12
-Font=Verdana
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-Enable=False
-CBorder=None
-
-[Grid Text]
-Text="VC"
-Px=3152,2296
+Px=4640,1904
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7699,7 +7825,27 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=3448,2360
+Px=4640,2112
+Height=-12
+Font=Verdana
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=4168,2144
+Height=-12
+Font=Verdana
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=4464,2208
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7709,7 +7855,7 @@ CBorder=None
 
 [Grid Text]
 Text="Вычитатель"
-Px=3368,2208
+Px=4384,2056
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7719,134 +7865,122 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=3896,2304
+Px=4912,2152
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=3920,2072
+Px=4936,1920
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=3552,2160
+Px=4568,2008
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Сумматор"
-Px=4168,2200
+Px=5184,2048
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=4304,2360
+Px=5320,2208
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="Cc"
-Px=4040,1448
+Px=4960,1448
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="D"
-Px=4176,1376
+Px=5096,1376
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="T"
-Px=4240,1456
+Px=5160,1456
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="D-триггер"
-Px=4112,1360
+Px=5032,1360
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=4304,2704
+Px=5680,1432
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=4304,2624
+Px=5680,1352
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
 Text="yout"
-Px=4432,2656
+Px=5808,1384
 Height=-12
 Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7867,7 +8001,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7878,7 +8011,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7909,7 +8041,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7920,7 +8051,6 @@ Font=Verdana
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
-Enable=False
 CBorder=None
 
 [Grid Text]
@@ -7935,7 +8065,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=584,1008
+Px=536,1008
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7945,7 +8075,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=584,1072
+Px=536,1072
 Height=-12
 Font=Verdana
 GridSnap=True
@@ -7977,6 +8107,63 @@ JustifyH=Left
 JustifyV=Bottom
 CBorder=None
 
+[Grid Text]
+Text="Формирователь выходной"
+Text="последовательности"
+Px=1608,952
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь треугольных"
+Text="импульсов"
+Px=1000,784
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь ступеньчатых"
+Text="импульсов"
+Px=1232,1416
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь управляющего "
+Text="напряжеия"
+Px=2080,1648
+Height=-37
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь ступеньчатых"
+Text="импульсов"
+Px=4584,1600
+Height=-37
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Формирователь выходной"
+Text="последовательности"
+Px=5464,1280
+Height=-37
+GridSnap=True
+JustifyH=Center
+JustifyV=Bottom
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -7985,7 +8172,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=2
+Scale=1.3333333333333333
 GridUser=10
 ShapeGroups="Main","DeMorgan","Main1","Euro","Polarity","Electrolytic","GroundArrow","Main2"
 CalcRMS=False
@@ -8131,9 +8318,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=1702,455
-Scale 3=4
-Px=3878,755
+SB 3=4105,1326
+Scale 3=1.3333333333333333
+Px=4548,1771
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -8233,6 +8420,7 @@ Text=+ SRN=5MEG SRP=5MEG VOFF=2m)
 Text=.MODEL $GENERIC_P PNP (LEVEL=2 BF=200)
 Text=;**** Pasted from "C:\Uchoba\PE2-18\2\Vika\Схемотехника\Кутсовая\Курсовая работа\Курсовая принципиальная +функциональная.CIR" Section="Курсовая принципиальная +функциональная"
 Text=.MODEL $GENERIC D ()
+Text=.MODEL 1 PUL (P1=2.8545m P2=2.8548m P3=2.8549m P4=2.855m P5=11.478m VONE=0.5)
 
 [InfoPage]
 InfoPage=True
@@ -8489,34 +8677,64 @@ Name="6"
 Analysis=Transient
 Object=MeasureH
 Locked=True
-Weight=4
 EndPoint=ArrowF
 CBorder=#FF0000
-w=8
-AliasID1=4
-Page="1"
-w2=8
-AliasID2=4
-Pos=1.0810267898814912e-005,11.999999753713885,0.010290747575239925,11.999999753713881
-Posm=8.8491620111731901
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+w=25
+AliasID1=22
+Page="5"
+w2=25
+AliasID2=22
+Pos=0.00054571871570681179,11.999999753713878,0.00081369042673998552,11.999999733097216
+Posm=5.9607843137254903
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 Format=3
 
 [AObject]
 Analysis=Transient
 Object=MeasureH
 Locked=True
-Weight=4
 EndPoint=ArrowF
 CBorder=#FF0000
-w=8
-AliasID1=4
-Page="1"
-w2=8
-AliasID2=4
-Pos=0.0004965701375427979,5.9999999404757363,0.0014892219524753618,5.9999999418692074
-Posm=3.709497206703916
-Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+w=25
+AliasID1=22
+Page="5"
+w2=25
+AliasID2=22
+Pos=0.00027129026010196242,4.9586403781819645e-010,0.00054471871570681177,1.1999999629322629e-007
+Posm=1.2549019607843137
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#FF0000
+w=25
+AliasID1=22
+Page="5"
+w2=25
+AliasID2=22
+Pos=6.8432122742049039e-005,5.9999999996918376,0.00020099891419035027,6.2528750206655435
+Posm=5.1764705882352944
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#FF0000
+w=22
+AliasID1=21
+Page="5"
+w2=22
+AliasID2=21
+Pos=0.0010898353212175354,11.999999820000003,1.6861235959749468e-006,11.999999820000003
+Posm=6.6412213740458022
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
 Format=3
 
 [DC]
@@ -8738,7 +8956,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TRange=15m
+TRange=2m
 TStep=1u
 NPts=51
 Temp=27
@@ -9027,11 +9245,11 @@ Plt=1
 Page=2
 AliasID=7
 XExp=T
-YExp=V(ytreug)
+YExp=V(C1)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Enable=DontRun
+Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
@@ -9052,7 +9270,7 @@ Plt=2
 Page=2
 AliasID=8
 XExp=T
-YExp=V(Test)
+YExp=V(Ts)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
@@ -9077,11 +9295,11 @@ Plt=3
 Page=2
 AliasID=11
 XExp=T
-YExp=V(y)
+YExp=V(TS2)
 XRng=AutoAlways
 YRng=AutoAlways
 Options=LINEARX,LINEARY
-Enable=DontRun
+Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
 Rainbow=False
@@ -9273,8 +9491,6 @@ NOFmtY=3
 
 [WaveForm]
 Analysis=Transient
-Plt=1
-Page=5
 AliasID=19
 XExp=T
 YExp=V(T)
@@ -9511,7 +9727,7 @@ PlaceText=True
 
 [Pane]
 Analysis=Transient
-CurrentPage 0="1"
+CurrentPage 0="5"
 
 [Pane]
 Analysis=AC
@@ -9552,6 +9768,49 @@ ExprPercentWidth=80
 Var Width=100
 Nominal Width=72
 Tol Width=152
+
+[BOM]
+Type.show=True
+Type.width=15
+Value.show=True
+Value.width=15
+Qnt.show=True
+Qnt.width=10
+UnitPower.show=True
+UnitPower.width=10
+UnitPower.digits=2
+TotalPower.show=True
+TotalPower.width=11
+TotalPower.digits=2
+UnitCost.show=True
+UnitCost.width=10
+UnitCost.digits=4
+TotalCost.show=True
+TotalCost.width=10
+TotalCost.digits=4
+User1.width=30
+User2.width=30
+User3.width=30
+User4.width=30
+Parts.show=True
+Parts.alignment=Left
+Parts.width=20
+Expand=False
+ViewReport=True
+GroupParts=True
+Delimiter=32
+Sort=VALUE
+Map 0=TYPE
+Map 1=VALUE
+Map 2=QTY
+Map 3=UNITPOWER
+Map 4=TOTALPOWER
+Map 5=UNITCOST
+Map 6=TOTALCOST
+Map 7=USER1
+Map 8=USER2
+Map 9=USER3
+Map 10=USER4
 
 [Slider]
 Analysis=Transient
