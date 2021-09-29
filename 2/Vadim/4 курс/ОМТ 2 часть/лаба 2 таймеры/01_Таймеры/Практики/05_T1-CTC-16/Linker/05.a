@@ -1,0 +1,103 @@
+;/*****************************************************
+;Chip type               : ATmega16
+;AVR Core Clock frequency: 8,000000 MHz
+;*****************************************************/
+;
+;#include <mega16.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x40
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0xB0
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_powerdown=0x20
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powersave=0x30
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_standby=0xA0
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_ext_standby=0xB0
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_adc_noise_red=0x10
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=mcucr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;// Timer1 output compare A interrupt service routine
+;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
+; 0000 0009 {			            //TCNT1 сбр. в 0 при совпадении (при возн. прерывани€)
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+;PCODE: $0000000E VOL: 0
+; 0000 000A // Place your code here	//т.о. между прерывани€ми будет 5-секундный интервал
+; 0000 000B PORTC=(PINC^0b00000001);	//измен€ем состо€ние LED на противоположное
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+; 0000 000C }
+;PCODE: $00000013 VOL: 0
+;PCODE: $00000014 VOL: 0
+;PCODE: $00000015 VOL: 0
+;
+;void main(void)
+; 0000 000F {
+;PCODE: $00000016 VOL: 0
+; 0000 0010 DDRC=0x01;     	//разр€д 0 порта — - на вывод
+;PCODE: $00000017 VOL: 0
+;PCODE: $00000018 VOL: 0
+; 0000 0011 PORTC=0x01;	    //«ажигаем желтый LED
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+; 0000 0012 
+; 0000 0013 DDRD=0x20;     	//разр€д 5 порта D - на вывод
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+; 0000 0014 PORTD=0x00;     //Ёто выход схемы сравнени€ канала A
+;PCODE: $0000001D VOL: 0
+;PCODE: $0000001E VOL: 0
+; 0000 0015 
+; 0000 0016 // Timer/Counter 1 initialization
+; 0000 0017 // Clock source: System Clock
+; 0000 0018 // Clock value: 7,813 kHz
+; 0000 0019 // Mode: CTC top=OCR1A
+; 0000 001A // OC1A output: Toggle
+; 0000 001B // Compare A Match Interrupt: On
+; 0000 001C TCCR1A=0x40;
+;PCODE: $0000001F VOL: 0
+;PCODE: $00000020 VOL: 0
+; 0000 001D TCCR1B=0x0D;
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+; 0000 001E OCR1AH=0x98;        //«апись в регистр сравнени€ канала ј
+;PCODE: $00000023 VOL: 0
+;PCODE: $00000024 VOL: 0
+; 0000 001F OCR1AL=0x96;        //необходимого модул€ счета дл€ форм. 5с интервала
+;PCODE: $00000025 VOL: 0
+;PCODE: $00000026 VOL: 0
+; 0000 0020                     //между прерывани€ми по совпадению A
+; 0000 0021 
+; 0000 0022 // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 0023 TIMSK=0x10;         //–азрешение прерывани€ по совпадению A
+;PCODE: $00000027 VOL: 0
+;PCODE: $00000028 VOL: 0
+; 0000 0024 
+; 0000 0025 // Global enable interrupts
+; 0000 0026 #asm("sei")
+;PCODE: $00000029 VOL: 0
+	sei
+;PCODE: $0000002A VOL: 0
+; 0000 0027 while (1);
+;PCODE: $0000002B VOL: 0
+;PCODE: $0000002C VOL: 0
+;PCODE: $0000002D VOL: 0
+; 0000 0028 }
+;PCODE: $0000002E VOL: 0
+;PCODE: $0000002F VOL: 0
+;PCODE: $00000030 VOL: 0

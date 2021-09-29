@@ -1,0 +1,112 @@
+/*************************************************************************************
+Chip type               : ATmega16
+AVR Core Clock frequency: 8,000000 MHz
+Измеритель длительности паузы периодической импульсной последовательности
+Динамическая индикация организована в бесконечном цикле фоновой программы.
+Измерение длительности паузы организовано с помощью внешнего прерывания INT0
+(по срезу - запускается подсчет импульсов с эталонной частотой 1МГц таймером TCNT0,
+по фронту - счет останавливается и содержимое TCNTO преобразуется в двоично-десятичный
+4-хразрядный распакованный код длительности паузы в микросекундах, который фоновой 
+программой выводится на 4-хразрядный семисегментный индикатор).
+*************************************************************************************/
+#include <mega16.h>
+#include <delay.h>      //подключение библиотеки задержек
+// Declare your global variables here
+//библиотека графики 10 десятичных цифр и "-"  (знакогенератор)
+//////////////////////////0////1////2////3////4////5////6////7////8////9////-//
+flash char DIG_DEC[11]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x40};
+//число в распакованном BCD (одна цифра в одном байте), ст. байт по младшему адресу
+unsigned char BCD_UNPACKED[4]={0,0,0,0};    //в исх. сост. на инд. 0000
+// External Interrupt 0 service routine
+interrupt [EXT_INT0] void ext_int0_isr(void)
+{
+if (MCUCR==0x02) 
+        {
+        TCCR0=0x02;     //Запуск TCNT0 на счет от 0 в NORMAL c f=1 МГЦ
+        MCUCR=0x03;     //следующее прерывание (конец паузы) - по фронту
+        }
+else  
+        {
+        unsigned char sot=0, des=0, pause_bin;
+        TCCR0=0x00;     //Останов TCNT0
+        PORTA=TCNT0;    //вывод TCNT0 в порт A и в переменную pause_bin
+        pause_bin=TCNT0;//пауза в микросекундах в двоичном коде
+        TCNT0=0;        //сброс TCNT0 для подгот. к след. измерению 
+        MCUCR=0x02;     //след. прерывание INT0 - по срезу
+        //получение распакованного BCD от pause_bin и запись его в массив BCD_UNPACKED[4] 
+        while (pause_bin>=100)        //подсчет сотен в числе 
+            {
+            pause_bin-=100; sot++;
+            };           
+        while (pause_bin>=10)        //подсчет десятков в числе 
+            {
+            pause_bin-=10; des++;
+            };                      //Здесь в pause_bin - число единиц (<=9)
+        BCD_UNPACKED[0]=0, BCD_UNPACKED[1]=sot, BCD_UNPACKED[2]=des, BCD_UNPACKED[3]=pause_bin;         
+        };
+}
+
+// Timer 0 overflow interrupt service routine
+interrupt [TIM0_OVF] void timer0_ovf_isr(void)
+{
+unsigned char i;
+// Place your code here
+PORTA=0xFF;             //Вывод на индикацию в порт A 0xFF в случае переполнения
+for (i=0;i<4;i++) 
+    {
+    BCD_UNPACKED[i]=10; //код изображения "-" на 7SEG, 
+    };                  // в случае переполнения на 7SEG индицируется "----"
+TCCR0=0x00;             //Останов TCNT0
+TCNT0=0;                //сброс TCNT0 для подгот. к след. измерению 
+MCUCR=0x02;             //след. прерывание INT0 - по срезу
+}
+
+void main(void)
+{
+// Declare your local variables here
+// Input/Output Ports initialization
+// Port A initialization
+PORTA=0x00;
+DDRA=0xFF;              //порт A - на вывод данных
+PORTB=0xFF;
+DDRB=0x0F;              //порт B (младшие 4 бита) - на вывод данных
+PORTC=0x00;
+DDRC=0xFF;              //порт C - на вывод данных
+
+// Timer/Counter 0 initialization
+// Clock source: System Clock
+// Clock value: Timer 0 Stopped
+// Mode: Normal top=0xFF
+// OC0 output: Disconnected
+TCCR0=0x00;
+TCNT0=0x00;
+OCR0=0x00;
+
+// External Interrupt(s) initialization
+// INT0: On
+// INT0 Mode: Falling Edge
+// INT1: Off
+// INT2: Off
+GICR|=0x40;
+MCUCR=0x02;
+MCUCSR=0x00;
+GIFR=0x40;
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=0x01;             //разрешение прерывания TCNT0 по переполнению
+
+// Global enable interrupts
+#asm("sei")
+
+while (1)
+      {                 //фоновая программа - развертка изображения числа микросекунд в паузе                                      
+      unsigned char i;  //на семисегментном индикаторе с общим катодом 7SEG-MPX4-CC
+      for (i=0;i<4;i++)
+        {
+        PORTB=~(0b00001000>>i);             //активиз. очередной общий катод (низким уровнем)
+        PORTC=DIG_DEC[BCD_UNPACKED[i]];     //Графика очередного знакоместа (извлекаем из таблицы знакогенератора)
+        delay_us(2500);                     //Задержка подсветки очередного знакоместа 2.5 мс
+        PORTB=0x0F;                         //Гашение сегментов очередного знакоместа перед переходом к след.
+        };
+      };
+}

@@ -1,0 +1,41 @@
+/*****************************************************
+Chip type               : ATmega16
+AVR Core Clock frequency: 8,000000 MHz
+*****************************************************/
+
+#include <mega16.h>
+// Timer1 output compare A interrupt service routine
+interrupt [TIM1_COMPA] void timer1_compa_isr(void)
+{			//TCNT1 сбр. в 0 при совпадении (при возн. прерывани€)
+// Place your code here	//т.о. между прерывани€ми будет 5-секундный интервал
+PORTC=(PINC^0b00000001);	//измен€ем состо€ние LED на противоположное
+      
+}               
+
+void main(void)
+{
+DDRC=0x01;     	//разр€д 0 порта — - на вывод
+PORTC=0x01;	//«ажигаем желтый LED
+
+DDRD=0x20;     	//разр€д 5 порта D - на вывод
+PORTD=0x00;     //Ёто выход схемы сравнени€ канала A
+
+// Timer/Counter 1 initialization
+// Clock source: System Clock
+// Clock value: 7,813 kHz
+// Mode: CTC top=OCR1A
+// OC1A output: Toggle
+// Compare A Match Interrupt: On
+TCCR1A=0x40;
+TCCR1B=0x0D;
+OCR1AH=0x98;        //«апись в регистр сравнени€ канала ј
+OCR1AL=0x96;        //необходимого модул€ счета дл€ форм. 5с интервала 
+                    //между прерывани€ми по совпадению A
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=0x10;         //–азрешение прерывани€ по совпадению A
+
+// Global enable interrupts
+#asm("sei")
+while (1);
+}

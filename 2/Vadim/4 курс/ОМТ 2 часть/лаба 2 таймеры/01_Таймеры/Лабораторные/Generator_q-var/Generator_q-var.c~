@@ -1,0 +1,77 @@
+//Системная тактовая частота 8 MHz
+#include <mega16.h>
+
+char a=1;                               //Глобальная переменная состояния цикла
+
+//Timer2 overflow interrupt service routine, обработчик прерывания по переполнению TC2
+interrupt [TIM2_OVF] void timer2_ovf_isr(void)
+{
+// Place your code here
+switch (a)
+    {
+    case 1: OCR2=64; break;         //Если a=1, то OCR2=64
+    case 2: OCR2=32; break;         //Если a=2, то OCR2=32
+    case 3: OCR2=16; break;         //Если а=3, то OCR2=16
+    case 4: OCR2=128; a=0; break;   //Если а=4, то OCR2=128; a=0;
+    default:a=0;                    //Если не выполняется ни одно из условий, a = 0
+    }
+a++;
+}
+
+// Declare your global variables here
+
+void main(void)                         //Главная функция
+{
+// Declare your local variables here
+
+// Input/Output Ports initialization
+
+//Port A в режиме ввода
+PORTA=0x00;
+DDRA=0x00;
+
+//Port B в режиме ввода
+PORTB=0x00;
+DDRB=0x00;
+
+//Port С в режиме ввода
+PORTC=0x00;
+DDRC=0x00;
+
+// PD.7 (выход схемы сравнения OC2) в режиме вывода
+PORTD=0x00;
+DDRD=0x80;
+
+// Timer/Counter 2 initialization
+// Clock source: System Clock
+// Clock value: 125,000 kHz
+// Mode: Fast PWM top=FFh
+// OC2 output: Non-Inverted PWM
+ASSR=0x00;              //асинхронный режим выключен
+TCCR2=0x6C;             //FastPWM, неинвертированный ШИМ, K=64
+TCNT2=0x00;
+OCR2=128;               //Для скважности q=2 в 1-ом периоде ШИМ-сигнала
+
+// External Interrupt(s) initialization
+// INT0: Off
+// INT1: Off
+// INT2: Off
+MCUCR=0x00;
+MCUCSR=0x00;
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=1<<TOIE2;         //Разрешение прерывания по переполнению счетного регистра TC2
+
+// Analog Comparator initialization
+// Analog Comparator: Off
+// Analog Comparator Input Capture by Timer/Counter 1: Off
+ACSR=0x80;
+SFIOR=0x00;
+
+// Global enable interrupts
+#asm("sei")             //Разрешение прерываний
+
+while (1)               //Бесконечный цикл
+      {
+      };
+}

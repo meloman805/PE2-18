@@ -1,0 +1,100 @@
+/*Программа вырисовывания символа на матрице светодиодов. Здесь для организации
+временной задержки используется прерывание по совпадению А таймера TC1, работающего
+в режиме СТС. Переход к новой точке изображения и подсветка светодиодов происходят 
+в обработчике этого прерывания*/
+/*****************************************************
+Chip type               : ATmega16
+Program type            : Application
+AVR Core Clock frequency: 8,000000 MHz
+Memory model            : Small
+External RAM size       : 0
+Data Stack size         : 256
+*****************************************************/
+#include <mega16.h>
+#include <delay.h>
+
+// Declare your global variables here
+char A[13] = {0x04,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x40,0x00,0x00,0x00};
+char B[13] = {0x00,0x00,0x01,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x80,0x00,0x00};
+char C[13] = {0x00,0x00,0x00,0x01,0x00,0x00,0x08,0x00,0x00,0x00,0x00,0x80,0x00};
+char D[13] = {0x00,0x00,0x00,0x00,0x02,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x40};
+char i=0;
+
+// Timer1 output compare A interrupt service routine
+interrupt [TIM1_COMPA] void timer1_compa_isr(void)
+{
+// Place your code here
+i++;                //переводим указатель на следующий элемент всех 4-х массивов
+                    //Счетчик TC1 обнулять не надо, поскольку он сбросится сам (режим CTC)
+if (i==13)	        //Если весь символ прорисовали,
+    {
+    PORTA=0x00;     //гасим все светодиоды
+    PORTB=0x00;		//и через заданную задержку (0,25 сек)
+    PORTC=0x00; 	//начинаем все заново
+    PORTD=0x00;
+    i=-1;
+    }
+else                //если не весь символ прорисован
+    {               //продолжение подсветки светодиодов
+    PORTA|=A[i];	//С операцией ИЛИ | - происходит вырисовывание знака,
+    PORTB|=B[i];	//т.е. остаются включенными ранее зажженные светодиоды
+    PORTC|=C[i];	//Без операции ИЛИ (простое присваивание портам
+    PORTD|=D[i];    //элементов массива) - бегущий огонь по контуру символа
+    };
+}                           
+
+void main(void)
+{
+// Declare your local variables here
+// Input/Output Ports initialization
+// Port A initialization
+PORTA=0x00;         //POPTA - на вывод данных
+DDRA=0xFF;
+
+// Port B initialization
+PORTB=0x00;         //POPTB - на вывод данных
+DDRB=0xFF;
+
+// Port C initialization
+PORTC=0x00;
+DDRC=0xFF;          //POPTC - на вывод данных
+
+// Port D initialization
+PORTD=0x00;
+DDRD=0xFF;          //POPTD - на вывод данных
+
+// Timer/Counter 1 initialization
+// Clock source: System Clock
+// Clock value: 7,813 kHz
+// Mode: CTC top=OCR1A
+// OC1A output: Discon.
+// OC1B output: Discon.
+// Noise Canceler: Off
+// Input Capture on Falling Edge
+// Timer1 Overflow Interrupt: Off
+// Input Capture Interrupt: Off
+// Compare A Match Interrupt: On
+// Compare B Match Interrupt: Off
+TCCR1A=0x00;
+TCCR1B=0x0D;
+TCNT1H=0x00;
+TCNT1L=0x00;
+ICR1H=0x00;
+ICR1L=0x00;
+OCR1AH=0x07;        //При счете от нуля до этой вершины проходит
+OCR1AL=0xA1;        //время t=0x7A1/7813=1953/7813=0.25 сек -
+OCR1BH=0x00;        //задержка подсвечивания очередной точки матрицы
+OCR1BL=0x00;
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=1<<OCIE1A;    //разрешение прерывания по совпадению A TC1
+
+// Global enable interrupts
+#asm("sei")         //общее разрешение прерываний
+
+while (1)			//бесконечный цикл (фоновая программа)
+    {				    
+    //Place your code here
+    }				//конец бесконечного цикла (фоновой программы)
+}                   //конец главной функции
+

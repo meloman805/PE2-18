@@ -1,0 +1,72 @@
+;/*****************************************************
+;Chip type               : ATmega16
+;AVR Core Clock frequency: 8,000000 MHz
+;*****************************************************/
+;#include <mega16.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x40
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0xB0
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_powerdown=0x20
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powersave=0x30
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_standby=0xA0
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_ext_standby=0xB0
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_adc_noise_red=0x10
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=mcucr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;// Declare your global variables here
+;
+;void main(void)
+; 0000 000A {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+; 0000 000B // Declare your local variables here
+; 0000 000C 
+; 0000 000D // Port B initialization
+; 0000 000E PORTB=0x00;     //PB3 - на вывод
+;PCODE: $0000000E VOL: 0
+;PCODE: $0000000F VOL: 0
+; 0000 000F DDRB=0x08;      //это выход схемы сравнени 0 - OC0
+;PCODE: $00000010 VOL: 0
+;PCODE: $00000011 VOL: 0
+; 0000 0010 
+; 0000 0011 // Timer/Counter 0 initialization
+; 0000 0012 // Clock source: System Clock
+; 0000 0013 // Clock value: 8000,000 kHz
+; 0000 0014 // Mode: Normal top=0xFF
+; 0000 0015 // OC0 output: Toggle on compare match
+; 0000 0016 TCCR0=0x11;
+;PCODE: $00000012 VOL: 0
+;PCODE: $00000013 VOL: 0
+; 0000 0017 TCNT0=0x00;
+;PCODE: $00000014 VOL: 0
+;PCODE: $00000015 VOL: 0
+; 0000 0018 OCR0=0x80;
+;PCODE: $00000016 VOL: 0
+;PCODE: $00000017 VOL: 0
+; 0000 0019 
+; 0000 001A while (1)
+;PCODE: $00000018 VOL: 0
+; 0000 001B       {
+; 0000 001C       }
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+; 0000 001D }
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+;PCODE: $0000001D VOL: 0

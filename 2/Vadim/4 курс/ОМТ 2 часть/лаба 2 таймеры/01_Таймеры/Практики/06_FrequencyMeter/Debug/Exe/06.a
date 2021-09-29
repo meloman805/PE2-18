@@ -1,0 +1,186 @@
+;/*******************************************************
+;Chip type               : ATmega16
+;AVR Core Clock frequency: 8,000000 MHz
+;*******************************************************/
+;#include <mega16.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x40
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0xB0
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_powerdown=0x20
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powersave=0x30
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_standby=0xA0
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_ext_standby=0xB0
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_adc_noise_red=0x10
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=mcucr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;// Declare your global variables here
+;
+;// Timer1 overflow interrupt service routine - обработчик переполнения T1
+;interrupt [TIM1_OVF] void timer1_ovf_isr(void)
+; 0000 000B {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+;PCODE: $0000000E VOL: 0
+; 0000 000C // Place your code here
+; 0000 000D //Останов таймера TCNT1
+; 0000 000E TCCR1B=(0<<ICNC1) | (0<<ICES1) | (0<<WGM13) | (0<<WGM12) | (0<<CS12) | (0<<CS11) | (0<<CS10);
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+; 0000 000F TCNT1H=255;
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+; 0000 0010 TCNT1L=255; //запись в Т1 макс. числа для индикации переполнения из обработчика совпад. T2
+;PCODE: $00000013 VOL: 0
+;PCODE: $00000014 VOL: 0
+; 0000 0011 }
+;PCODE: $00000015 VOL: 0
+;PCODE: $00000016 VOL: 0
+;PCODE: $00000017 VOL: 0
+;
+;// Timer2 output compare interrupt service routine
+;interrupt [TIM2_COMP] void timer2_comp_isr(void)
+; 0000 0015 {
+;PCODE: $00000018 VOL: 0
+;PCODE: $00000019 VOL: 0
+; 0000 0016 // Place your code here
+; 0000 0017 //Останов таймера TCNT1
+; 0000 0018 TCCR1B=(0<<ICNC1) | (0<<ICES1) | (0<<WGM13) | (0<<WGM12) | (0<<CS12) | (0<<CS11) | (0<<CS10);
+;PCODE: $0000001A VOL: 0
+;PCODE: $0000001B VOL: 0
+; 0000 0019 PORTA=TCNT1L;   //Индикация измеренной частоты в двоичном 16-р коде (HEX 4-р),
+;PCODE: $0000001C VOL: 0
+;PCODE: $0000001D VOL: 0
+; 0000 001A PORTD=TCNT1H;   //в том числе и переполнения 0xFFFF=0b1111111111111111
+;PCODE: $0000001E VOL: 0
+;PCODE: $0000001F VOL: 0
+; 0000 001B //запуск таймера TCNT1 на счет импульсов с внешнего входа с нуля для последующего измерения
+; 0000 001C //в течение следующего секундного интервала
+; 0000 001D TCNT1H=0; TCNT1L=0;
+;PCODE: $00000020 VOL: 0
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+;PCODE: $00000023 VOL: 0
+; 0000 001E TCCR1B=(0<<ICNC1) | (0<<ICES1) | (0<<WGM13) | (0<<WGM12) | (1<<CS12) | (1<<CS11) | (1<<CS10);
+;PCODE: $00000024 VOL: 0
+;PCODE: $00000025 VOL: 0
+; 0000 001F }
+;PCODE: $00000026 VOL: 0
+;PCODE: $00000027 VOL: 0
+;PCODE: $00000028 VOL: 0
+;
+;void main(void)
+; 0000 0022 {
+;PCODE: $00000029 VOL: 0
+; 0000 0023 // Input/Output Ports initialization
+; 0000 0024 // Port A initialization - на вывод младшего байта дв. кода частоты
+; 0000 0025 DDRA=(1<<DDA7)|(1<<DDA6)|(1<<DDA5)|(1<<DDA4)|(1<<DDA3)|(1<<DDA2)|(1<<DDA1)|(1<<DDA0);
+;PCODE: $0000002A VOL: 0
+;PCODE: $0000002B VOL: 0
+; 0000 0026 PORTA=(0<<PORTA7)|(0<<PORTA6)|(0<<PORTA5)|(0<<PORTA4)|(0<<PORTA3)|(0<<PORTA2)|(0<<PORTA1)|(0<<PORTA0);
+;PCODE: $0000002C VOL: 0
+;PCODE: $0000002D VOL: 0
+; 0000 0027 
+; 0000 0028 // Port D initialization - на вывод старшего байта дв. кода частоты
+; 0000 0029 DDRD=(1<<DDD7)|(1<<DDD6)|(1<<DDD5)|(1<<DDD4)|(1<<DDD3)|(1<<DDD2)|(1<<DDD1)|(1<<DDD0);
+;PCODE: $0000002E VOL: 0
+;PCODE: $0000002F VOL: 0
+; 0000 002A PORTD=(0<<PORTD7)|(0<<PORTD6)|(0<<PORTD5)|(0<<PORTD4)|(0<<PORTD3)|(0<<PORTD2)|(0<<PORTD1)|(0<<PORTD0);
+;PCODE: $00000030 VOL: 0
+;PCODE: $00000031 VOL: 0
+; 0000 002B 
+; 0000 002C // Timer/Counter 1 initialization
+; 0000 002D // Clock source: T1 pin Rising Edge -  режим Normal счета импульсов с внешнего входа МК T1
+; 0000 002E // Mode: Normal top=0xFFFF
+; 0000 002F // OC1A output: Disconnected
+; 0000 0030 // OC1B output: Disconnected
+; 0000 0031 // Noise Canceler: Off
+; 0000 0032 // Input Capture on Falling Edge
+; 0000 0033 // Timer1 Overflow Interrupt: On - разрешение прерывания по переполнению
+; 0000 0034 // Input Capture Interrupt: Off
+; 0000 0035 // Compare A Match Interrupt: Off
+; 0000 0036 // Compare B Match Interrupt: Off
+; 0000 0037 TCCR1A=(0<<COM1A1) | (0<<COM1A0) | (0<<COM1B1) | (0<<COM1B0) | (0<<WGM11) | (0<<WGM10);
+;PCODE: $00000032 VOL: 0
+;PCODE: $00000033 VOL: 0
+; 0000 0038 TCCR1B=(0<<ICNC1) | (0<<ICES1) | (0<<WGM13) | (0<<WGM12) | (1<<CS12) | (1<<CS11) | (1<<CS10);
+;PCODE: $00000034 VOL: 0
+;PCODE: $00000035 VOL: 0
+; 0000 0039 TCNT1H=0x00;
+;PCODE: $00000036 VOL: 0
+;PCODE: $00000037 VOL: 0
+; 0000 003A TCNT1L=0x00;
+;PCODE: $00000038 VOL: 0
+;PCODE: $00000039 VOL: 0
+; 0000 003B ICR1H=0x00;
+;PCODE: $0000003A VOL: 0
+;PCODE: $0000003B VOL: 0
+; 0000 003C ICR1L=0x00;
+;PCODE: $0000003C VOL: 0
+;PCODE: $0000003D VOL: 0
+; 0000 003D OCR1AH=0x00;
+;PCODE: $0000003E VOL: 0
+;PCODE: $0000003F VOL: 0
+; 0000 003E OCR1AL=0x00;
+;PCODE: $00000040 VOL: 0
+;PCODE: $00000041 VOL: 0
+; 0000 003F OCR1BH=0x00;
+;PCODE: $00000042 VOL: 0
+;PCODE: $00000043 VOL: 0
+; 0000 0040 OCR1BL=0x00;
+;PCODE: $00000044 VOL: 0
+;PCODE: $00000045 VOL: 0
+; 0000 0041 
+; 0000 0042 // Timer/Counter 2 initialization
+; 0000 0043 // Clock source: TOSC1 pin - источник тактовых импульсов часовой кварцевый резонатор f=32768Гц
+; 0000 0044 // Clock value: PCK2/256 - коэффициент деления предделителя 256, частота тактирования T2 ft2=32768/256=128Гц
+; 0000 0045 // Mode: CTC top=OCR2A   - режим сброс при совпадении, модуль счета в OCR2
+; 0000 0046 // OC2 output: Disconnected
+; 0000 0047 ASSR=1<<AS2;
+;PCODE: $00000046 VOL: 0
+;PCODE: $00000047 VOL: 0
+; 0000 0048 TCCR2=(0<<PWM2) | (0<<COM21) | (0<<COM20) | (1<<CTC2) | (1<<CS22) | (1<<CS21) | (0<<CS20);
+;PCODE: $00000048 VOL: 0
+;PCODE: $00000049 VOL: 0
+; 0000 0049 TCNT2=0;
+;PCODE: $0000004A VOL: 0
+;PCODE: $0000004B VOL: 0
+; 0000 004A OCR2=127; //возникновение прерывания по совпадению Т2 через интервал равный (1/ft2)*(OCR2+1)=1 сек
+;PCODE: $0000004C VOL: 0
+;PCODE: $0000004D VOL: 0
+; 0000 004B 
+; 0000 004C // Timer(s)/Counter(s) Interrupt(s) initialization - разрешение прерываний по совпадению T2 и переполн. T1
+; 0000 004D TIMSK=(1<<OCIE2)|(0<<TOIE2)|(0<<TICIE1)|(0<<OCIE1A)|(0<<OCIE1B)|(1<<TOIE1)|(0<<OCIE0)|(0<<TOIE0);
+;PCODE: $0000004E VOL: 0
+;PCODE: $0000004F VOL: 0
+; 0000 004E 
+; 0000 004F // Global enable interrupts - глобальное разрешение прерываний
+; 0000 0050 #asm("sei")
+;PCODE: $00000050 VOL: 0
+	sei
+;PCODE: $00000051 VOL: 0
+; 0000 0051 
+; 0000 0052 while (1);  //пустой бесконечный цикл - фоновая программа
+;PCODE: $00000052 VOL: 0
+;PCODE: $00000053 VOL: 0
+;PCODE: $00000054 VOL: 0
+; 0000 0053 
+; 0000 0054 }
+;PCODE: $00000055 VOL: 0
+;PCODE: $00000056 VOL: 0
+;PCODE: $00000057 VOL: 0
