@@ -1,35 +1,38 @@
 
-AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.asm Mon Feb 02 21:22:01 2015
+AVRASM ver. 2.1.30  F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 2 таймеры\Моя лаба\List\FrequencyMeter.asm Thu Sep 30 09:11:06 2021
 
                  
                  
-                 ;CodeVisionAVR C Compiler V2.05.3 Standard
-                 ;(C) Copyright 1998-2011 Pavel Haiduc, HP InfoTech s.r.l.
+                 ;CodeVisionAVR C Compiler V3.12 Advanced
+                 ;(C) Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
                  ;http://www.hpinfotech.com
                  
-                 ;Chip type                : ATmega16
-                 ;Program type             : Application
-                 ;Clock frequency          : 8,000000 MHz
-                 ;Memory model             : Small
-                 ;Optimize for             : Size
-                 ;(s)printf features       : int, width
-                 ;(s)scanf features        : int, width
-                 ;External RAM size        : 0
-                 ;Data Stack size          : 256 byte(s)
-                 ;Heap size                : 0 byte(s)
-                 ;Promote 'char' to 'int'  : Yes
-                 ;'char' is unsigned       : Yes
-                 ;8 bit enums              : Yes
-                 ;Global 'const' stored in FLASH     : No
+                 ;Build configuration    : Release
+                 ;Chip type              : ATmega16
+                 ;Program type           : Application
+                 ;Clock frequency        : 8,000000 MHz
+                 ;Memory model           : Small
+                 ;Optimize for           : Size
+                 ;(s)printf features     : int, width
+                 ;(s)scanf features      : int, width
+                 ;External RAM size      : 0
+                 ;Data Stack size        : 256 byte(s)
+                 ;Heap size              : 0 byte(s)
+                 ;Promote 'char' to 'int': Yes
+                 ;'char' is unsigned     : Yes
+                 ;8 bit enums            : Yes
+                 ;Global 'const' stored in FLASH: No
                  ;Enhanced function parameter passing: Yes
-                 ;Enhanced core instructions         : On
-                 ;Smart register allocation          : On
-                 ;Automatic register allocation      : On
+                 ;Enhanced core instructions: On
+                 ;Automatic register allocation for global variables: On
+                 ;Smart register allocation: On
+                 
+                 	#define _MODEL_SMALL_
                  
                  	#pragma AVRPART ADMIN PART_NAME ATmega16
                  	#pragma AVRPART MEMORY PROG_FLASH 16384
                  	#pragma AVRPART MEMORY EEPROM 512
-                 	#pragma AVRPART MEMORY INT_SRAM SIZE 1119
+                 	#pragma AVRPART MEMORY INT_SRAM SIZE 1024
                  	#pragma AVRPART MEMORY INT_SRAM START_ADDR 0x60
                  
                  	#define CALL_SUPPORTED 1
@@ -609,27 +612,40 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
                  	.ENDM
                  
                  	.MACRO __CALL2EN
+                 	PUSH R26
+                 	PUSH R27
                  	LDI  R26,LOW(@0+(@1))
                  	LDI  R27,HIGH(@0+(@1))
                  	CALL __EEPROMRDW
+                 	POP  R27
+                 	POP  R26
+                 	ICALL
+                 	.ENDM
+                 
+                 	.MACRO __CALL2EX
+                 	SUBI R26,LOW(-@0)
+                 	SBCI R27,HIGH(-@0)
+                 	CALL __EEPROMRDD
                  	ICALL
                  	.ENDM
                  
                  	.MACRO __GETW1STACK
-                 	IN   R26,SPL
-                 	IN   R27,SPH
-                 	ADIW R26,@0+1
-                 	LD   R30,X+
-                 	LD   R31,X
+                 	IN   R30,SPL
+                 	IN   R31,SPH
+                 	ADIW R30,@0+1
+                 	LD   R0,Z+
+                 	LD   R31,Z
+                 	MOV  R30,R0
                  	.ENDM
                  
                  	.MACRO __GETD1STACK
-                 	IN   R26,SPL
-                 	IN   R27,SPH
-                 	ADIW R26,@0+1
-                 	LD   R30,X+
-                 	LD   R31,X+
-                 	LD   R22,X
+                 	IN   R30,SPL
+                 	IN   R31,SPH
+                 	ADIW R30,@0+1
+                 	LD   R0,Z+
+                 	LD   R1,Z+
+                 	LD   R22,Z
+                 	MOVW R30,R0
                  	.ENDM
                  
                  	.MACRO __NBST
@@ -1174,6 +1190,7 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
                  
                  	.CSEG
                  _ext_int1_isr:
+                 ; .FSTART _ext_int1_isr
 000048 93ea      	ST   -Y,R30
                  ; 0000 0006 TCNT0=0x00;         //запуск ТС0 с нуля
 000049 e0e0      	LDI  R30,LOW(0)
@@ -1186,17 +1203,19 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
 00004e bdee      	OUT  0x2E,R30
                  ; 0000 0009 }
 00004f c006      	RJMP _0x7
+                 ; .FEND
                  ;
                  ;// Timer1 output compare A interrupt service routine, обработчик прерывания по совпадению A
                  ;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
                  ; 0000 000D {
                  _timer1_compa_isr:
+                 ; .FSTART _timer1_compa_isr
 000050 93ea      	ST   -Y,R30
                  ; 0000 000E TCCR0=0x00;         //Останов TC0
 000051 e0e0      	LDI  R30,LOW(0)
 000052 bfe3      	OUT  0x33,R30
                  ; 0000 000F TCCR1B=0x00;        //Останов TC1
-000053 d030      	RCALL SUBOPT_0x0
+000053 d02f      	RCALL SUBOPT_0x0
                  ; 0000 0010 TCNT1H=0x00;        //Обнуление счетного регистра TC1
                  ; 0000 0011 TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
                  ; 0000 0012 PORTA=TCNT0;        //Вывод в порт A частоты в герцах
@@ -1206,12 +1225,14 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
                  _0x7:
 000056 91e9      	LD   R30,Y+
 000057 9518      	RETI
+                 ; .FEND
                  ;
                  ;// Declare your global variables here
                  ;
                  ;void main(void)
                  ; 0000 0018 {
                  _main:
+                 ; .FSTART _main
                  ; 0000 0019 // Declare your local variables here
                  ; 0000 001A 
                  ; 0000 001B // Input/Output Ports initialization
@@ -1269,7 +1290,7 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
                  ; 0000 0041 TCCR1A=0x00;
 000066 bdef      	OUT  0x2F,R30
                  ; 0000 0042 TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
-000067 d01c      	RCALL SUBOPT_0x0
+000067 d01b      	RCALL SUBOPT_0x0
                  ; 0000 0043 TCNT1H=0x00;
                  ; 0000 0044 TCNT1L=0x00;
                  ; 0000 0045 ICR1H=0x00;
@@ -1277,17 +1298,16 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
 000069 bde7      	OUT  0x27,R30
                  ; 0000 0046 ICR1L=0x00;
 00006a bde6      	OUT  0x26,R30
-                 ; 0000 0047 OCR1AH=0x1E;        //Занесение в регистр сравнения A значения
-00006b e1ee      	LDI  R30,LOW(30)
-00006c bdeb      	OUT  0x2B,R30
-                 ; 0000 0048 OCR1AL=0x85;        //для формирования Tэт=1сек (7813)
-00006d e8e5      	LDI  R30,LOW(133)
-00006e bdea      	OUT  0x2A,R30
+                 ; 0000 0047 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
+00006b bdeb      	OUT  0x2B,R30
+                 ; 0000 0048 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
+00006c e0e7      	LDI  R30,LOW(7)
+00006d bdea      	OUT  0x2A,R30
                  ; 0000 0049 OCR1BH=0x00;
-00006f e0e0      	LDI  R30,LOW(0)
-000070 bde9      	OUT  0x29,R30
+00006e e0e0      	LDI  R30,LOW(0)
+00006f bde9      	OUT  0x29,R30
                  ; 0000 004A OCR1BL=0x00;
-000071 bde8      	OUT  0x28,R30
+000070 bde8      	OUT  0x28,R30
                  ; 0000 004B 
                  ; 0000 004C // External Interrupt(s) initialization
                  ; 0000 004D // INT0: Off
@@ -1295,55 +1315,56 @@ AVRASM ver. 2.1.30  D:\00_PROGRAMS\Posobie_2\FrequencyMeter\List\FrequencyMeter.
                  ; 0000 004F // INT1 Mode: Rising Edge
                  ; 0000 0050 // INT2: Off
                  ; 0000 0051 GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
-000072 b7eb      	IN   R30,0x3B
-000073 68e0      	ORI  R30,0x80
-000074 bfeb      	OUT  0x3B,R30
+000071 b7eb      	IN   R30,0x3B
+000072 68e0      	ORI  R30,0x80
+000073 bfeb      	OUT  0x3B,R30
                  ; 0000 0052 MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
-000075 e0ec      	LDI  R30,LOW(12)
-000076 bfe5      	OUT  0x35,R30
+000074 e0ec      	LDI  R30,LOW(12)
+000075 bfe5      	OUT  0x35,R30
                  ; 0000 0053 MCUCSR=0x00;
-000077 e0e0      	LDI  R30,LOW(0)
-000078 bfe4      	OUT  0x34,R30
+000076 e0e0      	LDI  R30,LOW(0)
+000077 bfe4      	OUT  0x34,R30
                  ; 0000 0054 GIFR=1<<INTF1;				//Сброс флага прерывания
-000079 e8e0      	LDI  R30,LOW(128)
-00007a bfea      	OUT  0x3A,R30
+000078 e8e0      	LDI  R30,LOW(128)
+000079 bfea      	OUT  0x3A,R30
                  ; 0000 0055 
                  ; 0000 0056 // Timer(s)/Counter(s) Interrupt(s) initialization
                  ; 0000 0057 TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
-00007b e1e0      	LDI  R30,LOW(16)
-00007c bfe9      	OUT  0x39,R30
+00007a e1e0      	LDI  R30,LOW(16)
+00007b bfe9      	OUT  0x39,R30
                  ; 0000 0058 
                  ; 0000 0059 // Analog Comparator initialization
                  ; 0000 005A // Analog Comparator: Off
                  ; 0000 005B // Analog Comparator Input Capture by Timer/Counter 1: Off
                  ; 0000 005C ACSR=0x80;
-00007d e8e0      	LDI  R30,LOW(128)
-00007e b9e8      	OUT  0x8,R30
+00007c e8e0      	LDI  R30,LOW(128)
+00007d b9e8      	OUT  0x8,R30
                  ; 0000 005D SFIOR=0x00;
-00007f e0e0      	LDI  R30,LOW(0)
-000080 bfe0      	OUT  0x30,R30
+00007e e0e0      	LDI  R30,LOW(0)
+00007f bfe0      	OUT  0x30,R30
                  ; 0000 005E 
                  ; 0000 005F // Global enable interrupts
                  ; 0000 0060 #asm("sei")         //Разрешение прерываний
-000081 9478      	sei
+000080 9478      	sei
                  ; 0000 0061 
                  ; 0000 0062 while (1)           //Бесконечный цикл
                  _0x3:
                  ; 0000 0063       {
                  ; 0000 0064       };
-000082 cfff      	RJMP _0x3
+000081 cfff      	RJMP _0x3
                  ; 0000 0065 }
                  _0x6:
-000083 cfff      	RJMP _0x6
+000082 cfff      	RJMP _0x6
+                 ; .FEND
                  
                  	.CSEG
                  ;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:1 WORDS
                  SUBOPT_0x0:
-000084 e0e0      	LDI  R30,LOW(0)
-000085 bdee      	OUT  0x2E,R30
-000086 bded      	OUT  0x2D,R30
-000087 bdec      	OUT  0x2C,R30
-000088 9508      	RET
+000083 e0e0      	LDI  R30,LOW(0)
+000084 bdee      	OUT  0x2E,R30
+000085 bded      	OUT  0x2D,R30
+000086 bdec      	OUT  0x2C,R30
+000087 9508      	RET
                  
                  
                  	.CSEG
@@ -1369,7 +1390,7 @@ ATmega16 register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
 r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  68 r31:   4 
+r24:   4 r25:   1 r26:   2 r27:   1 r28:   1 r29:   1 r30:  67 r31:   4 
 x  :   2 y  :   3 z  :   0 
 Registers used: 10 out of 35 (28.6%)
 
@@ -1384,7 +1405,7 @@ cbi   :   0 cbr   :   0 clc   :   0 clh   :   0 cli   :   1 cln   :   0
 clr   :   2 cls   :   0 clt   :   0 clv   :   0 clz   :   0 com   :   0 
 cp    :   0 cpc   :   0 cpi   :   0 cpse  :   0 dec   :   1 des   :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   2 inc   :   0 jmp   :  22 ld    :   1 ldd   :   0 ldi   :  29 
+in    :   2 inc   :   0 jmp   :  22 ld    :   1 ldd   :   0 ldi   :  28 
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
 ori   :   1 out   :  41 pop   :   0 push  :   0 rcall :   2 ret   :   1 
@@ -1399,8 +1420,8 @@ Instructions used: 17 out of 116 (14.7%)
 ATmega16 memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000112    274      0    274   16384   1.7%
-[.dseg] 0x000060 0x000160      0      0      0    1119   0.0%
+[.cseg] 0x000000 0x000110    272      0    272   16384   1.7%
+[.dseg] 0x000060 0x000160      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
 Assembly complete, 0 errors, 0 warnings

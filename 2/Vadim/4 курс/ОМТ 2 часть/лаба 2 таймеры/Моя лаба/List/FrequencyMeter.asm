@@ -1,31 +1,34 @@
 
-;CodeVisionAVR C Compiler V2.05.3 Standard
-;(C) Copyright 1998-2011 Pavel Haiduc, HP InfoTech s.r.l.
+;CodeVisionAVR C Compiler V3.12 Advanced
+;(C) Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 ;http://www.hpinfotech.com
 
-;Chip type                : ATmega16
-;Program type             : Application
-;Clock frequency          : 8,000000 MHz
-;Memory model             : Small
-;Optimize for             : Size
-;(s)printf features       : int, width
-;(s)scanf features        : int, width
-;External RAM size        : 0
-;Data Stack size          : 256 byte(s)
-;Heap size                : 0 byte(s)
-;Promote 'char' to 'int'  : Yes
-;'char' is unsigned       : Yes
-;8 bit enums              : Yes
-;Global 'const' stored in FLASH     : No
+;Build configuration    : Release
+;Chip type              : ATmega16
+;Program type           : Application
+;Clock frequency        : 8,000000 MHz
+;Memory model           : Small
+;Optimize for           : Size
+;(s)printf features     : int, width
+;(s)scanf features      : int, width
+;External RAM size      : 0
+;Data Stack size        : 256 byte(s)
+;Heap size              : 0 byte(s)
+;Promote 'char' to 'int': Yes
+;'char' is unsigned     : Yes
+;8 bit enums            : Yes
+;Global 'const' stored in FLASH: No
 ;Enhanced function parameter passing: Yes
-;Enhanced core instructions         : On
-;Smart register allocation          : On
-;Automatic register allocation      : On
+;Enhanced core instructions: On
+;Automatic register allocation for global variables: On
+;Smart register allocation: On
+
+	#define _MODEL_SMALL_
 
 	#pragma AVRPART ADMIN PART_NAME ATmega16
 	#pragma AVRPART MEMORY PROG_FLASH 16384
 	#pragma AVRPART MEMORY EEPROM 512
-	#pragma AVRPART MEMORY INT_SRAM SIZE 1119
+	#pragma AVRPART MEMORY INT_SRAM SIZE 1024
 	#pragma AVRPART MEMORY INT_SRAM START_ADDR 0x60
 
 	#define CALL_SUPPORTED 1
@@ -605,27 +608,40 @@ __DELAY_USW_LOOP:
 	.ENDM
 
 	.MACRO __CALL2EN
+	PUSH R26
+	PUSH R27
 	LDI  R26,LOW(@0+(@1))
 	LDI  R27,HIGH(@0+(@1))
 	CALL __EEPROMRDW
+	POP  R27
+	POP  R26
+	ICALL
+	.ENDM
+
+	.MACRO __CALL2EX
+	SUBI R26,LOW(-@0)
+	SBCI R27,HIGH(-@0)
+	CALL __EEPROMRDD
 	ICALL
 	.ENDM
 
 	.MACRO __GETW1STACK
-	IN   R26,SPL
-	IN   R27,SPH
-	ADIW R26,@0+1
-	LD   R30,X+
-	LD   R31,X
+	IN   R30,SPL
+	IN   R31,SPH
+	ADIW R30,@0+1
+	LD   R0,Z+
+	LD   R31,Z
+	MOV  R30,R0
 	.ENDM
 
 	.MACRO __GETD1STACK
-	IN   R26,SPL
-	IN   R27,SPH
-	ADIW R26,@0+1
-	LD   R30,X+
-	LD   R31,X+
-	LD   R22,X
+	IN   R30,SPL
+	IN   R31,SPH
+	ADIW R30,@0+1
+	LD   R0,Z+
+	LD   R1,Z+
+	LD   R22,Z
+	MOVW R30,R0
 	.ENDM
 
 	.MACRO __NBST
@@ -1170,6 +1186,7 @@ __CLEAR_SRAM:
 
 	.CSEG
 _ext_int1_isr:
+; .FSTART _ext_int1_isr
 	ST   -Y,R30
 ; 0000 0006 TCNT0=0x00;         //запуск ТС0 с нуля
 	LDI  R30,LOW(0)
@@ -1182,11 +1199,13 @@ _ext_int1_isr:
 	OUT  0x2E,R30
 ; 0000 0009 }
 	RJMP _0x7
+; .FEND
 ;
 ;// Timer1 output compare A interrupt service routine, обработчик прерывания по совпадению A
 ;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
 ; 0000 000D {
 _timer1_compa_isr:
+; .FSTART _timer1_compa_isr
 	ST   -Y,R30
 ; 0000 000E TCCR0=0x00;         //Останов TC0
 	LDI  R30,LOW(0)
@@ -1202,12 +1221,14 @@ _timer1_compa_isr:
 _0x7:
 	LD   R30,Y+
 	RETI
+; .FEND
 ;
 ;// Declare your global variables here
 ;
 ;void main(void)
 ; 0000 0018 {
 _main:
+; .FSTART _main
 ; 0000 0019 // Declare your local variables here
 ; 0000 001A 
 ; 0000 001B // Input/Output Ports initialization
@@ -1273,11 +1294,10 @@ _main:
 	OUT  0x27,R30
 ; 0000 0046 ICR1L=0x00;
 	OUT  0x26,R30
-; 0000 0047 OCR1AH=0x1E;        //Занесение в регистр сравнения A значения
-	LDI  R30,LOW(30)
+; 0000 0047 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
 	OUT  0x2B,R30
-; 0000 0048 OCR1AL=0x85;        //для формирования Tэт=1сек (7813)
-	LDI  R30,LOW(133)
+; 0000 0048 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
+	LDI  R30,LOW(7)
 	OUT  0x2A,R30
 ; 0000 0049 OCR1BH=0x00;
 	LDI  R30,LOW(0)
@@ -1331,6 +1351,7 @@ _0x3:
 ; 0000 0065 }
 _0x6:
 	RJMP _0x6
+; .FEND
 
 	.CSEG
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:1 WORDS
