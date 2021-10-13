@@ -1272,19 +1272,38 @@ _main:
 ; .FSTART _main
 ; 0000 0010 char str[15];  //выводима€ строка ТPROM_ELТ
 ; 0000 0011     char res[16];
-; 0000 0012      float c=5.375;
-; 0000 0013      sprintf (str,  "Goncharenko V ");
-	SBIW R28,35
-	CALL SUBOPT_0x0
+; 0000 0012          float c=5.375;
+; 0000 0013          float b=12.136;
+; 0000 0014     float result=c+b;
+; 0000 0015 
+; 0000 0016      sprintf (str,  "Goncharenko V ");
+	SBIW R28,43
+	LDI  R30,LOW(14)
+	STD  Y+4,R30
+	LDI  R30,LOW(45)
+	STD  Y+5,R30
+	LDI  R30,LOW(66)
+	STD  Y+6,R30
+	LDI  R30,LOW(65)
+	STD  Y+7,R30
+	LDI  R30,LOW(0)
+	STD  Y+8,R30
+	STD  Y+9,R30
 	LDI  R30,LOW(172)
-	STD  Y+2,R30
+	STD  Y+10,R30
 	LDI  R30,LOW(64)
-	STD  Y+3,R30
-;	str -> Y+20
-;	res -> Y+4
-;	c -> Y+0
+	STD  Y+11,R30
+;	str -> Y+28
+;	res -> Y+12
+;	c -> Y+8
+;	b -> Y+4
+;	result -> Y+0
+	CALL SUBOPT_0x0
+	__GETD2S 8
+	CALL __ADDF12
+	CALL __PUTD1S0
 	MOVW R30,R28
-	ADIW R30,20
+	ADIW R30,28
 	ST   -Y,R31
 	ST   -Y,R30
 	__POINTW1FN _0x0,0
@@ -1293,71 +1312,71 @@ _main:
 	LDI  R24,0
 	CALL _sprintf
 	ADIW R28,4
-; 0000 0014 // Alphanumeric LCD initialization
-; 0000 0015 // Connections are specified in the
-; 0000 0016 // Project|Configure|C Compiler|Libraries|Alphanumeric LCD menu:
-; 0000 0017 // RS - PORTC Bit 0
-; 0000 0018 // RD - PORTC Bit 1
-; 0000 0019 // EN - PORTC Bit 2
-; 0000 001A // D4 - PORTC Bit 4
-; 0000 001B // D5 - PORTC Bit 5
-; 0000 001C // D6 - PORTC Bit 6
-; 0000 001D // D7 - PORTC Bit 7
-; 0000 001E // Characters/line: 16
-; 0000 001F // LCD module initialization
-; 0000 0020 lcd_init(16);
+; 0000 0017 // Alphanumeric LCD initialization
+; 0000 0018 // Connections are specified in the
+; 0000 0019 // Project|Configure|C Compiler|Libraries|Alphanumeric LCD menu:
+; 0000 001A // RS - PORTC Bit 0
+; 0000 001B // RD - PORTC Bit 1
+; 0000 001C // EN - PORTC Bit 2
+; 0000 001D // D4 - PORTC Bit 4
+; 0000 001E // D5 - PORTC Bit 5
+; 0000 001F // D6 - PORTC Bit 6
+; 0000 0020 // D7 - PORTC Bit 7
+; 0000 0021 // Characters/line: 16
+; 0000 0022 // LCD module initialization
+; 0000 0023 lcd_init(16);
 	LDI  R26,LOW(16)
 	CALL _lcd_init
-; 0000 0021 //_lcd_ready();             //этой функции в библиотеке alcd нет
-; 0000 0022 //_lcd_write_data(0x01);    //очищаем экран
-; 0000 0023 //_lcd_write_data(0x02);    //устанавливаем курсор в нулевую позицию диспле€*/
-; 0000 0024 _lcd_write_data(0x0f);      /*¬ключаем экран, включаем курсор, изображение
-; 0000 0025                             курсора делаем в виде мигающего знакоместа*/
+; 0000 0024 //_lcd_ready();             //этой функции в библиотеке alcd нет
+; 0000 0025 //_lcd_write_data(0x01);    //очищаем экран
+; 0000 0026 //_lcd_write_data(0x02);    //устанавливаем курсор в нулевую позицию диспле€*/
+; 0000 0027 _lcd_write_data(0x0f);      /*¬ключаем экран, включаем курсор, изображение
+; 0000 0028                             курсора делаем в виде мигающего знакоместа*/
 	LDI  R26,LOW(15)
 	CALL __lcd_write_data
-; 0000 0026 
-; 0000 0027 
-; 0000 0028 sprintf (res, "%4.3f  ", c);
+; 0000 0029 
+; 0000 002A 
+; 0000 002B sprintf (res, "%4.3f  ", result);
 	MOVW R30,R28
-	ADIW R30,4
+	ADIW R30,12
 	ST   -Y,R31
 	ST   -Y,R30
 	__POINTW1FN _0x0,15
 	ST   -Y,R31
 	ST   -Y,R30
-	CALL SUBOPT_0x1
+	CALL SUBOPT_0x0
 	CALL __PUTPARD1
 	LDI  R24,4
 	CALL _sprintf
 	ADIW R28,8
-; 0000 0029 
-; 0000 002A lcd_gotoxy(0,0);            //переводим курсор на 3-е знакоместо 2-ой строки
+; 0000 002C 
+; 0000 002D lcd_gotoxy(0,0);            //переводим курсор на 3-е знакоместо 2-ой строки
 	LDI  R30,LOW(0)
 	ST   -Y,R30
 	LDI  R26,LOW(0)
 	CALL _lcd_gotoxy
-; 0000 002B 
-; 0000 002C lcd_puts(str);              // выводим на экран строку
+; 0000 002E 
+; 0000 002F lcd_puts(str);              // выводим на экран строку
 	MOVW R26,R28
-	ADIW R26,20
+	ADIW R26,28
 	CALL _lcd_puts
-; 0000 002D lcd_putchar (a);            //выводим на экран цифру 5
+; 0000 0030 lcd_putchar (a);            //выводим на экран цифру 5
 	MOV  R26,R7
 	CALL _lcd_putchar
-; 0000 002E 
-; 0000 002F lcd_gotoxy(0,1);
+; 0000 0031 
+; 0000 0032 lcd_gotoxy(0,1);
 	LDI  R30,LOW(0)
 	ST   -Y,R30
 	LDI  R26,LOW(1)
 	CALL _lcd_gotoxy
-; 0000 0030 lcd_puts(res);
+; 0000 0033 lcd_puts(res);
 	MOVW R26,R28
-	ADIW R26,4
+	ADIW R26,12
 	CALL _lcd_puts
-; 0000 0031 while (1);
+; 0000 0034 while (1);
 _0x5:
 	RJMP _0x5
-; 0000 0032 }
+; 0000 0035 }
 _0x8:
 	RJMP _0x8
 ; .FEND
@@ -1403,7 +1422,7 @@ _0x2000012:
 	LDD  R26,Y+2
 	LDD  R27,Y+2+1
 	ADIW R26,2
-	CALL SUBOPT_0x2
+	CALL SUBOPT_0x1
 	SBIW R30,1
 	LDD  R26,Y+4
 	STD  Z+0,R26
@@ -1413,7 +1432,7 @@ _0x2000013:
 	CALL __GETW1P
 	TST  R31
 	BRMI _0x2000014
-	CALL SUBOPT_0x2
+	CALL SUBOPT_0x1
 _0x2000014:
 	RJMP _0x2000015
 _0x2000010:
@@ -1431,10 +1450,7 @@ _0x2000015:
 ; .FEND
 __ftoe_G100:
 ; .FSTART __ftoe_G100
-	ST   -Y,R27
-	ST   -Y,R26
-	SBIW R28,4
-	CALL SUBOPT_0x0
+	CALL SUBOPT_0x2
 	LDI  R30,LOW(128)
 	STD  Y+2,R30
 	LDI  R30,LOW(63)
@@ -1535,7 +1551,7 @@ _0x200002A:
 	MOVW R24,R22
 	CALL _floor
 	__PUTD1S 4
-	CALL SUBOPT_0x1
+	CALL SUBOPT_0x0
 	CALL SUBOPT_0x5
 	CALL __DIVF21
 	CALL __CFD1U
@@ -1626,7 +1642,7 @@ _0x2000030:
 	MOVW R26,R28
 	SUBI R26,LOW(-(92))
 	SBCI R27,HIGH(-(92))
-	CALL SUBOPT_0x2
+	CALL SUBOPT_0x1
 	SBIW R30,1
 	LPM  R30,Z
 	MOV  R18,R30
@@ -2504,10 +2520,7 @@ _0x20C0003:
 	.CSEG
 _ftoa:
 ; .FSTART _ftoa
-	ST   -Y,R27
-	ST   -Y,R26
-	SBIW R28,4
-	RCALL SUBOPT_0x0
+	RCALL SUBOPT_0x2
 	LDI  R30,LOW(0)
 	STD  Y+2,R30
 	LDI  R30,LOW(63)
@@ -2667,25 +2680,28 @@ __seed_G105:
 	.BYTE 0x4
 
 	.CSEG
-;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 7 TIMES, CODE SIZE REDUCTION:9 WORDS
 SUBOPT_0x0:
-	LDI  R30,LOW(0)
-	ST   Y,R30
-	STD  Y+1,R30
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 6 TIMES, CODE SIZE REDUCTION:7 WORDS
-SUBOPT_0x1:
 	__GETD1S 4
 	RET
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:3 WORDS
-SUBOPT_0x2:
+SUBOPT_0x1:
 	LD   R30,X+
 	LD   R31,X+
 	ADIW R30,1
 	ST   -X,R31
 	ST   -X,R30
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:2 WORDS
+SUBOPT_0x2:
+	ST   -Y,R27
+	ST   -Y,R26
+	SBIW R28,4
+	LDI  R30,LOW(0)
+	ST   Y,R30
+	STD  Y+1,R30
 	RET
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:33 WORDS
@@ -2698,7 +2714,7 @@ SUBOPT_0x3:
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:15 WORDS
 SUBOPT_0x4:
-	RCALL SUBOPT_0x1
+	RCALL SUBOPT_0x0
 	__GETD2S 12
 	CALL __CMPF12
 	RET

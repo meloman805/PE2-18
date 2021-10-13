@@ -14,8 +14,11 @@ char a = 0x33;              //выводимый символ Ц цифра Ђ3ї
 void main(void)
 {
 char str[15];  //выводима€ строка ТPROM_ELТ
-    char res[16];   
-     float c=5.375; 
+    char res[16]; 
+         float c=5.375;
+         float b=12.136;
+    float result=c+b;  
+ 
      sprintf (str,  "Goncharenko V ");
 // Alphanumeric LCD initialization
 // Connections are specified in the
@@ -37,7 +40,7 @@ _lcd_write_data(0x0f);      /*¬ключаем экран, включаем курсор, изображение
                             курсора делаем в виде мигающего знакоместа*/
 
 
-sprintf (res, "%d.5  ", c);
+sprintf (res, "%4.3f  ", c);
 
 lcd_gotoxy(0,0);            //переводим курсор на 3-е знакоместо 2-ой строки
 

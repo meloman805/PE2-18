@@ -1,0 +1,64 @@
+/*****************************************************
+Chip type               : ATmega16
+Program type            : Application
+AVR Core Clock frequency: 8,000000 MHz
+Memory model            : Small
+External RAM size       : 0
+Data Stack size         : 256
+*****************************************************/
+/*Здесь запуск АЦП на преобразование - по прерыванию INT0, а считывание данных с АЦП -
+по прерыванию готовности данных АЦП, здесь разрешать INT0 и писать его обработчик не надо,
+поскольку АЦП запустится на преобразование при установке флага INT0 в регистре GIFR*/
+#include <mega16.h>
+#include <delay.h>
+#define ADC_VREF_TYPE 0x00  //Определение выбора внешнего ИОН для АЦП
+
+// ADC interrupt service routine
+interrupt [ADC_INT] void adc_isr(void)
+{
+// Read the AD conversion result
+PORTB=ADCL;
+PORTC=ADCH;
+GIFR|=1<<INTF0;				//Сброс флага прерывания INT0 (записью 1!)
+}
+
+// Declare your global variables here
+
+void main(void)
+{
+// Declare your local variables here
+
+// Port B initialization
+PORTB=0x00;                 //PORTB - на вывод данных
+DDRB=0xFF;                  //для вывода младшего байта результата
+
+// Port C initialization
+PORTC=0x00;                 //4 мл. раздяда PORTC - на вывод данных
+DDRC=0x0F;                  //для вывода старшего байта результата
+
+// External Interrupt(s) initialization
+// INT0: Off
+// INT0 Mode: Falling Edge  //Внешнее прерывание INT0 здесь запрещено
+// INT1: Off                //Однако его флаг устанавливается в GIFR
+// INT2: Off
+//GICR|=0x40;
+MCUCR=1<<ISC01;	            //Установка флага внешнего прерыв. INT0 - по срезу,
+MCUCSR=0x00;                //флаг запускает тем самым преобразование AЦП
+//GIFR=0x40;
+
+// ADC initialization
+// ADC Clock frequency: 250,000 kHz
+// ADC Voltage Reference: AREF pin
+// ADC Auto Trigger Source: External IRQ0
+ADMUX=0x0B|(ADC_VREF_TYPE & 0xFF);/*Установка выбранного канала АЦП и ИОН:
+дифференциальный канал ADC1-ADC0 с коэф. предв. усиления 200 и внешний ИОН, */
+
+ADCSRA=0xAD;        //частота преобр. 250 кГц, разрешение прерывания
+                    //по готовности преобразованных данных
+SFIOR&=0x1F;
+SFIOR|=0x40;        //Запуск преобразования - по установке флага INT0 в GIFR
+
+// Global enable interrupts
+#asm("sei")                         //Разрешение прерываний
+while (1);
+}

@@ -1,0 +1,53 @@
+/*****************************************************
+Chip type               : ATmega16
+Program type            : Application
+AVR Core Clock frequency: 8,000000 MHz
+Memory model            : Small
+External RAM size       : 0
+Data Stack size         : 256
+*****************************************************/
+
+#include <mega16.h>
+#include <delay.h>
+#define ADC_VREF_TYPE 0x00          //определение выбранного ИОН
+
+// ADC interrupt service routine - обработчик прерыв. по готовн. данных АЦП
+interrupt [ADC_INT] void adc_isr(void)
+{
+// Place your code here
+PORTB=ADCL;                         //вывод преобразованного значения
+PORTC=ADCH;                         //на индикацию (в двоичном коде)
+}
+
+// Declare your global variables here
+
+void main(void)
+{
+// Declare your local variables here
+
+// Port B initialization
+PORTB=0x00;
+DDRB=0xFF;
+
+// Port C initialization
+PORTC=0x00;
+DDRC=0x0F;
+
+// ADC initialization
+// ADC Clock frequency: 250,000 kHz
+// ADC Voltage Reference: AREF pin
+// ADC Auto Trigger Source: Free Running
+ADMUX=ADC_VREF_TYPE & 0xff;         //Установка выбранного ИОН,
+ADMUX|=0x00;                        //канала ADC0
+ADCSRA=0xAD;                        //разрешение прерывания от АЦП, частота 250 кГц
+                                    //режим запуска в соотв ADTS2...0 SFIOR
+SFIOR&=0x1F;                        //Режим непрерывного преобразования
+ADCSRA|=1<<ADSC;                    //Первый запуск преобразования АЦП
+
+// Global enable interrupts
+#asm("sei")
+while (1)                           //Бесконечный цикл фоновой программы
+      {
+      // Place your code here
+      }
+}
