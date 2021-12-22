@@ -1,0 +1,176 @@
+#include <mega16.h>
+#include <delay.h>
+// Declare your global variables here
+//Определение линий портов для SPI МК Atmega328p
+#define SS PORTB4
+#define SCK PORTB7
+#define MOSI PORTB5
+ void SET(char addr, char data);
+//Определение адресов функциональных регистров max7219
+#define Intensity   0x0A        // интенсивность свечения дисплея
+#define ScanLimit   0x0B        // подключение числа столбцов
+#define ShutDown    0x0C        // погасить дисплей
+#define DecodeMode  0x09        // режим декодирования
+
+int FREQH=0;
+int DISPL=0;
+int i;
+
+// Timer 0 overflow interrupt service routine
+interrupt [TIM0_OVF] void timer0_ovf_isr(void)
+{
+// Place your code here
+ FREQH++;
+ DISPL= FREQH;
+ for(i=0;i<8;i++) 
+ {
+ SET(i+1,FREQH%10);
+  FREQH= FREQH/10;
+ } 
+}
+
+// External Interrupt 1 service routine, обработчик внешнего прерывания INT1
+interrupt [EXT_INT1] void ext_int1_isr(void)
+{
+FREQH=0;             //обнуления счётчика переполнения старшего регистра
+TCNT0=0x00;         //запуск ТС0 с нуля
+TCCR0=0x07;         //в режиме счета импульсов с внешнего входа PB0/T0
+TCCR1B=0x05;        //Запуск ТС1 - начало формирования Тэт
+}
+
+// Timer1 output compare A interrupt service routine, обработчик прерывания по совпадению A
+interrupt [TIM1_COMPA] void timer1_compa_isr(void)
+{
+TCCR0=0x00;         //Останов TC0
+TCCR1B=0x00;        //Останов TC1
+TCNT1H=0x00;        //Обнуление счетного регистра TC1
+TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
+PORTA=TCNT0;        //Вывод в порт A частоты в герцах
+TCNT2=FREQH;
+PORTC=FREQH;
+//SET(2,6);
+
+}
+
+// Declare your global variables here
+
+/*ФУНКЦИЯ ПЕРЕДАЧИ БАЙТА ПО SPI-ИНТЕРФЕЙСУ ОТ MASTER-устройства(МК)*/
+void SPI_MasterTransmit(char d) //в переменную d принимаем байт для отправки по SPI интерфейсу
+  {
+  SPDR = d;                     //передаем байт в сдвиговый регистр SPDR
+  while(~SPSR & (1<<SPIF));     //ждем пока появится 1 в разряде SPIF (7) регистра 
+                                //SPSR - признак завершения передачи байта
+  }                             //байт передан устройству Slave, возврат
+
+/*ФУНКЦИЯ ОТПРАВ    КИ АДРЕСА И ДАННЫХ ИМС MAX7219 ПО SPI-ИНТЕРФЕЙСУ*/
+void SET(char addr, char data)
+{
+PORTB&=~(1<<SS);    //на /SS установить 0 для выбора ведомого устройства (MAX7219)
+//Отправляем по SPI старший байт, содержащий в младшей тетраде адрес функционального регистра, 
+SPI_MasterTransmit(addr);       //отправляем по SPI addr:
+//Отправляем младший байт - данные режима 
+SPI_MasterTransmit(data);       //Отправляем по SPI data
+//на /SS установить 1, т.е. отключить MAX7219 и одновременно защелкнуть в нём 16-битное слово
+PORTB|=(1<<SS);                 
+}
+
+void main(void)
+{
+// Declare your local variables here
+
+// Input/Output Ports initialization
+// Port A initialization, Все разряды порта A - на вывод с нулевыми нач. значениями
+PORTA=0x00;
+DDRA=0xFF;
+
+
+// Port B initialization
+// Function: Bit7=Out Bit6=In Bit5=Out Bit4=Out Bit3=In Bit2=In Bit1=In Bit0=In 
+DDRB=(1<<DDB7) | (0<<DDB6) | (1<<DDB5) | (1<<DDB4) | (0<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+// State: Bit7=0 Bit6=T Bit5=0 Bit4=0 Bit3=T Bit2=T Bit1=T Bit0=T 
+PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
+
+// Port C initialization
+PORTC=0x00;
+DDRC=0xFF;
+
+// Port D initialization
+PORTD=0x00;
+DDRD=0x00;
+
+
+
+// Timer/Counter 0 initialization
+// Clock source: System Clock
+// Clock value: Timer 0 Stopped
+// Mode: Normal top=FFh
+// OC0 output: Disconnected
+TCCR0=0x00;         //в исходном состоянии TC0 остановлен и обнулен
+TCNT0=0x00;
+OCR0=0x00;
+
+// Timer/Counter 1 initialization
+// Clock source: System Clock
+// Clock value: Timer1 Stopped
+// Mode: Normal top=FFFFh
+// OC1A output: Discon.
+// OC1B output: Discon.
+// Noise Canceler: Off
+// Input Capture on Falling Edge
+// Timer1 Overflow Interrupt: Off
+// Input Capture Interrupt: Off
+// Compare A Match Interrupt: On
+// Compare B Match Interrupt: Off
+TCCR1A=0x00;
+TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
+TCNT1H=0x00;
+TCNT1L=0x00;
+ICR1H=0x00;
+ICR1L=0x00;
+OCR1AH=0x1E;        //Занесение в регистр сравнения A значения
+OCR1AL=0x83;        //для формирования Tэт=1сек (7813)
+OCR1BH=0x00;
+OCR1BL=0x00;
+
+// External Interrupt(s) initialization
+// INT0: Off
+// INT1: On
+// INT1 Mode: Rising Edge
+// INT2: Off
+GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
+MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
+MCUCSR=0x00;
+GIFR=1<<INTF1;				//Сброс флага прерывания
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (1<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (1<<TOIE0);	//Разрешение прерывания по совпадению A TC1 и переполнению TC0
+
+// Analog Comparator initialization
+// Analog Comparator: Off
+// Analog Comparator Input Capture by Timer/Counter 1: Off
+ACSR=0x80;
+SFIOR=0x00;
+
+
+// SPI initialization
+// SPI Type: Master
+// SPI Clock Rate: 2000,000 kHz
+// SPI Clock Phase: Cycle Start
+// SPI Clock Polarity: Low
+// SPI Data Order: MSB First
+SPCR=(0<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+SPSR=(1<<SPI2X);
+
+// Инициализация Max7219
+SET(Intensity, 0x03);      // Установка интенсивности свечения (от 0 до F)
+SET(ScanLimit, 0x07);      // Индикация всех 8 знакомест 7SEG разрешена
+SET(ShutDown, 1);          // Установка режима индикации, а не выключения 
+SET(DecodeMode, 0xFF);     // Установка режима декодирования (с декодированием встроенным знакогенератором)
+// Global enable interrupts
+#asm("sei")         //Разрешение прерываний
+
+while (1)           //Бесконечный цикл
+      { 
+     
+      };
+}

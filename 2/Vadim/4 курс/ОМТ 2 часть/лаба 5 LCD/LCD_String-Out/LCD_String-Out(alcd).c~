@@ -19,7 +19,7 @@ char str[15];  //выводима€ строка ТPROM_ELТ
          float b=12.136;
     float result=c+b;  
  
-     sprintf (str,  "Goncharenko V ");
+     sprintf (str,  "Goncharenko A ");
 // Alphanumeric LCD initialization
 // Connections are specified in the
 // Project|Configure|C Compiler|Libraries|Alphanumeric LCD menu:
@@ -40,7 +40,7 @@ _lcd_write_data(0x0f);      /*¬ключаем экран, включаем курсор, изображение
                             курсора делаем в виде мигающего знакоместа*/
 
 
-sprintf (res, "%4.3f  ", c);
+sprintf (res, "%4.3f  ", result);
 
 lcd_gotoxy(0,0);            //переводим курсор на 3-е знакоместо 2-ой строки
 

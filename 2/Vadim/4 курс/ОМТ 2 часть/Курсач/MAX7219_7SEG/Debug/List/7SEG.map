@@ -1,0 +1,24 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+freq                                                                              0x0300       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+i                                                                                 R4           1
+a                                                                                 R5,R6        2
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+ext_int0_isr                                                                      0x00051     27
+ext_int1_isr                                                                      0x0006C      5
+timer1_compa_isr                                                                  0x00071     42
+SPI_MasterTransmit                                                                0x0009B      9
+SET                                                                               0x000A4      9
+main                                                                              0x000AD     73

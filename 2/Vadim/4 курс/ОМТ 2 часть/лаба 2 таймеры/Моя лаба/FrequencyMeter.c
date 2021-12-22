@@ -1,4 +1,16 @@
 #include <mega16.h>
+#include <delay.h>
+// Declare your global variables here
+//Определение линий портов для SPI МК Atmega328p
+#define SS PORTB2
+#define SCK PORTB5
+#define MOSI PORTB3
+
+//Определение адресов функциональных регистров max7219
+#define Intensity   0x0A        // интенсивность свечения дисплея
+#define ScanLimit   0x0B        // подключение числа столбцов
+#define ShutDown    0x0C        // погасить дисплей
+#define DecodeMode  0x09        // режим декодирования
 
 // External Interrupt 1 service routine, обработчик внешнего прерывания INT1
 interrupt [EXT_INT1] void ext_int1_isr(void)
@@ -19,6 +31,27 @@ PORTA=TCNT0;        //Вывод в порт A частоты в герцах
 }
 
 // Declare your global variables here
+
+/*ФУНКЦИЯ ПЕРЕДАЧИ БАЙТА ПО SPI-ИНТЕРФЕЙСУ ОТ MASTER-устройства(МК)*/
+void SPI_MasterTransmit(char d) //в переменную d принимаем байт для отправки по SPI интерфейсу
+  {
+  SPDR = d;                     //передаем байт в сдвиговый регистр SPDR
+  while(~SPSR & (1<<SPIF));     //ждем пока появится 1 в разряде SPIF (7) регистра 
+                                //SPSR - признак завершения передачи байта
+  }                             //байт передан устройству Slave, возврат
+
+/*ФУНКЦИЯ ОТПРАВКИ АДРЕСА И ДАННЫХ ИМС MAX7219 ПО SPI-ИНТЕРФЕЙСУ*/
+void SET(char addr, char data)
+{
+PORTB&=~(1<<SS);    //на /SS установить 0 для выбора ведомого устройства (MAX7219)
+//Отправляем по SPI старший байт, содержащий в младшей тетраде адрес функционального регистра, 
+SPI_MasterTransmit(addr);       //отправляем по SPI addr:
+//Отправляем младший байт - данные режима 
+SPI_MasterTransmit(data);       //Отправляем по SPI data
+//на /SS установить 1, т.е. отключить MAX7219 и одновременно защелкнуть в нём 16-битное слово
+PORTB|=(1<<SS);                 
+}
+
 
 void main(void)
 {
@@ -91,6 +124,32 @@ TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
 // Analog Comparator Input Capture by Timer/Counter 1: Off
 ACSR=0x80;
 SFIOR=0x00;
+
+// SPI initialization
+// SPI Type: Master
+// SPI Clock Rate: 2000,000 kHz
+// SPI Clock Phase: Cycle Start
+// SPI Clock Polarity: Low
+// SPI Data Order: MSB First
+SPCR=(1<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+SPSR=(0<<SPI2X);
+
+// Clear the SPI interrupt flag
+#asm
+    in   r30,spsr
+    in   r30,spdr
+#endasm
+
+// TWI initialization
+// TWI disabled
+TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
+
+
+// Инициализация Max7219
+SET(Intensity, 0x03);      // Установка интенсивности свечения (от 0 до F)
+SET(ScanLimit, 0x07);      // Индикация всех 8 знакомест 7SEG разрешена
+SET(ShutDown, 1);          // Установка режима индикации, а не выключения 
+SET(DecodeMode, 0xFF);     // Установка режима декодирования (с декодированием встроенным знакогенератором)
 
 // Global enable interrupts
 #asm("sei")         //Разрешение прерываний

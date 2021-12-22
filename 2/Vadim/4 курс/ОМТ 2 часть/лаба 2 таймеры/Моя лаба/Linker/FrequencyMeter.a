@@ -23,198 +23,317 @@
 	#endif
 ;PCODE: $0000000B VOL: 0
 ;PCODE: $0000000C VOL: 0
+;#include <delay.h>
+;// Declare your global variables here
+;//Определение линий портов для SPI МК Atmega328p
+;#define SS PORTB2
+;#define SCK PORTB5
+;#define MOSI PORTB3
+;
+;//Определение адресов функциональных регистров max7219
+;#define Intensity   0x0A        // интенсивность свечения дисплея
+;#define ScanLimit   0x0B        // подключение числа столбцов
+;#define ShutDown    0x0C        // погасить дисплей
+;#define DecodeMode  0x09        // режим декодирования
 ;
 ;// External Interrupt 1 service routine, обработчик внешнего прерывания INT1
 ;interrupt [EXT_INT1] void ext_int1_isr(void)
-; 0000 0005 {
+; 0000 0011 {
 
 	.CSEG
 ;PCODE: $0000000D VOL: 0
 ;PCODE: $0000000E VOL: 0
-; 0000 0006 TCNT0=0x00;         //запуск ТС0 с нуля
+; 0000 0012 TCNT0=0x00;         //запуск ТС0 с нуля
 ;PCODE: $0000000F VOL: 0
 ;PCODE: $00000010 VOL: 0
-; 0000 0007 TCCR0=0x07;         //в режиме счета импульсов с внешнего входа PB0/T0
+; 0000 0013 TCCR0=0x07;         //в режиме счета импульсов с внешнего входа PB0/T0
 ;PCODE: $00000011 VOL: 0
 ;PCODE: $00000012 VOL: 0
-; 0000 0008 TCCR1B=0x05;        //Запуск ТС1 - начало формирования Тэт
+; 0000 0014 TCCR1B=0x05;        //Запуск ТС1 - начало формирования Тэт
 ;PCODE: $00000013 VOL: 0
 ;PCODE: $00000014 VOL: 0
-; 0000 0009 }
+; 0000 0015 }
 ;PCODE: $00000015 VOL: 0
 ;PCODE: $00000016 VOL: 0
 ;PCODE: $00000017 VOL: 0
 ;
 ;// Timer1 output compare A interrupt service routine, обработчик прерывания по совпадению A
 ;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
-; 0000 000D {
+; 0000 0019 {
 ;PCODE: $00000018 VOL: 0
 ;PCODE: $00000019 VOL: 0
-; 0000 000E TCCR0=0x00;         //Останов TC0
+; 0000 001A TCCR0=0x00;         //Останов TC0
 ;PCODE: $0000001A VOL: 0
 ;PCODE: $0000001B VOL: 0
-; 0000 000F TCCR1B=0x00;        //Останов TC1
+; 0000 001B TCCR1B=0x00;        //Останов TC1
 ;PCODE: $0000001C VOL: 0
 ;PCODE: $0000001D VOL: 0
-; 0000 0010 TCNT1H=0x00;        //Обнуление счетного регистра TC1
+; 0000 001C TCNT1H=0x00;        //Обнуление счетного регистра TC1
 ;PCODE: $0000001E VOL: 0
 ;PCODE: $0000001F VOL: 0
-; 0000 0011 TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
+; 0000 001D TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
 ;PCODE: $00000020 VOL: 0
 ;PCODE: $00000021 VOL: 0
-; 0000 0012 PORTA=TCNT0;        //Вывод в порт A частоты в герцах
+; 0000 001E PORTA=TCNT0;        //Вывод в порт A частоты в герцах
 ;PCODE: $00000022 VOL: 0
 ;PCODE: $00000023 VOL: 0
-; 0000 0013 }
+; 0000 001F }
 ;PCODE: $00000024 VOL: 0
 ;PCODE: $00000025 VOL: 0
 ;PCODE: $00000026 VOL: 0
 ;
 ;// Declare your global variables here
 ;
-;void main(void)
-; 0000 0018 {
+;/*ФУНКЦИЯ ПЕРЕДАЧИ БАЙТА ПО SPI-ИНТЕРФЕЙСУ ОТ MASTER-устройства(МК)*/
+;void SPI_MasterTransmit(char d) //в переменную d принимаем байт для отправки по SPI интерфейсу
+; 0000 0025   {
 ;PCODE: $00000027 VOL: 0
-; 0000 0019 // Declare your local variables here
-; 0000 001A 
-; 0000 001B // Input/Output Ports initialization
-; 0000 001C // Port A initialization, Все разряды порта A - на вывод с нулевыми нач. значениями
-; 0000 001D PORTA=0x00;
 ;PCODE: $00000028 VOL: 0
+; 0000 0026   SPDR = d;                     //передаем байт в сдвиговый регистр SPDR
 ;PCODE: $00000029 VOL: 0
-; 0000 001E DDRA=0xFF;
+;	d -> Y+0
 ;PCODE: $0000002A VOL: 0
 ;PCODE: $0000002B VOL: 0
-; 0000 001F 
-; 0000 0020 // Port B initialization
-; 0000 0021 PORTB=0x00;
+; 0000 0027   while(~SPSR & (1<<SPIF));     //ждем пока появится 1 в разряде SPIF (7) регистра
 ;PCODE: $0000002C VOL: 0
 ;PCODE: $0000002D VOL: 0
-; 0000 0022 DDRB=0x00;
 ;PCODE: $0000002E VOL: 0
 ;PCODE: $0000002F VOL: 0
-; 0000 0023 
-; 0000 0024 // Port C initialization
-; 0000 0025 PORTC=0x00;
 ;PCODE: $00000030 VOL: 0
 ;PCODE: $00000031 VOL: 0
-; 0000 0026 DDRC=0x00;
 ;PCODE: $00000032 VOL: 0
+; 0000 0028                                 //SPSR - признак завершения передачи байта
+; 0000 0029   }                             //байт передан устройству Slave, возврат
 ;PCODE: $00000033 VOL: 0
-; 0000 0027 
-; 0000 0028 // Port D initialization
-; 0000 0029 PORTD=0x00;
 ;PCODE: $00000034 VOL: 0
 ;PCODE: $00000035 VOL: 0
-; 0000 002A DDRD=0x00;
+;
+;/*ФУНКЦИЯ ОТПРАВКИ АДРЕСА И ДАННЫХ ИМС MAX7219 ПО SPI-ИНТЕРФЕЙСУ*/
+;void SET(char addr, char data)
+; 0000 002D {
 ;PCODE: $00000036 VOL: 0
 ;PCODE: $00000037 VOL: 0
-; 0000 002B 
-; 0000 002C // Timer/Counter 0 initialization
-; 0000 002D // Clock source: System Clock
-; 0000 002E // Clock value: Timer 0 Stopped
-; 0000 002F // Mode: Normal top=FFh
-; 0000 0030 // OC0 output: Disconnected
-; 0000 0031 TCCR0=0x00;         //в исходном состоянии TC0 остановлен и обнулен
+; 0000 002E PORTB&=~(1<<SS);    //на /SS установить 0 для выбора ведомого устройства (MAX7219)
 ;PCODE: $00000038 VOL: 0
+;	addr -> Y+1
+;	data -> Y+0
 ;PCODE: $00000039 VOL: 0
-; 0000 0032 TCNT0=0x00;
 ;PCODE: $0000003A VOL: 0
+; 0000 002F //Отправляем по SPI старший байт, содержащий в младшей тетраде адрес функционального регистра,
+; 0000 0030 SPI_MasterTransmit(addr);       //отправляем по SPI addr:
 ;PCODE: $0000003B VOL: 0
-; 0000 0033 OCR0=0x00;
 ;PCODE: $0000003C VOL: 0
+; 0000 0031 //Отправляем младший байт - данные режима
+; 0000 0032 SPI_MasterTransmit(data);       //Отправляем по SPI data
 ;PCODE: $0000003D VOL: 0
-; 0000 0034 
-; 0000 0035 // Timer/Counter 1 initialization
-; 0000 0036 // Clock source: System Clock
-; 0000 0037 // Clock value: Timer1 Stopped
-; 0000 0038 // Mode: Normal top=FFFFh
-; 0000 0039 // OC1A output: Discon.
-; 0000 003A // OC1B output: Discon.
-; 0000 003B // Noise Canceler: Off
-; 0000 003C // Input Capture on Falling Edge
-; 0000 003D // Timer1 Overflow Interrupt: Off
-; 0000 003E // Input Capture Interrupt: Off
-; 0000 003F // Compare A Match Interrupt: On
-; 0000 0040 // Compare B Match Interrupt: Off
-; 0000 0041 TCCR1A=0x00;
 ;PCODE: $0000003E VOL: 0
+; 0000 0033 //на /SS установить 1, т.е. отключить MAX7219 и одновременно защелкнуть в нём 16-битное слово
+; 0000 0034 PORTB|=(1<<SS);
 ;PCODE: $0000003F VOL: 0
-; 0000 0042 TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
 ;PCODE: $00000040 VOL: 0
+; 0000 0035 }
 ;PCODE: $00000041 VOL: 0
-; 0000 0043 TCNT1H=0x00;
 ;PCODE: $00000042 VOL: 0
 ;PCODE: $00000043 VOL: 0
-; 0000 0044 TCNT1L=0x00;
+;
+;
+;void main(void)
+; 0000 0039 {
 ;PCODE: $00000044 VOL: 0
+; 0000 003A // Declare your local variables here
+; 0000 003B 
+; 0000 003C // Input/Output Ports initialization
+; 0000 003D // Port A initialization, Все разряды порта A - на вывод с нулевыми нач. значениями
+; 0000 003E PORTA=0x00;
 ;PCODE: $00000045 VOL: 0
-; 0000 0045 ICR1H=0x00;
 ;PCODE: $00000046 VOL: 0
+; 0000 003F DDRA=0xFF;
 ;PCODE: $00000047 VOL: 0
-; 0000 0046 ICR1L=0x00;
 ;PCODE: $00000048 VOL: 0
+; 0000 0040 
+; 0000 0041 // Port B initialization
+; 0000 0042 PORTB=0x00;
 ;PCODE: $00000049 VOL: 0
-; 0000 0047 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
 ;PCODE: $0000004A VOL: 0
+; 0000 0043 DDRB=0x00;
 ;PCODE: $0000004B VOL: 0
-; 0000 0048 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
 ;PCODE: $0000004C VOL: 0
+; 0000 0044 
+; 0000 0045 // Port C initialization
+; 0000 0046 PORTC=0x00;
 ;PCODE: $0000004D VOL: 0
-; 0000 0049 OCR1BH=0x00;
 ;PCODE: $0000004E VOL: 0
+; 0000 0047 DDRC=0x00;
 ;PCODE: $0000004F VOL: 0
-; 0000 004A OCR1BL=0x00;
 ;PCODE: $00000050 VOL: 0
+; 0000 0048 
+; 0000 0049 // Port D initialization
+; 0000 004A PORTD=0x00;
 ;PCODE: $00000051 VOL: 0
-; 0000 004B 
-; 0000 004C // External Interrupt(s) initialization
-; 0000 004D // INT0: Off
-; 0000 004E // INT1: On
-; 0000 004F // INT1 Mode: Rising Edge
-; 0000 0050 // INT2: Off
-; 0000 0051 GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
 ;PCODE: $00000052 VOL: 0
+; 0000 004B DDRD=0x00;
 ;PCODE: $00000053 VOL: 0
 ;PCODE: $00000054 VOL: 0
-; 0000 0052 MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
+; 0000 004C 
+; 0000 004D // Timer/Counter 0 initialization
+; 0000 004E // Clock source: System Clock
+; 0000 004F // Clock value: Timer 0 Stopped
+; 0000 0050 // Mode: Normal top=FFh
+; 0000 0051 // OC0 output: Disconnected
+; 0000 0052 TCCR0=0x00;         //в исходном состоянии TC0 остановлен и обнулен
 ;PCODE: $00000055 VOL: 0
 ;PCODE: $00000056 VOL: 0
-; 0000 0053 MCUCSR=0x00;
+; 0000 0053 TCNT0=0x00;
 ;PCODE: $00000057 VOL: 0
 ;PCODE: $00000058 VOL: 0
-; 0000 0054 GIFR=1<<INTF1;				//Сброс флага прерывания
+; 0000 0054 OCR0=0x00;
 ;PCODE: $00000059 VOL: 0
 ;PCODE: $0000005A VOL: 0
 ; 0000 0055 
-; 0000 0056 // Timer(s)/Counter(s) Interrupt(s) initialization
-; 0000 0057 TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
+; 0000 0056 // Timer/Counter 1 initialization
+; 0000 0057 // Clock source: System Clock
+; 0000 0058 // Clock value: Timer1 Stopped
+; 0000 0059 // Mode: Normal top=FFFFh
+; 0000 005A // OC1A output: Discon.
+; 0000 005B // OC1B output: Discon.
+; 0000 005C // Noise Canceler: Off
+; 0000 005D // Input Capture on Falling Edge
+; 0000 005E // Timer1 Overflow Interrupt: Off
+; 0000 005F // Input Capture Interrupt: Off
+; 0000 0060 // Compare A Match Interrupt: On
+; 0000 0061 // Compare B Match Interrupt: Off
+; 0000 0062 TCCR1A=0x00;
 ;PCODE: $0000005B VOL: 0
 ;PCODE: $0000005C VOL: 0
-; 0000 0058 
-; 0000 0059 // Analog Comparator initialization
-; 0000 005A // Analog Comparator: Off
-; 0000 005B // Analog Comparator Input Capture by Timer/Counter 1: Off
-; 0000 005C ACSR=0x80;
+; 0000 0063 TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
 ;PCODE: $0000005D VOL: 0
 ;PCODE: $0000005E VOL: 0
-; 0000 005D SFIOR=0x00;
+; 0000 0064 TCNT1H=0x00;
 ;PCODE: $0000005F VOL: 0
 ;PCODE: $00000060 VOL: 0
-; 0000 005E 
-; 0000 005F // Global enable interrupts
-; 0000 0060 #asm("sei")         //Разрешение прерываний
+; 0000 0065 TCNT1L=0x00;
 ;PCODE: $00000061 VOL: 0
-	sei
 ;PCODE: $00000062 VOL: 0
-; 0000 0061 
-; 0000 0062 while (1)           //Бесконечный цикл
+; 0000 0066 ICR1H=0x00;
 ;PCODE: $00000063 VOL: 0
-; 0000 0063       {
-; 0000 0064       };
 ;PCODE: $00000064 VOL: 0
+; 0000 0067 ICR1L=0x00;
 ;PCODE: $00000065 VOL: 0
-; 0000 0065 }
 ;PCODE: $00000066 VOL: 0
+; 0000 0068 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
 ;PCODE: $00000067 VOL: 0
 ;PCODE: $00000068 VOL: 0
+; 0000 0069 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
+;PCODE: $00000069 VOL: 0
+;PCODE: $0000006A VOL: 0
+; 0000 006A OCR1BH=0x00;
+;PCODE: $0000006B VOL: 0
+;PCODE: $0000006C VOL: 0
+; 0000 006B OCR1BL=0x00;
+;PCODE: $0000006D VOL: 0
+;PCODE: $0000006E VOL: 0
+; 0000 006C 
+; 0000 006D // External Interrupt(s) initialization
+; 0000 006E // INT0: Off
+; 0000 006F // INT1: On
+; 0000 0070 // INT1 Mode: Rising Edge
+; 0000 0071 // INT2: Off
+; 0000 0072 GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
+;PCODE: $0000006F VOL: 0
+;PCODE: $00000070 VOL: 0
+;PCODE: $00000071 VOL: 0
+; 0000 0073 MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
+;PCODE: $00000072 VOL: 0
+;PCODE: $00000073 VOL: 0
+; 0000 0074 MCUCSR=0x00;
+;PCODE: $00000074 VOL: 0
+;PCODE: $00000075 VOL: 0
+; 0000 0075 GIFR=1<<INTF1;				//Сброс флага прерывания
+;PCODE: $00000076 VOL: 0
+;PCODE: $00000077 VOL: 0
+; 0000 0076 
+; 0000 0077 // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 0078 TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
+;PCODE: $00000078 VOL: 0
+;PCODE: $00000079 VOL: 0
+; 0000 0079 
+; 0000 007A // Analog Comparator initialization
+; 0000 007B // Analog Comparator: Off
+; 0000 007C // Analog Comparator Input Capture by Timer/Counter 1: Off
+; 0000 007D ACSR=0x80;
+;PCODE: $0000007A VOL: 0
+;PCODE: $0000007B VOL: 0
+; 0000 007E SFIOR=0x00;
+;PCODE: $0000007C VOL: 0
+;PCODE: $0000007D VOL: 0
+; 0000 007F 
+; 0000 0080 // SPI initialization
+; 0000 0081 // SPI Type: Master
+; 0000 0082 // SPI Clock Rate: 2000,000 kHz
+; 0000 0083 // SPI Clock Phase: Cycle Start
+; 0000 0084 // SPI Clock Polarity: Low
+; 0000 0085 // SPI Data Order: MSB First
+; 0000 0086 SPCR=(1<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+;PCODE: $0000007E VOL: 0
+;PCODE: $0000007F VOL: 0
+; 0000 0087 SPSR=(0<<SPI2X);
+;PCODE: $00000080 VOL: 0
+;PCODE: $00000081 VOL: 0
+; 0000 0088 
+; 0000 0089 // Clear the SPI interrupt flag
+; 0000 008A #asm
+;PCODE: $00000082 VOL: 0
+; 0000 008B     in   r30,spsr
+    in   r30,spsr
+;PCODE: $00000083 VOL: 0
+; 0000 008C     in   r30,spdr
+    in   r30,spdr
+;PCODE: $00000084 VOL: 0
+;PCODE: $00000085 VOL: 0
+; 0000 008D #endasm
+; 0000 008E 
+; 0000 008F // TWI initialization
+; 0000 0090 // TWI disabled
+; 0000 0091 TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
+;PCODE: $00000086 VOL: 0
+;PCODE: $00000087 VOL: 0
+; 0000 0092 
+; 0000 0093 
+; 0000 0094 // Инициализация Max7219
+; 0000 0095 SET(Intensity, 0x03);      // Установка интенсивности свечения (от 0 до F)
+;PCODE: $00000088 VOL: 0
+;PCODE: $00000089 VOL: 0
+;PCODE: $0000008A VOL: 0
+;PCODE: $0000008B VOL: 0
+; 0000 0096 SET(ScanLimit, 0x07);      // Индикация всех 8 знакомест 7SEG разрешена
+;PCODE: $0000008C VOL: 0
+;PCODE: $0000008D VOL: 0
+;PCODE: $0000008E VOL: 0
+;PCODE: $0000008F VOL: 0
+; 0000 0097 SET(ShutDown, 1);          // Установка режима индикации, а не выключения
+;PCODE: $00000090 VOL: 0
+;PCODE: $00000091 VOL: 0
+;PCODE: $00000092 VOL: 0
+;PCODE: $00000093 VOL: 0
+; 0000 0098 SET(DecodeMode, 0xFF);     // Установка режима декодирования (с декодированием встроенным знакогенератором)
+;PCODE: $00000094 VOL: 0
+;PCODE: $00000095 VOL: 0
+;PCODE: $00000096 VOL: 0
+;PCODE: $00000097 VOL: 0
+; 0000 0099 
+; 0000 009A // Global enable interrupts
+; 0000 009B #asm("sei")         //Разрешение прерываний
+;PCODE: $00000098 VOL: 0
+	sei
+;PCODE: $00000099 VOL: 0
+; 0000 009C 
+; 0000 009D while (1)           //Бесконечный цикл
+;PCODE: $0000009A VOL: 0
+; 0000 009E       {
+; 0000 009F       };
+;PCODE: $0000009B VOL: 0
+;PCODE: $0000009C VOL: 0
+; 0000 00A0 }
+;PCODE: $0000009D VOL: 0
+;PCODE: $0000009E VOL: 0
+;PCODE: $0000009F VOL: 0

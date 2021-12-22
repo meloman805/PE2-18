@@ -1179,178 +1179,289 @@ __CLEAR_SRAM:
 	.EQU __sm_adc_noise_red=0x10
 	.SET power_ctrl_reg=mcucr
 	#endif
+;#include <delay.h>
+;// Declare your global variables here
+;//Определение линий портов для SPI МК Atmega328p
+;#define SS PORTB2
+;#define SCK PORTB5
+;#define MOSI PORTB3
+;
+;//Определение адресов функциональных регистров max7219
+;#define Intensity   0x0A        // интенсивность свечения дисплея
+;#define ScanLimit   0x0B        // подключение числа столбцов
+;#define ShutDown    0x0C        // погасить дисплей
+;#define DecodeMode  0x09        // режим декодирования
 ;
 ;// External Interrupt 1 service routine, обработчик внешнего прерывания INT1
 ;interrupt [EXT_INT1] void ext_int1_isr(void)
-; 0000 0005 {
+; 0000 0011 {
 
 	.CSEG
 _ext_int1_isr:
 ; .FSTART _ext_int1_isr
 	ST   -Y,R30
-; 0000 0006 TCNT0=0x00;         //запуск ТС0 с нуля
+; 0000 0012 TCNT0=0x00;         //запуск ТС0 с нуля
 	LDI  R30,LOW(0)
 	OUT  0x32,R30
-; 0000 0007 TCCR0=0x07;         //в режиме счета импульсов с внешнего входа PB0/T0
+; 0000 0013 TCCR0=0x07;         //в режиме счета импульсов с внешнего входа PB0/T0
 	LDI  R30,LOW(7)
 	OUT  0x33,R30
-; 0000 0008 TCCR1B=0x05;        //Запуск ТС1 - начало формирования Тэт
+; 0000 0014 TCCR1B=0x05;        //Запуск ТС1 - начало формирования Тэт
 	LDI  R30,LOW(5)
 	OUT  0x2E,R30
-; 0000 0009 }
-	RJMP _0x7
+; 0000 0015 }
+	RJMP _0xA
 ; .FEND
 ;
 ;// Timer1 output compare A interrupt service routine, обработчик прерывания по совпадению A
 ;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
-; 0000 000D {
+; 0000 0019 {
 _timer1_compa_isr:
 ; .FSTART _timer1_compa_isr
 	ST   -Y,R30
-; 0000 000E TCCR0=0x00;         //Останов TC0
+; 0000 001A TCCR0=0x00;         //Останов TC0
 	LDI  R30,LOW(0)
 	OUT  0x33,R30
-; 0000 000F TCCR1B=0x00;        //Останов TC1
+; 0000 001B TCCR1B=0x00;        //Останов TC1
 	RCALL SUBOPT_0x0
-; 0000 0010 TCNT1H=0x00;        //Обнуление счетного регистра TC1
-; 0000 0011 TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
-; 0000 0012 PORTA=TCNT0;        //Вывод в порт A частоты в герцах
+; 0000 001C TCNT1H=0x00;        //Обнуление счетного регистра TC1
+; 0000 001D TCNT1L=0x00;        //для того, чтобы последующее измерение было верным
+; 0000 001E PORTA=TCNT0;        //Вывод в порт A частоты в герцах
 	IN   R30,0x32
 	OUT  0x1B,R30
-; 0000 0013 }
-_0x7:
+; 0000 001F }
+_0xA:
 	LD   R30,Y+
 	RETI
 ; .FEND
 ;
 ;// Declare your global variables here
 ;
+;/*ФУНКЦИЯ ПЕРЕДАЧИ БАЙТА ПО SPI-ИНТЕРФЕЙСУ ОТ MASTER-устройства(МК)*/
+;void SPI_MasterTransmit(char d) //в переменную d принимаем байт для отправки по SPI интерфейсу
+; 0000 0025   {
+_SPI_MasterTransmit:
+; .FSTART _SPI_MasterTransmit
+; 0000 0026   SPDR = d;                     //передаем байт в сдвиговый регистр SPDR
+	ST   -Y,R26
+;	d -> Y+0
+	LD   R30,Y
+	OUT  0xF,R30
+; 0000 0027   while(~SPSR & (1<<SPIF));     //ждем пока появится 1 в разряде SPIF (7) регистра
+_0x3:
+	IN   R30,0xE
+	COM  R30
+	ANDI R30,LOW(0x80)
+	BRNE _0x3
+; 0000 0028                                 //SPSR - признак завершения передачи байта
+; 0000 0029   }                             //байт передан устройству Slave, возврат
+	ADIW R28,1
+	RET
+; .FEND
+;
+;/*ФУНКЦИЯ ОТПРАВКИ АДРЕСА И ДАННЫХ ИМС MAX7219 ПО SPI-ИНТЕРФЕЙСУ*/
+;void SET(char addr, char data)
+; 0000 002D {
+_SET:
+; .FSTART _SET
+; 0000 002E PORTB&=~(1<<SS);    //на /SS установить 0 для выбора ведомого устройства (MAX7219)
+	ST   -Y,R26
+;	addr -> Y+1
+;	data -> Y+0
+	CBI  0x18,2
+; 0000 002F //Отправляем по SPI старший байт, содержащий в младшей тетраде адрес функционального регистра,
+; 0000 0030 SPI_MasterTransmit(addr);       //отправляем по SPI addr:
+	LDD  R26,Y+1
+	RCALL _SPI_MasterTransmit
+; 0000 0031 //Отправляем младший байт - данные режима
+; 0000 0032 SPI_MasterTransmit(data);       //Отправляем по SPI data
+	LD   R26,Y
+	RCALL _SPI_MasterTransmit
+; 0000 0033 //на /SS установить 1, т.е. отключить MAX7219 и одновременно защелкнуть в нём 16-битное слово
+; 0000 0034 PORTB|=(1<<SS);
+	SBI  0x18,2
+; 0000 0035 }
+	ADIW R28,2
+	RET
+; .FEND
+;
+;
 ;void main(void)
-; 0000 0018 {
+; 0000 0039 {
 _main:
 ; .FSTART _main
-; 0000 0019 // Declare your local variables here
-; 0000 001A 
-; 0000 001B // Input/Output Ports initialization
-; 0000 001C // Port A initialization, Все разряды порта A - на вывод с нулевыми нач. значениями
-; 0000 001D PORTA=0x00;
+; 0000 003A // Declare your local variables here
+; 0000 003B 
+; 0000 003C // Input/Output Ports initialization
+; 0000 003D // Port A initialization, Все разряды порта A - на вывод с нулевыми нач. значениями
+; 0000 003E PORTA=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x1B,R30
-; 0000 001E DDRA=0xFF;
+; 0000 003F DDRA=0xFF;
 	LDI  R30,LOW(255)
 	OUT  0x1A,R30
-; 0000 001F 
-; 0000 0020 // Port B initialization
-; 0000 0021 PORTB=0x00;
+; 0000 0040 
+; 0000 0041 // Port B initialization
+; 0000 0042 PORTB=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x18,R30
-; 0000 0022 DDRB=0x00;
+; 0000 0043 DDRB=0x00;
 	OUT  0x17,R30
-; 0000 0023 
-; 0000 0024 // Port C initialization
-; 0000 0025 PORTC=0x00;
+; 0000 0044 
+; 0000 0045 // Port C initialization
+; 0000 0046 PORTC=0x00;
 	OUT  0x15,R30
-; 0000 0026 DDRC=0x00;
+; 0000 0047 DDRC=0x00;
 	OUT  0x14,R30
-; 0000 0027 
-; 0000 0028 // Port D initialization
-; 0000 0029 PORTD=0x00;
+; 0000 0048 
+; 0000 0049 // Port D initialization
+; 0000 004A PORTD=0x00;
 	OUT  0x12,R30
-; 0000 002A DDRD=0x00;
+; 0000 004B DDRD=0x00;
 	OUT  0x11,R30
-; 0000 002B 
-; 0000 002C // Timer/Counter 0 initialization
-; 0000 002D // Clock source: System Clock
-; 0000 002E // Clock value: Timer 0 Stopped
-; 0000 002F // Mode: Normal top=FFh
-; 0000 0030 // OC0 output: Disconnected
-; 0000 0031 TCCR0=0x00;         //в исходном состоянии TC0 остановлен и обнулен
+; 0000 004C 
+; 0000 004D // Timer/Counter 0 initialization
+; 0000 004E // Clock source: System Clock
+; 0000 004F // Clock value: Timer 0 Stopped
+; 0000 0050 // Mode: Normal top=FFh
+; 0000 0051 // OC0 output: Disconnected
+; 0000 0052 TCCR0=0x00;         //в исходном состоянии TC0 остановлен и обнулен
 	OUT  0x33,R30
-; 0000 0032 TCNT0=0x00;
+; 0000 0053 TCNT0=0x00;
 	OUT  0x32,R30
-; 0000 0033 OCR0=0x00;
+; 0000 0054 OCR0=0x00;
 	OUT  0x3C,R30
-; 0000 0034 
-; 0000 0035 // Timer/Counter 1 initialization
-; 0000 0036 // Clock source: System Clock
-; 0000 0037 // Clock value: Timer1 Stopped
-; 0000 0038 // Mode: Normal top=FFFFh
-; 0000 0039 // OC1A output: Discon.
-; 0000 003A // OC1B output: Discon.
-; 0000 003B // Noise Canceler: Off
-; 0000 003C // Input Capture on Falling Edge
-; 0000 003D // Timer1 Overflow Interrupt: Off
-; 0000 003E // Input Capture Interrupt: Off
-; 0000 003F // Compare A Match Interrupt: On
-; 0000 0040 // Compare B Match Interrupt: Off
-; 0000 0041 TCCR1A=0x00;
+; 0000 0055 
+; 0000 0056 // Timer/Counter 1 initialization
+; 0000 0057 // Clock source: System Clock
+; 0000 0058 // Clock value: Timer1 Stopped
+; 0000 0059 // Mode: Normal top=FFFFh
+; 0000 005A // OC1A output: Discon.
+; 0000 005B // OC1B output: Discon.
+; 0000 005C // Noise Canceler: Off
+; 0000 005D // Input Capture on Falling Edge
+; 0000 005E // Timer1 Overflow Interrupt: Off
+; 0000 005F // Input Capture Interrupt: Off
+; 0000 0060 // Compare A Match Interrupt: On
+; 0000 0061 // Compare B Match Interrupt: Off
+; 0000 0062 TCCR1A=0x00;
 	OUT  0x2F,R30
-; 0000 0042 TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
+; 0000 0063 TCCR1B=0x00;        //В исходном состоянии TC1 остановлен и обнулен
 	RCALL SUBOPT_0x0
-; 0000 0043 TCNT1H=0x00;
-; 0000 0044 TCNT1L=0x00;
-; 0000 0045 ICR1H=0x00;
+; 0000 0064 TCNT1H=0x00;
+; 0000 0065 TCNT1L=0x00;
+; 0000 0066 ICR1H=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x27,R30
-; 0000 0046 ICR1L=0x00;
+; 0000 0067 ICR1L=0x00;
 	OUT  0x26,R30
-; 0000 0047 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
+; 0000 0068 OCR1AH=0x00;        //Занесение в регистр сравнения A значения
 	OUT  0x2B,R30
-; 0000 0048 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
+; 0000 0069 OCR1AL=0x07;        //для формирования Tэт=1сек (7813)
 	LDI  R30,LOW(7)
 	OUT  0x2A,R30
-; 0000 0049 OCR1BH=0x00;
+; 0000 006A OCR1BH=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x29,R30
-; 0000 004A OCR1BL=0x00;
+; 0000 006B OCR1BL=0x00;
 	OUT  0x28,R30
-; 0000 004B 
-; 0000 004C // External Interrupt(s) initialization
-; 0000 004D // INT0: Off
-; 0000 004E // INT1: On
-; 0000 004F // INT1 Mode: Rising Edge
-; 0000 0050 // INT2: Off
-; 0000 0051 GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
+; 0000 006C 
+; 0000 006D // External Interrupt(s) initialization
+; 0000 006E // INT0: Off
+; 0000 006F // INT1: On
+; 0000 0070 // INT1 Mode: Rising Edge
+; 0000 0071 // INT2: Off
+; 0000 0072 GICR|=1<<INT1;              //Разрешение внешнего прерывания INT1
 	IN   R30,0x3B
 	ORI  R30,0x80
 	OUT  0x3B,R30
-; 0000 0052 MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
+; 0000 0073 MCUCR=1<<ISC11 | 1<<ISC10;  //Запуск - по переднему фронту
 	LDI  R30,LOW(12)
 	OUT  0x35,R30
-; 0000 0053 MCUCSR=0x00;
+; 0000 0074 MCUCSR=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x34,R30
-; 0000 0054 GIFR=1<<INTF1;				//Сброс флага прерывания
+; 0000 0075 GIFR=1<<INTF1;				//Сброс флага прерывания
 	LDI  R30,LOW(128)
 	OUT  0x3A,R30
-; 0000 0055 
-; 0000 0056 // Timer(s)/Counter(s) Interrupt(s) initialization
-; 0000 0057 TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
+; 0000 0076 
+; 0000 0077 // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 0078 TIMSK=1<<OCIE1A;			//Разрешение прерывания по совпадению A TC1
 	LDI  R30,LOW(16)
 	OUT  0x39,R30
-; 0000 0058 
-; 0000 0059 // Analog Comparator initialization
-; 0000 005A // Analog Comparator: Off
-; 0000 005B // Analog Comparator Input Capture by Timer/Counter 1: Off
-; 0000 005C ACSR=0x80;
+; 0000 0079 
+; 0000 007A // Analog Comparator initialization
+; 0000 007B // Analog Comparator: Off
+; 0000 007C // Analog Comparator Input Capture by Timer/Counter 1: Off
+; 0000 007D ACSR=0x80;
 	LDI  R30,LOW(128)
 	OUT  0x8,R30
-; 0000 005D SFIOR=0x00;
+; 0000 007E SFIOR=0x00;
 	LDI  R30,LOW(0)
 	OUT  0x30,R30
-; 0000 005E 
-; 0000 005F // Global enable interrupts
-; 0000 0060 #asm("sei")         //Разрешение прерываний
+; 0000 007F 
+; 0000 0080 // SPI initialization
+; 0000 0081 // SPI Type: Master
+; 0000 0082 // SPI Clock Rate: 2000,000 kHz
+; 0000 0083 // SPI Clock Phase: Cycle Start
+; 0000 0084 // SPI Clock Polarity: Low
+; 0000 0085 // SPI Data Order: MSB First
+; 0000 0086 SPCR=(1<<SPIE) | (1<<SPE) | (0<<DORD) | (1<<MSTR) | (0<<CPOL) | (0<<CPHA) | (0<<SPR1) | (0<<SPR0);
+	LDI  R30,LOW(208)
+	OUT  0xD,R30
+; 0000 0087 SPSR=(0<<SPI2X);
+	LDI  R30,LOW(0)
+	OUT  0xE,R30
+; 0000 0088 
+; 0000 0089 // Clear the SPI interrupt flag
+; 0000 008A #asm
+; 0000 008B     in   r30,spsr
+    in   r30,spsr
+; 0000 008C     in   r30,spdr
+    in   r30,spdr
+; 0000 008D #endasm
+; 0000 008E 
+; 0000 008F // TWI initialization
+; 0000 0090 // TWI disabled
+; 0000 0091 TWCR=(0<<TWEA) | (0<<TWSTA) | (0<<TWSTO) | (0<<TWEN) | (0<<TWIE);
+	LDI  R30,LOW(0)
+	OUT  0x36,R30
+; 0000 0092 
+; 0000 0093 
+; 0000 0094 // Инициализация Max7219
+; 0000 0095 SET(Intensity, 0x03);      // Установка интенсивности свечения (от 0 до F)
+	LDI  R30,LOW(10)
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	RCALL _SET
+; 0000 0096 SET(ScanLimit, 0x07);      // Индикация всех 8 знакомест 7SEG разрешена
+	LDI  R30,LOW(11)
+	ST   -Y,R30
+	LDI  R26,LOW(7)
+	RCALL _SET
+; 0000 0097 SET(ShutDown, 1);          // Установка режима индикации, а не выключения
+	LDI  R30,LOW(12)
+	ST   -Y,R30
+	LDI  R26,LOW(1)
+	RCALL _SET
+; 0000 0098 SET(DecodeMode, 0xFF);     // Установка режима декодирования (с декодированием встроенным знакогенератором)
+	LDI  R30,LOW(9)
+	ST   -Y,R30
+	LDI  R26,LOW(255)
+	RCALL _SET
+; 0000 0099 
+; 0000 009A // Global enable interrupts
+; 0000 009B #asm("sei")         //Разрешение прерываний
 	sei
-; 0000 0061 
-; 0000 0062 while (1)           //Бесконечный цикл
-_0x3:
-; 0000 0063       {
-; 0000 0064       };
-	RJMP _0x3
-; 0000 0065 }
+; 0000 009C 
+; 0000 009D while (1)           //Бесконечный цикл
 _0x6:
+; 0000 009E       {
+; 0000 009F       };
 	RJMP _0x6
+; 0000 00A0 }
+_0x9:
+	RJMP _0x9
 ; .FEND
 
 	.CSEG

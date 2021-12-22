@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_String-Out(alcd).asm Mon Oct 11 08:42:35 2021
+AVRASM ver. 2.1.30  F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_String-Out(alcd).asm Thu Dec 09 10:46:47 2021
 
 F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_String-Out(alcd).asm(1088): warning: Register r4 already defined by the .DEF directive
 F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_String-Out(alcd).asm(1089): warning: Register r5 already defined by the .DEF directive
@@ -1134,7 +1134,7 @@ F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_S
                  ;GLOBAL REGISTER VARIABLES INITIALIZATION
                  __REG_VARS:
 00002a 002d
-00002b 3300      	.DB  0x2D,0x0,0x0,0x33
+00002b 3200      	.DB  0x2D,0x0,0x0,0x32
                  
                  _0x3:
 00002c 2d0e
@@ -1149,8 +1149,8 @@ F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_S
 000033 6572      	.DB  0x47,0x6F,0x6E,0x63,0x68,0x61,0x72,0x65
 000034 6b6e
 000035 206f
-000036 2056
-000037 2500      	.DB  0x6E,0x6B,0x6F,0x20,0x56,0x20,0x0,0x25
+000036 2041
+000037 2500      	.DB  0x6E,0x6B,0x6F,0x20,0x41,0x20,0x0,0x25
 000038 2e34
 000039 6633
 00003a 2020
@@ -1293,7 +1293,7 @@ F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_S
                  ;
                  ;  float result=2.643;
                  ;
-                 ;char a = 0x33;              //выводимый символ – цифра «3»
+                 ;char a = 0x32;              //выводимый символ – цифра «3»
                  ;
                  ;void main(void)
                  ; 0000 000F {
@@ -1307,7 +1307,7 @@ F:\Uchoba\PE2-18\2\Vadim\4 курс\ОМТ 2 часть\лаба 5 LCD\LCD_String-Out\List\LCD_S
                  ; 0000 0013          float b=12.136;
                  ; 0000 0014     float result=c+b;
                  ; 0000 0015 
-                 ; 0000 0016      sprintf (str,  "Goncharenko V ");
+                 ; 0000 0016      sprintf (str,  "Goncharenko A ");
 000080 97ab      	SBIW R28,43
 000081 e0ee      	LDI  R30,LOW(14)
 000082 83ec      	STD  Y+4,R30

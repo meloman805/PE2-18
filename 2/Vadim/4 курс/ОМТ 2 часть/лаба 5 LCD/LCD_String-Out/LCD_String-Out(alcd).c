@@ -9,7 +9,7 @@ float b=12.136;
 
   float result=2.643;
 
-char a = 0x33;              //выводимый символ Ц цифра Ђ3ї
+char a = 0x32;              //выводимый символ Ц цифра Ђ3ї
 
 void main(void)
 {
@@ -19,7 +19,7 @@ char str[15];  //выводима€ строка ТPROM_ELТ
          float b=12.136;
     float result=c+b;  
  
-     sprintf (str,  "Goncharenko V ");
+     sprintf (str,  "Goncharenko A ");
 // Alphanumeric LCD initialization
 // Connections are specified in the
 // Project|Configure|C Compiler|Libraries|Alphanumeric LCD menu:

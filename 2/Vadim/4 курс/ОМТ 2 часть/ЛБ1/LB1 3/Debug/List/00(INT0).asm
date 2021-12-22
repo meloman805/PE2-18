@@ -1379,13 +1379,7 @@ _main:
 	ADD  R9,R30
 ; 0000 0051           PORTB=result;
 	OUT  0x18,R9
-; 0000 0052               a1=a;
-	LDS  R10,_a
-	CLR  R11
-; 0000 0053               b1=b;
-	LDS  R12,_b
-	CLR  R13
-; 0000 0054             a1=(pow(a*b,0.5));
+; 0000 0052             a1=(pow(a*b,0.5));
 	LDS  R26,_a
 	CLR  R27
 	LDS  R30,_b
@@ -1397,24 +1391,23 @@ _main:
 	CALL _pow
 	CALL __CFD1
 	MOVW R10,R30
-; 0000 0055 
-; 0000 0056           result-=a1;
+; 0000 0053           result-=a1;
 	SUB  R9,R10
-; 0000 0057             PORTB=result;
+; 0000 0054             PORTB=result;
 	OUT  0x18,R9
-; 0000 0058              delay_ms(250);
+; 0000 0055              delay_ms(250);
 	LDI  R26,LOW(250)
 	LDI  R27,0
 	CALL _delay_ms
-; 0000 0059 while (1)
+; 0000 0056 while (1)
 _0x9:
-; 0000 005A 
-; 0000 005B       delay_ms(250);
+; 0000 0057 
+; 0000 0058       delay_ms(250);
 	LDI  R26,LOW(250)
 	LDI  R27,0
 	CALL _delay_ms
 	RJMP _0x9
-; 0000 005D }
+; 0000 005A }
 _0xC:
 	RJMP _0xC
 ; .FEND
